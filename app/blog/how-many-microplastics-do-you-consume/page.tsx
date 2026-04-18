@@ -184,7 +184,7 @@ export default function BlogPost() {
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
           <li>Marfella R et al. Microplastics and Nanoplastics in Atheromas and Cardiovascular Events. <em>NEJM</em>. 2024. DOI: 10.1056/NEJMoa2309822</li>
           <li>EFSA Panel on Contaminants. Presence of Microplastics and Nanoplastics in Food. <em>EFSA Journal</em>. 2016. DOI: 10.2903/j.efsa.2016.4501</li>
-          <li>Dris R et al. Synthetic fibres in atmospheric fallout. <em>Sci Total Environ</em>. 2017. DOI: 10.1016/j.scitotenv.2016.11.037</li>
+          <li>Dris R et al. A first overview of textile fibers, including microplastics, in indoor and outdoor environments. <em>Environmental Pollution</em>. 2017. DOI: 10.1016/j.envpol.2016.12.013</li>
         </ol>
       </div>
     </article>
