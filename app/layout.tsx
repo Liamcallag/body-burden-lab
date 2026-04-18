@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Body Burden Lab — Microplastics Exposure Calculator",
-    template: "%s | Body Burden Lab",
+    default: "Body Burden — Microplastics Exposure Calculator",
+    template: "%s | Body Burden",
   },
   description:
     "Estimate how many microplastic particles you consume and inhale each week based on your lifestyle. Built on peer-reviewed science.",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "microplastics test online",
   ],
   openGraph: {
-    siteName: "Body Burden Lab",
+    siteName: "Body Burden",
     type: "website",
   },
 };

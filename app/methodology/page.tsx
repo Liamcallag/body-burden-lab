@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Methodology — How We Calculate Your Microplastic Exposure",
   description:
-    "Full scientific methodology and source reference table for the Body Burden Lab microplastics calculator. Every estimate is traceable to peer-reviewed research.",
+    "Full scientific methodology and source reference table for the Body Burden microplastics calculator. Every estimate is traceable to peer-reviewed research.",
 };
 
 const sources = [
@@ -130,7 +130,7 @@ export default function MethodologyPage() {
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Methodology</h1>
         <p className="text-slate-500 leading-relaxed max-w-2xl">
-          Every figure in the Body Burden Lab calculator is derived from peer-reviewed research. This page documents each data point, its source, and our confidence level.
+          Every figure in the Body Burden calculator is derived from peer-reviewed research. This page documents each data point, its source, and our confidence level.
         </p>
       </div>
 
@@ -249,7 +249,7 @@ export default function MethodologyPage() {
           href="/about"
           className="inline-block border border-slate-200 text-slate-600 font-medium px-6 py-3 rounded-full text-sm hover:bg-slate-50 transition-colors text-center"
         >
-          About Body Burden Lab
+          About Body Burden
         </Link>
       </div>
     </div>

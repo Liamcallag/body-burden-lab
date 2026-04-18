@@ -23,7 +23,7 @@ export default function Nav() {
           <span className="inline-block w-6 h-6 rounded bg-teal-700 text-white flex items-center justify-center text-xs font-bold">
             B
           </span>
-          Body Burden Lab
+          Body Burden
         </Link>
 
         {/* Desktop links */}

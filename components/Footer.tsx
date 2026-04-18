@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="font-semibold text-slate-900 mb-1 text-sm">Body Burden Lab</div>
+            <div className="font-semibold text-slate-900 mb-1 text-sm">Body Burden</div>
             <p className="text-xs text-slate-400 leading-relaxed">
               Science-backed estimates of your microplastic exposure, built on peer-reviewed research.
             </p>
@@ -32,7 +32,7 @@ export default function Footer() {
             <strong className="text-slate-500">Disclaimer:</strong> This calculator provides educational estimates based on published peer-reviewed research. Results are approximations with an estimated margin of error of ±30% due to variation between studies and individual factors not captured by this tool. This is not a medical diagnosis or personalised health advice. See our{" "}
             <Link href="/methodology" className="underline hover:text-teal-700">full methodology</Link> for sources and limitations.
           </p>
-          <p className="text-xs text-slate-400 mt-3">© {new Date().getFullYear()} Body Burden Lab. For educational purposes only.</p>
+          <p className="text-xs text-slate-400 mt-3">© {new Date().getFullYear()} Body Burden. For educational purposes only.</p>
         </div>
       </div>
     </footer>

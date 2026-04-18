@@ -68,7 +68,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Per litre of food, the study found concentrations exceeding 1,000 times what has been detected in bottled water. Daily microwaving of food in plastic containers could contribute tens of thousands of particles per week to an individual's exposure — by far the single largest controllable variable in the Body Burden Lab calculator.
+          Per litre of food, the study found concentrations exceeding 1,000 times what has been detected in bottled water. Daily microwaving of food in plastic containers could contribute tens of thousands of particles per week to an individual's exposure — by far the single largest controllable variable in the Body Burden calculator.
         </p>
 
         <p>
@@ -158,7 +158,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Find out where you stand</h2>
 
         <p>
-          The Body Burden Lab microplastics calculator takes 10 questions about your specific habits and gives you a personalised weekly particle estimate, a breakdown by source, and your top reduction opportunities — all based on the peer-reviewed studies referenced in this article.
+          The Body Burden microplastics calculator takes 10 questions about your specific habits and gives you a personalised weekly particle estimate, a breakdown by source, and your top reduction opportunities — all based on the peer-reviewed studies referenced in this article.
         </p>
 
       </div>

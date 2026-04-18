@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Body Burden Lab — How Many Microplastics Are You Consuming?",
+  title: "Body Burden — How Many Microplastics Are You Consuming?",
   description:
-    "Body Burden Lab estimates your weekly microplastic exposure based on your lifestyle, using peer-reviewed science. Free, anonymous, takes 2 minutes.",
+    "Body Burden estimates your weekly microplastic exposure based on your lifestyle, using peer-reviewed science. Free, anonymous, takes 2 minutes.",
 };
 
 const stats = [
@@ -41,7 +41,7 @@ export default function HomePage() {
             How many microplastics are you consuming?
           </h1>
           <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-xl mx-auto">
-            Body Burden Lab estimates your weekly microplastic exposure based on your lifestyle habits — built on peer-reviewed research, not guesswork.
+            Body Burden estimates your weekly microplastic exposure based on your lifestyle habits — built on peer-reviewed research, not guesswork.
           </p>
           <Link
             href="/calculator"
