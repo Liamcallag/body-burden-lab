@@ -203,7 +203,7 @@ export default function ResultsClient() {
       {/* Confidence note */}
       <div className="border border-slate-100 rounded-xl p-5 mb-6 bg-slate-50">
         <p className="text-xs text-slate-500 leading-relaxed">
-          <strong className="text-slate-600">About this estimate:</strong> This result carries an estimated margin of error of ±30% due to variation between studies and individual factors not captured here. It represents a reasonable approximation based on published research, not a precise measurement.
+          <strong className="text-slate-600">About this estimate:</strong> The microplastic figures in this calculator carry an estimated margin of error of ±30% due to variation between studies and individual factors not captured here. Nanoplastic exposure is not included and may be significantly higher. Your score should be understood as a conservative floor, not a precise measurement.
         </p>
       </div>
 

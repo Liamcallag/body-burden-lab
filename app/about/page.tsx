@@ -40,7 +40,7 @@ export default function AboutPage() {
         <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Our principles</h2>
         <ul className="list-disc list-inside space-y-2 text-slate-600">
           <li><strong>Scientific accuracy:</strong> Every estimate traces back to a published study. Confidence levels are disclosed.</li>
-          <li><strong>Honest uncertainty:</strong> We acknowledge the ±30% margin of error and the limitations of current research.</li>
+          <li><strong>Honest uncertainty:</strong> We acknowledge the ±30% margin of error in the microplastic figures cited, and we are explicit that nanoplastic exposure — not captured here — may be significantly higher. Our scores are a conservative floor, not a precise measurement.</li>
           <li><strong>No alarmism:</strong> The numbers speak for themselves. Our job is to present them clearly, not to frighten.</li>
           <li><strong>No login required:</strong> Results are calculated in your browser. We do not collect your answers.</li>
           <li><strong>Educational purpose only:</strong> This tool is not a medical diagnostic and should not be treated as one.</li>
