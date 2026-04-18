@@ -96,8 +96,7 @@ export default function ResultsClient() {
         <p className="text-2xl font-bold text-slate-900 mb-1">{annualFormatted} particles per year</p>
         <p className="text-sm text-slate-500">
           This is{" "}
-          <span className="font-semibold text-slate-700">{result.comparisonText}</span> the average
-          estimated American exposure of 74,000–121,000 particles per year
+          <span className="font-semibold text-slate-700">{result.comparisonText}</span> the 74,000–121,000 particles per year estimated by Cox et al. (2019) — though researchers note this figure likely significantly underestimates true exposure, as many pathways were not yet studied at the time.
         </p>
         <p className="text-xs text-slate-400 mt-2">Source: Cox et al., Environmental Science & Technology, 2019</p>
       </div>

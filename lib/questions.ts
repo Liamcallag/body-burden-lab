@@ -91,6 +91,17 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
+    id: "diet",
+    category: "food",
+    question: "How would you describe your typical diet?",
+    tipKey: "diet",
+    options: [
+      { label: "Mostly packaged, canned, processed food or regular takeaway", value: 2000 },
+      { label: "Mix of fresh and packaged or processed food", value: 1000 },
+      { label: "Mostly fresh, home-cooked meals with unpackaged ingredients", value: 400 },
+    ],
+  },
+  {
     id: "seafood",
     category: "food",
     question: "How often do you eat seafood — fish, shellfish, mussels etc?",
@@ -169,6 +180,7 @@ export const REDUCTION_TIPS: Record<string, string> = {
   utensils: "Replacing plastic cooking utensils with wood or stainless steel could reduce your exposure by up to 450 particles per week.",
   nonstick: "Replacing old or scratched non-stick pans with stainless steel or cast iron could reduce your exposure by up to 400 particles per week.",
   cuttingboard: "Replacing plastic cutting boards with wood or bamboo could reduce your exposure by up to 400 particles per week.",
+  diet: "Reducing packaged and processed food in favour of fresh ingredients reduces exposure from plastic food packaging, can linings, and food contact materials. Buying loose produce and storing food in glass rather than plastic also helps.",
   seafood: "Microplastics accumulate in the digestive tracts of fish and shellfish — reducing seafood intake or choosing larger fish over shellfish can lower ingestion.",
   clothing: "Washing synthetic clothing in a microfibre-catching laundry bag reduces fibre release. Natural fibres shed fewer microplastics overall.",
   environment: "Using an air purifier with a HEPA filter indoors can capture microplastic fibres, partially offsetting urban air exposure.",
