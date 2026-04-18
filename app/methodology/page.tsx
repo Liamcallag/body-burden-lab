@@ -150,6 +150,9 @@ export default function MethodologyPage() {
           <p>
             The calculator carries an estimated margin of error of ±30%. Individual exposure will vary depending on consumption volumes, product types, and geographic factors not captured by these questions.
           </p>
+          <p>
+            <strong>A note on microplastics vs nanoplastics:</strong> This calculator counts microplastic particles only — defined as particles between 1 micron and 5mm in size. Nanoplastic particles (smaller than 1 micron) are not included. This is a deliberate methodological choice: nanoplastic research is newer, measurement techniques vary significantly between studies, and consistent comparable figures do not yet exist across all exposure pathways. Where nanoplastic data does exist — such as in the tea bag study by Hernandez et al. (2019), which found 11.6 billion nanoplastic particles released per bag — the numbers are orders of magnitude higher than microplastic counts alone. All scores in this calculator should therefore be understood as conservative estimates. The true total particle exposure, including nanoplastics, is likely 10 to 100 times higher.
+          </p>
         </div>
       </section>
 

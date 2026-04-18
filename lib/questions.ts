@@ -38,7 +38,9 @@ export const QUESTIONS: Question[] = [
     question: "How do you make your tea or coffee?",
     tipKey: "tea",
     options: [
-      { label: "Plastic or nylon tea bags daily", value: 7000 },
+      { label: "Plastic or nylon tea bags — daily", value: 7000 },
+      { label: "Plastic or nylon tea bags — a few times a week", value: 3000 },
+      { label: "Plastic or nylon tea bags — occasionally", value: 800 },
       { label: "Paper tea bags or loose leaf", value: 10 },
       { label: "Coffee machine with plastic parts or pods", value: 200 },
       { label: "I don't drink tea or coffee", value: 0 },
