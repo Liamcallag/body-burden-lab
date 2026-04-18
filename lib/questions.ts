@@ -95,12 +95,12 @@ export const QUESTIONS: Question[] = [
   {
     id: "diet",
     category: "food",
-    question: "How would you describe your typical diet?",
+    question: "How much of your food comes into contact with plastic packaging or wrapping?",
     tipKey: "diet",
     options: [
-      { label: "Mostly packaged, canned, processed food or regular takeaway", value: 2000 },
-      { label: "Mix of fresh and packaged or processed food", value: 1000 },
-      { label: "Mostly fresh, home-cooked meals with unpackaged ingredients", value: 400 },
+      { label: "Most of it — cling film, plastic trays, canned food, plastic bags", value: 2000 },
+      { label: "About half — some plastic, some paper, glass or loose", value: 1000 },
+      { label: "Very little — mostly loose, unpackaged or stored in glass", value: 400 },
     ],
   },
   {
