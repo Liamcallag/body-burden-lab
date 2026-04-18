@@ -188,6 +188,71 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* Further reading */}
+      <section className="mb-12">
+        <h2 className="text-xl font-semibold text-slate-900 mb-2">Further reading</h2>
+        <p className="text-sm text-slate-500 mb-5">Landmark studies on microplastics in the human body — supporting context for this calculator</p>
+        <div className="flex flex-col gap-4">
+          {[
+            {
+              author: "Marfella et al.",
+              year: 2024,
+              title: "Microplastics and Nanoplastics in Atheromas and Cardiovascular Events",
+              journal: "New England Journal of Medicine",
+              doi: "10.1056/NEJMoa2309822",
+              note: "Found microplastics and nanoplastics in human arterial plaques. Patients with detectable particles had a 4.5x higher risk of heart attack, stroke, or death over 34 months.",
+            },
+            {
+              author: "Leslie et al.",
+              year: 2022,
+              title: "Discovery and quantification of plastic particle pollution in human blood",
+              journal: "Environment International",
+              doi: "10.1016/j.envint.2022.107199",
+              note: "First study to detect and quantify microplastic particles in human blood. Found plastic particles in 77% of people tested.",
+            },
+            {
+              author: "Ragusa et al.",
+              year: 2021,
+              title: "Plasticenta: First evidence of microplastics in human placenta",
+              journal: "Environment International",
+              doi: "10.1016/j.envint.2020.106274",
+              note: "First study to detect microplastics in human placental tissue, demonstrating that particles can cross the placental barrier.",
+            },
+            {
+              author: "World Health Organization",
+              year: 2019,
+              title: "Microplastics in Drinking-Water",
+              journal: "WHO Report",
+              doi: null,
+              url: "https://iris.who.int/handle/10665/326499",
+              note: "Comprehensive global review of microplastic contamination in drinking water sources, treatment processes, and human health implications.",
+            },
+          ].map((s) => (
+            <div key={s.title} className="border border-slate-100 rounded-xl p-5 bg-white">
+              <div className="flex items-start justify-between gap-3 flex-wrap">
+                <div className="flex-1">
+                  <p className="font-medium text-slate-900 text-sm">{s.title}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">
+                    {s.author} · {s.journal} · {s.year}
+                  </p>
+                  <p className="text-xs text-slate-600 mt-2">{s.note}</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <a
+                    href={s.doi ? `https://doi.org/${s.doi}` : s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-teal-700 hover:underline"
+                  >
+                    {s.doi ? "DOI →" : "Report →"}
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Reference table */}
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-slate-900 mb-2">Full reference table</h2>
