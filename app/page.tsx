@@ -38,10 +38,10 @@ export default function HomePage() {
             Peer-reviewed science
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-5">
-            You consume microplastics every week. Find out how much.
+            How many microplastics are you consuming?
           </h1>
           <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-xl mx-auto">
-            Based on your lifestyle habits — 13 questions, 2 minutes, no account required.
+            Most people have no idea. Find out in 2 minutes — based on your lifestyle habits and peer-reviewed science.
           </p>
           <Link
             href="/calculator"
