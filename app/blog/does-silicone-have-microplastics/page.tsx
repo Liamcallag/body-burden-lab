@@ -5,7 +5,17 @@ export const metadata: Metadata = {
   title: "Does Silicone Release Microplastics?",
   description:
     "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
-  openGraph: { type: "article", publishedTime: "2026-04-19" },
+  openGraph: {
+    type: "article",
+    publishedTime: "2026-04-19",
+    images: [
+      {
+        url: "https://bodyburdenlab.com/api/og?title=Does+Silicone+Release+Microplastics%3F&tag=Science",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function BlogPost() {

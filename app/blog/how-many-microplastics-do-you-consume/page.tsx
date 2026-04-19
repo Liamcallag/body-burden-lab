@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     publishedTime: "2026-04-18",
+    images: [
+      {
+        url: "https://bodyburdenlab.com/api/og?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "Body Burden",
     type: "website",
+    images: [
+      {
+        url: "https://bodyburdenlab.com/api/og?title=Body+Burden+%E2%80%94+Microplastics+Exposure+Calculator&tag=Tool",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
