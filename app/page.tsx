@@ -101,13 +101,11 @@ export default function HomePage() {
               const Icon = item.icon;
               return (
                 <div key={item.system} className="border border-slate-100 rounded-xl p-5 bg-white shadow-sm">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-7 h-7 rounded-lg bg-teal-50 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-4 h-4 text-teal-600" />
-                    </div>
-                    <span className="text-xs font-semibold text-slate-700 uppercase tracking-wide">{item.system}</span>
+                  <div className="flex items-center gap-3 mb-3">
+                    <Icon className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                    <span className="text-base font-bold text-slate-900">{item.system}</span>
                   </div>
-                  <p className="text-sm text-slate-600 leading-snug mb-3">{item.finding}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed mb-3">{item.finding}</p>
                   <p className="text-xs text-slate-400">{item.source}</p>
                 </div>
               );
