@@ -9,6 +9,42 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "how-to-avoid-microplastics",
+    title: "How to Avoid Microplastics — A Science-Based Guide",
+    excerpt:
+      "You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can reduce your intake by tens of thousands of particles per week.",
+    date: "2026-04-19",
+    readTime: "7 min read",
+    tag: "Guide",
+  },
+  {
+    slug: "does-reverse-osmosis-remove-microplastics",
+    title: "Does Reverse Osmosis Remove Microplastics?",
+    excerpt:
+      "Reverse osmosis is among the most effective water filtration methods for microplastics, achieving removal rates above 99%. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
+    date: "2026-04-19",
+    readTime: "5 min read",
+    tag: "Science",
+  },
+  {
+    slug: "microplastics-in-bottled-water",
+    title: "Microplastics in Bottled Water — What the Research Shows",
+    excerpt:
+      "Bottled water is sold on the premise of purity. Multiple peer-reviewed studies document a consistent finding: it contains significantly more microplastics than filtered tap water.",
+    date: "2026-04-19",
+    readTime: "6 min read",
+    tag: "Science",
+  },
+  {
+    slug: "does-silicone-have-microplastics",
+    title: "Does Silicone Release Microplastics?",
+    excerpt:
+      "Silicone kitchen items are widely promoted as a safer plastic alternative. The picture is more nuanced than the marketing suggests — here's what the research actually shows.",
+    date: "2026-04-19",
+    readTime: "5 min read",
+    tag: "Science",
+  },
+  {
     slug: "how-many-microplastics-do-you-consume",
     title: "How Many Microplastics Do You Consume Per Week?",
     excerpt:
