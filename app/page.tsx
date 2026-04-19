@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Body Burden — How Many Microplastics Are You Consuming?",
+  title: "Body Burden — Microplastics Exposure Calculator",
   description:
-    "Body Burden estimates your weekly microplastic exposure based on your lifestyle, using peer-reviewed science. Free, anonymous, takes 2 minutes.",
+    "Find out how many microplastic particles you consume and inhale each week. Free calculator based on peer-reviewed science. Takes 2 minutes, no account needed.",
 };
 
 const stats = [
