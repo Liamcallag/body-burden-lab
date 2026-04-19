@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Body Burden — Microplastics Exposure Calculator",
   description:
-    "Based on peer-reviewed science — find out how many microplastic particles you consume and inhale each week. Free, takes 2 minutes, no account needed.",
+    "How many microplastics are you actually consuming? Get your personal estimate in 2 minutes. Free calculator built on peer-reviewed research.",
 };
 
 const stats = [
