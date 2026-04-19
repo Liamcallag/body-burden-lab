@@ -102,7 +102,9 @@ export default function HomePage() {
               return (
                 <div key={item.system} className="border border-slate-100 rounded-xl p-5 bg-white shadow-sm">
                   <div className="flex items-center gap-3 mb-3">
-                    <Icon className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                    <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-teal-600" />
+                    </div>
                     <span className="text-base font-bold text-slate-900">{item.system}</span>
                   </div>
                   <p className="text-xs text-slate-500 leading-relaxed mb-3">{item.finding}</p>
