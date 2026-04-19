@@ -91,63 +91,23 @@ export default function HomePage() {
           <p className="text-slate-500 text-center text-sm mb-10 max-w-xl mx-auto">Peer-reviewed studies have confirmed microplastics in the following tissues. Detection does not prove causation — health effects remain an active area of research.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              {
-                system: "Cardiovascular system",
-                finding: "Plastic particles found in 58% of arterial plaque samples. Those with microplastics in plaque had 4.5× higher risk of heart attack, stroke, or death.",
-                source: "Marfella et al., NEJM, 2024",
-                color: "border-red-200 bg-red-50",
-                iconColor: "text-red-400",
-                icon: Heart,
-              },
-              {
-                system: "Brain tissue",
-                finding: "Microplastics found in all brain samples tested, at higher concentrations than liver or kidney. Levels rose significantly between 2016 and 2024.",
-                source: "Nihart et al., Nature Medicine, 2025",
-                color: "border-purple-200 bg-purple-50",
-                iconColor: "text-purple-400",
-                icon: Brain,
-              },
-              {
-                system: "Lung tissue",
-                finding: "Detected in 85% of live human lung tissue samples, including deep in the lower lobes where the body cannot easily expel them.",
-                source: "Jenner et al., Sci. Total Environ., 2022",
-                color: "border-blue-200 bg-blue-50",
-                iconColor: "text-blue-400",
-                icon: Wind,
-              },
-              {
-                system: "Reproductive system",
-                finding: "Found in 100% of semen samples tested. More polymer types correlated with significantly lower sperm count and reduced motility.",
-                source: "Zhang et al., eBioMedicine, 2024",
-                color: "border-amber-200 bg-amber-50",
-                iconColor: "text-amber-400",
-                icon: FlaskConical,
-              },
-              {
-                system: "Human blood",
-                finding: "Detected in 77% of healthy volunteer blood samples, confirming microplastics circulate throughout the body via the bloodstream.",
-                source: "Leslie et al., Environ. Int., 2022",
-                color: "border-teal-200 bg-teal-50",
-                iconColor: "text-teal-500",
-                icon: Droplets,
-              },
-              {
-                system: "Placenta",
-                finding: "Microplastic fragments found on both the fetal and maternal sides of human placentas, the first evidence of fetal-adjacent exposure.",
-                source: "Ragusa et al., Environ. Int., 2021",
-                color: "border-pink-200 bg-pink-50",
-                iconColor: "text-pink-400",
-                icon: Baby,
-              },
+              { system: "Cardiovascular system", finding: "Plastic particles found in 58% of arterial plaque samples. Those with microplastics in plaque had 4.5× higher risk of heart attack, stroke, or death.", source: "Marfella et al., NEJM, 2024", icon: Heart },
+              { system: "Brain tissue", finding: "Microplastics found in all brain samples tested, at higher concentrations than liver or kidney. Levels rose significantly between 2016 and 2024.", source: "Nihart et al., Nature Medicine, 2025", icon: Brain },
+              { system: "Lung tissue", finding: "Detected in 85% of live human lung tissue samples, including deep in the lower lobes where the body cannot easily expel them.", source: "Jenner et al., Sci. Total Environ., 2022", icon: Wind },
+              { system: "Reproductive system", finding: "Found in 100% of semen samples tested. More polymer types correlated with significantly lower sperm count and reduced motility.", source: "Zhang et al., eBioMedicine, 2024", icon: FlaskConical },
+              { system: "Human blood", finding: "Detected in 77% of healthy volunteer blood samples, confirming microplastics circulate throughout the body via the bloodstream.", source: "Leslie et al., Environ. Int., 2022", icon: Droplets },
+              { system: "Placenta", finding: "Microplastic fragments found on both the fetal and maternal sides of human placentas, the first evidence of fetal-adjacent exposure.", source: "Ragusa et al., Environ. Int., 2021", icon: Baby },
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.system} className={`border rounded-xl p-5 ${item.color}`}>
+                <div key={item.system} className="border border-slate-100 rounded-xl p-5 bg-white shadow-sm">
                   <div className="flex items-center gap-2 mb-3">
-                    <Icon className={`w-4 h-4 flex-shrink-0 ${item.iconColor}`} />
+                    <div className="w-7 h-7 rounded-lg bg-teal-50 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-4 h-4 text-teal-600" />
+                    </div>
                     <span className="text-xs font-semibold text-slate-700 uppercase tracking-wide">{item.system}</span>
                   </div>
-                  <p className="text-sm text-slate-700 leading-snug mb-3">{item.finding}</p>
+                  <p className="text-sm text-slate-600 leading-snug mb-3">{item.finding}</p>
                   <p className="text-xs text-slate-400">{item.source}</p>
                 </div>
               );
