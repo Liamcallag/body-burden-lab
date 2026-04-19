@@ -19,9 +19,9 @@ export default function Nav() {
 
   return (
     <nav className="border-b border-slate-100 bg-white sticky top-0 z-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
         <Link href="/" className="flex items-center gap-2 font-semibold text-slate-900 text-sm tracking-tight">
-          <Image src="/logo.png" alt="Body Burden" width={48} height={48} className="rounded-xl" />
+          <Image src="/logo.png" alt="Body Burden" width={56} height={56} className="rounded-xl" />
           Body Burden
         </Link>
 
