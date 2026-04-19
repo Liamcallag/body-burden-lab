@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Heart, Brain, Wind, Baby, Droplets, FlaskConical } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Body Burden — Microplastics Exposure Calculator",
@@ -95,53 +96,62 @@ export default function HomePage() {
                 finding: "Plastic particles found in 58% of arterial plaque samples. Those with microplastics in plaque had 4.5× higher risk of heart attack, stroke, or death.",
                 source: "Marfella et al., NEJM, 2024",
                 color: "border-red-200 bg-red-50",
-                dot: "bg-red-400",
+                iconColor: "text-red-400",
+                icon: Heart,
               },
               {
                 system: "Brain tissue",
                 finding: "Microplastics found in all brain samples tested, at higher concentrations than liver or kidney. Levels rose significantly between 2016 and 2024.",
                 source: "Nihart et al., Nature Medicine, 2025",
                 color: "border-purple-200 bg-purple-50",
-                dot: "bg-purple-400",
+                iconColor: "text-purple-400",
+                icon: Brain,
               },
               {
                 system: "Lung tissue",
                 finding: "Detected in 85% of live human lung tissue samples, including deep in the lower lobes where the body cannot easily expel them.",
                 source: "Jenner et al., Sci. Total Environ., 2022",
                 color: "border-blue-200 bg-blue-50",
-                dot: "bg-blue-400",
+                iconColor: "text-blue-400",
+                icon: Wind,
               },
               {
                 system: "Reproductive system",
                 finding: "Found in 100% of semen samples tested. More polymer types correlated with significantly lower sperm count and reduced motility.",
                 source: "Zhang et al., eBioMedicine, 2024",
                 color: "border-amber-200 bg-amber-50",
-                dot: "bg-amber-400",
+                iconColor: "text-amber-400",
+                icon: FlaskConical,
               },
               {
                 system: "Human blood",
                 finding: "Detected in 77% of healthy volunteer blood samples, confirming microplastics circulate throughout the body via the bloodstream.",
                 source: "Leslie et al., Environ. Int., 2022",
                 color: "border-teal-200 bg-teal-50",
-                dot: "bg-teal-500",
+                iconColor: "text-teal-500",
+                icon: Droplets,
               },
               {
                 system: "Placenta",
                 finding: "Microplastic fragments found on both the fetal and maternal sides of human placentas, the first evidence of fetal-adjacent exposure.",
                 source: "Ragusa et al., Environ. Int., 2021",
                 color: "border-pink-200 bg-pink-50",
-                dot: "bg-pink-400",
+                iconColor: "text-pink-400",
+                icon: Baby,
               },
-            ].map((item) => (
-              <div key={item.system} className={`border rounded-xl p-5 ${item.color}`}>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`w-2 h-2 rounded-full flex-shrink-0 ${item.dot}`} />
-                  <span className="text-xs font-semibold text-slate-700 uppercase tracking-wide">{item.system}</span>
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.system} className={`border rounded-xl p-5 ${item.color}`}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon className={`w-4 h-4 flex-shrink-0 ${item.iconColor}`} />
+                    <span className="text-xs font-semibold text-slate-700 uppercase tracking-wide">{item.system}</span>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-snug mb-3">{item.finding}</p>
+                  <p className="text-xs text-slate-400">{item.source}</p>
                 </div>
-                <p className="text-sm text-slate-700 leading-snug mb-3">{item.finding}</p>
-                <p className="text-xs text-slate-400">{item.source}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
