@@ -71,6 +71,24 @@ const sources = [
     usedFor: "Indoor air quality and inhalation exposure overview",
     confidence: "Medium",
   },
+  {
+    author: "Kim et al.",
+    year: 2018,
+    title: "Global Pattern of Microplastics (MPs) in Commercial Food-Grade Salts: Sea Salt as an Indicator of Seawater MP Pollution",
+    journal: "Environmental Science & Technology",
+    doi: "10.1021/acs.est.8b04180",
+    usedFor: "Microplastic concentrations in sea salt vs rock salt",
+    confidence: "High",
+  },
+  {
+    author: "Liebezeit & Liebezeit",
+    year: 2014,
+    title: "Synthetic particles as contaminants in German beers",
+    journal: "Food Additives & Contaminants: Part A",
+    doi: "10.1080/19440049.2014.945099",
+    usedFor: "Microplastic particles found in beer samples",
+    confidence: "Medium",
+  },
 ];
 
 const referenceTable = [
@@ -99,6 +117,12 @@ const referenceTable = [
   { question: "Seafood", answer: "Several times/week", weekly: "1,200", study: "Cox et al.", year: 2019, confidence: "High" },
   { question: "Seafood", answer: "Once/week", weekly: "296", study: "Cox et al.", year: 2019, confidence: "High" },
   { question: "Seafood", answer: "Few times/month", weekly: "100", study: "Cox et al.", year: 2019, confidence: "High" },
+  { question: "Beer / alcohol", answer: "Daily", weekly: "70", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium" },
+  { question: "Beer / alcohol", answer: "Few times/week", weekly: "30", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium" },
+  { question: "Beer / alcohol", answer: "Occasionally", weekly: "10", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium" },
+  { question: "Salt type", answer: "Sea salt", weekly: "15", study: "Kim et al.", year: 2018, confidence: "High" },
+  { question: "Salt type", answer: "Table / mixed", weekly: "5", study: "Kim et al.", year: 2018, confidence: "High" },
+  { question: "Salt type", answer: "Rock / Himalayan", weekly: "2", study: "Kim et al.", year: 2018, confidence: "High" },
   { question: "Clothing", answer: "Mostly synthetic", weekly: "800", study: "Dris et al.", year: 2017, confidence: "Medium" },
   { question: "Clothing", answer: "Half and half", weekly: "400", study: "Dris et al.", year: 2017, confidence: "Medium" },
   { question: "Clothing", answer: "Mostly natural fibres", weekly: "150", study: "Dris et al.", year: 2017, confidence: "Medium" },
@@ -136,7 +160,7 @@ export default function MethodologyPage() {
         <h2 className="text-xl font-semibold text-slate-900 mb-4">How the calculator works</h2>
         <div className="prose prose-slate max-w-none text-sm text-slate-600 leading-relaxed space-y-3">
           <p>
-            The calculator presents 11 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from the relevant published study.
+            The calculator presents 13 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from the relevant published study.
           </p>
           <p>
             Estimates are expressed as microplastic particles per week. To calculate annual exposure, weekly totals are multiplied by 52. Results are compared to the range of 74,000–121,000 particles per year reported by Cox et al. (2019) for the average American — researchers note this is likely a significant underestimate as many exposure pathways remain unstudied.

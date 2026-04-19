@@ -43,7 +43,7 @@ export default function BlogPost() {
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your personal exposure</p>
-          <p className="text-xs text-slate-500">11 questions, 2 minutes, no account needed</p>
+          <p className="text-xs text-slate-500">13 questions, 2 minutes, no account needed</p>
         </div>
         <Link
           href="/calculator"
@@ -165,7 +165,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Find out where you stand</h2>
 
         <p>
-          The Body Burden microplastics calculator takes 11 questions about your specific habits and gives you a personalised weekly particle estimate, a breakdown by source, and your top reduction opportunities — all based on the peer-reviewed studies referenced in this article.
+          The Body Burden microplastics calculator takes 13 questions about your specific habits and gives you a personalised weekly particle estimate, a breakdown by source, and your top reduction opportunities — all based on the peer-reviewed studies referenced in this article.
         </p>
 
       </div>
@@ -173,7 +173,7 @@ export default function BlogPost() {
       {/* End CTA */}
       <div className="bg-teal-700 rounded-2xl p-6 mt-10 text-white text-center">
         <p className="font-semibold text-lg mb-1">Calculate your body burden</p>
-        <p className="text-teal-200 text-sm mb-4">11 questions · 2 minutes · peer-reviewed science</p>
+        <p className="text-teal-200 text-sm mb-4">13 questions · 2 minutes · peer-reviewed science</p>
         <Link
           href="/calculator"
           className="bg-white text-teal-700 font-semibold px-7 py-2.5 rounded-full text-sm hover:bg-teal-50 transition-colors"

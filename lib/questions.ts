@@ -117,6 +117,30 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
+    id: "beer",
+    category: "food",
+    question: "How often do you drink beer or other alcoholic drinks?",
+    tipKey: "beer",
+    options: [
+      { label: "Daily", value: 70 },
+      { label: "A few times a week", value: 30 },
+      { label: "Occasionally", value: 10 },
+      { label: "Rarely or never", value: 0 },
+    ],
+  },
+  {
+    id: "salt",
+    category: "food",
+    question: "What type of salt do you mainly use?",
+    tipKey: "salt",
+    options: [
+      { label: "Sea salt", value: 15 },
+      { label: "Table salt or mixed", value: 5 },
+      { label: "Rock salt or Himalayan", value: 2 },
+      { label: "I don't use salt", value: 0 },
+    ],
+  },
+  {
     id: "clothing",
     category: "air",
     question: "What does your wardrobe mostly consist of?",
@@ -187,4 +211,6 @@ export const REDUCTION_TIPS: Record<string, string> = {
   clothing: "Washing synthetic clothing in a microfibre-catching laundry bag reduces fibre release. Natural fibres shed fewer microplastics overall.",
   environment: "Using an air purifier with a HEPA filter indoors can capture microplastic fibres, partially offsetting urban air exposure.",
   airquality: "Adding a HEPA air purifier to your home could reduce your indoor microplastic inhalation by up to 550 particles per week.",
+  beer: "Microplastic fibres in beer are attributed to airborne deposition during the brewing process. Reducing consumption or choosing alternatives reduces this exposure pathway.",
+  salt: "Switching from sea salt to rock salt or Himalayan salt could marginally reduce your microplastic intake — sea salt consistently shows higher contamination than mined salts in peer-reviewed studies.",
 };
