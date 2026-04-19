@@ -119,8 +119,8 @@ export default function HomePage() {
       {/* Latest research */}
       <section className="py-14 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Latest research</h2>
-          <p className="text-slate-500 text-center text-sm mb-10">Recent landmark studies from peer-reviewed journals</p>
+          <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Landmark research</h2>
+          <p className="text-slate-500 text-center text-sm mb-10">Significant studies from peer-reviewed journals</p>
           <div className="flex flex-col gap-4">
             {[
               {
