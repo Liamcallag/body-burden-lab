@@ -13,6 +13,7 @@ export default function Nav() {
     { href: "/calculator", label: "Calculator" },
     { href: "/methodology", label: "Methodology" },
     { href: "/blog", label: "Blog" },
+    { href: "/faq", label: "FAQ" },
     { href: "/about", label: "About" },
   ];
 
