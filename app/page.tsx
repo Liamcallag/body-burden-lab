@@ -37,6 +37,9 @@ export default function HomePage() {
           <div className="inline-block bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
             Peer-reviewed science
           </div>
+          <p className="text-base sm:text-lg font-medium text-slate-500 mb-3">
+            You consume microplastics every day. Most people have no idea how much.
+          </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-5">
             How many microplastics are you consuming?
           </h1>
@@ -47,7 +50,7 @@ export default function HomePage() {
             href="/calculator"
             className="inline-block bg-teal-700 text-white font-semibold px-8 py-3.5 rounded-full text-base hover:bg-teal-800 transition-colors shadow-sm"
           >
-            Calculate Your Body Burden
+            Find out how much →
           </Link>
           <p className="text-xs text-slate-400 mt-3">13 questions · 2 minutes · no account required</p>
         </div>
@@ -119,7 +122,7 @@ export default function HomePage() {
             href="/calculator"
             className="inline-block bg-teal-700 text-white font-semibold px-8 py-3 rounded-full text-sm hover:bg-teal-800 transition-colors"
           >
-            Calculate Your Body Burden
+            Find out how much →
           </Link>
         </div>
       </section>
