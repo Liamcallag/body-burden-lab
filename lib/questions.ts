@@ -119,7 +119,7 @@ export const QUESTIONS: Question[] = [
   {
     id: "beer",
     category: "food",
-    question: "How often do you drink beer or other alcoholic drinks?",
+    question: "How often do you drink beer?",
     tipKey: "beer",
     options: [
       { label: "Daily", value: 70 },
