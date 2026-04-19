@@ -22,6 +22,7 @@ export default function Footer() {
             <div className="font-medium text-slate-700 text-xs uppercase tracking-wider mb-3">Site</div>
             <nav className="flex flex-col gap-2">
               <Link href="/blog" className="text-xs text-slate-500 hover:text-teal-700">Blog</Link>
+              <Link href="/faq" className="text-xs text-slate-500 hover:text-teal-700">FAQ</Link>
               <Link href="/about" className="text-xs text-slate-500 hover:text-teal-700">About</Link>
             </nav>
           </div>

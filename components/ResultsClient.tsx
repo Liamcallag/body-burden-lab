@@ -121,6 +121,33 @@ export default function ResultsClient() {
         <p className="text-xs text-slate-400 mt-2">Source: Cox et al., Environmental Science & Technology, 2019</p>
       </div>
 
+      {/* Health context */}
+      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+        <h2 className="font-semibold text-slate-900 mb-1">What this means for your health</h2>
+        <p className="text-xs text-slate-400 mb-4">Based on peer-reviewed research — detection does not prove causation</p>
+        <div className="flex flex-col gap-3 text-sm text-slate-600 leading-relaxed">
+          {exposureLevel.label === "Low" && (
+            <>
+              <p>Your exposure is below the estimated average. Microplastics have been confirmed in human blood, lung tissue, and organs regardless of exposure level — there is no threshold below which accumulation stops entirely.</p>
+              <p>At lower exposure levels, the current evidence does not clearly establish harm. The most important finding from lower-exposure groups is that accumulation occurs over a lifetime, making ongoing reduction worthwhile even at modest current levels.</p>
+            </>
+          )}
+          {exposureLevel.label === "Moderate" && (
+            <>
+              <p>Your exposure is around the estimated average. Research has confirmed microplastics in the blood of 77% of healthy adults (Leslie et al., 2022) and in lung tissue of 85% of patients tested (Jenner et al., 2022) — suggesting this level of exposure is consistent with detectable tissue accumulation.</p>
+              <p>The most significant study at typical population exposure levels — Marfella et al. (2024) in the New England Journal of Medicine — found microplastics in the arterial plaque of 58% of cardiovascular patients and linked their presence to a 4.5× higher risk of heart attack or stroke. This was an observational study and cannot prove causation.</p>
+            </>
+          )}
+          {exposureLevel.label === "High" && (
+            <>
+              <p>Your exposure is above the estimated average. Studies have consistently found that microplastics accumulate in human organs including the brain, lungs, liver, and arterial plaque — with concentrations that have risen measurably over just the past decade (Nihart et al., Nature Medicine, 2025).</p>
+              <p>At higher exposure levels, the research suggests the most actionable risk areas are cardiovascular health and reproductive health. The Marfella et al. (2024) NEJM study found people with microplastics in arterial plaque had a 4.5× higher risk of cardiovascular events. Zhang et al. (2024) found higher polymer exposure correlated with lower sperm count and motility in 100% of male samples tested.</p>
+              <p className="text-xs text-slate-400">These are observational findings. Causation has not been established. See our <a href="/methodology" className="underline hover:text-teal-700">methodology page</a> for full citations.</p>
+            </>
+          )}
+        </div>
+      </div>
+
       {/* Nanoplastics callout */}
       <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-6">
         <div className="flex gap-3 items-start">

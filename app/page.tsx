@@ -83,6 +83,126 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Health effects */}
+      <section className="py-14 px-4 sm:px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Found in the human body</h2>
+          <p className="text-slate-500 text-center text-sm mb-10 max-w-xl mx-auto">Peer-reviewed studies have confirmed microplastics in the following tissues. Detection does not prove causation — health effects remain an active area of research.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                system: "Cardiovascular system",
+                finding: "Plastic particles found in 58% of arterial plaque samples. Those with microplastics in plaque had 4.5× higher risk of heart attack, stroke, or death.",
+                source: "Marfella et al., NEJM, 2024",
+                color: "border-red-200 bg-red-50",
+                dot: "bg-red-400",
+              },
+              {
+                system: "Brain tissue",
+                finding: "Microplastics found in all brain samples tested, at higher concentrations than liver or kidney. Levels rose significantly between 2016 and 2024.",
+                source: "Nihart et al., Nature Medicine, 2025",
+                color: "border-purple-200 bg-purple-50",
+                dot: "bg-purple-400",
+              },
+              {
+                system: "Lung tissue",
+                finding: "Detected in 85% of live human lung tissue samples, including deep in the lower lobes where the body cannot easily expel them.",
+                source: "Jenner et al., Sci. Total Environ., 2022",
+                color: "border-blue-200 bg-blue-50",
+                dot: "bg-blue-400",
+              },
+              {
+                system: "Reproductive system",
+                finding: "Found in 100% of semen samples tested. More polymer types correlated with significantly lower sperm count and reduced motility.",
+                source: "Zhang et al., eBioMedicine, 2024",
+                color: "border-amber-200 bg-amber-50",
+                dot: "bg-amber-400",
+              },
+              {
+                system: "Human blood",
+                finding: "Detected in 77% of healthy volunteer blood samples, confirming microplastics circulate throughout the body via the bloodstream.",
+                source: "Leslie et al., Environ. Int., 2022",
+                color: "border-teal-200 bg-teal-50",
+                dot: "bg-teal-500",
+              },
+              {
+                system: "Placenta",
+                finding: "Microplastic fragments found on both the fetal and maternal sides of human placentas, the first evidence of fetal-adjacent exposure.",
+                source: "Ragusa et al., Environ. Int., 2021",
+                color: "border-pink-200 bg-pink-50",
+                dot: "bg-pink-400",
+              },
+            ].map((item) => (
+              <div key={item.system} className={`border rounded-xl p-5 ${item.color}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className={`w-2 h-2 rounded-full flex-shrink-0 ${item.dot}`} />
+                  <span className="text-xs font-semibold text-slate-700 uppercase tracking-wide">{item.system}</span>
+                </div>
+                <p className="text-sm text-slate-700 leading-snug mb-3">{item.finding}</p>
+                <p className="text-xs text-slate-400">{item.source}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest research */}
+      <section className="py-14 px-4 sm:px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Latest research</h2>
+          <p className="text-slate-500 text-center text-sm mb-10">Recent landmark studies from peer-reviewed journals</p>
+          <div className="flex flex-col gap-4">
+            {[
+              {
+                journal: "New England Journal of Medicine",
+                year: "2024",
+                title: "Microplastics found in arterial plaque linked to 4.5× higher cardiovascular risk",
+                summary: "Scientists examined arterial plaque from 257 heart surgery patients and found plastic in the majority of samples. Those whose plaque contained microplastics were nearly five times more likely to have a heart attack, stroke, or die within three years.",
+                doi: "10.1056/NEJMoa2309822",
+              },
+              {
+                journal: "Nature Medicine",
+                year: "2025",
+                title: "Brains accumulate more microplastic than any other organ — and levels are rising",
+                summary: "Autopsy analysis of brain, liver, and kidney tissue found that brains contain more microplastic than other organs, and concentrations rose significantly in just eight years. Brains from people with dementia showed even higher plastic loads.",
+                doi: "10.1038/s41591-024-03453-1",
+              },
+              {
+                journal: "eBioMedicine (The Lancet)",
+                year: "2024",
+                title: "Microplastics found in 100% of semen samples — more types linked to lower sperm count",
+                summary: "Every semen sample from 113 men contained microplastics. Men with more polymer types showed significantly lower sperm counts and reduced motility, with PTFE showing the strongest association.",
+                doi: "10.1016/j.ebiom.2024.105369",
+              },
+              {
+                journal: "Science of the Total Environment",
+                year: "2022",
+                title: "First detection of microplastics in living human lung tissue",
+                summary: "For the first time, researchers confirmed microplastics in lung tissue from living patients — not just cadavers. Particles were found deep in the lower lungs, in locations very difficult for the body to expel.",
+                doi: "10.1016/j.scitotenv.2022.154907",
+              },
+            ].map((study) => (
+              <div key={study.doi} className="border border-slate-100 rounded-xl p-5 bg-white hover:border-teal-200 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">{study.journal}</span>
+                  <span className="text-xs text-slate-400">{study.year}</span>
+                </div>
+                <p className="text-sm font-semibold text-slate-900 mb-1 leading-snug">{study.title}</p>
+                <p className="text-sm text-slate-500 leading-relaxed mb-3">{study.summary}</p>
+                <a
+                  href={`https://doi.org/${study.doi}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-teal-600 hover:underline"
+                >
+                  DOI: {study.doi} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="bg-teal-700 py-14 px-4 sm:px-6 text-white">
         <div className="max-w-3xl mx-auto text-center">
