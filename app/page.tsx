@@ -10,22 +10,22 @@ export const metadata: Metadata = {
 
 const stats = [
   {
-    figure: "74,000–121,000",
-    unit: "particles/year",
-    label: "The estimated annual microplastic intake for the average American",
-    source: "Cox et al., Environmental Science & Technology, 2019",
+    figure: "28,000",
+    unit: "microplastic particles/week",
+    label: "Added to your weekly intake by microwaving food in plastic containers daily",
+    source: "Hussain et al., Environmental Science & Technology, 2023",
   },
   {
-    figure: "11.6 billion",
-    unit: "microplastic fibres",
-    label: "Released by a single plastic tea bag into your cup at brewing temperature",
+    figure: "7,000",
+    unit: "microplastic particles/week",
+    label: "Added to your weekly intake by using plastic tea bags once a day",
     source: "Hernandez et al., Environmental Science & Technology, 2019",
   },
   {
-    figure: "4.22 million",
-    unit: "particles",
-    label: "Released from a plastic container microwaved for 3 minutes",
-    source: "Hussain et al., Environmental Science & Technology, 2023",
+    figure: "1,730",
+    unit: "microplastic particles/week",
+    label: "Added to your weekly intake by drinking only bottled water",
+    source: "Cox et al., Environmental Science & Technology, 2019",
   },
 ];
 
@@ -69,8 +69,8 @@ export default function HomePage() {
       {/* Stats */}
       <section className="py-14 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">The research is striking</h2>
-          <p className="text-slate-500 text-center text-sm mb-10">Published figures from peer-reviewed studies</p>
+          <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Three habits that drive the most exposure</h2>
+          <p className="text-slate-500 text-center text-sm mb-10">Microplastic particles per week — peer-reviewed figures, same unit</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {stats.map((s) => (
               <div key={s.figure} className="border border-slate-100 rounded-xl p-6">
