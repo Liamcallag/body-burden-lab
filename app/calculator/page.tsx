@@ -4,7 +4,7 @@ import CalculatorClient from "@/components/CalculatorClient";
 export const metadata: Metadata = {
   title: "Microplastics Calculator",
   description:
-    "Answer 10 questions about your lifestyle and get a personalised estimate of your weekly microplastic exposure — based on peer-reviewed science.",
+    "Answer 11 questions about your lifestyle and get a personalised estimate of your weekly microplastic exposure — based on peer-reviewed science.",
 };
 
 export default function CalculatorPage() {

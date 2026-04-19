@@ -12,16 +12,36 @@ export default function ResultsClient() {
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [copied, setCopied] = useState(false);
 
+  const [noAnswers, setNoAnswers] = useState(false);
+
   useEffect(() => {
     const raw = localStorage.getItem("bbl_answers");
     if (!raw) {
-      router.replace("/calculator");
+      setNoAnswers(true);
       return;
     }
     const parsed: AnswerMap = JSON.parse(raw);
     setAnswers(parsed);
     setResult(calculateScore(parsed));
   }, [router]);
+
+  if (noAnswers) {
+    return (
+      <div className="max-w-md mx-auto text-center py-20">
+        <div className="text-4xl mb-4">🧪</div>
+        <h1 className="text-2xl font-bold text-slate-900 mb-3">No results yet</h1>
+        <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+          It looks like you haven't completed the calculator yet — or you're viewing this on a different device. Take the 2-minute quiz to get your personalised microplastic exposure estimate.
+        </p>
+        <Link
+          href="/calculator"
+          className="inline-block bg-teal-700 text-white font-semibold px-7 py-3 rounded-full text-sm hover:bg-teal-800 transition-colors"
+        >
+          Take the calculator →
+        </Link>
+      </div>
+    );
+  }
 
   if (!result) {
     return (

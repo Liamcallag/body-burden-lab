@@ -49,7 +49,7 @@ export default function HomePage() {
           >
             Calculate Your Body Burden
           </Link>
-          <p className="text-xs text-slate-400 mt-3">10 questions · 2 minutes · no account required</p>
+          <p className="text-xs text-slate-400 mt-3">11 questions · 2 minutes · no account required</p>
         </div>
       </section>
 
