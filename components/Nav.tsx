@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -21,7 +20,8 @@ export default function Nav() {
     <nav className="border-b border-slate-100 bg-white sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
         <Link href="/" className="flex items-center gap-2 font-semibold text-slate-900 text-sm tracking-tight">
-          <Image src="/logo.png" alt="Body Burden" width={56} height={56} className="w-14 h-14 rounded-xl flex-shrink-0" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Body Burden" style={{ width: 56, height: 56, borderRadius: 10, flexShrink: 0 }} />
           Body Burden
         </Link>
 
