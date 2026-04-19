@@ -33,9 +33,20 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white pt-16 pb-20 px-4 sm:px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <div className="inline-block bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+      <section className="relative bg-gradient-to-b from-teal-50/60 to-white pt-16 pb-20 px-4 sm:px-6 text-center overflow-hidden">
+        {/* subtle dot grid */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #0f766e18 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        <div className="relative max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-1.5 bg-teal-700/10 text-teal-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block" />
             Peer-reviewed science
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-5">
@@ -46,7 +57,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/calculator"
-            className="inline-block bg-teal-700 text-white font-semibold px-8 py-3.5 rounded-full text-base hover:bg-teal-800 transition-colors shadow-sm"
+            className="inline-block bg-teal-700 text-white font-semibold px-8 py-3.5 rounded-full text-base hover:bg-teal-800 transition-colors shadow-md"
           >
             Find out how much →
           </Link>
@@ -56,13 +67,15 @@ export default function HomePage() {
       {/* What is body burden */}
       <section className="bg-slate-50 py-14 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-semibold text-slate-900 mb-3">What is "body burden"?</h2>
-          <p className="text-slate-600 leading-relaxed mb-4">
-            <em>Body burden</em> is the scientific term used by toxicologists and the CDC to describe the total accumulation of environmental contaminants in the human body. It reflects lifetime exposure — not just what enters today, but what persists in tissues and organs.
-          </p>
-          <p className="text-slate-600 leading-relaxed">
-            Microplastics have been detected in human blood, lungs, liver, kidneys, and — most recently — in arterial plaques and the human brain. Researchers note that current ingestion estimates are likely a significant underestimate, as many exposure pathways remain unstudied.
-          </p>
+          <div className="border-l-4 border-teal-400 pl-5">
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">What is "body burden"?</h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              <em>Body burden</em> is the scientific term used by toxicologists and the CDC to describe the total accumulation of environmental contaminants in the human body. It reflects lifetime exposure — not just what enters today, but what persists in tissues and organs.
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              Microplastics have been detected in human blood, lungs, liver, kidneys, and — most recently — in arterial plaques and the human brain. Researchers note that current ingestion estimates are likely a significant underestimate, as many exposure pathways remain unstudied.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -73,10 +86,10 @@ export default function HomePage() {
           <p className="text-slate-500 text-center text-sm mb-10">Microplastic particles per week — peer-reviewed figures, same unit</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {stats.map((s) => (
-              <div key={s.figure} className="border border-slate-100 rounded-xl p-6">
-                <div className="text-3xl font-bold text-teal-700 mb-1">{s.figure}</div>
-                <div className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-2">{s.unit}</div>
-                <p className="text-sm text-slate-700 leading-snug mb-3">{s.label}</p>
+              <div key={s.figure} className="rounded-xl p-6 bg-white shadow-sm border-t-4 border-teal-500">
+                <div className="text-5xl font-extrabold text-teal-700 mb-1 tracking-tight">{s.figure}</div>
+                <div className="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-3">{s.unit}</div>
+                <p className="text-sm text-slate-700 leading-snug mb-4">{s.label}</p>
                 <p className="text-xs text-slate-400">{s.source}</p>
               </div>
             ))}
@@ -100,10 +113,10 @@ export default function HomePage() {
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.system} className="border border-slate-100 rounded-xl p-5 bg-white shadow-sm">
+                <div key={item.system} className="rounded-xl p-5 bg-white shadow-sm hover:shadow-md transition-shadow border border-slate-100 hover:border-teal-200">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-teal-600" />
+                    <div className="w-9 h-9 rounded-lg bg-teal-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
                     <span className="text-base font-bold text-slate-900">{item.system}</span>
                   </div>
@@ -152,7 +165,7 @@ export default function HomePage() {
                 doi: "10.1016/j.scitotenv.2022.154907",
               },
             ].map((study) => (
-              <div key={study.doi} className="border border-slate-100 rounded-xl p-5 bg-white hover:border-teal-200 transition-colors">
+              <div key={study.doi} className="border border-slate-100 rounded-xl p-5 bg-white hover:border-teal-200 transition-colors border-l-4 border-l-teal-400">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">{study.journal}</span>
                   <span className="text-xs text-slate-400">{study.year}</span>
@@ -174,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-teal-700 py-14 px-4 sm:px-6 text-white">
+      <section className="bg-gradient-to-br from-teal-700 to-teal-900 py-14 px-4 sm:px-6 text-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-xl font-semibold mb-3">Built on science, not guesswork</h2>
           <p className="text-teal-100 leading-relaxed mb-6 max-w-xl mx-auto">
@@ -198,7 +211,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-14 px-4 sm:px-6 bg-white text-center">
+      <section className="py-14 px-4 sm:px-6 bg-teal-50/40 text-center">
         <div className="max-w-md mx-auto">
           <h2 className="text-xl font-semibold text-slate-900 mb-2">Know what's inside you</h2>
           <p className="text-slate-500 text-sm mb-6">
