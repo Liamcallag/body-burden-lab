@@ -22,9 +22,9 @@ const sources = [
     year: 2019,
     title: "No Plastic in Nature: Assessing Plastic Ingestion from Nature to People",
     journal: "WWF International",
-    doi: "10.1139/er-2019-0090",
+    doi: "report",
     usedFor: "Weight-based context figure (~5g/week) shown in homepage hero. Not used in particle-count calculations — a separate weight-based estimate.",
-    confidence: "Medium",
+    confidence: "Contextual",
   },
   {
     author: "Hernandez et al.",
@@ -206,14 +206,18 @@ export default function MethodologyPage() {
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${confidenceBadge[s.confidence]}`}>
                     {s.confidence} confidence
                   </span>
-                  <a
-                    href={`https://doi.org/${s.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-teal-700 hover:underline"
-                  >
-                    DOI →
-                  </a>
+                  {s.doi === "report" ? (
+                    <span className="text-xs text-slate-400">Policy report — no DOI</span>
+                  ) : (
+                    <a
+                      href={`https://doi.org/${s.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-teal-700 hover:underline"
+                    >
+                      DOI →
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
