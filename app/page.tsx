@@ -47,7 +47,7 @@ export default function HomePage() {
           <div className="inline-block bg-white/10 text-white/80 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-8 backdrop-blur-sm">
             Peer-reviewed science
           </div>
-          <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-4">
+          <p className="text-white text-sm font-medium uppercase tracking-widest mb-4">
             The average person consumes up to
           </p>
           <h1 className="text-5xl sm:text-7xl font-extrabold text-white leading-none mb-4">
@@ -59,7 +59,7 @@ export default function HomePage() {
           <p className="text-white/40 text-sm mb-10">
             By weight · WWF / University of Newcastle, 2019
           </p>
-          <p className="text-white/60 text-base mb-8 max-w-md mx-auto">
+          <p className="text-white text-base mb-8 max-w-md mx-auto">
             How much is down to your habits?
           </p>
           <Link
