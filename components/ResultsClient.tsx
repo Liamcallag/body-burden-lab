@@ -79,6 +79,13 @@ export default function ResultsClient() {
   const annualFormatted = formatNumber(result.annualTotal);
   const weeklyFormatted = result.weeklyTotal.toLocaleString();
 
+  // Comparison bar
+  const DISPLAY_MAX = 15000;
+  const COX_BASELINE = 1875; // midpoint of Cox et al. 2019 (1,423–2,327/week)
+  const coxPct = (COX_BASELINE / DISPLAY_MAX) * 100;
+  const userPct = Math.min((result.weeklyTotal / DISPLAY_MAX) * 100, 97);
+  const multiplier = (result.weeklyTotal / COX_BASELINE).toFixed(1);
+
   // Share text
   const shareText = `I consume approximately ${weeklyFormatted} microplastic particles per week (${annualFormatted} per year). Find out yours at bodyburdenlab.com`;
 
@@ -113,6 +120,57 @@ export default function ResultsClient() {
           {weeklyFormatted}
         </div>
         <p className="text-lg text-slate-500">microplastic particles per week</p>
+      </div>
+
+      {/* Comparison bar */}
+      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+        <p className="text-center text-sm text-slate-500 mb-5">
+          {parseFloat(multiplier) < 1
+            ? "Your exposure is below the estimated population baseline"
+            : <>Your exposure is <span className="font-bold text-slate-900 text-base">{multiplier}×</span> the estimated population baseline</>
+          }
+        </p>
+
+        {/* Bar */}
+        <div className="relative mb-6">
+          {/* Gradient track */}
+          <div
+            className="h-4 rounded-full"
+            style={{ background: "linear-gradient(to right, #34d399, #fbbf24 40%, #f87171)" }}
+          />
+
+          {/* Cox baseline tick + label */}
+          <div
+            className="absolute top-0 h-4 flex flex-col items-center"
+            style={{ left: `${coxPct}%`, transform: "translateX(-50%)" }}
+          >
+            <div className="w-0.5 h-4 bg-white/80" />
+          </div>
+          <div
+            className="absolute text-center"
+            style={{ left: `${coxPct}%`, transform: "translateX(-50%)", top: "1.25rem" }}
+          >
+            <div className="text-[10px] text-slate-400 leading-tight whitespace-nowrap">Population<br />baseline</div>
+          </div>
+
+          {/* User marker */}
+          <div
+            className="absolute flex flex-col items-center"
+            style={{ left: `${userPct}%`, transform: "translateX(-50%)", top: "-1.5rem" }}
+          >
+            <div className="text-[10px] font-semibold text-slate-700 whitespace-nowrap mb-0.5">You</div>
+            <div className="w-0.5 h-3 bg-slate-800" />
+            <div className="w-3.5 h-3.5 rounded-full bg-slate-900 border-2 border-white shadow-md -mt-px" />
+          </div>
+        </div>
+
+        <div className="flex justify-between text-[10px] text-slate-300 mt-7">
+          <span>Lower exposure</span>
+          <span>Higher exposure</span>
+        </div>
+        <p className="text-[10px] text-slate-300 text-center mt-1">
+          Scale capped at 15,000 particles/week · Baseline: Cox et al., Environmental Science &amp; Technology, 2019
+        </p>
       </div>
 
       {/* Share card — placed high so users see it while engaged */}
