@@ -48,17 +48,19 @@ export default function HomePage() {
             Peer-reviewed science
           </div>
           <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-4">
-            The average person consumes up to
+            The average person consumes
           </p>
           <h1 className="text-5xl sm:text-7xl font-extrabold text-white leading-none mb-4">
-            1 plastic fork
+            74,000+
           </h1>
-          <p className="text-white/70 text-lg mb-10">
-            worth of microplastics <span className="text-white font-semibold">every single week</span>
-            <span className="block text-sm text-white/40 mt-1">By weight · WWF / University of Newcastle, 2019</span>
+          <p className="text-white/70 text-lg mb-3">
+            microplastic particles <span className="text-white font-semibold">every year</span>
+          </p>
+          <p className="text-white/40 text-sm mb-10">
+            Cox et al., Environmental Science & Technology, 2019
           </p>
           <p className="text-white/60 text-base mb-8 max-w-md mx-auto">
-            How much of that is down to your habits?
+            That's the baseline. How much is down to your habits?
           </p>
           <Link
             href="/calculator"
