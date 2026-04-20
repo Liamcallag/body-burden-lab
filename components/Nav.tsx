@@ -34,7 +34,7 @@ export default function Nav() {
               className={`text-sm transition-colors ${
                 pathname === l.href
                   ? "text-teal-700 font-medium"
-                  : "text-slate-500 hover:text-slate-900"
+                  : "text-slate-900 hover:text-teal-700"
               }`}
             >
               {l.label}
