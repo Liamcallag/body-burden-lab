@@ -163,12 +163,12 @@ export default function ResultsClient() {
       {/* Lifetime accumulation */}
       {ageData && (
         <div className="bg-slate-900 rounded-2xl p-6 mb-6 text-white text-center">
-          <p className="text-xs uppercase tracking-widest text-slate-400 mb-3">Lifetime accumulation</p>
+          <p className="text-xs uppercase tracking-widest text-slate-400 mb-3">Lifetime exposure</p>
           <div className="text-4xl sm:text-5xl font-extrabold tabular-nums text-white mb-2">
             {formatNumber(result.weeklyTotal * 52 * ageData.yearsTo80)}
           </div>
-          <p className="text-slate-300 text-sm mb-1">microplastic particles over your remaining lifetime</p>
-          <p className="text-xs text-slate-500">Based on {ageData.yearsTo80} years remaining · current exposure rate · age range: {ageData.label}</p>
+          <p className="text-slate-300 text-sm mb-1">microplastic particles ingested or inhaled over your remaining lifetime</p>
+          <p className="text-xs text-slate-500 mt-3 max-w-sm mx-auto leading-relaxed">Based on {ageData.yearsTo80} years remaining at your current exposure rate. This is total intake — the body excretes some fraction, though net tissue accumulation does occur over time.</p>
         </div>
       )}
 
