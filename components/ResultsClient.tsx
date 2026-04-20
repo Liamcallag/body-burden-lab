@@ -111,6 +111,41 @@ export default function ResultsClient() {
         <p className="text-lg text-slate-500">microplastic particles per week</p>
       </div>
 
+      {/* Share card — placed high so users see it while engaged */}
+      <div className="rounded-2xl mb-6 overflow-hidden border border-slate-100 shadow-sm">
+        {/* Visual card (screenshot-friendly) */}
+        <div className="bg-gradient-to-br from-teal-700 to-teal-900 px-6 pt-8 pb-6 text-white text-center">
+          <p className="text-xs uppercase tracking-widest text-teal-300 mb-3">My microplastic exposure</p>
+          <div className="text-6xl font-extrabold tabular-nums mb-1">{weeklyFormatted}</div>
+          <p className="text-teal-200 text-sm mb-3">microplastic particles per week</p>
+          <div className={`inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 ${
+            exposureLevel.label === "Low" ? "bg-emerald-400/20 text-emerald-200" :
+            exposureLevel.label === "Moderate" ? "bg-amber-400/20 text-amber-200" :
+            "bg-red-400/20 text-red-200"
+          }`}>
+            {exposureLevel.label} exposure
+          </div>
+          <p className="text-xs text-teal-400">bodyburdenlab.com</p>
+        </div>
+        {/* Share buttons */}
+        <div className="bg-white px-6 py-4 flex flex-col sm:flex-row gap-3">
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I consume ${weeklyFormatted} microplastic particles per week (${exposureLevel.label.toLowerCase()} exposure). Find out yours 👇`)}&url=${encodeURIComponent("https://bodyburdenlab.com/calculator")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 text-center bg-slate-900 text-white font-semibold py-2.5 rounded-full text-sm hover:bg-slate-700 transition-colors"
+          >
+            Share on X / Twitter
+          </a>
+          <button
+            onClick={handleShare}
+            className="flex-1 text-center border border-slate-200 text-slate-600 font-semibold py-2.5 rounded-full text-sm hover:bg-slate-50 transition-colors"
+          >
+            {copied ? "Copied!" : "Copy result text"}
+          </button>
+        </div>
+      </div>
+
       {/* Annual + comparison */}
       <div className="bg-slate-50 rounded-2xl p-6 mb-6 text-center border border-slate-100">
         <p className="text-2xl font-bold text-slate-900 mb-1">{annualFormatted} microplastic particles per year</p>
@@ -229,23 +264,6 @@ export default function ResultsClient() {
           </div>
         </div>
       )}
-
-      {/* Share card */}
-      <div className="bg-teal-700 rounded-2xl p-6 mb-6 text-white text-center">
-        <p className="text-xs uppercase tracking-wider text-teal-200 mb-3">Share your result</p>
-        <p className="text-2xl font-bold mb-1">{weeklyFormatted} particles/week</p>
-        <p className="text-teal-200 text-sm mb-1">{annualFormatted} per year</p>
-        <p className="text-xs text-teal-300 mb-5">bodyburdenlab.com</p>
-        <button
-          onClick={handleShare}
-          className="bg-white text-teal-700 font-semibold px-6 py-2.5 rounded-full text-sm hover:bg-teal-50 transition-colors"
-        >
-          {copied ? "Copied to clipboard!" : "Share my result"}
-        </button>
-        <p className="text-xs text-teal-300 mt-3">
-          Sharing helps others discover their exposure
-        </p>
-      </div>
 
       {/* Confidence note */}
       <div className="border border-slate-100 rounded-xl p-5 mb-6 bg-slate-50">
