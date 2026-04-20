@@ -56,23 +56,11 @@ export default function HomePage() {
           <p className="text-white/70 text-lg mb-3">
             worth of microplastics <span className="text-white font-semibold">every single week</span>
           </p>
-
-          {/* Two lenses callout */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 max-w-xl mx-auto">
-            <div className="flex-1 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 text-left border border-white/10">
-              <p className="text-white/40 text-[10px] uppercase tracking-wider mb-1">By weight</p>
-              <p className="text-white text-sm font-medium">~5g per week</p>
-              <p className="text-white/40 text-[10px] mt-1">WWF / Newcastle, 2019</p>
-            </div>
-            <div className="flex-1 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 text-left border border-white/10">
-              <p className="text-white/40 text-[10px] uppercase tracking-wider mb-1">By particle count</p>
-              <p className="text-white text-sm font-medium">74,000+ particles/year</p>
-              <p className="text-white/40 text-[10px] mt-1">Cox et al., Est. 2019</p>
-            </div>
-          </div>
-
+          <p className="text-white/40 text-sm mb-10">
+            By weight · WWF / University of Newcastle, 2019
+          </p>
           <p className="text-white/60 text-base mb-8 max-w-md mx-auto">
-            Two ways to measure the same problem. How much is down to your habits?
+            How much is down to your habits?
           </p>
           <Link
             href="/calculator"
