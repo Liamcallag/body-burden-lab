@@ -18,6 +18,15 @@ const sources = [
     confidence: "High",
   },
   {
+    author: "Dalberg / University of Newcastle",
+    year: 2019,
+    title: "No Plastic in Nature: Assessing Plastic Ingestion from Nature to People",
+    journal: "WWF International",
+    doi: "10.1139/er-2019-0090",
+    usedFor: "Weight-based context figure (~5g/week) shown in homepage hero. Not used in particle-count calculations — a separate weight-based estimate.",
+    confidence: "Medium",
+  },
+  {
     author: "Hernandez et al.",
     year: 2019,
     title: "Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea",
