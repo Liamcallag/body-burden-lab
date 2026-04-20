@@ -207,7 +207,14 @@ export default function MethodologyPage() {
                     {s.confidence} confidence
                   </span>
                   {s.doi === "report" ? (
-                    <span className="text-xs text-slate-400">Policy report — no DOI</span>
+                    <a
+                      href="https://wwfint.awsassets.panda.org/downloads/plastic_ingestion_web_spreads.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-teal-700 hover:underline"
+                    >
+                      Report →
+                    </a>
                   ) : (
                     <a
                       href={`https://doi.org/${s.doi}`}
