@@ -13,6 +13,7 @@ export default function ResultsClient() {
   const [copied, setCopied] = useState(false);
 
   const [noAnswers, setNoAnswers] = useState(false);
+  const [ageData, setAgeData] = useState<{ label: string; midpoint: number; yearsTo80: number } | null>(null);
 
   useEffect(() => {
     const raw = localStorage.getItem("bbl_answers");
@@ -23,6 +24,9 @@ export default function ResultsClient() {
     const parsed: AnswerMap = JSON.parse(raw);
     setAnswers(parsed);
     setResult(calculateScore(parsed));
+
+    const rawAge = localStorage.getItem("bbl_age");
+    if (rawAge) setAgeData(JSON.parse(rawAge));
   }, [router]);
 
   if (noAnswers) {
@@ -155,6 +159,18 @@ export default function ResultsClient() {
         </p>
         <p className="text-xs text-slate-400 mt-2">Source: Cox et al., Environmental Science & Technology, 2019</p>
       </div>
+
+      {/* Lifetime accumulation */}
+      {ageData && (
+        <div className="bg-slate-900 rounded-2xl p-6 mb-6 text-white text-center">
+          <p className="text-xs uppercase tracking-widest text-slate-400 mb-3">Lifetime accumulation</p>
+          <div className="text-4xl sm:text-5xl font-extrabold tabular-nums text-white mb-2">
+            {formatNumber(result.weeklyTotal * 52 * ageData.yearsTo80)}
+          </div>
+          <p className="text-slate-300 text-sm mb-1">microplastic particles over your remaining lifetime</p>
+          <p className="text-xs text-slate-500">Based on {ageData.yearsTo80} years remaining · current exposure rate · age range: {ageData.label}</p>
+        </div>
+      )}
 
       {/* Health context */}
       <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
