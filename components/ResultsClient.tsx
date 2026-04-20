@@ -173,6 +173,33 @@ export default function ResultsClient() {
         </p>
       </div>
 
+      {/* Category breakdown */}
+      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+        <h2 className="font-semibold text-slate-900 mb-4">Exposure by source</h2>
+        <div className="flex flex-col gap-4">
+          {result.categories.map((cat) => {
+            const pct = maxCategory > 0 ? (cat.particles / maxCategory) * 100 : 0;
+            const color = CATEGORY_COLORS[cat.category];
+            return (
+              <div key={cat.category}>
+                <div className="flex justify-between items-center mb-1.5">
+                  <span className="text-sm font-medium text-slate-700">{cat.label}</span>
+                  <span className="text-sm text-slate-500 tabular-nums">
+                    {cat.particles.toLocaleString()} particles/week
+                  </span>
+                </div>
+                <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all duration-500"
+                    style={{ width: `${pct}%`, backgroundColor: color }}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Share card — placed high so users see it while engaged */}
       <div className="rounded-2xl mb-6 overflow-hidden border border-slate-100 shadow-sm">
         {/* Visual card (screenshot-friendly) */}
@@ -268,33 +295,6 @@ export default function ResultsClient() {
             </p>
             <p className="text-xs text-slate-400 mt-2">Hernandez et al., Environmental Science & Technology, 2019</p>
           </div>
-        </div>
-      </div>
-
-      {/* Category breakdown */}
-      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-        <h2 className="font-semibold text-slate-900 mb-4">Exposure by source</h2>
-        <div className="flex flex-col gap-4">
-          {result.categories.map((cat) => {
-            const pct = maxCategory > 0 ? (cat.particles / maxCategory) * 100 : 0;
-            const color = CATEGORY_COLORS[cat.category];
-            return (
-              <div key={cat.category}>
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-sm font-medium text-slate-700">{cat.label}</span>
-                  <span className="text-sm text-slate-500 tabular-nums">
-                    {cat.particles.toLocaleString()} particles/week
-                  </span>
-                </div>
-                <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full transition-all duration-500"
-                    style={{ width: `${pct}%`, backgroundColor: color }}
-                  />
-                </div>
-              </div>
-            );
-          })}
         </div>
       </div>
 
