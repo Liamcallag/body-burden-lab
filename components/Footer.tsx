@@ -33,7 +33,7 @@ export default function Footer() {
             <strong className="text-slate-500">Disclaimer:</strong> This calculator provides educational estimates based on published peer-reviewed research. Results count microplastic particles only and carry an estimated margin of error of ±30%. Nanoplastic exposure is not included and may be significantly higher. Scores represent a conservative floor, not a precise measurement. This is not a medical diagnosis or personalised health advice. See our{" "}
             <Link href="/methodology" className="underline hover:text-teal-700">full methodology</Link> for sources and limitations.
           </p>
-          <p className="text-xs text-slate-400 mt-3">© {new Date().getFullYear()} Body Burden. For educational purposes only.</p>
+          <p className="text-xs text-slate-400 mt-3">© {new Date().getFullYear()} Body Burden. For educational purposes only. · Fork photo by <a href="https://unsplash.com/@possessedphotography" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-700">Possessed Photography</a> / Unsplash</p>
         </div>
       </div>
     </footer>

@@ -33,20 +33,36 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white pt-16 pb-20 px-4 sm:px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <div className="inline-block bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+      <section className="relative min-h-[85vh] flex items-center justify-center text-center px-4 sm:px-6 overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/fork.jpg')" }}
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/65" />
+
+        {/* Content */}
+        <div className="relative max-w-2xl mx-auto py-24">
+          <div className="inline-block bg-white/10 text-white/80 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-8 backdrop-blur-sm">
             Peer-reviewed science
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-5">
-            How many microplastics are you consuming?
+          <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-4">
+            The average person consumes
+          </p>
+          <h1 className="text-5xl sm:text-7xl font-extrabold text-white leading-none mb-4">
+            1 plastic fork
           </h1>
-          <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-xl mx-auto">
-            Most people have no idea. Find out in 2 minutes — based on your lifestyle habits and peer-reviewed science.
+          <p className="text-white/70 text-lg mb-10">
+            worth of microplastics <span className="text-white font-semibold">every single week</span>
+            <span className="block text-sm text-white/40 mt-1">WWF / University of Newcastle, 2019</span>
+          </p>
+          <p className="text-white/60 text-base mb-8 max-w-md mx-auto">
+            How much of that is down to your habits?
           </p>
           <Link
             href="/calculator"
-            className="inline-block bg-teal-700 text-white font-semibold px-8 py-3.5 rounded-full text-base hover:bg-teal-800 transition-colors shadow-sm"
+            className="inline-block bg-teal-500 text-white font-semibold px-8 py-3.5 rounded-full text-base hover:bg-teal-400 transition-colors shadow-lg"
           >
             Find out how much →
           </Link>
