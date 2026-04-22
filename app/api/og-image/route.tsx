@@ -39,26 +39,15 @@ export async function GET(request: NextRequest) {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ color: "#14b8a6", fontSize: "13px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase" }}>
-                My Microplastic Exposure
+              <div style={{ color: "#14b8a6", fontSize: "13px", fontWeight: 700 }}>
+                MY MICROPLASTIC EXPOSURE
               </div>
-              <div
-                style={{
-                  color: levelColor,
-                  fontSize: "13px",
-                  fontWeight: 700,
-                  padding: "5px 14px",
-                  borderRadius: "999px",
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  border: "1px solid " + levelColor,
-                }}
-              >
-                {level} exposure
+              <div style={{ color: levelColor, fontSize: "13px", fontWeight: 700 }}>
+                {level.toUpperCase()} EXPOSURE
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ fontSize: "110px", fontWeight: 800, color: "#ffffff", lineHeight: "1" }}>
+              <div style={{ fontSize: "110px", fontWeight: 800, color: "#ffffff", lineHeight: 1 }}>
                 {formattedScore}
               </div>
               <div style={{ fontSize: "28px", color: "#94a3b8", fontWeight: 400, marginTop: "12px" }}>
@@ -101,29 +90,15 @@ export async function GET(request: NextRequest) {
             padding: "56px 80px 48px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              backgroundColor: "#0f2d3d",
-              color: "#14b8a6",
-              fontSize: "13px",
-              fontWeight: 700,
-              padding: "6px 16px",
-              borderRadius: "999px",
-              letterSpacing: "1px",
-              textTransform: "uppercase",
-              border: "1px solid #14b8a6",
-            }}
-          >
-            {tag}
+          <div style={{ color: "#14b8a6", fontSize: "13px", fontWeight: 700 }}>
+            {tag.toUpperCase()}
           </div>
           <div
             style={{
               fontSize: title.length > 50 ? "52px" : "62px",
               fontWeight: 800,
               color: "#ffffff",
-              lineHeight: "1.15",
+              lineHeight: 1.15,
               maxWidth: "900px",
             }}
           >
