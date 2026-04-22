@@ -18,15 +18,6 @@ const sources = [
     confidence: "High",
   },
   {
-    author: "Dalberg / University of Newcastle",
-    year: 2019,
-    title: "No Plastic in Nature: Assessing Plastic Ingestion from Nature to People",
-    journal: "WWF International",
-    doi: "report",
-    usedFor: "Weight-based context figure (~5g/week) shown in homepage hero. Not used in particle-count calculations — a separate weight-based estimate.",
-    confidence: "Contextual",
-  },
-  {
     author: "Hernandez et al.",
     year: 2019,
     title: "Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea",
@@ -169,7 +160,7 @@ export default function MethodologyPage() {
         <h2 className="text-xl font-semibold text-slate-900 mb-4">How the calculator works</h2>
         <div className="prose prose-slate max-w-none text-sm text-slate-600 leading-relaxed space-y-3">
           <p>
-            The calculator presents 13 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from the relevant published study.
+            The calculator presents 15 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from the relevant published study.
           </p>
           <p>
             Estimates are expressed as microplastic particles per week. To calculate annual exposure, weekly totals are multiplied by 52. Results are compared to the range of 74,000–121,000 particles per year reported by Cox et al. (2019) for the average American — researchers note this is likely a significant underestimate as many exposure pathways remain unstudied.
@@ -206,25 +197,14 @@ export default function MethodologyPage() {
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${confidenceBadge[s.confidence]}`}>
                     {s.confidence} confidence
                   </span>
-                  {s.doi === "report" ? (
-                    <a
-                      href="https://wwfint.awsassets.panda.org/downloads/plastic_ingestion_web_spreads.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-teal-700 hover:underline"
-                    >
-                      Report →
-                    </a>
-                  ) : (
-                    <a
-                      href={`https://doi.org/${s.doi}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-teal-700 hover:underline"
-                    >
-                      DOI →
-                    </a>
-                  )}
+                  <a
+                    href={`https://doi.org/${s.doi}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-teal-700 hover:underline"
+                  >
+                    DOI →
+                  </a>
                 </div>
               </div>
             </div>

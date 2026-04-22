@@ -71,10 +71,13 @@ export default function ResultsClient() {
   const questionContributions = QUESTIONS.map((q) => {
     const idx = answers[q.id] ?? 0;
     const value = q.options[idx]?.value ?? 0;
-    return { id: q.id, label: q.question, value, category: q.category, tipKey: q.tipKey };
-  }).sort((a, b) => b.value - a.value);
+    const minValue = Math.min(...q.options.map((o) => o.value));
+    const bestOption = q.options.reduce((a, b) => (a.value <= b.value ? a : b));
+    const saving = value - minValue;
+    return { id: q.id, label: q.question, value, saving, bestOption, category: q.category, tipKey: q.tipKey };
+  }).sort((a, b) => b.saving - a.saving);
 
-  const top3Questions = questionContributions.slice(0, 3).filter((q) => q.value > 0);
+  const top3Questions = questionContributions.slice(0, 3).filter((q) => q.saving > 0);
 
   const annualFormatted = formatNumber(result.annualTotal);
   const weeklyFormatted = result.weeklyTotal.toLocaleString();
@@ -171,6 +174,12 @@ export default function ResultsClient() {
         <p className="text-[10px] text-slate-300 text-center mt-1">
           Scale capped at 15,000 particles/week · Baseline: Cox et al., Environmental Science &amp; Technology, 2019
         </p>
+        <div className="border-t border-slate-100 mt-4 pt-4 text-center">
+          <p className="text-sm text-slate-500">
+            That's <span className="font-semibold text-slate-700">{annualFormatted} particles per year</span> —{" "}
+            {result.comparisonText} the 74,000–121,000/year calculated by Cox et al. (2019)
+          </p>
+        </div>
       </div>
 
       {/* Category breakdown */}
@@ -217,32 +226,15 @@ export default function ResultsClient() {
           <p className="text-xs text-teal-400">bodyburdenlab.com</p>
         </div>
         {/* Share buttons */}
-        <div className="bg-white px-6 py-4 flex flex-col sm:flex-row gap-3">
-          <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I consume ${weeklyFormatted} microplastic particles per week (${exposureLevel.label.toLowerCase()} exposure). Find out yours 👇`)}&url=${encodeURIComponent("https://bodyburdenlab.com/calculator")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 text-center bg-slate-900 text-white font-semibold py-2.5 rounded-full text-sm hover:bg-slate-700 transition-colors"
-          >
-            Share on X / Twitter
-          </a>
+        <div className="bg-white px-6 py-4">
           <button
             onClick={handleShare}
-            className="flex-1 text-center border border-slate-200 text-slate-600 font-semibold py-2.5 rounded-full text-sm hover:bg-slate-50 transition-colors"
+            className="w-full text-center bg-slate-900 text-white font-semibold py-2.5 rounded-full text-sm hover:bg-slate-700 transition-colors"
           >
-            {copied ? "Copied!" : "Copy result text"}
+            {copied ? "Copied!" : "Share your result"}
           </button>
+          <p className="text-xs text-slate-400 text-center mt-2">Opens share menu on mobile · copies text on desktop</p>
         </div>
-      </div>
-
-      {/* Annual + comparison */}
-      <div className="bg-slate-50 rounded-2xl p-6 mb-6 text-center border border-slate-100">
-        <p className="text-2xl font-bold text-slate-900 mb-1">{annualFormatted} microplastic particles per year</p>
-        <p className="text-sm text-slate-500">
-          This is{" "}
-          <span className="font-semibold text-slate-700">{result.comparisonText}</span> the 74,000–121,000 particles per year calculated by Cox et al. (2019) — a figure based on a limited set of exposure pathways and widely considered an underestimate of true average exposure.
-        </p>
-        <p className="text-xs text-slate-400 mt-2">Source: Cox et al., Environmental Science & Technology, 2019</p>
       </div>
 
       {/* Lifetime accumulation */}
@@ -253,7 +245,7 @@ export default function ResultsClient() {
             {formatNumber(result.weeklyTotal * 52 * ageData.yearsTo80)}
           </div>
           <p className="text-slate-300 text-sm mb-1">microplastic particles ingested or inhaled over your remaining lifetime</p>
-          <p className="text-xs text-slate-500 mt-3 max-w-sm mx-auto leading-relaxed">Based on {ageData.yearsTo80} years remaining at your current exposure rate. This is total intake — the body excretes some fraction, though net tissue accumulation does occur over time.</p>
+          <p className="text-xs text-slate-500 mt-3 max-w-sm mx-auto leading-relaxed">Based on the age you provided. This is total intake — the body excretes some fraction, though net tissue accumulation does occur over time.</p>
         </div>
       )}
 
@@ -284,6 +276,41 @@ export default function ResultsClient() {
         </div>
       </div>
 
+      {/* Top 3 changes with savings */}
+      {top3Questions.length > 0 && (
+        <div className="bg-slate-900 rounded-2xl p-6 mb-6">
+          <h2 className="font-semibold text-white mb-1">Your top {top3Questions.length} changes</h2>
+          <p className="text-xs text-slate-400 mb-5">The single habits that would reduce your exposure the most</p>
+          <ol className="flex flex-col gap-4">
+            {top3Questions.map((q, i) => {
+              const tip = REDUCTION_TIPS[q.tipKey];
+              return (
+                <li key={q.id} className="bg-white/5 rounded-xl p-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 text-white text-xs font-bold flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <span className="text-xs font-semibold text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded-full whitespace-nowrap">
+                      −{q.saving.toLocaleString()} particles/week
+                    </span>
+                  </div>
+                  <p className="text-sm font-semibold text-white mb-1">{q.label}</p>
+                  {tip && <p className="text-xs text-slate-400 leading-relaxed">{tip}</p>}
+                </li>
+              );
+            })}
+          </ol>
+          <div className="mt-4 pt-4 border-t border-white/10 text-center">
+            <p className="text-xs text-slate-400">
+              All 3 changes together →{" "}
+              <span className="font-semibold text-teal-400">
+                −{top3Questions.reduce((sum, q) => sum + q.saving, 0).toLocaleString()} particles/week
+              </span>
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Nanoplastics callout */}
       <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-6">
         <div className="flex gap-3 items-start">
@@ -297,47 +324,6 @@ export default function ResultsClient() {
           </div>
         </div>
       </div>
-
-      {/* Top 3 sources */}
-      {top3Questions.length > 0 && (
-        <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-          <h2 className="font-semibold text-slate-900 mb-1">Your top {top3Questions.length} sources</h2>
-          <p className="text-xs text-slate-400 mb-4">The habits contributing most to your score</p>
-          <ol className="flex flex-col gap-3">
-            {top3Questions.map((q, i) => (
-              <li key={q.id} className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-700 text-white text-xs font-bold flex items-center justify-center mt-0.5">
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="text-sm font-medium text-slate-800">{q.label}</p>
-                  <p className="text-xs text-slate-400 mt-0.5">{q.value.toLocaleString()} particles/week</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      )}
-
-      {/* Reduction tips */}
-      {top3Questions.length > 0 && (
-        <div className="bg-teal-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h2 className="font-semibold text-slate-900 mb-1">Reduce your exposure</h2>
-          <p className="text-xs text-slate-500 mb-4">Personalised tips based on your top sources</p>
-          <div className="flex flex-col gap-4">
-            {top3Questions.map((q) => {
-              const tip = REDUCTION_TIPS[q.tipKey];
-              if (!tip) return null;
-              return (
-                <div key={q.id} className="flex gap-3">
-                  <span className="text-teal-600 flex-shrink-0 mt-0.5">→</span>
-                  <p className="text-sm text-slate-700 leading-relaxed">{tip}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
 
       {/* Confidence note */}
       <div className="border border-slate-100 rounded-xl p-5 mb-6 bg-slate-50">

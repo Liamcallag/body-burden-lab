@@ -53,7 +53,8 @@ export default function AboutPage() {
 
         <div className="border-t border-slate-100 pt-8 mt-8">
           <p className="text-xs text-slate-400">
-            Body Burden is an independent educational project. If you are a researcher and spot an error in our methodology, we welcome corrections.
+            Body Burden is an independent educational project. If you are a researcher and spot an error in our methodology, we welcome corrections. Get in touch at{" "}
+            <a href="mailto:contact@bodyburdenlab.com" className="underline hover:text-teal-700">contact@bodyburdenlab.com</a>.
           </p>
         </div>
       </div>

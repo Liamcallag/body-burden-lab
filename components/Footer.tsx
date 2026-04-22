@@ -24,6 +24,7 @@ export default function Footer() {
               <Link href="/blog" className="text-xs text-slate-500 hover:text-teal-700">Blog</Link>
               <Link href="/faq" className="text-xs text-slate-500 hover:text-teal-700">FAQ</Link>
               <Link href="/about" className="text-xs text-slate-500 hover:text-teal-700">About</Link>
+              <a href="mailto:contact@bodyburdenlab.com" className="text-xs text-slate-500 hover:text-teal-700">contact@bodyburdenlab.com</a>
             </nav>
           </div>
         </div>
@@ -33,7 +34,7 @@ export default function Footer() {
             <strong className="text-slate-500">Disclaimer:</strong> This calculator provides educational estimates based on published peer-reviewed research. Results count microplastic particles only and carry an estimated margin of error of ±30%. Nanoplastic exposure is not included and may be significantly higher. Scores represent a conservative floor, not a precise measurement. This is not a medical diagnosis or personalised health advice. See our{" "}
             <Link href="/methodology" className="underline hover:text-teal-700">full methodology</Link> for sources and limitations.
           </p>
-          <p className="text-xs text-slate-400 mt-3">© {new Date().getFullYear()} Body Burden. For educational purposes only. · Fork photo by <a href="https://unsplash.com/@possessedphotography" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-700">Possessed Photography</a> / Unsplash</p>
+          <p className="text-xs text-slate-400 mt-3">© {new Date().getFullYear()} Body Burden. For educational purposes only.</p>
         </div>
       </div>
     </footer>

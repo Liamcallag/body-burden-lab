@@ -196,14 +196,12 @@ export default function CalculatorClient() {
         </div>
 
         <div className="flex gap-3 mt-7">
-          {currentQ > 0 && (
-            <button
-              onClick={handleBack}
-              className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors"
-            >
-              ← Back
-            </button>
-          )}
+          <button
+            onClick={handleBack}
+            className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors"
+          >
+            ← Back
+          </button>
           <button
             onClick={handleNext}
             disabled={displaySelected === null}

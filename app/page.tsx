@@ -37,30 +37,24 @@ export default function HomePage() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/fork.jpg')" }}
+          style={{ backgroundImage: "url('/brain.jpg')" }}
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-black/70" />
 
         {/* Content */}
         <div className="relative max-w-2xl mx-auto py-24">
           <div className="inline-block bg-white/10 text-white/80 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-8 backdrop-blur-sm">
             Peer-reviewed science
           </div>
-          <p className="text-white text-sm font-medium uppercase tracking-widest mb-4">
-            The average person consumes up to
-          </p>
-          <h1 className="text-5xl sm:text-7xl font-extrabold text-white leading-none mb-4">
-            1 plastic fork
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-5">
+            100% of human brains tested contain microplastics. Including yours.
           </h1>
-          <p className="text-white/70 text-lg mb-3">
-            worth of microplastics <span className="text-white font-semibold">every single week</span>
-          </p>
           <p className="text-white/40 text-sm mb-10">
-            By weight · WWF / University of Newcastle, 2019
+            Nihart et al., Nature Medicine, 2025
           </p>
           <p className="text-white text-base mb-8 max-w-md mx-auto">
-            How much is down to your habits?
+            How much are your habits contributing?
           </p>
           <Link
             href="/calculator"

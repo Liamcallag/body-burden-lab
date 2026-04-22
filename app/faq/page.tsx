@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "How does the Body Burden calculator work?",
-    a: "The calculator asks 13 questions about your daily habits covering the major documented microplastic exposure pathways: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from a specific peer-reviewed study. The estimates are expressed in microplastic particles per week (particles ≥1 micron) and are summed to give a total. Results are compared to the 74,000–121,000 particles/year figure from Cox et al. (2019), which researchers note is a conservative underestimate. The full methodology and all source studies are documented on our methodology page.",
+    a: "The calculator asks 15 questions about your daily habits covering the major documented microplastic exposure pathways: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from a specific peer-reviewed study. The estimates are expressed in microplastic particles per week (particles ≥1 micron) and are summed to give a total. Results are compared to the 74,000–121,000 particles/year figure from Cox et al. (2019), which researchers note is a conservative underestimate. The full methodology and all source studies are documented on our methodology page.",
   },
   {
     q: "Why doesn't the calculator include nanoplastics?",
@@ -81,7 +81,7 @@ export default function FAQPage() {
       <div className="mt-10 bg-teal-50 border border-teal-100 rounded-2xl p-6 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your personal exposure</p>
-          <p className="text-xs text-slate-500">13 questions · 2 minutes · peer-reviewed science</p>
+          <p className="text-xs text-slate-500">15 questions · 2 minutes · peer-reviewed science</p>
         </div>
         <Link
           href="/calculator"
