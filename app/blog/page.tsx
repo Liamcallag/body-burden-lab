@@ -16,6 +16,8 @@ const posts = [
     date: "2026-04-19",
     readTime: "7 min read",
     tag: "Guide",
+    image: "/blog-avoid.png",
+    imageAlt: "Ways to reduce microplastic exposure in daily life",
   },
   {
     slug: "does-reverse-osmosis-remove-microplastics",
@@ -25,6 +27,8 @@ const posts = [
     date: "2026-04-19",
     readTime: "5 min read",
     tag: "Science",
+    image: "/blog-reverse-osmosis.png",
+    imageAlt: "Reverse osmosis under-sink filtration system",
   },
   {
     slug: "microplastics-in-bottled-water",
@@ -34,6 +38,8 @@ const posts = [
     date: "2026-04-19",
     readTime: "6 min read",
     tag: "Science",
+    image: "/blog-bottled-water.png",
+    imageAlt: "Plastic water bottles",
   },
   {
     slug: "does-silicone-have-microplastics",
@@ -43,6 +49,8 @@ const posts = [
     date: "2026-04-19",
     readTime: "5 min read",
     tag: "Science",
+    image: "/blog-silicone.png",
+    imageAlt: "Silicone kitchen utensils",
   },
   {
     slug: "how-many-microplastics-do-you-consume",
@@ -52,6 +60,8 @@ const posts = [
     date: "2026-04-18",
     readTime: "8 min read",
     tag: "Science",
+    image: "/blog-how-many.png",
+    imageAlt: "Microplastics entering the food chain and human body",
   },
 ];
 
@@ -66,27 +76,33 @@ export default function BlogPage() {
         <p className="text-slate-500">Science-backed articles on exposure, research, and reducing your body burden.</p>
       </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-6">
         {posts.map((post) => (
-          <article key={post.slug} className="border border-slate-100 rounded-2xl p-6 bg-white shadow-sm hover:border-teal-200 transition-colors">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">{post.tag}</span>
-              <span className="text-xs text-slate-400">{post.readTime}</span>
-            </div>
+          <article key={post.slug} className="border border-slate-100 rounded-2xl bg-white shadow-sm hover:border-teal-200 transition-colors overflow-hidden">
             <Link href={`/blog/${post.slug}`}>
-              <h2 className="text-xl font-semibold text-slate-900 hover:text-teal-700 transition-colors mb-2 leading-snug">
-                {post.title}
-              </h2>
+              <img
+                src={post.image}
+                alt={post.imageAlt}
+                className="w-full h-48 object-cover"
+              />
             </Link>
-            <p className="text-sm text-slate-500 leading-relaxed mb-4">{post.excerpt}</p>
-            <div className="flex items-center justify-between">
-              <time className="text-xs text-slate-400">{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="text-xs font-medium text-teal-700 hover:underline"
-              >
-                Read article →
+            <div className="p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">{post.tag}</span>
+                <span className="text-xs text-slate-400">{post.readTime}</span>
+              </div>
+              <Link href={`/blog/${post.slug}`}>
+                <h2 className="text-xl font-semibold text-slate-900 hover:text-teal-700 transition-colors mb-2 leading-snug">
+                  {post.title}
+                </h2>
               </Link>
+              <p className="text-sm text-slate-500 leading-relaxed mb-4">{post.excerpt}</p>
+              <div className="flex items-center justify-between">
+                <time className="text-xs text-slate-400">{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
+                <Link href={`/blog/${post.slug}`} className="text-xs font-medium text-teal-700 hover:underline">
+                  Read article →
+                </Link>
+              </div>
             </div>
           </article>
         ))}
