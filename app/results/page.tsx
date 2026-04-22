@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import ResultsClient from "@/components/ResultsClient";
 
 export async function generateMetadata({
@@ -58,7 +59,9 @@ export async function generateMetadata({
 export default function ResultsPage() {
   return (
     <div className="px-4 py-10 sm:px-6">
-      <ResultsClient />
+      <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh] text-slate-400 text-sm">Loading…</div>}>
+        <ResultsClient />
+      </Suspense>
     </div>
   );
 }
