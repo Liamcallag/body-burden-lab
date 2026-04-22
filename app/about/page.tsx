@@ -24,7 +24,12 @@ export default function AboutPage() {
           Body Burden is an independent educational tool that estimates how many microplastic particles a person consumes and inhales each week, based on their lifestyle habits. Every figure in the calculator is derived from peer-reviewed research published in peer-reviewed scientific journals.
         </p>
 
-        <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Why we built it</h2>
+        <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Who built it</h2>
+        <p>
+          Body Burden was built by Liam, an independent researcher with an interest in environmental health. It started after reading the 2024 <em>New England Journal of Medicine</em> study finding microplastics in human arterial plaques — and realising there was no clear, well-cited public tool for understanding personal exposure.
+        </p>
+
+        <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Why it exists</h2>
         <p>
           Microplastics are now found in human blood, lungs, liver, kidney, and testicular tissue — and most recently, in arterial plaques associated with cardiovascular events. The research is not alarmist speculation. It is accumulating rapidly in some of the most rigorous journals in environmental science.
         </p>
