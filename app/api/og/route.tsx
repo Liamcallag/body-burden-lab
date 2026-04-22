@@ -12,117 +12,118 @@ export async function GET(request: NextRequest) {
 
   const levelColor =
     level === "Low" ? "#34d399" : level === "High" ? "#f87171" : "#fbbf24";
-  const levelBg =
-    level === "Low" ? "rgba(52,211,153,0.15)" : level === "High" ? "rgba(248,113,113,0.15)" : "rgba(251,191,36,0.15)";
 
   const formattedScore = score
     ? parseInt(score).toLocaleString("en-US")
     : null;
 
-  return new ImageResponse(
-    score ? (
-      // Personalised score card
-      <div
-        style={{
-          width: "1200px",
-          height: "630px",
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: "#0a1628",
-          fontFamily: "sans-serif",
-          position: "relative",
-        }}
-      >
-        {/* Teal top bar */}
-        <div style={{ height: "6px", background: "linear-gradient(to right, #0f766e, #14b8a6)", width: "100%" }} />
-
+  if (score && formattedScore) {
+    return new ImageResponse(
+      (
         <div
           style={{
-            flex: 1,
+            width: "1200px",
+            height: "630px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
-            padding: "56px 80px 48px",
+            backgroundColor: "#0a1628",
+            fontFamily: "sans-serif",
           }}
         >
-          {/* Top row */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div
-              style={{
-                color: "#14b8a6",
-                fontSize: "13px",
-                fontWeight: 700,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-              }}
-            >
-              My Microplastic Exposure
-            </div>
-            <div
-              style={{
-                backgroundColor: levelBg,
-                color: levelColor,
-                fontSize: "13px",
-                fontWeight: 700,
-                padding: "5px 14px",
-                borderRadius: "999px",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                border: `1px solid ${levelColor}40`,
-              }}
-            >
-              {level} exposure
-            </div>
-          </div>
+          {/* Top accent bar */}
+          <div style={{ height: "6px", backgroundColor: "#0f766e", width: "100%" }} />
 
-          {/* Score */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-            <div
-              style={{
-                fontSize: "110px",
-                fontWeight: 800,
-                color: "#ffffff",
-                lineHeight: 1,
-                letterSpacing: "-0.03em",
-              }}
-            >
-              {formattedScore}
-            </div>
-            <div
-              style={{
-                fontSize: "28px",
-                color: "#94a3b8",
-                fontWeight: 400,
-                marginTop: "12px",
-              }}
-            >
-              microplastic particles per week
-            </div>
-          </div>
-
-          {/* Bottom row */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              padding: "56px 80px 48px",
+            }}
+          >
+            {/* Top row */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div
                 style={{
-                  width: "32px",
-                  height: "32px",
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, #0f766e, #14b8a6)",
+                  color: "#14b8a6",
+                  fontSize: "13px",
+                  fontWeight: 700,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
                 }}
-              />
-              <div style={{ fontSize: "20px", fontWeight: 700, color: "#ffffff" }}>
-                Body Burden Lab
+              >
+                My Microplastic Exposure
+              </div>
+              <div
+                style={{
+                  color: levelColor,
+                  fontSize: "13px",
+                  fontWeight: 700,
+                  padding: "5px 14px",
+                  borderRadius: "999px",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  border: `1px solid ${levelColor}`,
+                }}
+              >
+                {level} exposure
               </div>
             </div>
-            <div style={{ fontSize: "17px", color: "#475569" }}>
-              Find out yours at bodyburdenlab.com →
+
+            {/* Score */}
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  fontSize: "110px",
+                  fontWeight: 800,
+                  color: "#ffffff",
+                  lineHeight: 1,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                {formattedScore}
+              </div>
+              <div
+                style={{
+                  fontSize: "28px",
+                  color: "#94a3b8",
+                  fontWeight: 400,
+                  marginTop: "12px",
+                }}
+              >
+                microplastic particles per week
+              </div>
+            </div>
+
+            {/* Bottom row */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    borderRadius: "50%",
+                    backgroundColor: "#0f766e",
+                  }}
+                />
+                <div style={{ fontSize: "20px", fontWeight: 700, color: "#ffffff" }}>
+                  Body Burden Lab
+                </div>
+              </div>
+              <div style={{ fontSize: "17px", color: "#475569" }}>
+                Find out yours at bodyburdenlab.com →
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    ) : (
-      // Generic tool card
+      ),
+      { width: 1200, height: 630 }
+    );
+  }
+
+  return new ImageResponse(
+    (
       <div
         style={{
           width: "1200px",
@@ -133,8 +134,8 @@ export async function GET(request: NextRequest) {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Teal top bar */}
-        <div style={{ height: "6px", background: "linear-gradient(to right, #0f766e, #14b8a6)", width: "100%" }} />
+        {/* Top accent bar */}
+        <div style={{ height: "6px", backgroundColor: "#0f766e", width: "100%" }} />
 
         <div
           style={{
@@ -148,9 +149,9 @@ export async function GET(request: NextRequest) {
           {/* Tag pill */}
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               alignItems: "center",
-              backgroundColor: "rgba(20,184,166,0.15)",
+              backgroundColor: "#0f2d3d",
               color: "#14b8a6",
               fontSize: "13px",
               fontWeight: 700,
@@ -158,7 +159,7 @@ export async function GET(request: NextRequest) {
               borderRadius: "999px",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              border: "1px solid rgba(20,184,166,0.3)",
+              border: "1px solid #14b8a6",
               width: "fit-content",
             }}
           >
@@ -186,7 +187,7 @@ export async function GET(request: NextRequest) {
                   width: "32px",
                   height: "32px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #0f766e, #14b8a6)",
+                  backgroundColor: "#0f766e",
                 }}
               />
               <div style={{ fontSize: "20px", fontWeight: 700, color: "#ffffff" }}>
