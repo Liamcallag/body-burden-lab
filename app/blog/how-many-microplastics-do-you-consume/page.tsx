@@ -49,6 +49,11 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's almost certainly a significant underestimate. Here's what the science actually shows.
         </p>
+        <img
+          src="/blog-how-many.png"
+          alt="Microplastics entering the food chain and human body"
+          className="w-full rounded-xl mt-6 mb-2"
+        />
       </div>
 
       {/* CTA */}
