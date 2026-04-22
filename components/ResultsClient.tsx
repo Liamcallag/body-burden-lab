@@ -41,9 +41,15 @@ export default function ResultsClient() {
     if (sharedScore) {
       const weekly = parseInt(sharedScore).toLocaleString("en-US");
       const levelColor =
-        sharedLevel === "Low" ? "text-emerald-600" : sharedLevel === "High" ? "text-red-600" : "text-amber-600";
+        sharedLevel === "Low" ? "text-emerald-600" :
+        sharedLevel === "High" ? "text-red-600" :
+        sharedLevel === "Very High" ? "text-red-800" :
+        "text-amber-600";
       const levelBg =
-        sharedLevel === "Low" ? "bg-emerald-50 border-emerald-100" : sharedLevel === "High" ? "bg-red-50 border-red-100" : "bg-amber-50 border-amber-100";
+        sharedLevel === "Low" ? "bg-emerald-50 border-emerald-100" :
+        sharedLevel === "High" ? "bg-red-50 border-red-100" :
+        sharedLevel === "Very High" ? "bg-red-100 border-red-200" :
+        "bg-amber-50 border-amber-100";
       return (
         <div className="max-w-md mx-auto text-center py-16">
           <div className={`inline-block border text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6 ${levelBg} ${levelColor}`}>
@@ -145,7 +151,9 @@ export default function ResultsClient() {
       ? { label: "Low", color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-100" }
       : result.annualTotal < 150000
       ? { label: "Moderate", color: "text-amber-600", bg: "bg-amber-50 border-amber-100" }
-      : { label: "High", color: "text-red-600", bg: "bg-red-50 border-red-100" };
+      : result.annualTotal < 500000
+      ? { label: "High", color: "text-red-600", bg: "bg-red-50 border-red-100" }
+      : { label: "Very High", color: "text-red-800", bg: "bg-red-100 border-red-200" };
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -257,6 +265,7 @@ export default function ResultsClient() {
           <div className={`inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 ${
             exposureLevel.label === "Low" ? "bg-emerald-400/20 text-emerald-200" :
             exposureLevel.label === "Moderate" ? "bg-amber-400/20 text-amber-200" :
+            exposureLevel.label === "Very High" ? "bg-red-300/30 text-red-100" :
             "bg-red-400/20 text-red-200"
           }`}>
             {exposureLevel.label} exposure
@@ -308,6 +317,13 @@ export default function ResultsClient() {
             <>
               <p>Your exposure is above the estimated average. Studies have consistently found that microplastics accumulate in human organs including the brain, lungs, liver, and arterial plaque — with concentrations that have risen measurably over just the past decade (Nihart et al., Nature Medicine, 2025).</p>
               <p>At higher exposure levels, the research suggests the most actionable risk areas are cardiovascular health and reproductive health. The Marfella et al. (2024) NEJM study found people with microplastics in arterial plaque had a 4.5× higher risk of cardiovascular events. Zhang et al. (2024) found higher polymer exposure correlated with lower sperm count and motility in 100% of male samples tested.</p>
+              <p className="text-xs text-slate-400">These are observational findings. Causation has not been established. See our <a href="/methodology" className="underline hover:text-teal-700">methodology page</a> for full citations.</p>
+            </>
+          )}
+          {exposureLevel.label === "Very High" && (
+            <>
+              <p>Your exposure is more than 5× the estimated population average — placing you in the highest-exposure bracket. This is typically driven by a combination of daily microwaving in plastic, regular use of plastic tea bags, and reliance on bottled water. These are also the habits with the largest reduction potential.</p>
+              <p>At this level, the research on microplastic accumulation in human organs is most directly relevant. Nihart et al. (2025, Nature Medicine) found that microplastic concentrations in human brain tissue increased by approximately 50% between 2016 and 2024, with levels correlating positively with exposure indicators. The Marfella et al. (2024) NEJM cardiovascular findings — a 4.5× elevated risk of heart attack or stroke in patients with detectable arterial microplastics — apply with particular force at higher cumulative exposure levels.</p>
               <p className="text-xs text-slate-400">These are observational findings. Causation has not been established. See our <a href="/methodology" className="underline hover:text-teal-700">methodology page</a> for full citations.</p>
             </>
           )}
