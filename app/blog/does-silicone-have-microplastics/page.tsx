@@ -48,6 +48,11 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Silicone kitchen items — baking moulds, baby bottles, spatulas — are widely promoted as a safer plastic alternative. The picture is more nuanced than the marketing suggests.
         </p>
+        <img
+          src="/blog-silicone.png"
+          alt="Silicone kitchen utensils"
+          className="w-full rounded-xl mt-6 mb-2"
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
