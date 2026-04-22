@@ -93,10 +93,15 @@ export default function ResultsClient() {
   const shareText = `I consume approximately ${weeklyFormatted} microplastic particles per week (${annualFormatted} per year). Find out yours at bodyburdenlab.com`;
 
   function handleShare() {
+    const shareUrl = `https://bodyburdenlab.com/results?score=${result.weeklyTotal}&level=${encodeURIComponent(exposureLevel.label)}`;
     if (navigator.share) {
-      navigator.share({ text: shareText, url: "https://bodyburdenlab.com/calculator" });
+      navigator.share({
+        title: `I consume ${weeklyFormatted} microplastic particles per week`,
+        text: shareText,
+        url: shareUrl,
+      });
     } else {
-      navigator.clipboard.writeText(shareText);
+      navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
