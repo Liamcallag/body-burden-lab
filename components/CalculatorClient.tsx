@@ -85,7 +85,7 @@ export default function CalculatorClient() {
           </div>
         </div>
 
-        <div className="bg-white border-2 border-teal-600 rounded-2xl shadow-sm p-6 sm:p-8">
+        <div className="bg-white border-[6px] border-teal-600 rounded-2xl shadow-sm p-6 sm:p-8">
           <div className="mb-1">
             <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">About you</span>
           </div>
@@ -157,7 +157,7 @@ export default function CalculatorClient() {
       </div>
 
       {/* Question card */}
-      <div className="bg-white border-2 border-teal-600 rounded-2xl shadow-sm p-6 sm:p-8">
+      <div className="bg-white border-[6px] border-teal-600 rounded-2xl shadow-sm p-6 sm:p-8">
         <div className="mb-1">
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">
             {question.category === "water"
