@@ -90,7 +90,7 @@ export default function ResultsClient() {
   const multiplier = (result.weeklyTotal / COX_BASELINE).toFixed(1);
 
   // Share text
-  const shareText = `I consume approximately ${weeklyFormatted} microplastic particles per week (${annualFormatted} per year). Find out yours at bodyburdenlab.com`;
+  const shareText = `I consume approximately ${weeklyFormatted} microplastic particles per week (${annualFormatted} per year). Find out yours:`;
 
   function handleShare() {
     const shareUrl = `https://bodyburdenlab.com/results?score=${result!.weeklyTotal}&level=${encodeURIComponent(exposureLevel.label)}`;
