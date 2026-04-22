@@ -307,7 +307,8 @@ export default function MethodologyPage() {
       {/* Reference table */}
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-slate-900 mb-2">Full reference table</h2>
-        <p className="text-sm text-slate-500 mb-5">Every answer and its corresponding weekly particle estimate</p>
+        <p className="text-sm text-slate-500 mb-2">Every answer and its corresponding weekly particle estimate</p>
+        <p className="text-xs text-slate-400 mb-5"><span className="font-semibold text-emerald-700">High confidence</span> — figure derives directly from a single well-cited study. <span className="font-semibold text-amber-700">Medium confidence</span> — figure is a reasoned estimate informed by the cited study but involves extrapolation (e.g. scaling from lab conditions to weekly exposure).</p>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left border-collapse">
             <thead>
