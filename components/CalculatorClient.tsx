@@ -85,7 +85,9 @@ export default function CalculatorClient() {
           </div>
         </div>
 
-        <div className="bg-white border-[6px] border-teal-600 rounded-2xl shadow-sm p-6 sm:p-8">
+        <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
+          <div className="h-1 bg-teal-600 w-full" />
+          <div className="p-6 sm:p-8">
           <div className="mb-1">
             <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">About you</span>
           </div>
@@ -129,6 +131,7 @@ export default function CalculatorClient() {
               Start the calculator →
             </button>
           </div>
+          </div>
         </div>
 
         <p className="text-center text-xs text-slate-400 mt-5">
@@ -157,7 +160,9 @@ export default function CalculatorClient() {
       </div>
 
       {/* Question card */}
-      <div className="bg-white border-[6px] border-teal-600 rounded-2xl shadow-sm p-6 sm:p-8">
+      <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
+        <div className="h-1 bg-teal-600 w-full" />
+        <div className="p-6 sm:p-8">
         <div className="mb-1">
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">
             {question.category === "water"
@@ -213,6 +218,7 @@ export default function CalculatorClient() {
           >
             {isLast ? "See My Results →" : "Next →"}
           </button>
+        </div>
         </div>
       </div>
 
