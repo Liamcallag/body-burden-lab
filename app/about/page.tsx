@@ -51,11 +51,6 @@ export default function AboutPage() {
           <li><strong>Educational purpose only:</strong> This tool is not a medical diagnostic and should not be treated as one.</li>
         </ul>
 
-        <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Future plans</h2>
-        <p>
-          The microplastics calculator is the first tool under the Body Burden umbrella. Future calculators will cover heavy metals exposure, PFAS ("forever chemicals"), and pesticide intake — building toward an overall toxic load estimate grounded in the same peer-reviewed methodology.
-        </p>
-
         <div className="border-t border-slate-100 pt-8 mt-8">
           <p className="text-xs text-slate-400">
             Body Burden is an independent educational project. If you are a researcher and spot an error in our methodology, we welcome corrections. Get in touch at{" "}
