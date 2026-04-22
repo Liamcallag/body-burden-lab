@@ -116,15 +116,6 @@ const sources = [
     usedFor: "Urban, suburban, and rural microplastic air concentration estimates",
     confidence: "Medium",
   },
-  {
-    author: "Gaylarde et al.",
-    year: 2024,
-    title: "Indoor Airborne Microplastics: Human Health Importance and Effects of Air Filtration and Turbulence",
-    journal: "Microplastics",
-    doi: "10.3390/microplastics3040040",
-    usedFor: "Effect of HEPA filtration and vacuuming on indoor airborne microplastic levels",
-    confidence: "Medium",
-  },
 ];
 
 const referenceTable = [
@@ -166,9 +157,9 @@ const referenceTable = [
   { question: "Environment", answer: "Suburban / town", weekly: "700", study: "Eberhard et al.", year: 2024, confidence: "Medium", doi: "10.1038/s41370-023-00634-x" },
   { question: "Environment", answer: "Rural / coastal", weekly: "350", study: "Eberhard et al.", year: 2024, confidence: "Medium", doi: "10.1038/s41370-023-00634-x" },
   { question: "Home air quality", answer: "No filter, carpet, rarely vacuum", weekly: "700", study: "Amato-Lourenço et al.", year: 2020, confidence: "Medium", doi: "10.1016/j.scitotenv.2020.141676" },
-  { question: "Home air quality", answer: "Vacuum, no HEPA", weekly: "400", study: "Gaylarde et al.", year: 2024, confidence: "Medium", doi: "10.3390/microplastics3040040" },
-  { question: "Home air quality", answer: "Hard floors, regular vacuum", weekly: "200", study: "Gaylarde et al.", year: 2024, confidence: "Medium", doi: "10.3390/microplastics3040040" },
-  { question: "Home air quality", answer: "HEPA filter/vacuum", weekly: "150", study: "Gaylarde et al.", year: 2024, confidence: "Medium", doi: "10.3390/microplastics3040040" },
+  { question: "Home air quality", answer: "Vacuum, no HEPA", weekly: "400", study: "Amato-Lourenço et al.", year: 2020, confidence: "Medium", doi: "10.1016/j.scitotenv.2020.141676" },
+  { question: "Home air quality", answer: "Hard floors, regular vacuum", weekly: "200", study: "Amato-Lourenço et al.", year: 2020, confidence: "Medium", doi: "10.1016/j.scitotenv.2020.141676" },
+  { question: "Home air quality", answer: "HEPA filter/vacuum", weekly: "150", study: "Amato-Lourenço et al.", year: 2020, confidence: "Medium", doi: "10.1016/j.scitotenv.2020.141676" },
 ];
 
 const confidenceBadge: Record<string, string> = {
