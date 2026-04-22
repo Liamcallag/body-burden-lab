@@ -8,12 +8,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
+    title: "How to Avoid Microplastics — A Science-Based Guide",
+    description:
+      "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
     images: [
       {
         url: "https://bodyburdenlab.com/api/og?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
         width: 1200,
         height: 630,
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Avoid Microplastics — A Science-Based Guide",
+    description:
+      "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
+    images: [
+      "https://bodyburdenlab.com/api/og?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
     ],
   },
 };

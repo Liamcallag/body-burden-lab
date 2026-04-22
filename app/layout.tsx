@@ -21,14 +21,26 @@ export const metadata: Metadata = {
     "microplastics test online",
   ],
   openGraph: {
-    siteName: "Body Burden",
+    siteName: "Body Burden Lab",
     type: "website",
+    title: "Body Burden — Microplastics Exposure Calculator",
+    description:
+      "Estimate how many microplastic particles you consume and inhale each week based on your lifestyle. Built on peer-reviewed science.",
     images: [
       {
         url: "https://bodyburdenlab.com/api/og?title=Body+Burden+%E2%80%94+Microplastics+Exposure+Calculator&tag=Tool",
         width: 1200,
         height: 630,
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Body Burden — Microplastics Exposure Calculator",
+    description:
+      "Estimate how many microplastic particles you consume and inhale each week based on your lifestyle. Built on peer-reviewed science.",
+    images: [
+      "https://bodyburdenlab.com/api/og?title=Body+Burden+%E2%80%94+Microplastics+Exposure+Calculator&tag=Tool",
     ],
   },
 };

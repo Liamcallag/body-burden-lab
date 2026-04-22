@@ -8,12 +8,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
+    title: "Microplastics in Bottled Water — What the Research Shows",
+    description:
+      "Bottled water contains significantly more microplastics than filtered tap water. Here's what peer-reviewed research has found, and what it means for your exposure.",
     images: [
       {
         url: "https://bodyburdenlab.com/api/og?title=Microplastics+in+Bottled+Water+%E2%80%94+What+the+Research+Shows&tag=Science",
         width: 1200,
         height: 630,
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Microplastics in Bottled Water — What the Research Shows",
+    description:
+      "Bottled water contains significantly more microplastics than filtered tap water. Here's what peer-reviewed research has found, and what it means for your exposure.",
+    images: [
+      "https://bodyburdenlab.com/api/og?title=Microplastics+in+Bottled+Water+%E2%80%94+What+the+Research+Shows&tag=Science",
     ],
   },
 };

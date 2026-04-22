@@ -8,12 +8,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
+    title: "Does Reverse Osmosis Remove Microplastics?",
+    description:
+      "Reverse osmosis is among the most effective water filtration methods for microplastics. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
     images: [
       {
         url: "https://bodyburdenlab.com/api/og?title=Does+Reverse+Osmosis+Remove+Microplastics%3F&tag=Science",
         width: 1200,
         height: 630,
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Does Reverse Osmosis Remove Microplastics?",
+    description:
+      "Reverse osmosis is among the most effective water filtration methods for microplastics. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
+    images: [
+      "https://bodyburdenlab.com/api/og?title=Does+Reverse+Osmosis+Remove+Microplastics%3F&tag=Science",
     ],
   },
 };
