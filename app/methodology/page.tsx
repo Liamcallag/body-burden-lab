@@ -89,6 +89,15 @@ const sources = [
     usedFor: "Microplastic particles found in beer samples",
     confidence: "Medium",
   },
+  {
+    author: "Wang et al.",
+    year: 2023,
+    title: "Pouring hot water through drip bags releases thousands of microplastics into coffee",
+    journal: "Food Chemistry",
+    doi: "10.1016/j.foodchem.2023.135717",
+    usedFor: "Microplastic release from plastic coffee filter bags and pod-style brewing",
+    confidence: "Medium",
+  },
 ];
 
 const referenceTable = [
@@ -101,7 +110,7 @@ const referenceTable = [
   { question: "Tea & coffee", answer: "Plastic/nylon tea bags few times/week", weekly: "3,000", study: "Hernandez et al.", year: 2019, confidence: "High" },
   { question: "Tea & coffee", answer: "Plastic/nylon tea bags occasionally", weekly: "800", study: "Hernandez et al.", year: 2019, confidence: "High" },
   { question: "Tea & coffee", answer: "Paper bags / loose leaf", weekly: "10", study: "Hernandez et al.", year: 2019, confidence: "High" },
-  { question: "Tea & coffee", answer: "Coffee machine / pods", weekly: "200", study: "Various", year: null, confidence: "Low" },
+  { question: "Tea & coffee", answer: "Coffee machine / pods", weekly: "200", study: "Wang et al.", year: 2023, confidence: "Medium" },
   { question: "Microwaving plastic", answer: "Daily", weekly: "28,000", study: "Hussain et al.", year: 2023, confidence: "Medium" },
   { question: "Microwaving plastic", answer: "Few times/week", weekly: "12,000", study: "Hussain et al.", year: 2023, confidence: "Medium" },
   { question: "Microwaving plastic", answer: "Occasionally", weekly: "3,000", study: "Hussain et al.", year: 2023, confidence: "Medium" },
