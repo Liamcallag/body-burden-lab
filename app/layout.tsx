@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Estimate how many microplastic particles you consume and inhale each week based on your lifestyle. Built on peer-reviewed science.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og?title=Body+Burden+%E2%80%94+Microplastics+Exposure+Calculator&tag=Tool",
+        url: "https://www.bodyburdenlab.com/api/og-image?title=Body+Burden+%E2%80%94+Microplastics+Exposure+Calculator&tag=Tool",
         width: 1200,
         height: 630,
       },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description:
       "Estimate how many microplastic particles you consume and inhale each week based on your lifestyle. Built on peer-reviewed science.",
     images: [
-      "https://www.bodyburdenlab.com/api/og?title=Body+Burden+%E2%80%94+Microplastics+Exposure+Calculator&tag=Tool",
+      "https://www.bodyburdenlab.com/api/og-image?title=Body+Burden+%E2%80%94+Microplastics+Exposure+Calculator&tag=Tool",
     ],
   },
 };

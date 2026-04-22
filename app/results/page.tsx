@@ -11,7 +11,7 @@ export async function generateMetadata({
 
   if (score) {
     const weekly = parseInt(score).toLocaleString("en-US");
-    const ogUrl = `https://www.bodyburdenlab.com/api/og?score=${score}&level=${encodeURIComponent(level)}`;
+    const ogUrl = `https://www.bodyburdenlab.com/api/og-image?score=${score}&level=${encodeURIComponent(level)}`;
     const title = `I consume ${weekly} microplastic particles per week`;
     const description = `My microplastic exposure is ${level.toLowerCase()}. How does yours compare? Take the calculator at Body Burden Lab.`;
     return {
@@ -39,7 +39,7 @@ export async function generateMetadata({
       description: "Your personalised microplastic exposure estimate based on your lifestyle.",
       images: [
         {
-          url: "https://www.bodyburdenlab.com/api/og?title=How+Many+Microplastics+Do+You+Consume%3F&tag=Calculator",
+          url: "https://www.bodyburdenlab.com/api/og-image?title=How+Many+Microplastics+Do+You+Consume%3F&tag=Calculator",
           width: 1200,
           height: 630,
         },
@@ -50,7 +50,7 @@ export async function generateMetadata({
       title: "Your Microplastics Results",
       description: "Your personalised microplastic exposure estimate based on your lifestyle.",
       images: [
-        "https://www.bodyburdenlab.com/api/og?title=How+Many+Microplastics+Do+You+Consume%3F&tag=Calculator",
+        "https://www.bodyburdenlab.com/api/og-image?title=How+Many+Microplastics+Do+You+Consume%3F&tag=Calculator",
       ],
     },
   };
