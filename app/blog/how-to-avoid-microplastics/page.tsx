@@ -48,6 +48,11 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can dramatically reduce your intake — some by tens of thousands of particles per week.
         </p>
+        <img
+          src="/blog-avoid.png"
+          alt="Ways to reduce microplastic exposure in daily life"
+          className="w-full rounded-xl mt-6 mb-2"
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
