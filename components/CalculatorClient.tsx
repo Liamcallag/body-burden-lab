@@ -211,7 +211,7 @@ export default function CalculatorClient() {
                 : "bg-slate-100 text-slate-400 cursor-not-allowed"
             }`}
           >
-            {isLast ? "Next →" : "Next →"}
+            {isLast ? "See My Results →" : "Next →"}
           </button>
         </div>
       </div>
