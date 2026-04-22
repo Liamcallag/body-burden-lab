@@ -101,47 +101,47 @@ const sources = [
 ];
 
 const referenceTable = [
-  { question: "Drinking water", answer: "Only bottled", weekly: "1,730", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Drinking water", answer: "Mostly bottled", weekly: "1,300", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Drinking water", answer: "Mix of both", weekly: "850", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Drinking water", answer: "Mostly tap", weekly: "150", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Drinking water", answer: "Only tap / filtered", weekly: "77", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Tea & coffee", answer: "Plastic/nylon tea bags daily", weekly: "7,000", study: "Hernandez et al.", year: 2019, confidence: "High" },
-  { question: "Tea & coffee", answer: "Plastic/nylon tea bags few times/week", weekly: "3,000", study: "Hernandez et al.", year: 2019, confidence: "High" },
-  { question: "Tea & coffee", answer: "Plastic/nylon tea bags occasionally", weekly: "800", study: "Hernandez et al.", year: 2019, confidence: "High" },
-  { question: "Tea & coffee", answer: "Paper bags / loose leaf", weekly: "10", study: "Hernandez et al.", year: 2019, confidence: "High" },
-  { question: "Tea & coffee", answer: "Coffee machine / pods", weekly: "200", study: "Wang et al.", year: 2023, confidence: "Medium" },
-  { question: "Microwaving plastic", answer: "Daily", weekly: "28,000", study: "Hussain et al.", year: 2023, confidence: "Medium" },
-  { question: "Microwaving plastic", answer: "Few times/week", weekly: "12,000", study: "Hussain et al.", year: 2023, confidence: "Medium" },
-  { question: "Microwaving plastic", answer: "Occasionally", weekly: "3,000", study: "Hussain et al.", year: 2023, confidence: "Medium" },
-  { question: "Cooking utensils", answer: "Mostly plastic", weekly: "500", study: "Cole et al.", year: 2024, confidence: "Medium" },
-  { question: "Cooking utensils", answer: "Mix", weekly: "250", study: "Cole et al.", year: 2024, confidence: "Medium" },
-  { question: "Cooking utensils", answer: "Wood / metal / silicone", weekly: "50", study: "Cole et al.", year: 2024, confidence: "Medium" },
-  { question: "Non-stick pans", answer: "Old or scratched", weekly: "400", study: "Cole et al.", year: 2024, confidence: "Medium" },
-  { question: "Non-stick pans", answer: "New, good condition", weekly: "150", study: "Cole et al.", year: 2024, confidence: "Medium" },
-  { question: "Non-stick pans", answer: "Occasionally", weekly: "75", study: "Cole et al.", year: 2024, confidence: "Medium" },
-  { question: "Cutting board", answer: "Plastic", weekly: "400", study: "Various", year: 2023, confidence: "Medium" },
-  { question: "Cutting board", answer: "Mix", weekly: "200", study: "Various", year: 2023, confidence: "Medium" },
-  { question: "Seafood", answer: "Daily", weekly: "2,100", study: "Cox et al. / EFSA", year: 2019, confidence: "High" },
-  { question: "Seafood", answer: "Several times/week", weekly: "1,200", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Seafood", answer: "Once/week", weekly: "296", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Seafood", answer: "Few times/month", weekly: "100", study: "Cox et al.", year: 2019, confidence: "High" },
-  { question: "Beer / alcohol", answer: "Daily", weekly: "70", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium" },
-  { question: "Beer / alcohol", answer: "Few times/week", weekly: "30", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium" },
-  { question: "Beer / alcohol", answer: "Occasionally", weekly: "10", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium" },
-  { question: "Salt type", answer: "Sea salt", weekly: "15", study: "Kim et al.", year: 2018, confidence: "High" },
-  { question: "Salt type", answer: "Table / mixed", weekly: "5", study: "Kim et al.", year: 2018, confidence: "High" },
-  { question: "Salt type", answer: "Rock / Himalayan", weekly: "2", study: "Kim et al.", year: 2018, confidence: "High" },
-  { question: "Clothing", answer: "Mostly synthetic", weekly: "800", study: "Dris et al.", year: 2017, confidence: "Medium" },
-  { question: "Clothing", answer: "Half and half", weekly: "400", study: "Dris et al.", year: 2017, confidence: "Medium" },
-  { question: "Clothing", answer: "Mostly natural fibres", weekly: "150", study: "Dris et al.", year: 2017, confidence: "Medium" },
-  { question: "Environment", answer: "Dense city", weekly: "1,050", study: "Various", year: null, confidence: "Medium" },
-  { question: "Environment", answer: "Suburban / town", weekly: "700", study: "Various", year: null, confidence: "Medium" },
-  { question: "Environment", answer: "Rural / coastal", weekly: "350", study: "Various", year: null, confidence: "Medium" },
-  { question: "Home air quality", answer: "No filter, carpet, rarely vacuum", weekly: "700", study: "Amato-Lourenço et al.", year: 2020, confidence: "Medium" },
-  { question: "Home air quality", answer: "Vacuum, no HEPA", weekly: "400", study: "Various", year: null, confidence: "Medium" },
-  { question: "Home air quality", answer: "Hard floors, regular vacuum", weekly: "200", study: "Various", year: null, confidence: "Medium" },
-  { question: "Home air quality", answer: "HEPA filter/vacuum", weekly: "150", study: "Various", year: null, confidence: "Medium" },
+  { question: "Drinking water", answer: "Only bottled", weekly: "1,730", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Drinking water", answer: "Mostly bottled", weekly: "1,300", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Drinking water", answer: "Mix of both", weekly: "850", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Drinking water", answer: "Mostly tap", weekly: "150", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Drinking water", answer: "Only tap / filtered", weekly: "77", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Tea & coffee", answer: "Plastic/nylon tea bags daily", weekly: "7,000", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+  { question: "Tea & coffee", answer: "Plastic/nylon tea bags few times/week", weekly: "3,000", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+  { question: "Tea & coffee", answer: "Plastic/nylon tea bags occasionally", weekly: "800", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+  { question: "Tea & coffee", answer: "Paper bags / loose leaf", weekly: "10", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+  { question: "Tea & coffee", answer: "Coffee machine / pods", weekly: "200", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
+  { question: "Microwaving plastic", answer: "Daily", weekly: "28,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
+  { question: "Microwaving plastic", answer: "Few times/week", weekly: "12,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
+  { question: "Microwaving plastic", answer: "Occasionally", weekly: "3,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
+  { question: "Cooking utensils", answer: "Mostly plastic", weekly: "500", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
+  { question: "Cooking utensils", answer: "Mix", weekly: "250", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
+  { question: "Cooking utensils", answer: "Wood / metal / silicone", weekly: "50", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
+  { question: "Non-stick pans", answer: "Old or scratched", weekly: "400", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
+  { question: "Non-stick pans", answer: "New, good condition", weekly: "150", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
+  { question: "Non-stick pans", answer: "Occasionally", weekly: "75", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
+  { question: "Cutting board", answer: "Plastic", weekly: "400", study: "Various", year: 2023, confidence: "Medium", doi: null },
+  { question: "Cutting board", answer: "Mix", weekly: "200", study: "Various", year: 2023, confidence: "Medium", doi: null },
+  { question: "Seafood", answer: "Daily", weekly: "2,100", study: "Cox et al. / EFSA", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Seafood", answer: "Several times/week", weekly: "1,200", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Seafood", answer: "Once/week", weekly: "296", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Seafood", answer: "Few times/month", weekly: "100", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Beer / alcohol", answer: "Daily", weekly: "70", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium", doi: "10.1080/19440049.2014.945099" },
+  { question: "Beer / alcohol", answer: "Few times/week", weekly: "30", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium", doi: "10.1080/19440049.2014.945099" },
+  { question: "Beer / alcohol", answer: "Occasionally", weekly: "10", study: "Liebezeit & Liebezeit", year: 2014, confidence: "Medium", doi: "10.1080/19440049.2014.945099" },
+  { question: "Salt type", answer: "Sea salt", weekly: "15", study: "Kim et al.", year: 2018, confidence: "High", doi: "10.1021/acs.est.8b04180" },
+  { question: "Salt type", answer: "Table / mixed", weekly: "5", study: "Kim et al.", year: 2018, confidence: "High", doi: "10.1021/acs.est.8b04180" },
+  { question: "Salt type", answer: "Rock / Himalayan", weekly: "2", study: "Kim et al.", year: 2018, confidence: "High", doi: "10.1021/acs.est.8b04180" },
+  { question: "Clothing", answer: "Mostly synthetic", weekly: "800", study: "Dris et al.", year: 2017, confidence: "Medium", doi: "10.1016/j.envpol.2016.12.013" },
+  { question: "Clothing", answer: "Half and half", weekly: "400", study: "Dris et al.", year: 2017, confidence: "Medium", doi: "10.1016/j.envpol.2016.12.013" },
+  { question: "Clothing", answer: "Mostly natural fibres", weekly: "150", study: "Dris et al.", year: 2017, confidence: "Medium", doi: "10.1016/j.envpol.2016.12.013" },
+  { question: "Environment", answer: "Dense city", weekly: "1,050", study: "Various", year: null, confidence: "Medium", doi: null },
+  { question: "Environment", answer: "Suburban / town", weekly: "700", study: "Various", year: null, confidence: "Medium", doi: null },
+  { question: "Environment", answer: "Rural / coastal", weekly: "350", study: "Various", year: null, confidence: "Medium", doi: null },
+  { question: "Home air quality", answer: "No filter, carpet, rarely vacuum", weekly: "700", study: "Amato-Lourenço et al.", year: 2020, confidence: "Medium", doi: "10.1016/j.scitotenv.2020.141676" },
+  { question: "Home air quality", answer: "Vacuum, no HEPA", weekly: "400", study: "Various", year: null, confidence: "Medium", doi: null },
+  { question: "Home air quality", answer: "Hard floors, regular vacuum", weekly: "200", study: "Various", year: null, confidence: "Medium", doi: null },
+  { question: "Home air quality", answer: "HEPA filter/vacuum", weekly: "150", study: "Various", year: null, confidence: "Medium", doi: null },
 ];
 
 const confidenceBadge: Record<string, string> = {
@@ -307,7 +307,15 @@ export default function MethodologyPage() {
                   <td className="py-2 pr-4 text-slate-700 whitespace-nowrap font-medium">{row.question}</td>
                   <td className="py-2 pr-4 text-slate-600">{row.answer}</td>
                   <td className="py-2 pr-4 text-slate-900 font-medium text-right tabular-nums whitespace-nowrap">{row.weekly}</td>
-                  <td className="py-2 pr-4 text-slate-500 whitespace-nowrap">{row.study}{row.year ? ` (${row.year})` : ""}</td>
+                  <td className="py-2 pr-4 text-slate-500 whitespace-nowrap">
+                    {row.doi ? (
+                      <a href={`https://doi.org/${row.doi}`} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
+                        {row.study}{row.year ? ` (${row.year})` : ""}
+                      </a>
+                    ) : (
+                      <>{row.study}{row.year ? ` (${row.year})` : ""}</>
+                    )}
+                  </td>
                   <td className="py-2">
                     <span className={`inline-block text-xs font-medium px-2 py-0.5 rounded-full ${confidenceBadge[row.confidence]}`}>
                       {row.confidence}
