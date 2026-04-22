@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's a significant underestimate. Here's what the science shows, and which daily habits drive the highest exposure.",
     images: [
       {
-        url: "https://bodyburdenlab.com/api/og?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
+        url: "https://www.bodyburdenlab.com/api/og?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
         width: 1200,
         height: 630,
       },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's a significant underestimate. Here's what the science shows, and which daily habits drive the highest exposure.",
     images: [
-      "https://bodyburdenlab.com/api/og?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
+      "https://www.bodyburdenlab.com/api/og?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
     ],
   },
 };

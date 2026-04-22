@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
     images: [
       {
-        url: "https://bodyburdenlab.com/api/og?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
+        url: "https://www.bodyburdenlab.com/api/og?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
         width: 1200,
         height: 630,
       },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
     images: [
-      "https://bodyburdenlab.com/api/og?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
+      "https://www.bodyburdenlab.com/api/og?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
     ],
   },
 };

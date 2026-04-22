@@ -2,12 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { QUESTIONS, REDUCTION_TIPS, CATEGORY_COLORS } from "@/lib/questions";
 import { calculateScore, formatNumber, type AnswerMap, type ScoreResult } from "@/lib/scoring";
 
 export default function ResultsClient() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const sharedScore = searchParams.get("score");
+  const sharedLevel = searchParams.get("level") ?? "Moderate";
+
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [copied, setCopied] = useState(false);
@@ -30,6 +34,31 @@ export default function ResultsClient() {
   }, [router]);
 
   if (noAnswers) {
+    if (sharedScore) {
+      const weekly = parseInt(sharedScore).toLocaleString("en-US");
+      const levelColor =
+        sharedLevel === "Low" ? "text-emerald-600" : sharedLevel === "High" ? "text-red-600" : "text-amber-600";
+      const levelBg =
+        sharedLevel === "Low" ? "bg-emerald-50 border-emerald-100" : sharedLevel === "High" ? "bg-red-50 border-red-100" : "bg-amber-50 border-amber-100";
+      return (
+        <div className="max-w-md mx-auto text-center py-16">
+          <div className={`inline-block border text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6 ${levelBg} ${levelColor}`}>
+            {sharedLevel} exposure
+          </div>
+          <p className="text-slate-500 text-sm uppercase tracking-widest mb-2">Someone consumed</p>
+          <div className="text-6xl font-extrabold text-teal-700 tabular-nums my-3">{weekly}</div>
+          <p className="text-slate-500 text-base mb-8">microplastic particles per week</p>
+          <p className="text-slate-600 text-sm mb-6 leading-relaxed">How does your exposure compare? Take the 2-minute calculator to find out.</p>
+          <Link
+            href="/calculator"
+            className="inline-block bg-teal-700 text-white font-semibold px-8 py-3 rounded-full text-sm hover:bg-teal-800 transition-colors"
+          >
+            Find out yours →
+          </Link>
+          <p className="text-xs text-slate-400 mt-4">Built on peer-reviewed science · bodyburdenlab.com</p>
+        </div>
+      );
+    }
     return (
       <div className="max-w-md mx-auto text-center py-20">
         <div className="text-4xl mb-4">🧪</div>
