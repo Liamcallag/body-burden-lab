@@ -20,6 +20,10 @@ export default function ResultsClient() {
   const [ageData, setAgeData] = useState<{ label: string; midpoint: number; yearsTo80: number } | null>(null);
 
   useEffect(() => {
+    if (sharedScore) {
+      setNoAnswers(true);
+      return;
+    }
     const raw = localStorage.getItem("bbl_answers");
     if (!raw) {
       setNoAnswers(true);

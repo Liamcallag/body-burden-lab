@@ -160,7 +160,6 @@ export async function GET(request: NextRequest) {
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               border: "1px solid #14b8a6",
-              width: "fit-content",
             }}
           >
             {tag}
