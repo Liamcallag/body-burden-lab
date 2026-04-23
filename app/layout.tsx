@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "body burden",
     "microplastics test online",
   ],
+  metadataBase: new URL("https://www.bodyburdenlab.com"),
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com",
+  },
   openGraph: {
     siteName: "Body Burden Lab",
     type: "website",
