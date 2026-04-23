@@ -31,8 +31,17 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPost() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Avoid Microplastics — A Science-Based Guide",
+    "datePublished": "2026-04-19",
+    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "url": "https://www.bodyburdenlab.com/blog/how-to-avoid-microplastics",
+  };
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="mb-8">
         <Link href="/blog" className="text-xs text-slate-400 hover:text-teal-700 transition-colors">
           ← Back to Blog
