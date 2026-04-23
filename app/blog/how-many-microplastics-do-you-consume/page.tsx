@@ -187,6 +187,15 @@ export default function BlogPost() {
 
       </div>
 
+      <div className="mt-10 border-t border-slate-100 pt-8 mb-8">
+        <h3 className="text-sm font-semibold text-slate-900 mb-4">Related articles</h3>
+        <div className="flex flex-col gap-3">
+          <Link href="/blog/how-to-avoid-microplastics" className="text-sm text-teal-700 hover:underline">How to Avoid Microplastics — A Science-Based Guide →</Link>
+          <Link href="/blog/microplastics-in-bottled-water" className="text-sm text-teal-700 hover:underline">Microplastics in Bottled Water — What the Research Shows →</Link>
+          <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-sm text-teal-700 hover:underline">Does Reverse Osmosis Remove Microplastics? →</Link>
+        </div>
+      </div>
+
       {/* End CTA */}
       <div className="bg-teal-700 rounded-2xl p-6 mt-10 text-white text-center">
         <p className="font-semibold text-lg mb-1">Calculate your body burden</p>

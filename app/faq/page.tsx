@@ -11,10 +11,12 @@ const faqs = [
   {
     q: "Are microplastics dangerous?",
     a: "The honest answer is: the research is concerning but causation in humans has not been fully established. What is confirmed is that microplastics are now found in human blood, lungs, brain tissue, arterial plaque, testicular tissue, and placenta. The most significant study to date — Marfella et al. (2024) in the New England Journal of Medicine — found that people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death over three years. However, this was an observational study and cannot prove that microplastics directly caused these events. The scientific consensus is that presence is well-established, health effects are strongly suspected, and causation is still being investigated.",
+    readMore: { href: "/blog/how-many-microplastics-do-you-consume", label: "What the research shows on microplastic consumption" },
   },
   {
     q: "Can you remove microplastics from your body?",
     a: "No proven method currently exists. The body's lymphatic system and immune cells can clear some particles over time, but microplastics have been found in tissues including the brain and lungs at concentrations that suggest significant accumulation. No supplement, treatment, sauna, or dietary protocol has been shown in peer-reviewed human trials to remove microplastics from body tissues. The most effective strategy is reducing ongoing intake, which slows accumulation rather than reversing it.",
+    readMore: { href: "/blog/how-to-avoid-microplastics", label: "Science-based steps to reduce your exposure" },
   },
   {
     q: "What exactly are microplastics?",
@@ -31,6 +33,7 @@ const faqs = [
   {
     q: "Does a water filter remove microplastics?",
     a: "It depends on the filter type. Reverse osmosis removes more than 99% of microplastics — the most effective technology available for home use. Activated carbon block filters (such as Berkey or ZeroWater) remove 70–90% of larger particles but are less effective for particles below 10 microns. Standard pitcher filters (Brita-style) have inconsistent performance for smaller particles. Bottled water is not a solution — multiple studies have found it contains significantly more microplastics than filtered tap water, with contamination originating from the PET bottle and cap.",
+    readMore: { href: "/blog/does-reverse-osmosis-remove-microplastics", label: "Does reverse osmosis remove microplastics?" },
   },
   {
     q: "Are some people more at risk than others?",
@@ -47,6 +50,7 @@ const faqs = [
   {
     q: "How does the Body Burden calculator work?",
     a: "The calculator asks 15 questions about your daily habits covering the major documented microplastic exposure pathways: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from a specific peer-reviewed study. The estimates are expressed in microplastic particles per week (particles ≥1 micron) and are summed to give a total. Results are compared to the 74,000–121,000 particles/year figure from Cox et al. (2019), which researchers note is a conservative underestimate. The full methodology and all source studies are documented on our methodology page.",
+    readMore: { href: "/methodology", label: "Read the full methodology" },
   },
   {
     q: "Why doesn't the calculator include nanoplastics?",
@@ -74,6 +78,11 @@ export default function FAQPage() {
           <div key={i} className="py-7">
             <h2 className="text-base font-semibold text-slate-900 mb-3">{faq.q}</h2>
             <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+            {faq.readMore && (
+              <Link href={faq.readMore.href} className="inline-block mt-3 text-xs font-medium text-teal-700 hover:underline">
+                {faq.readMore.label} →
+              </Link>
+            )}
           </div>
         ))}
       </div>

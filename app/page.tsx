@@ -185,6 +185,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Blog preview */}
+      <section className="py-14 px-4 sm:px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-xl font-semibold text-slate-900 mb-1">From the blog</h2>
+              <p className="text-sm text-slate-500">Science-backed guides on microplastic exposure</p>
+            </div>
+            <Link href="/blog" className="text-sm font-medium text-teal-700 hover:underline whitespace-nowrap">
+              All articles →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {[
+              { slug: "how-to-avoid-microplastics", title: "How to Avoid Microplastics — A Science-Based Guide", tag: "Guide", image: "/blog-avoid.png" },
+              { slug: "how-many-microplastics-do-you-consume", title: "How Many Microplastics Do You Consume Per Week?", tag: "Science", image: "/blog-how-many.png" },
+              { slug: "microplastics-in-bottled-water", title: "Microplastics in Bottled Water — What the Research Shows", tag: "Science", image: "/blog-bottled-water.png" },
+            ].map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="border border-slate-100 rounded-xl bg-white shadow-sm hover:border-teal-200 transition-colors overflow-hidden">
+                <img src={post.image} alt={post.title} className="w-full h-36 object-cover" />
+                <div className="p-4">
+                  <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">{post.tag}</span>
+                  <p className="text-sm font-semibold text-slate-900 mt-2 leading-snug">{post.title}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="bg-teal-700 py-14 px-4 sm:px-6 text-white">
         <div className="max-w-3xl mx-auto text-center">
