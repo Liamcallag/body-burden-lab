@@ -57,6 +57,11 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Plastic cutting boards are found in most kitchens. Research now shows they are a significant and underappreciated source of microplastic contamination in food — releasing particles with every knife stroke.
         </p>
+        <img
+          src="/blog-cutting-boards.png"
+          alt="Plastic cutting board with knife marks and microplastic particles"
+          className="w-full rounded-xl mt-6 mb-2"
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">

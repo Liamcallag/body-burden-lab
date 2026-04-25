@@ -57,6 +57,11 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Infants face disproportionately high microplastic exposure relative to their body weight — from plastic feeding bottles, formula preparation, and breast milk. Here is what the peer-reviewed evidence shows.
         </p>
+        <img
+          src="/blog-baby-formula.png"
+          alt="Baby bottle and breastfeeding with microplastic particles"
+          className="w-full rounded-xl mt-6 mb-2"
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">

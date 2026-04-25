@@ -57,6 +57,11 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Tea is the second most consumed beverage in the world. For the many millions who brew it in a plastic or nylon bag, each cup delivers billions of microplastic and nanoplastic particles alongside the flavour.
         </p>
+        <img
+          src="/blog-tea-bags.png"
+          alt="Tea bag steeping in hot water with microplastic particles"
+          className="w-full rounded-xl mt-6 mb-2"
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">

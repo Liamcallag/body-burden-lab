@@ -57,6 +57,11 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Sea salt is marketed as natural and minimally processed. Research shows it is also the most microplastic-contaminated type of salt available — a direct consequence of ocean plastic pollution.
         </p>
+        <img
+          src="/blog-salt.png"
+          alt="Sea salt with microplastic particles"
+          className="w-full rounded-xl mt-6 mb-2"
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
