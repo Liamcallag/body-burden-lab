@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's a significant underestimate. Here's what the science shows, and which daily habits drive the highest exposure.",
   openGraph: {
     type: "article",
-    publishedTime: "2026-04-18",
+    publishedTime: "2026-04-01",
     title: "How Many Microplastics Do You Consume Per Week?",
     description:
       "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's a significant underestimate. Here's what the science shows, and which daily habits drive the highest exposure.",
@@ -35,7 +35,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How Many Microplastics Do You Consume Per Week?",
-    "datePublished": "2026-04-18",
+    "datePublished": "2026-04-01",
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/how-many-microplastics-do-you-consume",
   };
@@ -50,7 +50,7 @@ export default function BlogPost() {
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Science</span>
           <span className="text-xs text-slate-400">8 min read</span>
-          <time className="text-xs text-slate-400" dateTime="2026-04-18">April 18, 2026</time>
+          <time className="text-xs text-slate-400" dateTime="2026-04-01">April 1, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
           How Many Microplastics Do You Consume Per Week?

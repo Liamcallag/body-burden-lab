@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Reverse osmosis is among the most effective water filtration methods for microplastics. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
   openGraph: {
     type: "article",
-    publishedTime: "2026-04-19",
+    publishedTime: "2026-04-15",
     title: "Does Reverse Osmosis Remove Microplastics?",
     description:
       "Reverse osmosis is among the most effective water filtration methods for microplastics. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
@@ -49,7 +49,7 @@ export default function BlogPost() {
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Science</span>
           <span className="text-xs text-slate-400">5 min read</span>
-          <time className="text-xs text-slate-400" dateTime="2026-04-19">April 19, 2026</time>
+          <time className="text-xs text-slate-400" dateTime="2026-04-15">April 15, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
           Does Reverse Osmosis Remove Microplastics?

@@ -9,37 +9,48 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    slug: "how-to-avoid-microplastics",
-    title: "How to Avoid Microplastics — A Science-Based Guide",
+    slug: "microplastics-in-baby-formula",
+    title: "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
     excerpt:
-      "You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can reduce your intake by tens of thousands of particles per week.",
-    date: "2026-04-19",
-    readTime: "7 min read",
-    tag: "Guide",
-    image: "/blog-avoid.png",
-    imageAlt: "Ways to reduce microplastic exposure in daily life",
-  },
-  {
-    slug: "does-reverse-osmosis-remove-microplastics",
-    title: "Does Reverse Osmosis Remove Microplastics?",
-    excerpt:
-      "Reverse osmosis is among the most effective water filtration methods for microplastics, achieving removal rates above 99%. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
-    date: "2026-04-19",
-    readTime: "5 min read",
-    tag: "Science",
-    image: "/blog-reverse-osmosis.png",
-    imageAlt: "Reverse osmosis under-sink filtration system",
-  },
-  {
-    slug: "microplastics-in-bottled-water",
-    title: "Microplastics in Bottled Water — What the Research Shows",
-    excerpt:
-      "Bottled water is sold on the premise of purity. Multiple peer-reviewed studies document a consistent finding: it contains significantly more microplastics than filtered tap water.",
-    date: "2026-04-19",
+      "Plastic baby bottles can release up to 16 million microplastic particles per litre during formula preparation. Microplastics have also been detected in breast milk and placenta.",
+    date: "2026-05-05",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-bottled-water.png",
-    imageAlt: "Plastic water bottles",
+    image: "/blog-baby-formula.png",
+    imageAlt: "Baby bottle and infant feeding",
+  },
+  {
+    slug: "microplastics-in-salt",
+    title: "Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?",
+    excerpt:
+      "90% of commercial salt brands contain microplastics — and sea salt is the most contaminated type. Here's what a global study of 39 brands found, and what to use instead.",
+    date: "2026-05-01",
+    readTime: "5 min read",
+    tag: "Science",
+    image: "/blog-salt.png",
+    imageAlt: "Sea salt and table salt comparison",
+  },
+  {
+    slug: "microplastics-in-cutting-boards",
+    title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
+    excerpt:
+      "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Each knife stroke releases 100–300 particles directly onto your food.",
+    date: "2026-04-27",
+    readTime: "5 min read",
+    tag: "Science",
+    image: "/blog-cutting-boards.png",
+    imageAlt: "Plastic cutting board with knife marks",
+  },
+  {
+    slug: "microplastics-in-tea-bags",
+    title: "Microplastics in Tea Bags: How Many You're Drinking and What to Use Instead",
+    excerpt:
+      "A single plastic or nylon tea bag releases up to 11.6 billion microplastic particles per cup. For daily tea drinkers, this is one of the largest controllable exposure sources.",
+    date: "2026-04-23",
+    readTime: "5 min read",
+    tag: "Science",
+    image: "/blog-tea-bags.png",
+    imageAlt: "Plastic tea bag steeping in hot water",
   },
   {
     slug: "does-silicone-have-microplastics",
@@ -53,11 +64,44 @@ const posts = [
     imageAlt: "Silicone kitchen utensils",
   },
   {
+    slug: "does-reverse-osmosis-remove-microplastics",
+    title: "Does Reverse Osmosis Remove Microplastics?",
+    excerpt:
+      "Reverse osmosis is among the most effective water filtration methods for microplastics, achieving removal rates above 99%. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
+    date: "2026-04-15",
+    readTime: "5 min read",
+    tag: "Science",
+    image: "/blog-reverse-osmosis.png",
+    imageAlt: "Reverse osmosis under-sink filtration system",
+  },
+  {
+    slug: "microplastics-in-bottled-water",
+    title: "Microplastics in Bottled Water — What the Research Shows",
+    excerpt:
+      "Bottled water is sold on the premise of purity. Multiple peer-reviewed studies document a consistent finding: it contains significantly more microplastics than filtered tap water.",
+    date: "2026-04-11",
+    readTime: "6 min read",
+    tag: "Science",
+    image: "/blog-bottled-water.png",
+    imageAlt: "Plastic water bottles",
+  },
+  {
+    slug: "how-to-avoid-microplastics",
+    title: "How to Avoid Microplastics — A Science-Based Guide",
+    excerpt:
+      "You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can reduce your intake by tens of thousands of particles per week.",
+    date: "2026-04-06",
+    readTime: "7 min read",
+    tag: "Guide",
+    image: "/blog-avoid.png",
+    imageAlt: "Ways to reduce microplastic exposure in daily life",
+  },
+  {
     slug: "how-many-microplastics-do-you-consume",
     title: "How Many Microplastics Do You Consume Per Week?",
     excerpt:
       "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's almost certainly an underestimate. Here's what the science actually shows.",
-    date: "2026-04-18",
+    date: "2026-04-01",
     readTime: "8 min read",
     tag: "Science",
     image: "/blog-how-many.png",

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
   openGraph: {
     type: "article",
-    publishedTime: "2026-04-19",
+    publishedTime: "2026-04-06",
     title: "How to Avoid Microplastics — A Science-Based Guide",
     description:
       "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
@@ -49,7 +49,7 @@ export default function BlogPost() {
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Guide</span>
           <span className="text-xs text-slate-400">7 min read</span>
-          <time className="text-xs text-slate-400" dateTime="2026-04-19">April 19, 2026</time>
+          <time className="text-xs text-slate-400" dateTime="2026-04-06">April 6, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
           How to Avoid Microplastics — A Science-Based Guide
