@@ -13,7 +13,7 @@ const posts = [
     title: "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
     excerpt:
       "Plastic baby bottles can release up to 16 million microplastic particles per litre during formula preparation. Microplastics have also been detected in breast milk and placenta.",
-    date: "2026-05-05",
+    date: "2026-04-20",
     readTime: "6 min read",
     tag: "Science",
     image: "/blog-baby-formula.png",
@@ -24,7 +24,7 @@ const posts = [
     title: "Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?",
     excerpt:
       "90% of commercial salt brands contain microplastics — and sea salt is the most contaminated type. Here's what a global study of 39 brands found, and what to use instead.",
-    date: "2026-05-01",
+    date: "2026-04-22",
     readTime: "5 min read",
     tag: "Science",
     image: "/blog-salt.png",
@@ -35,7 +35,7 @@ const posts = [
     title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
     excerpt:
       "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Each knife stroke releases 100–300 particles directly onto your food.",
-    date: "2026-04-27",
+    date: "2026-04-24",
     readTime: "5 min read",
     tag: "Science",
     image: "/blog-cutting-boards.png",

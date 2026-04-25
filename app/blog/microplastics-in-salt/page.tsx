@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "90% of commercial salt brands contain microplastics — and sea salt is the most contaminated type. Here's what the research shows and what it means for your exposure.",
   openGraph: {
     type: "article",
-    publishedTime: "2026-05-01",
+    publishedTime: "2026-04-22",
     title: "Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?",
     description:
       "90% of commercial salt brands contain microplastics — and sea salt is the most contaminated type. Here's what the research shows and what it means for your exposure.",
@@ -35,7 +35,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?",
-    "datePublished": "2026-05-01",
+    "datePublished": "2026-04-22",
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-salt",
   };
@@ -49,7 +49,7 @@ export default function BlogPost() {
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Science</span>
           <span className="text-xs text-slate-400">5 min read</span>
-          <time className="text-xs text-slate-400" dateTime="2026-05-01">May 1, 2026</time>
+          <time className="text-xs text-slate-400" dateTime="2026-04-22">April 22, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
           Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?

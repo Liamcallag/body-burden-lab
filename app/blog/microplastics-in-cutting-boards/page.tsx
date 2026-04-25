@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Here's what the research shows and what to use instead.",
   openGraph: {
     type: "article",
-    publishedTime: "2026-04-27",
+    publishedTime: "2026-04-24",
     title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
     description:
       "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Here's what the research shows and what to use instead.",
@@ -35,7 +35,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
-    "datePublished": "2026-04-27",
+    "datePublished": "2026-04-24",
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-cutting-boards",
   };
@@ -49,7 +49,7 @@ export default function BlogPost() {
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Science</span>
           <span className="text-xs text-slate-400">5 min read</span>
-          <time className="text-xs text-slate-400" dateTime="2026-04-27">April 27, 2026</time>
+          <time className="text-xs text-slate-400" dateTime="2026-04-24">April 24, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
           How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?

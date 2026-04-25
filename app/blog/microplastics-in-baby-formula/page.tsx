@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
   openGraph: {
     type: "article",
-    publishedTime: "2026-05-05",
+    publishedTime: "2026-04-20",
     title: "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
     description:
       "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
@@ -35,7 +35,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
-    "datePublished": "2026-05-05",
+    "datePublished": "2026-04-20",
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-baby-formula",
   };
@@ -49,7 +49,7 @@ export default function BlogPost() {
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Science</span>
           <span className="text-xs text-slate-400">6 min read</span>
-          <time className="text-xs text-slate-400" dateTime="2026-05-05">May 5, 2026</time>
+          <time className="text-xs text-slate-400" dateTime="2026-04-20">April 20, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
           Microplastics in Baby Formula and Breast Milk: What Parents Need to Know
