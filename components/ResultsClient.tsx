@@ -333,16 +333,29 @@ export default function ResultsClient() {
       {/* Nanoplastics callout — moved here so users see it before the reduction tips */}
       <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-6">
         <div className="flex gap-3 items-start">
-          <span className="text-amber-500 text-lg flex-shrink-0">⚠</span>
-          <div>
-            <p className="text-sm font-semibold text-slate-900 mb-1">This is likely a significant underestimate</p>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              This calculator counts <strong>microplastic particles only</strong> (≥1 micron). Nanoplastic particles — which are far smaller and more numerous — are not included due to inconsistent measurement across studies. Their concentrations in food and water are not yet reliably quantified. A single plastic tea bag, for example, releases approximately 11.6 billion nanoplastic particles per cup alongside the microplastics counted here — suggesting the real total is substantially higher than this estimate.
+          <span className="text-amber-500 text-xl flex-shrink-0">⚠</span>
+          <div className="w-full">
+            <p className="text-base font-bold text-slate-900 mb-3">This score is likely a significant underestimate</p>
+
+            <p className="text-sm text-slate-700 leading-relaxed mb-2">
+              <strong>What this score includes:</strong> Microplastic particles only — defined as particles ≥1 micron in size, ingested or inhaled through your specific habits.
             </p>
-            <p className="text-xs text-slate-400 mt-2">Hernandez et al., Environmental Science & Technology, 2019</p>
-            <p className="text-xs text-slate-500 mt-3 leading-relaxed border-t border-amber-200 pt-3">
-              <strong className="text-slate-600">About this estimate:</strong> The figures in this calculator are derived from peer-reviewed studies and vary depending on individual consumption volumes, product types, and geographic factors not captured here. Nanoplastic exposure is not included and is likely significantly higher. Your score should be understood as a documented minimum, not a precise measurement.
+
+            <p className="text-sm text-slate-700 leading-relaxed mb-2">
+              <strong>What it doesn't include:</strong> Nanoplastic particles (smaller than 1 micron) are not counted. They are far smaller, more numerous, and more likely to penetrate cells and tissues — but consistent measurement data across exposure sources does not yet exist.
             </p>
+
+            <p className="text-sm text-slate-600 leading-relaxed mb-2">
+              To illustrate the gap: a single plastic tea bag releases approximately <strong>11.6 billion nanoplastic particles</strong> per cup alongside the microplastics counted here — yet none of those nanoplastics appear in your score.
+            </p>
+
+            <p className="text-xs text-slate-400 mb-3">Hernandez et al., Environmental Science & Technology, 2019</p>
+
+            <div className="border-t border-amber-200 pt-3">
+              <p className="text-xs text-slate-500 leading-relaxed">
+                <strong className="text-slate-600">About this estimate:</strong> The figures in this calculator are derived from peer-reviewed studies and vary depending on individual consumption volumes, product types, and geographic factors not captured here. Nanoplastic exposure is not included and is likely significantly higher. Your score should be understood as a documented minimum, not a precise measurement.
+              </p>
+            </div>
           </div>
         </div>
       </div>
