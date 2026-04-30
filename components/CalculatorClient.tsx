@@ -33,10 +33,17 @@ export default function CalculatorClient() {
     setSelected(idx);
   }
 
+  function trackEvent(name: string, params?: Record<string, string | number>) {
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", name, params);
+    }
+  }
+
   function handleAgeConfirm() {
     if (selectedAge === null) return;
     localStorage.setItem("bbl_age", JSON.stringify(AGE_RANGES[selectedAge]));
     setPhase("questions");
+    trackEvent("calculator_question_viewed", { question_number: 1, question_id: QUESTIONS[0].id });
   }
 
   function handleNext() {
@@ -46,11 +53,14 @@ export default function CalculatorClient() {
 
     if (isLast) {
       localStorage.setItem("bbl_answers", JSON.stringify(updated));
+      trackEvent("calculator_completed");
       router.push("/results");
     } else {
-      setCurrentQ(currentQ + 1);
-      const nextQ = QUESTIONS[currentQ + 1];
+      const nextIndex = currentQ + 1;
+      setCurrentQ(nextIndex);
+      const nextQ = QUESTIONS[nextIndex];
       setSelected(updated[nextQ.id] !== undefined ? updated[nextQ.id] : null);
+      trackEvent("calculator_question_viewed", { question_number: nextIndex + 1, question_id: nextQ.id });
     }
   }
 
