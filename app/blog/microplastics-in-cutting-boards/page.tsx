@@ -93,7 +93,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What happens to the particles in the body</h2>
 
         <p>
-          A 2025 review published in <em>Environmental Health Perspectives</em> examined the downstream effects of cutting board microplastics specifically. Mouse studies using PP board particles found impairment of intestinal barrier function and induction of inflammatory markers in gut tissue. PE board particles were associated with disruption of gut microbiota composition and altered liver metabolism in exposed animals.
+          Gan, Chen et al. (2025) in <em>Environmental Health Perspectives</em> (Vol. 133, DOI: 10.1289/EHP15472) examined the downstream effects of cutting board microplastics specifically. Mouse diets were prepared on PP, PE, and wooden cutting boards over 4 and 12 weeks. PP board particles were found to impair intestinal barrier function and induce inflammatory markers in gut tissue. PE board particles were associated with disruption of gut microbiota composition — including a significant decrease in Firmicutes — and altered liver and fecal metabolites in exposed animals.
         </p>
 
         <p>
@@ -155,6 +155,7 @@ export default function BlogPost() {
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Hernandez LM et al. Cutting Boards: An Overlooked Source of Microplastics in Human Food? <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c00924</li>
+          <li>Gan Z, Chen Q et al. Simulated Microplastic Release from Cutting Boards and Evaluation of Intestinal Inflammation and Gut Microbiota in Mice. <em>Environ Health Perspect</em>. 2025;133(3-4). DOI: 10.1289/EHP15472</li>
           <li>Snekkevik VK et al. Beyond the Food on Your Plate: Investigating Sources of Microplastic Contamination in Home Kitchens. <em>Heliyon</em>. 2024. DOI: 10.1016/j.heliyon.2024.e35022</li>
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers and Reusable Food Pouches. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
         </ol>

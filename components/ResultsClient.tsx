@@ -337,7 +337,7 @@ export default function ResultsClient() {
           <div>
             <p className="text-sm font-semibold text-slate-900 mb-1">This is likely a significant underestimate</p>
             <p className="text-sm text-slate-600 leading-relaxed">
-              This calculator counts <strong>microplastic particles only</strong> (≥1 micron). Nanoplastic particles — which are far smaller and more numerous — are not included due to inconsistent measurement across studies. Research suggests nanoplastics may be present at <strong>10 to 100 times higher concentrations</strong> than microplastics. A single plastic tea bag, for example, releases approximately 11.6 billion nanoplastic particles per cup alongside the microplastics counted here.
+              This calculator counts <strong>microplastic particles only</strong> (≥1 micron). Nanoplastic particles — which are far smaller and more numerous — are not included due to inconsistent measurement across studies. Their concentrations in food and water are not yet reliably quantified. A single plastic tea bag, for example, releases approximately 11.6 billion nanoplastic particles per cup alongside the microplastics counted here — suggesting the real total is substantially higher than this estimate.
             </p>
             <p className="text-xs text-slate-400 mt-2">Hernandez et al., Environmental Science & Technology, 2019</p>
           </div>
@@ -382,7 +382,7 @@ export default function ResultsClient() {
       {/* Confidence note */}
       <div className="border border-slate-100 rounded-xl p-5 mb-6 bg-slate-50">
         <p className="text-xs text-slate-500 leading-relaxed">
-          <strong className="text-slate-600">About this estimate:</strong> The microplastic figures in this calculator carry an estimated margin of error of ±30% due to variation between studies and individual factors not captured here. Nanoplastic exposure is not included and may be significantly higher. Your score should be understood as a conservative floor, not a precise measurement.
+          <strong className="text-slate-600">About this estimate:</strong> The figures in this calculator are derived from peer-reviewed studies and vary depending on individual consumption volumes, product types, and geographic factors not captured here. Nanoplastic exposure is not included and is likely significantly higher. Your score should be understood as a documented minimum, not a precise measurement.
         </p>
       </div>
 

@@ -123,7 +123,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research doesn't yet tell us</h2>
 
         <p>
-          The 2018 Kim et al. study remains the most comprehensive global analysis. Since then, several regional studies have confirmed the pattern of sea salt contamination, and a 2025 review in <em>Science of the Total Environment</em> confirmed that sea salt consistently shows the highest contamination across salt types globally. However, the health effects specifically from salt-derived microplastic ingestion have not been studied in isolation — the data on dose, accumulation, and long-term effects comes from the broader microplastics literature, not salt-specific research.
+          The 2018 Kim et al. study remains the most comprehensive global analysis. Since then, several regional studies have confirmed the pattern of sea salt contamination, and a 2025 critical review by Chell et al. in the <em>Journal of Chromatography Open</em> (DOI: 10.1016/j.jcoa.2025.100276) confirmed that sea salt consistently shows the highest contamination across salt types globally, with fragments and fibres under 200 μm being the most prevalent particle type. However, the health effects specifically from salt-derived microplastic ingestion have not been studied in isolation — the data on dose, accumulation, and long-term effects comes from the broader microplastics literature, not salt-specific research.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Practical guidance</h2>
@@ -156,6 +156,7 @@ export default function BlogPost() {
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Kim JS et al. Global Pattern of Microplastics (MPs) in Commercial Food-Grade Salts: Sea Salt as an Indicator of Seawater MP Pollution. <em>Environ Sci Technol</em>. 2018. DOI: 10.1021/acs.est.8b04180</li>
           <li>Karami A et al. The presence of microplastics in commercial salts from different countries. <em>Sci Rep</em>. 2017. DOI: 10.1038/srep46173</li>
+          <li>Chell S et al. Microplastics in salt: A critical review of contamination, analytical methodologies, and health implications. <em>J Chromatogr Open</em>. 2025;8:100276. DOI: 10.1016/j.jcoa.2025.100276</li>
         </ol>
       </div>
     </article>
