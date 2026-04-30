@@ -395,13 +395,6 @@ export default function ResultsClient() {
         </div>
       )}
 
-      {/* Confidence note */}
-      <div className="border border-slate-100 rounded-xl p-5 mb-6 bg-slate-50">
-        <p className="text-xs text-slate-500 leading-relaxed">
-          <strong className="text-slate-600">About this estimate:</strong> The figures in this calculator are derived from peer-reviewed studies and vary depending on individual consumption volumes, product types, and geographic factors not captured here. Nanoplastic exposure is not included and is likely significantly higher. Your score should be understood as a documented minimum, not a precise measurement.
-        </p>
-      </div>
-
       {/* CTAs */}
       <div className="flex flex-col sm:flex-row gap-3">
         <Link
