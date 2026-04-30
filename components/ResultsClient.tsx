@@ -163,7 +163,7 @@ export default function ResultsClient() {
           {exposureLevel.label} exposure
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-2">
-          You consume and inhale at least
+          You consume and inhale an estimated
         </h1>
         <div className="text-5xl sm:text-6xl font-bold text-teal-700 my-4 tabular-nums">
           {weeklyFormatted}
