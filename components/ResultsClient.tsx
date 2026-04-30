@@ -163,7 +163,7 @@ export default function ResultsClient() {
           {exposureLevel.label} exposure
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-2">
-          You consume and inhale approximately
+          You consume and inhale at least
         </h1>
         <div className="text-5xl sm:text-6xl font-bold text-teal-700 my-4 tabular-nums">
           {weeklyFormatted}
@@ -330,11 +330,25 @@ export default function ResultsClient() {
         </div>
       </div>
 
+      {/* Nanoplastics callout — moved here so users see it before the reduction tips */}
+      <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-6">
+        <div className="flex gap-3 items-start">
+          <span className="text-amber-500 text-lg flex-shrink-0">⚠</span>
+          <div>
+            <p className="text-sm font-semibold text-slate-900 mb-1">This is likely a significant underestimate</p>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              This calculator counts <strong>microplastic particles only</strong> (≥1 micron). Nanoplastic particles — which are far smaller and more numerous — are not included due to inconsistent measurement across studies. Research suggests nanoplastics may be present at <strong>10 to 100 times higher concentrations</strong> than microplastics. A single plastic tea bag, for example, releases approximately 11.6 billion nanoplastic particles per cup alongside the microplastics counted here.
+            </p>
+            <p className="text-xs text-slate-400 mt-2">Hernandez et al., Environmental Science & Technology, 2019</p>
+          </div>
+        </div>
+      </div>
+
       {/* Top 3 changes with savings */}
       {top3Questions.length > 0 && (
         <div className="bg-slate-900 rounded-2xl p-6 mb-6">
           <h2 className="font-semibold text-white mb-1">Your top {top3Questions.length} changes</h2>
-          <p className="text-xs text-slate-400 mb-5">The single habits that would reduce your exposure the most</p>
+          <p className="text-xs text-slate-400 mb-5">The single habits that would reduce your microplastic exposure the most — real reductions are likely even larger when nanoplastics are included</p>
           <ol className="flex flex-col gap-4">
             {top3Questions.map((q, i) => {
               const tip = REDUCTION_TIPS[q.tipKey];
@@ -364,20 +378,6 @@ export default function ResultsClient() {
           </div>
         </div>
       )}
-
-      {/* Nanoplastics callout */}
-      <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-6">
-        <div className="flex gap-3 items-start">
-          <span className="text-amber-500 text-lg flex-shrink-0">⚠</span>
-          <div>
-            <p className="text-sm font-semibold text-slate-900 mb-1">This is likely a significant underestimate</p>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              This calculator counts <strong>microplastic particles only</strong> (≥1 micron). Nanoplastic particles — which are far smaller and more numerous — are not included due to inconsistent measurement across studies. Research suggests nanoplastics may be present at <strong>10 to 100 times higher concentrations</strong> than microplastics. A single plastic tea bag, for example, releases approximately 11.6 billion nanoplastic particles per cup alongside the microplastics counted here.
-            </p>
-            <p className="text-xs text-slate-400 mt-2">Hernandez et al., Environmental Science & Technology, 2019</p>
-          </div>
-        </div>
-      </div>
 
       {/* Confidence note */}
       <div className="border border-slate-100 rounded-xl p-5 mb-6 bg-slate-50">
