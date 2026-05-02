@@ -351,6 +351,10 @@ export default function ResultsClient() {
 
             <p className="text-xs text-slate-400 mb-3">Hernandez et al., Environmental Science & Technology, 2019</p>
 
+            <p className="text-sm text-slate-700 leading-relaxed mb-2">
+              <strong>Microwaving and tea bags are also underrepresented:</strong> The microplastic figures used for these two sources in this calculator are based on earlier studies. A 2023 study (Hussain et al.) found microwaving polypropylene containers releases up to 4.22 million microplastic particles per square centimetre in a single session — far higher than the figures currently reflected here. These newer figures cannot yet be directly combined with other sources due to differences in measurement methodology across studies.
+            </p>
+
             <div className="border-t border-amber-200 pt-3">
               <p className="text-xs text-slate-500 leading-relaxed">
                 <strong className="text-slate-600">About this estimate:</strong> The figures in this calculator are derived from peer-reviewed studies and vary depending on individual consumption volumes, product types, and geographic factors not captured here. Nanoplastic exposure is not included and is likely significantly higher. Your score should be understood as a documented minimum, not a precise measurement.
