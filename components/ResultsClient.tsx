@@ -157,8 +157,11 @@ export default function ResultsClient() {
 
       {/* Category breakdown — vertical bar chart */}
       {(() => {
-        // Sort by absolute score so highest-contributing category appears first
         const sorted = [...result.categories].sort((a, b) => b.score - a.score);
+        // Normalise all bars against the same reference — the highest possible
+        // category score across all categories (kitchen). This means water can
+        // never look more alarming than kitchen even if it's 100% of its own max.
+        const globalMaxPossible = Math.max(...result.categories.map((c) => c.maxScore), 1);
         const BAR_MAX_PX = 180;
         const LABEL_AREA_PX = 44; // fixed height above all bars for labels
 
@@ -182,19 +185,17 @@ export default function ResultsClient() {
             {/* Chart — items-end aligns all bars to the same baseline */}
             <div className="flex items-end justify-between gap-3">
               {sorted.map((cat) => {
-                // Height based on cat.percentage — how much of this category's
-                // maximum possible risk the user actually scored
-                const pct = cat.percentage;
-                const barHeightPx = Math.max((pct / 100) * BAR_MAX_PX, 8);
+                const normPct = Math.round((cat.score / globalMaxPossible) * 100);
+                const barHeightPx = Math.max((normPct / 100) * BAR_MAX_PX, 8);
                 const barColor =
-                  pct >= 76 ? "#dc2626" :
-                  pct >= 51 ? "#f97316" :
-                  pct >= 26 ? "#f59e0b" :
+                  normPct >= 76 ? "#dc2626" :
+                  normPct >= 51 ? "#f97316" :
+                  normPct >= 26 ? "#f59e0b" :
                   "#10b981";
                 const tierLabel =
-                  pct >= 76 ? "Very high" :
-                  pct >= 51 ? "High" :
-                  pct >= 26 ? "Moderate" :
+                  normPct >= 76 ? "Very high" :
+                  normPct >= 51 ? "High" :
+                  normPct >= 26 ? "Moderate" :
                   "Low";
                 const isExpanded = expandedCategory === cat.category;
                 return (
@@ -234,10 +235,11 @@ export default function ResultsClient() {
             {expandedCategory && (() => {
               const items = categoryBreakdown(expandedCategory);
               const cat = sorted.find((c) => c.category === expandedCategory)!;
+              const catNormPct = Math.round((cat.score / globalMaxPossible) * 100);
               const barColor =
-                cat.percentage >= 76 ? "#dc2626" :
-                cat.percentage >= 51 ? "#f97316" :
-                cat.percentage >= 26 ? "#f59e0b" :
+                catNormPct >= 76 ? "#dc2626" :
+                catNormPct >= 51 ? "#f97316" :
+                catNormPct >= 26 ? "#f59e0b" :
                 "#10b981";
               return (
                 <div className="mt-5 border-t border-slate-100 pt-4">
