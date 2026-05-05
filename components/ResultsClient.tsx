@@ -140,68 +140,69 @@ export default function ResultsClient() {
 
       {/* Header */}
       <div className="text-center mb-10">
-        <div className={`inline-block border text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 ${exposureLevel.bg} ${exposureLevel.color}`}>
-          {result.exposureTier} exposure
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-2">
+        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-6">
           Your microplastic risk score
         </h1>
-        <div className="text-7xl sm:text-8xl font-extrabold text-teal-700 my-4 tabular-nums">
-          {result.riskScore}
+        <div className={`inline-flex items-center gap-2 border px-5 py-2.5 rounded-full mb-4 ${exposureLevel.bg} ${exposureLevel.color}`}>
+          <span className={`text-3xl font-extrabold tabular-nums`}>{result.riskScore}</span>
+          <span className="text-sm font-semibold">/ 100</span>
+          <span className="w-px h-5 bg-current opacity-30 mx-1" />
+          <span className="text-sm font-bold uppercase tracking-wide">{result.exposureTier}</span>
         </div>
-        <p className="text-lg text-slate-500">out of 100</p>
-        <p className="text-xs text-slate-400 mt-2 max-w-sm mx-auto">
+        <p className="text-xs text-slate-400 mt-3 max-w-sm mx-auto">
           Based on your habits across 15 questions — higher score means higher relative exposure risk
         </p>
       </div>
 
       {/* Category breakdown — vertical bar chart */}
-      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-        <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
-        <p className="text-xs text-slate-400 mb-6">How close to maximum risk you are in each area</p>
-        <div className="flex items-end justify-between gap-3 h-52">
-          {result.categories.map((cat) => {
-            const pct = cat.percentage;
-            const barColor =
-              pct >= 76 ? "#dc2626" :   // red
-              pct >= 51 ? "#f97316" :   // orange
-              pct >= 26 ? "#f59e0b" :   // amber
-              "#10b981";                // green
-            const tierLabel =
-              pct >= 76 ? "Very high" :
-              pct >= 51 ? "High" :
-              pct >= 26 ? "Moderate" :
-              "Low";
-            return (
-              <div key={cat.category} className="flex flex-col items-center flex-1 h-full">
-                {/* Percentage label above bar */}
-                <div className="flex flex-col items-center mb-1">
-                  <span className="text-sm font-bold tabular-nums" style={{ color: barColor }}>{pct}%</span>
-                  <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
-                </div>
-                {/* Bar track */}
-                <div className="w-full flex-1 bg-slate-100 rounded-t-lg overflow-hidden flex items-end">
-                  <div
-                    className="w-full rounded-t-lg transition-all duration-700"
-                    style={{
-                      height: `${Math.max(pct, 2)}%`,
-                      backgroundColor: barColor,
-                    }}
-                  />
-                </div>
-                {/* Category label below */}
-                <div className="mt-2 text-center">
-                  <span className="text-[11px] font-medium text-slate-600 leading-tight block">
-                    {cat.label.split(" & ").map((part, i) => (
-                      <span key={i}>{part}{i < cat.label.split(" & ").length - 1 ? " &" : ""}<br /></span>
-                    ))}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      {(() => {
+        // Sort by absolute score so the most dangerous category is tallest
+        const sorted = [...result.categories].sort((a, b) => b.score - a.score);
+        const maxScore = Math.max(...sorted.map((c) => c.score), 1);
+        return (
+          <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+            <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
+            <p className="text-xs text-slate-400 mb-6">Your highest-risk categories shown tallest</p>
+            <div className="flex items-end justify-between gap-3 h-52">
+              {sorted.map((cat) => {
+                const barHeight = Math.max((cat.score / maxScore) * 100, 2);
+                const pct = cat.percentage;
+                const barColor =
+                  pct >= 76 ? "#dc2626" :
+                  pct >= 51 ? "#f97316" :
+                  pct >= 26 ? "#f59e0b" :
+                  "#10b981";
+                const tierLabel =
+                  pct >= 76 ? "Very high" :
+                  pct >= 51 ? "High" :
+                  pct >= 26 ? "Moderate" :
+                  "Low";
+                return (
+                  <div key={cat.category} className="flex flex-col items-center flex-1 h-full">
+                    <div className="flex flex-col items-center mb-1">
+                      <span className="text-sm font-bold tabular-nums" style={{ color: barColor }}>{pct}%</span>
+                      <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
+                    </div>
+                    <div className="w-full flex-1 bg-slate-100 rounded-t-lg overflow-hidden flex items-end">
+                      <div
+                        className="w-full rounded-t-lg transition-all duration-700"
+                        style={{ height: `${barHeight}%`, backgroundColor: barColor }}
+                      />
+                    </div>
+                    <div className="mt-2 text-center">
+                      <span className="text-[11px] font-medium text-slate-600 leading-tight block">
+                        {cat.label.split(" & ").map((part, i, arr) => (
+                          <span key={i}>{part}{i < arr.length - 1 ? " &" : ""}<br /></span>
+                        ))}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Study callouts — only shown if user has high-risk answers for those questions */}
       {activeCallouts.length > 0 && (
