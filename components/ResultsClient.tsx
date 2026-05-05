@@ -171,10 +171,8 @@ export default function ResultsClient() {
           return qs.map((q) => {
             const idx = answers[q.id] ?? 0;
             const selected = q.options[idx];
-            const maxOpt = Math.max(...q.options.map((o) => o.riskScore));
-            const contribution = maxOpt > 0 ? Math.round((selected.riskScore / maxOpt) * 100) : 0;
-            return { question: q, selected, contribution };
-          }).filter((r) => r.selected.riskScore > 0);
+            return { question: q, selected };
+          });
         };
 
         return (

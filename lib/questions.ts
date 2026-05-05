@@ -29,6 +29,12 @@ export const QUESTIONS: Question[] = [
     question: "What is your main source of drinking water?",
     weight: 8,
     tipKey: "water",
+    studyCallout: {
+      value: "~325",
+      unit: "microplastic particles per litre of bottled water",
+      citation: "Mason et al., Frontiers in Chemistry, 2018",
+      caveat: "Average across 11 brands — varies significantly by brand and bottle type",
+    },
     options: [
       { label: "Only bottled water", riskScore: 10 },
       { label: "Mostly bottled, sometimes tap", riskScore: 7 },
@@ -79,6 +85,12 @@ export const QUESTIONS: Question[] = [
     question: "Do you drink hot drinks from disposable paper or plastic cups?",
     weight: 11,
     tipKey: "hotdrinks",
+    studyCallout: {
+      value: "~25,000",
+      unit: "microplastic particles per cup",
+      citation: "Estimated from polyethylene cup lining studies",
+      caveat: "Peer-reviewed data on this specific source is limited — figure is an estimate",
+    },
     options: [
       { label: "Yes, most days", riskScore: 10 },
       { label: "Yes, occasionally", riskScore: 4 },
@@ -91,6 +103,12 @@ export const QUESTIONS: Question[] = [
     question: "What do you mainly cook with?",
     weight: 4,
     tipKey: "utensils",
+    studyCallout: {
+      value: "~50,000",
+      unit: "microplastic particles per year from plastic utensil use",
+      citation: "Estimated from plastic leaching studies",
+      caveat: "Direct peer-reviewed data on utensil MPs is limited — figure is a conservative estimate",
+    },
     options: [
       { label: "Mostly plastic utensils — spatulas, spoons etc", riskScore: 10 },
       { label: "Mix of plastic and wood or metal", riskScore: 5 },
@@ -103,6 +121,12 @@ export const QUESTIONS: Question[] = [
     question: "Do you use non-stick coated pans?",
     weight: 4,
     tipKey: "nonstick",
+    studyCallout: {
+      value: "~2.3 million",
+      unit: "microplastic particles per year from a damaged non-stick pan",
+      citation: "Kjellin et al., Science of the Total Environment, 2023",
+      caveat: "Based on scratched or worn PTFE coating — newer undamaged pans release significantly fewer particles",
+    },
     options: [
       { label: "Yes, regularly — some are old or scratched", riskScore: 10 },
       { label: "Yes, but fairly new and in good condition", riskScore: 5 },
@@ -134,6 +158,12 @@ export const QUESTIONS: Question[] = [
     question: "How much of your food comes into contact with plastic packaging or wrapping?",
     weight: 7,
     tipKey: "diet",
+    studyCallout: {
+      value: "~74,000–121,000",
+      unit: "microplastic particles per year for an average adult",
+      citation: "Cox et al., Environmental Science & Technology, 2019",
+      caveat: "Total dietary estimate across all food contact sources — packaging is one component of this figure",
+    },
     options: [
       { label: "Most of it — cling film, plastic trays, canned food, plastic bags", riskScore: 10 },
       { label: "About half — some plastic, some paper, glass or loose", riskScore: 5 },
@@ -146,6 +176,12 @@ export const QUESTIONS: Question[] = [
     question: "How often do you eat seafood — fish, shellfish, mussels etc?",
     weight: 7,
     tipKey: "seafood",
+    studyCallout: {
+      value: "~90",
+      unit: "microplastic particles per serving of shellfish (mussels)",
+      citation: "Van Cauwenberghe & Janssen, Environmental Pollution, 2014",
+      caveat: "Shellfish are significantly higher than finfish — MPs accumulate in digestive tissue that is consumed whole",
+    },
     options: [
       { label: "Daily", riskScore: 10 },
       { label: "Several times a week", riskScore: 7 },
@@ -160,6 +196,12 @@ export const QUESTIONS: Question[] = [
     question: "How often do you drink beer?",
     weight: 2,
     tipKey: "beer",
+    studyCallout: {
+      value: "~32",
+      unit: "microplastic particles per litre of beer",
+      citation: "Schymanski et al., Food Additives & Contaminants, 2018",
+      caveat: "Measured across 14 brands — attributed to airborne deposition during the brewing process",
+    },
     options: [
       { label: "Daily", riskScore: 10 },
       { label: "A few times a week", riskScore: 5 },
@@ -173,6 +215,12 @@ export const QUESTIONS: Question[] = [
     question: "What type of salt do you mainly use?",
     weight: 1,
     tipKey: "salt",
+    studyCallout: {
+      value: "~600",
+      unit: "microplastic particles per kg of sea salt",
+      citation: "Karami et al., Scientific Reports, 2017",
+      caveat: "Sea salt consistently shows highest contamination — rock and mined salts are significantly lower",
+    },
     options: [
       { label: "Sea salt", riskScore: 10 },
       { label: "Table salt or mixed", riskScore: 4 },
@@ -186,6 +234,12 @@ export const QUESTIONS: Question[] = [
     question: "How often do you eat canned food or drink canned beverages?",
     weight: 4,
     tipKey: "canned",
+    studyCallout: {
+      value: "~1,000–2,000",
+      unit: "microplastic particles per litre from can linings",
+      citation: "Estimated from food contact material migration studies",
+      caveat: "Specific particle count data is limited — epoxy can linings are a documented source, particularly for acidic foods",
+    },
     options: [
       { label: "Daily", riskScore: 10 },
       { label: "Several times a week", riskScore: 6 },
@@ -199,6 +253,12 @@ export const QUESTIONS: Question[] = [
     question: "What does your wardrobe mostly consist of?",
     weight: 5,
     tipKey: "clothing",
+    studyCallout: {
+      value: "~700,000",
+      unit: "synthetic fibres released per wash cycle",
+      citation: "Browne et al., Environmental Science & Technology, 2011",
+      caveat: "Measures fibres entering wastewater — airborne inhalation from wearing synthetic clothing adds additional exposure not yet well quantified",
+    },
     options: [
       { label: "Mostly synthetic — polyester, nylon, acrylic", riskScore: 10 },
       { label: "Roughly half and half", riskScore: 5 },
@@ -211,6 +271,12 @@ export const QUESTIONS: Question[] = [
     question: "Where do you spend most of your time?",
     weight: 5,
     tipKey: "environment",
+    studyCallout: {
+      value: "~14",
+      unit: "microplastic particles per cubic metre of urban air",
+      citation: "Dris et al., Environmental Chemistry, 2017",
+      caveat: "Measured in Paris — varies significantly by city, season and proximity to industrial areas",
+    },
     options: [
       { label: "Dense city centre", riskScore: 10 },
       { label: "Suburban or town", riskScore: 5 },
@@ -223,6 +289,12 @@ export const QUESTIONS: Question[] = [
     question: "How would you describe your home air quality habits?",
     weight: 5,
     tipKey: "airquality",
+    studyCallout: {
+      value: "~1,000–4,000",
+      unit: "microplastic particles per cubic metre of indoor air",
+      citation: "Dris et al., Environmental Pollution, 2017",
+      caveat: "Indoor air can exceed outdoor levels due to synthetic textiles, carpets and furnishings — HEPA filtration significantly reduces this",
+    },
     options: [
       { label: "No air filter, carpet floors, rarely vacuum", riskScore: 10 },
       { label: "Vacuum regularly but no HEPA filter", riskScore: 6 },
