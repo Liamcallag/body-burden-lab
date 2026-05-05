@@ -1,10 +1,11 @@
 export type Category = "water" | "kitchen" | "food" | "air";
 
 export interface StudyCallout {
-  value: string;       // e.g. "4.22 million"
-  unit: string;        // e.g. "microplastic particles per cm² per use"
-  citation: string;    // e.g. "Hussain et al., ES&T, 2023"
-  caveat: string;      // e.g. "Peak measurement · real food may release more"
+  value: string;        // e.g. "4.22 million"
+  unit: string;         // e.g. "microplastic particles per cm² per use"
+  citation: string;     // e.g. "Hussain et al., ES&T, 2023"
+  caveat: string;       // shown on methodology page, not in main UI
+  url?: string;         // link to the study
 }
 
 export interface Option {
@@ -34,6 +35,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per litre of bottled water",
       citation: "Mason et al., Frontiers in Chemistry, 2018",
       caveat: "Average across 11 brands — varies significantly by brand and bottle type",
+      url: "https://www.frontiersin.org/articles/10.3389/fchem.2018.00407/full",
     },
     options: [
       { label: "Only bottled water", riskScore: 10 },
@@ -54,6 +56,7 @@ export const QUESTIONS: Question[] = [
       unit: "microparticles per cup",
       citation: "Hernandez et al., Environmental Science & Technology, 2019",
       caveat: "Includes particles across a wide size range — methodology disputed, likely an overcount of true microplastics",
+      url: "https://pubs.acs.org/doi/10.1021/acs.est.9b02540",
     },
     options: [
       { label: "Yes, most days", riskScore: 10 },
@@ -72,6 +75,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per cm² per use",
       citation: "Hussain et al., Environmental Science & Technology, 2023",
       caveat: "Peak measurement under 3-min heating using food simulants · real food may release more",
+      url: "https://pubs.acs.org/doi/10.1021/acs.est.3c01942",
     },
     options: [
       { label: "Yes, several times a week or more", riskScore: 10 },
@@ -163,6 +167,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per year for an average adult",
       citation: "Cox et al., Environmental Science & Technology, 2019",
       caveat: "Total dietary estimate across all food contact sources — packaging is one component of this figure",
+      url: "https://pubs.acs.org/doi/10.1021/acs.est.9b01517",
     },
     options: [
       { label: "Most of it — cling film, plastic trays, canned food, plastic bags", riskScore: 10 },
@@ -181,6 +186,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per serving of shellfish (mussels)",
       citation: "Van Cauwenberghe & Janssen, Environmental Pollution, 2014",
       caveat: "Shellfish are significantly higher than finfish — MPs accumulate in digestive tissue that is consumed whole",
+      url: "https://www.sciencedirect.com/science/article/pii/S0269749114000815",
     },
     options: [
       { label: "Daily", riskScore: 10 },
@@ -201,6 +207,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per litre of beer",
       citation: "Schymanski et al., Food Additives & Contaminants, 2018",
       caveat: "Measured across 14 brands — attributed to airborne deposition during the brewing process",
+      url: "https://www.tandfonline.com/doi/full/10.1080/19440049.2018.1430186",
     },
     options: [
       { label: "Daily", riskScore: 10 },
@@ -220,6 +227,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per kg of sea salt",
       citation: "Karami et al., Scientific Reports, 2017",
       caveat: "Sea salt consistently shows highest contamination — rock and mined salts are significantly lower",
+      url: "https://www.nature.com/articles/srep46173",
     },
     options: [
       { label: "Sea salt", riskScore: 10 },
@@ -258,6 +266,7 @@ export const QUESTIONS: Question[] = [
       unit: "synthetic fibres released per wash cycle",
       citation: "Browne et al., Environmental Science & Technology, 2011",
       caveat: "Measures fibres entering wastewater — airborne inhalation from wearing synthetic clothing adds additional exposure not yet well quantified",
+      url: "https://pubs.acs.org/doi/10.1021/es201811s",
     },
     options: [
       { label: "Mostly synthetic — polyester, nylon, acrylic", riskScore: 10 },

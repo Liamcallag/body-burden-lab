@@ -231,11 +231,24 @@ export default function ResultsClient() {
                                 <p className="text-xs font-semibold text-slate-700 leading-snug">{question.question}</p>
                                 <p className="text-xs text-slate-400 mt-0.5 mb-1">Your answer: "{selected.label}"</p>
                                 {question.studyCallout && (
-                                  <div className="border-l-2 pl-3 mt-2" style={{ borderColor: barColor }}>
-                                    <span className="text-base font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                                    <span className="text-xs text-slate-600">{question.studyCallout.unit}</span>
-                                    <p className="text-[10px] font-medium mt-0.5" style={{ color: barColor }}>{question.studyCallout.citation}</p>
-                                    <p className="text-[10px] text-slate-400 italic">{question.studyCallout.caveat}</p>
+                                  <div className="flex items-baseline justify-between gap-2 mt-1.5">
+                                    <p className="text-sm text-slate-700">
+                                      <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                                      {question.studyCallout.unit}
+                                    </p>
+                                    {question.studyCallout.url ? (
+                                      <a
+                                        href={question.studyCallout.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
+                                        onClick={(e) => e.stopPropagation()}
+                                      >
+                                        View study →
+                                      </a>
+                                    ) : (
+                                      <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
+                                    )}
                                   </div>
                                 )}
                               </div>
