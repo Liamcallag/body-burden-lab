@@ -158,12 +158,9 @@ export default function ResultsClient() {
       {/* Category breakdown — vertical bar chart */}
       {(() => {
         const sorted = [...result.categories].sort((a, b) => b.score - a.score);
-        // Normalise all bars against the same reference — the highest possible
-        // category score across all categories (kitchen). This means water can
-        // never look more alarming than kitchen even if it's 100% of its own max.
-        const globalMaxPossible = Math.max(...result.categories.map((c) => c.maxScore), 1);
-        const BAR_MAX_PX = 180;
-        const LABEL_AREA_PX = 44; // fixed height above all bars for labels
+        // Bar width = this category's share of the user's own total weighted score.
+        // Answers "where is your exposure coming from?" — always proportionally honest.
+        const totalScore = result.categories.reduce((sum, c) => sum + c.score, 0) || 1;
 
         // Per-category question breakdown
         const categoryBreakdown = (categoryId: string) => {
@@ -178,15 +175,14 @@ export default function ResultsClient() {
         return (
           <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
             <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
-            <p className="text-xs text-slate-400 mb-5">Tap a row to see what's driving it</p>
+            <p className="text-xs text-slate-400 mb-5">Share of your total exposure · tap a row to see what's driving it</p>
 
             <div className="flex flex-col gap-1">
               {sorted.map((cat) => {
-                const normPct = Math.round((cat.score / globalMaxPossible) * 100);
+                const normPct = Math.round((cat.score / totalScore) * 100);
                 const barColor =
-                  normPct >= 76 ? "#dc2626" :
-                  normPct >= 51 ? "#f97316" :
-                  normPct >= 26 ? "#f59e0b" :
+                  normPct >= 50 ? "#f97316" :
+                  normPct >= 30 ? "#f59e0b" :
                   "#10b981";
                 const isExpanded = expandedCategory === cat.category;
                 const items = isExpanded ? categoryBreakdown(cat.category) : [];
@@ -200,7 +196,10 @@ export default function ResultsClient() {
                       {/* Label row */}
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-sm font-semibold text-slate-800">{cat.label}</span>
-                        <span className="text-slate-300 text-xs">{isExpanded ? "▲" : "▼"}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-semibold tabular-nums" style={{ color: barColor }}>{normPct}%</span>
+                          <span className="text-slate-300 text-xs">{isExpanded ? "▲" : "▼"}</span>
+                        </div>
                       </div>
                       {/* Bar */}
                       <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
