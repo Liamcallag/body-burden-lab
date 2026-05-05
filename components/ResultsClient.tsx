@@ -188,11 +188,6 @@ export default function ResultsClient() {
                   normPct >= 51 ? "#f97316" :
                   normPct >= 26 ? "#f59e0b" :
                   "#10b981";
-                const tierLabel =
-                  normPct >= 76 ? "Very high" :
-                  normPct >= 51 ? "High" :
-                  normPct >= 26 ? "Moderate" :
-                  "Low";
                 const isExpanded = expandedCategory === cat.category;
                 const items = isExpanded ? categoryBreakdown(cat.category) : [];
 
@@ -205,10 +200,7 @@ export default function ResultsClient() {
                       {/* Label row */}
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-sm font-semibold text-slate-800">{cat.label}</span>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: barColor }}>{tierLabel}</span>
-                          <span className="text-slate-300 text-xs">{isExpanded ? "▲" : "▼"}</span>
-                        </div>
+                        <span className="text-slate-300 text-xs">{isExpanded ? "▲" : "▼"}</span>
                       </div>
                       {/* Bar */}
                       <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
