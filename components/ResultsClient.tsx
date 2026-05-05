@@ -179,11 +179,11 @@ export default function ResultsClient() {
             <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
             <p className="text-xs text-slate-400 mb-4">Tap a bar to see what's driving it</p>
 
-            {/* Chart */}
-            <div className="flex items-end justify-between gap-3" style={{ paddingTop: LABEL_AREA_PX }}>
+            {/* Chart — items-end aligns all bars to the same baseline */}
+            <div className="flex items-end justify-between gap-3">
               {sorted.map((cat) => {
                 const relPct = Math.round((cat.score / maxScore) * 100);
-                const barHeightPx = Math.max((relPct / 100) * BAR_MAX_PX, 6);
+                const barHeightPx = Math.max((relPct / 100) * BAR_MAX_PX, 8);
                 const barColor =
                   relPct >= 76 ? "#dc2626" :
                   relPct >= 51 ? "#f97316" :
@@ -198,13 +198,12 @@ export default function ResultsClient() {
                 return (
                   <div
                     key={cat.category}
-                    className="flex flex-col items-center flex-1 cursor-pointer group"
+                    className="relative flex flex-col items-center flex-1 cursor-pointer group"
                     onClick={() => setExpandedCategory(isExpanded ? null : cat.category)}
                   >
-                    {/* Fixed-height label area so all bars share the same baseline */}
-                    <div className="flex flex-col items-center justify-end mb-1.5" style={{ height: LABEL_AREA_PX }}>
-                      <span className="text-sm font-bold tabular-nums" style={{ color: barColor }}>{relPct}%</span>
-                      <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
+                    {/* Label sits directly above its own bar */}
+                    <div className="flex flex-col items-center mb-1.5">
+                      <span className="text-[10px] font-bold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
                     </div>
                     {/* Bar */}
                     <div
@@ -246,17 +245,19 @@ export default function ResultsClient() {
                   {items.length === 0 ? (
                     <p className="text-sm text-slate-400">No significant sources in this category based on your answers.</p>
                   ) : (
-                    <div className="flex flex-col gap-3">
-                      {items.map(({ question, selected, contribution }) => (
-                        <div key={question.id} className="flex items-center gap-3">
-                          <div className="flex-1">
-                            <p className="text-xs font-medium text-slate-700 leading-snug">{question.question}</p>
-                            <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
-                          </div>
-                          <div className="flex flex-col items-end shrink-0">
-                            <span className="text-xs font-bold" style={{ color: barColor }}>{contribution}%</span>
-                            <span className="text-[10px] text-slate-400">of max</span>
-                          </div>
+                    <div className="flex flex-col gap-4">
+                      {items.map(({ question, selected }) => (
+                        <div key={question.id}>
+                          <p className="text-xs font-medium text-slate-700 leading-snug">{question.question}</p>
+                          <p className="text-xs text-slate-400 mt-0.5 mb-1">Your answer: "{selected.label}"</p>
+                          {question.studyCallout && (
+                            <div className="bg-slate-50 rounded-lg px-3 py-2 mt-1">
+                              <span className="text-base font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                              <span className="text-xs text-slate-600">{question.studyCallout.unit}</span>
+                              <p className="text-[10px] text-teal-700 font-medium mt-0.5">{question.studyCallout.citation}</p>
+                              <p className="text-[10px] text-slate-400 italic">{question.studyCallout.caveat}</p>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
