@@ -16,6 +16,7 @@ export default function ResultsClient() {
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [copied, setCopied] = useState(false);
   const [noAnswers, setNoAnswers] = useState(false);
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
   useEffect(() => {
     if (sharedScore) {
@@ -156,17 +157,31 @@ export default function ResultsClient() {
 
       {/* Category breakdown — vertical bar chart */}
       {(() => {
-        // Sort by absolute score so the most dangerous category is tallest
         const sorted = [...result.categories].sort((a, b) => b.score - a.score);
         const maxScore = Math.max(...sorted.map((c) => c.score), 1);
+        const BAR_MAX_PX = 180;
+        const LABEL_AREA_PX = 44; // fixed height above all bars for labels
+
+        // Per-category question breakdown
+        const categoryBreakdown = (categoryId: string) => {
+          const qs = QUESTIONS.filter((q) => q.category === categoryId);
+          return qs.map((q) => {
+            const idx = answers[q.id] ?? 0;
+            const selected = q.options[idx];
+            const maxOpt = Math.max(...q.options.map((o) => o.riskScore));
+            const contribution = maxOpt > 0 ? Math.round((selected.riskScore / maxOpt) * 100) : 0;
+            return { question: q, selected, contribution };
+          }).filter((r) => r.selected.riskScore > 0);
+        };
+
         return (
           <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
             <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
-            <p className="text-xs text-slate-400 mb-6">Your highest-risk categories shown tallest</p>
-            <div className="flex items-end justify-between gap-3">
+            <p className="text-xs text-slate-400 mb-4">Tap a bar to see what's driving it</p>
+
+            {/* Chart */}
+            <div className="flex items-end justify-between gap-3" style={{ paddingTop: LABEL_AREA_PX }}>
               {sorted.map((cat) => {
-                const BAR_MAX_PX = 180;
-                // Use a single consistent metric for height, colour, and label
                 const relPct = Math.round((cat.score / maxScore) * 100);
                 const barHeightPx = Math.max((relPct / 100) * BAR_MAX_PX, 6);
                 const barColor =
@@ -179,15 +194,27 @@ export default function ResultsClient() {
                   relPct >= 51 ? "High" :
                   relPct >= 26 ? "Moderate" :
                   "Low";
+                const isExpanded = expandedCategory === cat.category;
                 return (
-                  <div key={cat.category} className="flex flex-col items-center flex-1">
-                    {/* Labels above bar */}
-                    <span className="text-sm font-bold tabular-nums mb-0.5" style={{ color: barColor }}>{relPct}%</span>
-                    <span className="text-[10px] font-semibold uppercase tracking-wide mb-2" style={{ color: barColor }}>{tierLabel}</span>
+                  <div
+                    key={cat.category}
+                    className="flex flex-col items-center flex-1 cursor-pointer group"
+                    onClick={() => setExpandedCategory(isExpanded ? null : cat.category)}
+                  >
+                    {/* Fixed-height label area so all bars share the same baseline */}
+                    <div className="flex flex-col items-center justify-end mb-1.5" style={{ height: LABEL_AREA_PX }}>
+                      <span className="text-sm font-bold tabular-nums" style={{ color: barColor }}>{relPct}%</span>
+                      <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
+                    </div>
                     {/* Bar */}
                     <div
-                      className="w-full rounded-t-lg transition-all duration-700"
-                      style={{ height: barHeightPx, backgroundColor: barColor }}
+                      className="w-full rounded-t-lg transition-all duration-700 group-hover:opacity-80"
+                      style={{
+                        height: barHeightPx,
+                        backgroundColor: barColor,
+                        outline: isExpanded ? `2px solid ${barColor}` : "none",
+                        outlineOffset: 2,
+                      }}
                     />
                     {/* Category label */}
                     <div className="mt-2 text-center">
@@ -201,6 +228,42 @@ export default function ResultsClient() {
                 );
               })}
             </div>
+
+            {/* Expanded breakdown */}
+            {expandedCategory && (() => {
+              const items = categoryBreakdown(expandedCategory);
+              const cat = sorted.find((c) => c.category === expandedCategory)!;
+              const barColor =
+                Math.round((cat.score / maxScore) * 100) >= 76 ? "#dc2626" :
+                Math.round((cat.score / maxScore) * 100) >= 51 ? "#f97316" :
+                Math.round((cat.score / maxScore) * 100) >= 26 ? "#f59e0b" :
+                "#10b981";
+              return (
+                <div className="mt-5 border-t border-slate-100 pt-4">
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">
+                    {cat.label} — what's contributing
+                  </p>
+                  {items.length === 0 ? (
+                    <p className="text-sm text-slate-400">No significant sources in this category based on your answers.</p>
+                  ) : (
+                    <div className="flex flex-col gap-3">
+                      {items.map(({ question, selected, contribution }) => (
+                        <div key={question.id} className="flex items-center gap-3">
+                          <div className="flex-1">
+                            <p className="text-xs font-medium text-slate-700 leading-snug">{question.question}</p>
+                            <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
+                          </div>
+                          <div className="flex flex-col items-end shrink-0">
+                            <span className="text-xs font-bold" style={{ color: barColor }}>{contribution}%</span>
+                            <span className="text-[10px] text-slate-400">of max</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
           </div>
         );
       })()}
