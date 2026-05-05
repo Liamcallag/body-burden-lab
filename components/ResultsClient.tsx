@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { QUESTIONS, REDUCTION_TIPS, CATEGORY_COLORS } from "@/lib/questions";
+import { QUESTIONS, REDUCTION_TIPS } from "@/lib/questions";
 import { calculateScore, type AnswerMap, type ScoreResult } from "@/lib/scoring";
 
 export default function ResultsClient() {
@@ -155,30 +155,47 @@ export default function ResultsClient() {
         </p>
       </div>
 
-      {/* Category breakdown */}
+      {/* Category breakdown — vertical bar chart */}
       <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
         <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
-        <p className="text-xs text-slate-400 mb-5">Each bar shows how close to maximum risk you are within that category</p>
-        <div className="flex flex-col gap-5">
+        <p className="text-xs text-slate-400 mb-6">How close to maximum risk you are in each area</p>
+        <div className="flex items-end justify-between gap-3 h-52">
           {result.categories.map((cat) => {
-            const color = CATEGORY_COLORS[cat.category];
-            const isVeryHigh = cat.percentage >= 75;
+            const pct = cat.percentage;
+            const barColor =
+              pct >= 76 ? "#dc2626" :   // red
+              pct >= 51 ? "#f97316" :   // orange
+              pct >= 26 ? "#f59e0b" :   // amber
+              "#10b981";                // green
+            const tierLabel =
+              pct >= 76 ? "Very high" :
+              pct >= 51 ? "High" :
+              pct >= 26 ? "Moderate" :
+              "Low";
             return (
-              <div key={cat.category}>
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-sm font-medium text-slate-700">{cat.label}</span>
-                  <div className="flex items-center gap-2">
-                    {isVeryHigh && (
-                      <span className="text-xs font-semibold text-red-500 uppercase tracking-wide">Very high</span>
-                    )}
-                    <span className="text-sm tabular-nums text-slate-500">{cat.percentage}%</span>
-                  </div>
+              <div key={cat.category} className="flex flex-col items-center flex-1 h-full">
+                {/* Percentage label above bar */}
+                <div className="flex flex-col items-center mb-1">
+                  <span className="text-sm font-bold tabular-nums" style={{ color: barColor }}>{pct}%</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
                 </div>
-                <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+                {/* Bar track */}
+                <div className="w-full flex-1 bg-slate-100 rounded-t-lg overflow-hidden flex items-end">
                   <div
-                    className="h-full rounded-full transition-all duration-700"
-                    style={{ width: `${cat.percentage}%`, backgroundColor: color }}
+                    className="w-full rounded-t-lg transition-all duration-700"
+                    style={{
+                      height: `${Math.max(pct, 2)}%`,
+                      backgroundColor: barColor,
+                    }}
                   />
+                </div>
+                {/* Category label below */}
+                <div className="mt-2 text-center">
+                  <span className="text-[11px] font-medium text-slate-600 leading-tight block">
+                    {cat.label.split(" & ").map((part, i) => (
+                      <span key={i}>{part}{i < cat.label.split(" & ").length - 1 ? " &" : ""}<br /></span>
+                    ))}
+                  </span>
                 </div>
               </div>
             );
