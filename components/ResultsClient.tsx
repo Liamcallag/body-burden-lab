@@ -181,7 +181,7 @@ export default function ResultsClient() {
                           {i + 1}
                         </span>
                         <div className="min-w-0">
-                          <p className="text-sm font-semibold text-slate-800 leading-snug">{question.question}</p>
+                          <p className="text-sm font-semibold text-slate-800 leading-snug">{question.resultLabel}</p>
                           <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
                         </div>
                       </div>

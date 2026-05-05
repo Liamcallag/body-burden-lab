@@ -17,6 +17,7 @@ export interface Question {
   id: string;
   category: Category;
   question: string;
+  resultLabel: string; // short label used in results view
   weight: number; // relative importance multiplier — higher = more impact on total score
   options: Option[];
   tipKey: string;
@@ -28,6 +29,7 @@ export const QUESTIONS: Question[] = [
     id: "water",
     category: "water",
     question: "What is your main source of drinking water?",
+    resultLabel: "Drinking water",
     weight: 8,
     tipKey: "water",
     studyCallout: {
@@ -49,6 +51,7 @@ export const QUESTIONS: Question[] = [
     id: "tea",
     category: "kitchen",
     question: "Do you use plastic or nylon tea bags?",
+    resultLabel: "Plastic tea bags",
     weight: 13,
     tipKey: "tea",
     studyCallout: {
@@ -68,6 +71,7 @@ export const QUESTIONS: Question[] = [
     id: "microwave",
     category: "kitchen",
     question: "Do you microwave food in plastic containers?",
+    resultLabel: "Microwaving in plastic",
     weight: 15,
     tipKey: "microwave",
     studyCallout: {
@@ -87,6 +91,7 @@ export const QUESTIONS: Question[] = [
     id: "hotdrinks",
     category: "kitchen",
     question: "Do you drink hot drinks from disposable paper or plastic cups?",
+    resultLabel: "Disposable cups",
     weight: 11,
     tipKey: "hotdrinks",
     studyCallout: {
@@ -105,6 +110,7 @@ export const QUESTIONS: Question[] = [
     id: "utensils",
     category: "kitchen",
     question: "What do you mainly cook with?",
+    resultLabel: "Plastic utensils",
     weight: 4,
     tipKey: "utensils",
     studyCallout: {
@@ -123,6 +129,7 @@ export const QUESTIONS: Question[] = [
     id: "nonstick",
     category: "kitchen",
     question: "Do you use non-stick coated pans?",
+    resultLabel: "Non-stick pans",
     weight: 4,
     tipKey: "nonstick",
     studyCallout: {
@@ -142,6 +149,7 @@ export const QUESTIONS: Question[] = [
     id: "cuttingboard",
     category: "kitchen",
     question: "What cutting board do you use?",
+    resultLabel: "Plastic cutting board",
     weight: 10,
     tipKey: "cuttingboard",
     studyCallout: {
@@ -160,6 +168,7 @@ export const QUESTIONS: Question[] = [
     id: "diet",
     category: "food",
     question: "How much of your food comes into contact with plastic packaging or wrapping?",
+    resultLabel: "Plastic food packaging",
     weight: 7,
     tipKey: "diet",
     studyCallout: {
@@ -179,6 +188,7 @@ export const QUESTIONS: Question[] = [
     id: "seafood",
     category: "food",
     question: "How often do you eat seafood — fish, shellfish, mussels etc?",
+    resultLabel: "Seafood",
     weight: 7,
     tipKey: "seafood",
     studyCallout: {
@@ -200,6 +210,7 @@ export const QUESTIONS: Question[] = [
     id: "beer",
     category: "food",
     question: "How often do you drink beer?",
+    resultLabel: "Beer",
     weight: 2,
     tipKey: "beer",
     studyCallout: {
@@ -220,6 +231,7 @@ export const QUESTIONS: Question[] = [
     id: "salt",
     category: "food",
     question: "What type of salt do you mainly use?",
+    resultLabel: "Salt type",
     weight: 1,
     tipKey: "salt",
     studyCallout: {
@@ -240,6 +252,7 @@ export const QUESTIONS: Question[] = [
     id: "canned",
     category: "food",
     question: "How often do you eat canned food or drink canned beverages?",
+    resultLabel: "Canned food & drinks",
     weight: 4,
     tipKey: "canned",
     studyCallout: {
@@ -259,6 +272,7 @@ export const QUESTIONS: Question[] = [
     id: "clothing",
     category: "air",
     question: "What does your wardrobe mostly consist of?",
+    resultLabel: "Synthetic clothing",
     weight: 5,
     tipKey: "clothing",
     studyCallout: {
@@ -278,6 +292,7 @@ export const QUESTIONS: Question[] = [
     id: "environment",
     category: "air",
     question: "Where do you spend most of your time?",
+    resultLabel: "Living environment",
     weight: 5,
     tipKey: "environment",
     studyCallout: {
@@ -296,6 +311,7 @@ export const QUESTIONS: Question[] = [
     id: "airquality",
     category: "air",
     question: "How would you describe your home air quality habits?",
+    resultLabel: "Indoor air quality",
     weight: 5,
     tipKey: "airquality",
     studyCallout: {
