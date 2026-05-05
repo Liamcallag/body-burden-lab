@@ -163,9 +163,10 @@ export default function ResultsClient() {
           <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
             <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
             <p className="text-xs text-slate-400 mb-6">Your highest-risk categories shown tallest</p>
-            <div className="flex items-end justify-between gap-3 h-52">
+            <div className="flex items-end justify-between gap-3">
               {sorted.map((cat) => {
-                const barHeight = Math.max((cat.score / maxScore) * 100, 2);
+                const BAR_MAX_PX = 180;
+                const barHeightPx = Math.max((cat.score / maxScore) * BAR_MAX_PX, 6);
                 const pct = cat.percentage;
                 const barColor =
                   pct >= 76 ? "#dc2626" :
@@ -178,17 +179,16 @@ export default function ResultsClient() {
                   pct >= 26 ? "Moderate" :
                   "Low";
                 return (
-                  <div key={cat.category} className="flex flex-col items-center flex-1 h-full">
-                    <div className="flex flex-col items-center mb-1">
-                      <span className="text-sm font-bold tabular-nums" style={{ color: barColor }}>{pct}%</span>
-                      <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
-                    </div>
-                    <div className="w-full flex-1 bg-slate-100 rounded-t-lg overflow-hidden flex items-end">
-                      <div
-                        className="w-full rounded-t-lg transition-all duration-700"
-                        style={{ height: `${barHeight}%`, backgroundColor: barColor }}
-                      />
-                    </div>
+                  <div key={cat.category} className="flex flex-col items-center flex-1">
+                    {/* Labels above bar */}
+                    <span className="text-sm font-bold tabular-nums mb-0.5" style={{ color: barColor }}>{pct}%</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wide mb-2" style={{ color: barColor }}>{tierLabel}</span>
+                    {/* Bar */}
+                    <div
+                      className="w-full rounded-t-lg transition-all duration-700"
+                      style={{ height: barHeightPx, backgroundColor: barColor }}
+                    />
+                    {/* Category label */}
                     <div className="mt-2 text-center">
                       <span className="text-[11px] font-medium text-slate-600 leading-tight block">
                         {cat.label.split(" & ").map((part, i, arr) => (
