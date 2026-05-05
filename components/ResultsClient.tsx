@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { QUESTIONS, REDUCTION_TIPS, CATEGORY_COLORS } from "@/lib/questions";
-import { calculateScore, formatNumber, type AnswerMap, type ScoreResult } from "@/lib/scoring";
+import { calculateScore, type AnswerMap, type ScoreResult } from "@/lib/scoring";
 
 export default function ResultsClient() {
   const router = useRouter();
@@ -15,9 +15,7 @@ export default function ResultsClient() {
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [copied, setCopied] = useState(false);
-
   const [noAnswers, setNoAnswers] = useState(false);
-  const [ageData, setAgeData] = useState<{ label: string; midpoint: number; yearsTo80: number } | null>(null);
 
   useEffect(() => {
     if (sharedScore) {
@@ -32,14 +30,10 @@ export default function ResultsClient() {
     const parsed: AnswerMap = JSON.parse(raw);
     setAnswers(parsed);
     setResult(calculateScore(parsed));
-
-    const rawAge = localStorage.getItem("bbl_age");
-    if (rawAge) setAgeData(JSON.parse(rawAge));
   }, [router]);
 
   if (noAnswers) {
     if (sharedScore) {
-      const weekly = parseInt(sharedScore).toLocaleString("en-US");
       const levelColor =
         sharedLevel === "Low" ? "text-emerald-600" :
         sharedLevel === "High" ? "text-red-600" :
@@ -55,9 +49,10 @@ export default function ResultsClient() {
           <div className={`inline-block border text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6 ${levelBg} ${levelColor}`}>
             {sharedLevel} exposure
           </div>
-          <p className="text-slate-500 text-sm uppercase tracking-widest mb-2">Someone consumed</p>
-          <div className="text-6xl font-extrabold text-teal-700 tabular-nums my-3">{weekly}</div>
-          <p className="text-slate-500 text-base mb-8">microplastic particles per week</p>
+          <p className="text-slate-500 text-sm uppercase tracking-widest mb-2">Someone scored</p>
+          <div className="text-7xl font-extrabold text-teal-700 tabular-nums my-3">{sharedScore}</div>
+          <p className="text-slate-500 text-base mb-2">out of 100 on the microplastic risk index</p>
+          <p className="text-slate-400 text-sm mb-8">{sharedLevel} exposure · bodyburdenlab.com</p>
           <p className="text-slate-600 text-sm mb-6 leading-relaxed">How does your exposure compare? Take the 2-minute calculator to find out.</p>
           <Link
             href="/calculator"
@@ -71,10 +66,9 @@ export default function ResultsClient() {
     }
     return (
       <div className="max-w-md mx-auto text-center py-20">
-        <div className="text-4xl mb-4">🧪</div>
         <h1 className="text-2xl font-bold text-slate-900 mb-3">No results yet</h1>
         <p className="text-slate-500 text-sm mb-6 leading-relaxed">
-          It looks like you haven't completed the calculator yet — or you're viewing this on a different device. Take the 2-minute quiz to get your personalised microplastic exposure estimate.
+          It looks like you haven't completed the calculator yet. Take the 2-minute quiz to get your personalised microplastic risk score.
         </p>
         <Link
           href="/calculator"
@@ -94,49 +88,44 @@ export default function ResultsClient() {
     );
   }
 
-  const maxCategory = Math.max(...result.categories.map((c) => c.particles));
+  // Exposure level styling
+  const exposureLevel =
+    result.exposureTier === "Low"
+      ? { color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-100", barColor: "#10b981" }
+      : result.exposureTier === "Moderate"
+      ? { color: "text-amber-600", bg: "bg-amber-50 border-amber-100", barColor: "#f59e0b" }
+      : result.exposureTier === "High"
+      ? { color: "text-red-600", bg: "bg-red-50 border-red-100", barColor: "#ef4444" }
+      : { color: "text-red-800", bg: "bg-red-100 border-red-200", barColor: "#b91c1c" };
 
-  // Determine top sources from actual answers
-  const topSourceTips = result.topSources
-    .filter((s) => s.particles > 0)
-    .map((source) => {
-      const q = QUESTIONS.find((q) => q.category === source.category);
-      const tip = q ? REDUCTION_TIPS[q.tipKey] : null;
-      return { category: source.label, tip };
+  // Study callouts — only for questions with callout data where user selected non-zero risk
+  const activeCallouts = QUESTIONS
+    .filter((q) => {
+      if (!q.studyCallout) return false;
+      const idx = answers[q.id] ?? 0;
+      return (q.options[idx]?.riskScore ?? 0) > 0;
     })
-    .filter((t) => t.tip);
+    .map((q) => ({ question: q, callout: q.studyCallout! }));
 
-  // Top 3 individual question contributors
-  const questionContributions = QUESTIONS.map((q) => {
+  // Top 3 questions by reduction potential: (selectedRiskScore - minRiskScore) * weight
+  const reductionOpportunities = QUESTIONS.map((q) => {
     const idx = answers[q.id] ?? 0;
-    const value = q.options[idx]?.value ?? 0;
-    const minValue = Math.min(...q.options.map((o) => o.value));
-    const bestOption = q.options.reduce((a, b) => (a.value <= b.value ? a : b));
-    const saving = value - minValue;
-    return { id: q.id, label: q.question, value, saving, bestOption, category: q.category, tipKey: q.tipKey };
-  }).sort((a, b) => b.saving - a.saving);
-
-  const top3Questions = questionContributions.slice(0, 3).filter((q) => q.saving > 0);
-
-  const annualFormatted = formatNumber(result.annualTotal);
-  const weeklyFormatted = result.weeklyTotal.toLocaleString();
-
-  // Comparison bar
-  const DISPLAY_MAX = 15000;
-  const COX_BASELINE = 1875; // midpoint of Cox et al. 2019 (1,423–2,327/week)
-  const coxPct = (COX_BASELINE / DISPLAY_MAX) * 100;
-  const userPct = Math.min((result.weeklyTotal / DISPLAY_MAX) * 100, 97);
-  const multiplier = (result.weeklyTotal / COX_BASELINE).toFixed(1);
-
-  // Share text
-  const shareText = `I consume approximately ${weeklyFormatted} microplastic particles per week (${annualFormatted} per year). Find out yours:`;
+    const selectedScore = q.options[idx]?.riskScore ?? 0;
+    const minScore = Math.min(...q.options.map((o) => o.riskScore));
+    const potential = (selectedScore - minScore) * q.weight;
+    const tip = REDUCTION_TIPS[q.tipKey];
+    return { question: q, potential, tip, selectedScore };
+  })
+    .filter((r) => r.potential > 0 && r.tip)
+    .sort((a, b) => b.potential - a.potential)
+    .slice(0, 3);
 
   function handleShare() {
-    const shareUrl = `https://bodyburdenlab.com/results?score=${result!.weeklyTotal}&level=${encodeURIComponent(exposureLevel.label)}`;
+    const shareUrl = `https://bodyburdenlab.com/results?score=${result!.riskScore}&level=${encodeURIComponent(result!.exposureTier)}`;
     if (navigator.share) {
       navigator.share({
-        title: `I consume ${weeklyFormatted} microplastic particles per week`,
-        text: shareText,
+        title: `My microplastic risk score is ${result!.riskScore}/100`,
+        text: `I scored ${result!.riskScore}/100 on the microplastic risk index (${result!.exposureTier} exposure). Find out yours:`,
         url: shareUrl,
       });
     } else {
@@ -146,107 +135,49 @@ export default function ResultsClient() {
     }
   }
 
-  const exposureLevel =
-    result.annualTotal < 56000
-      ? { label: "Low", color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-100" }
-      : result.annualTotal < 150000
-      ? { label: "Moderate", color: "text-amber-600", bg: "bg-amber-50 border-amber-100" }
-      : result.annualTotal < 500000
-      ? { label: "High", color: "text-red-600", bg: "bg-red-50 border-red-100" }
-      : { label: "Very High", color: "text-red-800", bg: "bg-red-100 border-red-200" };
-
   return (
     <div className="max-w-2xl mx-auto">
+
       {/* Header */}
       <div className="text-center mb-10">
         <div className={`inline-block border text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 ${exposureLevel.bg} ${exposureLevel.color}`}>
-          {exposureLevel.label} exposure
+          {result.exposureTier} exposure
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-2">
-          You consume and inhale an estimated
+          Your microplastic risk score
         </h1>
-        <div className="text-5xl sm:text-6xl font-bold text-teal-700 my-4 tabular-nums">
-          {weeklyFormatted}
+        <div className="text-7xl sm:text-8xl font-extrabold text-teal-700 my-4 tabular-nums">
+          {result.riskScore}
         </div>
-        <p className="text-lg text-slate-500">microplastic particles per week</p>
-      </div>
-
-      {/* Comparison bar */}
-      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-        <p className="text-center text-sm text-slate-500 mb-5">
-          {parseFloat(multiplier) < 1
-            ? "Your exposure is below the estimated population baseline"
-            : <>Your exposure is <span className="font-bold text-slate-900 text-base">{multiplier}×</span> the estimated population baseline</>
-          }
+        <p className="text-lg text-slate-500">out of 100</p>
+        <p className="text-xs text-slate-400 mt-2 max-w-sm mx-auto">
+          Based on your habits across 15 questions — higher score means higher relative exposure risk
         </p>
-
-        {/* Bar */}
-        <div className="relative mb-6">
-          {/* Gradient track */}
-          <div
-            className="h-4 rounded-full"
-            style={{ background: "linear-gradient(to right, #34d399, #fbbf24 40%, #f87171)" }}
-          />
-
-          {/* Cox baseline tick + label */}
-          <div
-            className="absolute top-0 h-4 flex flex-col items-center"
-            style={{ left: `${coxPct}%`, transform: "translateX(-50%)" }}
-          >
-            <div className="w-0.5 h-4 bg-white/80" />
-          </div>
-          <div
-            className="absolute text-center"
-            style={{ left: `${coxPct}%`, transform: "translateX(-50%)", top: "1.25rem" }}
-          >
-            <div className="text-[10px] text-slate-400 leading-tight whitespace-nowrap">Population<br />baseline</div>
-          </div>
-
-          {/* User marker */}
-          <div
-            className="absolute flex flex-col items-center"
-            style={{ left: `${userPct}%`, transform: "translateX(-50%)", top: "-1.5rem" }}
-          >
-            <div className="text-[10px] font-semibold text-slate-700 whitespace-nowrap mb-0.5">You</div>
-            <div className="w-0.5 h-3 bg-slate-800" />
-            <div className="w-3.5 h-3.5 rounded-full bg-slate-900 border-2 border-white shadow-md -mt-px" />
-          </div>
-        </div>
-
-        <div className="flex justify-between text-[10px] text-slate-300 mt-7">
-          <span>Lower exposure</span>
-          <span>Higher exposure</span>
-        </div>
-        <p className="text-[10px] text-slate-300 text-center mt-1">
-          Scale capped at 15,000 particles/week · Baseline: Cox et al., Environmental Science &amp; Technology, 2019
-        </p>
-        <div className="border-t border-slate-100 mt-4 pt-4 text-center">
-          <p className="text-sm text-slate-500">
-            That's <span className="font-semibold text-slate-700">{annualFormatted} particles per year</span> —{" "}
-            {result.comparisonText} the 74,000–121,000/year calculated by Cox et al. (2019)
-          </p>
-        </div>
       </div>
 
       {/* Category breakdown */}
       <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-        <h2 className="font-semibold text-slate-900 mb-4">Exposure by source</h2>
-        <div className="flex flex-col gap-4">
+        <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
+        <p className="text-xs text-slate-400 mb-5">Each bar shows how close to maximum risk you are within that category</p>
+        <div className="flex flex-col gap-5">
           {result.categories.map((cat) => {
-            const pct = maxCategory > 0 ? (cat.particles / maxCategory) * 100 : 0;
             const color = CATEGORY_COLORS[cat.category];
+            const isVeryHigh = cat.percentage >= 75;
             return (
               <div key={cat.category}>
                 <div className="flex justify-between items-center mb-1.5">
                   <span className="text-sm font-medium text-slate-700">{cat.label}</span>
-                  <span className="text-sm text-slate-500 tabular-nums">
-                    {cat.particles.toLocaleString()} particles/week
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {isVeryHigh && (
+                      <span className="text-xs font-semibold text-red-500 uppercase tracking-wide">Very high</span>
+                    )}
+                    <span className="text-sm tabular-nums text-slate-500">{cat.percentage}%</span>
+                  </div>
                 </div>
-                <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
                   <div
-                    className="h-full rounded-full transition-all duration-500"
-                    style={{ width: `${pct}%`, backgroundColor: color }}
+                    className="h-full rounded-full transition-all duration-700"
+                    style={{ width: `${cat.percentage}%`, backgroundColor: color }}
                   />
                 </div>
               </div>
@@ -255,24 +186,45 @@ export default function ResultsClient() {
         </div>
       </div>
 
-      {/* Share card — placed high so users see it while engaged */}
+      {/* Study callouts — only shown if user has high-risk answers for those questions */}
+      {activeCallouts.length > 0 && (
+        <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+          <h2 className="font-semibold text-slate-900 mb-1">What the research says</h2>
+          <p className="text-xs text-slate-400 mb-5">For your highest-risk habits — figures from peer-reviewed studies</p>
+          <div className="flex flex-col gap-5">
+            {activeCallouts.map(({ question, callout }) => (
+              <div key={question.id} className="border-l-2 border-teal-200 pl-4">
+                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">
+                  {question.question.replace("?", "")}
+                </p>
+                <div className="flex items-baseline gap-1.5 mb-1">
+                  <span className="text-2xl font-extrabold text-slate-900 tabular-nums">{callout.value}</span>
+                  <span className="text-sm text-slate-600">{callout.unit}</span>
+                </div>
+                <p className="text-xs text-teal-700 font-medium mb-1">{callout.citation}</p>
+                <p className="text-xs text-slate-400 italic">{callout.caveat}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Share card */}
       <div className="rounded-2xl mb-6 overflow-hidden border border-slate-100 shadow-sm">
-        {/* Visual card (screenshot-friendly) */}
         <div className="bg-gradient-to-br from-teal-700 to-teal-900 px-6 pt-8 pb-6 text-white text-center">
-          <p className="text-xs uppercase tracking-widest text-teal-300 mb-3">My microplastic exposure</p>
-          <div className="text-6xl font-extrabold tabular-nums mb-1">{weeklyFormatted}</div>
-          <p className="text-teal-200 text-sm mb-3">microplastic particles per week</p>
+          <p className="text-xs uppercase tracking-widest text-teal-300 mb-3">My microplastic risk score</p>
+          <div className="text-7xl font-extrabold tabular-nums mb-1">{result.riskScore}</div>
+          <p className="text-teal-200 text-sm mb-3">out of 100</p>
           <div className={`inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 ${
-            exposureLevel.label === "Low" ? "bg-emerald-400/20 text-emerald-200" :
-            exposureLevel.label === "Moderate" ? "bg-amber-400/20 text-amber-200" :
-            exposureLevel.label === "Very High" ? "bg-red-300/30 text-red-100" :
+            result.exposureTier === "Low" ? "bg-emerald-400/20 text-emerald-200" :
+            result.exposureTier === "Moderate" ? "bg-amber-400/20 text-amber-200" :
+            result.exposureTier === "Very High" ? "bg-red-300/30 text-red-100" :
             "bg-red-400/20 text-red-200"
           }`}>
-            {exposureLevel.label} exposure
+            {result.exposureTier} exposure
           </div>
           <p className="text-xs text-teal-400">bodyburdenlab.com</p>
         </div>
-        {/* Share buttons */}
         <div className="bg-white px-6 py-4">
           <button
             onClick={handleShare}
@@ -280,122 +232,79 @@ export default function ResultsClient() {
           >
             {copied ? "Copied!" : "Share your result"}
           </button>
-          <p className="text-xs text-slate-400 text-center mt-2">Opens share menu on mobile · copies text on desktop</p>
+          <p className="text-xs text-slate-400 text-center mt-2">Opens share menu on mobile · copies link on desktop</p>
         </div>
       </div>
-
-      {/* Lifetime accumulation */}
-      {ageData && (
-        <div className="bg-slate-900 rounded-2xl p-6 mb-6 text-white text-center">
-          <p className="text-xs uppercase tracking-widest text-slate-400 mb-3">Lifetime exposure</p>
-          <div className="text-4xl sm:text-5xl font-extrabold tabular-nums text-white mb-2">
-            {formatNumber(result.weeklyTotal * 52 * ageData.yearsTo80)}
-          </div>
-          <p className="text-slate-300 text-sm mb-1">microplastic particles ingested or inhaled over your remaining lifetime</p>
-          <p className="text-xs text-slate-500 mt-3 max-w-sm mx-auto leading-relaxed">Based on the age you provided. This is total intake — the body excretes some fraction, though net tissue accumulation does occur over time.</p>
-        </div>
-      )}
 
       {/* Health context */}
       <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
         <h2 className="font-semibold text-slate-900 mb-1">What this means for your health</h2>
         <p className="text-xs text-slate-400 mb-4">Based on peer-reviewed research — detection does not prove causation</p>
         <div className="flex flex-col gap-3 text-sm text-slate-600 leading-relaxed">
-          {exposureLevel.label === "Low" && (
+          {result.exposureTier === "Low" && (
             <>
               <p>Your exposure is below the estimated average. Microplastics have been confirmed in human blood, lung tissue, and organs regardless of exposure level — there is no threshold below which accumulation stops entirely.</p>
               <p>At lower exposure levels, the current evidence does not clearly establish harm. The most important finding from lower-exposure groups is that accumulation occurs over a lifetime, making ongoing reduction worthwhile even at modest current levels.</p>
             </>
           )}
-          {exposureLevel.label === "Moderate" && (
+          {result.exposureTier === "Moderate" && (
             <>
               <p>Your exposure is around the estimated average. Research has confirmed microplastics in the blood of 77% of healthy adults (Leslie et al., 2022) and in lung tissue of 85% of patients tested (Jenner et al., 2022) — suggesting this level of exposure is consistent with detectable tissue accumulation.</p>
               <p>The most significant study at typical population exposure levels — Marfella et al. (2024) in the New England Journal of Medicine — found microplastics in the arterial plaque of 58% of cardiovascular patients and linked their presence to a 4.5× higher risk of heart attack or stroke. This was an observational study and cannot prove causation.</p>
             </>
           )}
-          {exposureLevel.label === "High" && (
+          {result.exposureTier === "High" && (
             <>
               <p>Your exposure is above the estimated average. Studies have consistently found that microplastics accumulate in human organs including the brain, lungs, liver, and arterial plaque — with concentrations that have risen measurably over just the past decade (Nihart et al., Nature Medicine, 2025).</p>
               <p>At higher exposure levels, the research suggests the most actionable risk areas are cardiovascular health and reproductive health. The Marfella et al. (2024) NEJM study found people with microplastics in arterial plaque had a 4.5× higher risk of cardiovascular events. Zhang et al. (2024) found higher polymer exposure correlated with lower sperm count and motility in 100% of male samples tested.</p>
               <p className="text-xs text-slate-400">These are observational findings. Causation has not been established. See our <a href="/methodology" className="underline hover:text-teal-700">methodology page</a> for full citations.</p>
             </>
           )}
-          {exposureLevel.label === "Very High" && (
+          {result.exposureTier === "Very High" && (
             <>
-              <p>Your exposure is more than 5× the estimated population average — placing you in the highest-exposure bracket. This is typically driven by a combination of daily microwaving in plastic, regular use of plastic tea bags, and reliance on bottled water. These are also the habits with the largest reduction potential.</p>
-              <p>At this level, the research on microplastic accumulation in human organs is most directly relevant. Nihart et al. (2025, Nature Medicine) found that microplastic concentrations in human brain tissue increased by approximately 50% between 2016 and 2024, with levels correlating positively with exposure indicators. The Marfella et al. (2024) NEJM cardiovascular findings — a 4.5× elevated risk of heart attack or stroke in patients with detectable arterial microplastics — apply with particular force at higher cumulative exposure levels.</p>
+              <p>Your score places you in the highest-exposure bracket. This is typically driven by a combination of daily microwaving in plastic, regular use of plastic tea bags, and reliance on bottled water — also the habits with the largest reduction potential.</p>
+              <p>At this level, the research on microplastic accumulation in human organs is most directly relevant. Nihart et al. (2025, Nature Medicine) found that microplastic concentrations in human brain tissue increased by approximately 50% between 2016 and 2024. The Marfella et al. (2024) NEJM cardiovascular findings — a 4.5× elevated risk of heart attack or stroke in patients with detectable arterial microplastics — apply with particular force at higher cumulative exposure levels.</p>
               <p className="text-xs text-slate-400">These are observational findings. Causation has not been established. See our <a href="/methodology" className="underline hover:text-teal-700">methodology page</a> for full citations.</p>
             </>
           )}
         </div>
       </div>
 
-      {/* Nanoplastics callout — moved here so users see it before the reduction tips */}
+      {/* Nanoplastics callout */}
       <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-6">
         <div className="flex gap-3 items-start">
           <span className="text-amber-500 text-xl flex-shrink-0">⚠</span>
-          <div className="w-full">
-            <p className="text-base font-bold text-slate-900 mb-3">This score is likely a significant underestimate</p>
-
+          <div>
+            <p className="text-base font-bold text-slate-900 mb-2">Your true exposure is likely far higher</p>
             <p className="text-sm text-slate-700 leading-relaxed mb-2">
-              <strong>What this score includes:</strong> Microplastic particles only — defined as particles ≥1 micron in size, ingested or inhaled through your specific habits.
+              This score is based on microplastic exposure only. Nanoplastic particles — far smaller, more numerous, and more likely to penetrate cells and tissues — are not included because consistent measurement data across sources does not yet exist.
             </p>
-
-            <p className="text-sm text-slate-700 leading-relaxed mb-2">
-              <strong>What it doesn't include:</strong> Nanoplastic particles (smaller than 1 micron) are not counted. They are far smaller, more numerous, and more likely to penetrate cells and tissues — but consistent measurement data across exposure sources does not yet exist.
-            </p>
-
             <p className="text-sm text-slate-600 leading-relaxed mb-2">
-              To illustrate the gap: a single plastic tea bag releases approximately <strong>11.6 billion nanoplastic particles</strong> per cup alongside the microplastics counted here — yet none of those nanoplastics appear in your score.
+              For context: microwaving polypropylene containers releases up to <strong>2.11 billion nanoplastic particles</strong> per cm² in a single 3-minute session alongside the microplastics counted here — none of those nanoplastics appear in your score.
             </p>
-
-            <p className="text-xs text-slate-400 mb-3">Hernandez et al., Environmental Science & Technology, 2019</p>
-
-            <p className="text-sm text-slate-700 leading-relaxed mb-2">
-              <strong>Microwaving and tea bags are also underrepresented:</strong> The microplastic figures used for these two sources in this calculator are based on earlier studies. A 2023 study (Hussain et al.) found microwaving polypropylene containers releases up to 4.22 million microplastic particles per square centimetre in a single session — far higher than the figures currently reflected here. These newer figures cannot yet be directly combined with other sources due to differences in measurement methodology across studies.
-            </p>
-
-            <div className="border-t border-amber-200 pt-3">
-              <p className="text-xs text-slate-500 leading-relaxed">
-                <strong className="text-slate-600">About this estimate:</strong> The figures in this calculator are derived from peer-reviewed studies and vary depending on individual consumption volumes, product types, and geographic factors not captured here. Nanoplastic exposure is not included and is likely significantly higher. Your score should be understood as a documented minimum, not a precise measurement.
-              </p>
-            </div>
+            <p className="text-xs text-slate-400">Hussain et al., Environmental Science & Technology, 2023</p>
           </div>
         </div>
       </div>
 
-      {/* Top 3 changes with savings */}
-      {top3Questions.length > 0 && (
+      {/* Top 3 changes */}
+      {reductionOpportunities.length > 0 && (
         <div className="bg-slate-900 rounded-2xl p-6 mb-6">
-          <h2 className="font-semibold text-white mb-1">Your top {top3Questions.length} changes</h2>
-          <p className="text-xs text-slate-400 mb-5">The single habits that would reduce your microplastic exposure the most — real reductions are likely even larger when nanoplastics are included</p>
+          <h2 className="font-semibold text-white mb-1">Your top {reductionOpportunities.length} changes</h2>
+          <p className="text-xs text-slate-400 mb-5">The single habits that would reduce your risk score the most</p>
           <ol className="flex flex-col gap-4">
-            {top3Questions.map((q, i) => {
-              const tip = REDUCTION_TIPS[q.tipKey];
-              return (
-                <li key={q.id} className="bg-white/5 rounded-xl p-4">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 text-white text-xs font-bold flex items-center justify-center">
-                      {i + 1}
-                    </span>
-                    <span className="text-xs font-semibold text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded-full whitespace-nowrap">
-                      −{q.saving.toLocaleString()} particles/week
-                    </span>
-                  </div>
-                  <p className="text-sm font-semibold text-white mb-1">{q.label}</p>
-                  {tip && <p className="text-xs text-slate-400 leading-relaxed">{tip}</p>}
-                </li>
-              );
-            })}
+            {reductionOpportunities.map((r, i) => (
+              <li key={r.question.id} className="bg-white/5 rounded-xl p-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 text-white text-xs font-bold flex items-center justify-center">
+                    {i + 1}
+                  </span>
+                </div>
+                <p className="text-sm font-semibold text-white mb-1">{r.question.question}</p>
+                {r.tip && <p className="text-xs text-slate-400 leading-relaxed">{r.tip}</p>}
+              </li>
+            ))}
           </ol>
-          <div className="mt-4 pt-4 border-t border-white/10 text-center">
-            <p className="text-xs text-slate-400">
-              All 3 changes together →{" "}
-              <span className="font-semibold text-teal-400">
-                −{top3Questions.reduce((sum, q) => sum + q.saving, 0).toLocaleString()} particles/week
-              </span>
-            </p>
-          </div>
         </div>
       )}
 
@@ -414,6 +323,7 @@ export default function ResultsClient() {
           Retake the calculator
         </Link>
       </div>
+
     </div>
   );
 }

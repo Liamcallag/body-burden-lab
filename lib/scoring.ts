@@ -1,4 +1,4 @@
-import { QUESTIONS, CATEGORY_LABELS, BENCHMARKS, type Category } from "./questions";
+import { QUESTIONS, CATEGORY_LABELS, type Category } from "./questions";
 
 export interface AnswerMap {
   [questionId: string]: number; // selected option index
@@ -7,78 +7,80 @@ export interface AnswerMap {
 export interface CategoryScore {
   category: Category;
   label: string;
-  particles: number;
+  score: number;      // weighted score for this category
+  maxScore: number;   // max possible weighted score for this category
+  percentage: number; // score / maxScore * 100 — used for bar width
 }
 
 export interface ScoreResult {
-  weeklyTotal: number;
-  annualTotal: number;
+  riskScore: number;   // 0–100 normalised
+  exposureTier: "Low" | "Moderate" | "High" | "Very High";
   categories: CategoryScore[];
   topSources: CategoryScore[];
-  comparisonText: string;
-  comparisonPercent: number; // relative to Cox et al. midpoint (97,500/yr)
 }
 
+export type ExposureTier = ScoreResult["exposureTier"];
+
 export function calculateScore(answers: AnswerMap): ScoreResult {
-  let weeklyTotal = 0;
-  const categoryTotals: Partial<Record<Category, number>> = {};
+  let weightedTotal = 0;
+  let maxPossible = 0;
+
+  const categoryWeightedTotals: Partial<Record<Category, number>> = {};
+  const categoryMaxTotals: Partial<Record<Category, number>> = {};
 
   for (const question of QUESTIONS) {
     const idx = answers[question.id] ?? 0;
-    const value = question.options[idx]?.value ?? 0;
-    weeklyTotal += value;
-    categoryTotals[question.category] = (categoryTotals[question.category] ?? 0) + value;
+    const riskScore = question.options[idx]?.riskScore ?? 0;
+    const maxOptionScore = Math.max(...question.options.map((o) => o.riskScore));
+
+    const contribution = riskScore * question.weight;
+    const maxContribution = maxOptionScore * question.weight;
+
+    weightedTotal += contribution;
+    maxPossible += maxContribution;
+
+    categoryWeightedTotals[question.category] =
+      (categoryWeightedTotals[question.category] ?? 0) + contribution;
+    categoryMaxTotals[question.category] =
+      (categoryMaxTotals[question.category] ?? 0) + maxContribution;
   }
 
-  const annualTotal = weeklyTotal * 52;
+  const riskScore = maxPossible > 0 ? Math.round((weightedTotal / maxPossible) * 100) : 0;
+
+  const exposureTier: ExposureTier =
+    riskScore <= 25 ? "Low" :
+    riskScore <= 50 ? "Moderate" :
+    riskScore <= 75 ? "High" :
+    "Very High";
 
   const categories: CategoryScore[] = (
-    Object.entries(categoryTotals) as [Category, number][]
+    Object.entries(categoryWeightedTotals) as [Category, number][]
   )
-    .map(([category, particles]) => ({
-      category,
-      label: CATEGORY_LABELS[category],
-      particles,
-    }))
-    .sort((a, b) => b.particles - a.particles);
+    .map(([category, score]) => {
+      const maxScore = categoryMaxTotals[category] ?? 0;
+      return {
+        category,
+        label: CATEGORY_LABELS[category],
+        score,
+        maxScore,
+        percentage: maxScore > 0 ? Math.round((score / maxScore) * 100) : 0,
+      };
+    })
+    .sort((a, b) => b.percentage - a.percentage);
 
   const topSources = categories.slice(0, 3);
 
-  // Compare to Cox et al. midpoint: ~97,500/year
-  const midpoint = 97500;
-  const comparisonPercent = Math.round((annualTotal / midpoint) * 100);
-
-  let comparisonText: string;
-  if (annualTotal < midpoint * 0.5) {
-    comparisonText = `significantly lower than`;
-  } else if (annualTotal < midpoint * 0.85) {
-    comparisonText = `lower than`;
-  } else if (annualTotal <= midpoint * 1.15) {
-    comparisonText = `roughly in line with`;
-  } else if (annualTotal <= midpoint * 2) {
-    comparisonText = `higher than`;
-  } else {
-    comparisonText = `significantly higher than`;
-  }
-
   return {
-    weeklyTotal,
-    annualTotal,
+    riskScore,
+    exposureTier,
     categories,
     topSources,
-    comparisonText,
-    comparisonPercent,
   };
 }
 
-export function formatNumber(n: number): string {
-  if (n >= 1_000_000) {
-    return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + " million";
-  }
-  if (n >= 1_000) {
-    return n.toLocaleString();
-  }
-  return n.toString();
+export function formatRiskScore(score: number): string {
+  if (score <= 25) return "Low";
+  if (score <= 50) return "Moderate";
+  if (score <= 75) return "High";
+  return "Very High";
 }
-
-export { BENCHMARKS };

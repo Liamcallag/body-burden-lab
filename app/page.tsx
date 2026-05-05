@@ -10,22 +10,22 @@ export const metadata: Metadata = {
 
 const stats = [
   {
-    figure: "28,000",
-    unit: "microplastic particles/week",
-    label: "Added to your weekly intake by microwaving food in plastic containers daily",
+    figure: "4.22 million",
+    unit: "microplastic particles per use",
+    label: "Released per cm² of polypropylene container during 3 minutes of microwave heating",
     source: "Hussain et al., Environmental Science & Technology, 2023",
   },
   {
-    figure: "7,000",
-    unit: "microplastic particles/week",
-    label: "Added to your weekly intake by using plastic tea bags once a day",
-    source: "Hernandez et al., Environmental Science & Technology, 2019",
+    figure: "2.11 billion",
+    unit: "nanoplastic particles per use",
+    label: "Released alongside microplastics from the same container in the same 3-minute microwave session",
+    source: "Hussain et al., Environmental Science & Technology, 2023",
   },
   {
-    figure: "1,730",
-    unit: "microplastic particles/week",
-    label: "Added to your weekly intake by drinking only bottled water",
-    source: "Cox et al., Environmental Science & Technology, 2019",
+    figure: "7–14 million",
+    unit: "microplastic particles per year",
+    label: "Released into food from a plastic cutting board through normal daily use",
+    source: "Environmental Science & Technology, 2023",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="py-14 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Three habits that drive the most exposure</h2>
-          <p className="text-slate-500 text-center text-sm mb-10">Microplastic particles per week — peer-reviewed figures, same unit</p>
+          <p className="text-slate-500 text-center text-sm mb-10">Per-use figures from peer-reviewed studies — not weekly estimates</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {stats.map((s) => (
               <div key={s.figure} className="border border-slate-100 rounded-xl p-6">

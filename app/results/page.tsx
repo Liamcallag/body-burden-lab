@@ -10,10 +10,9 @@ export async function generateMetadata({
   const { score, level = "Moderate" } = await searchParams;
 
   if (score) {
-    const weekly = parseInt(score).toLocaleString("en-US");
     const ogUrl = `https://www.bodyburdenlab.com/api/og-image?score=${score}&level=${encodeURIComponent(level)}`;
-    const title = `I consume ${weekly} microplastic particles per week`;
-    const description = `My microplastic exposure is ${level.toLowerCase()}. How does yours compare? Take the calculator at Body Burden Lab.`;
+    const title = `My microplastic risk score is ${score}/100 (${level} exposure)`;
+    const description = `I scored ${score}/100 on the microplastic risk index. How does yours compare? Take the calculator at Body Burden Lab.`;
     return {
       title,
       description,
