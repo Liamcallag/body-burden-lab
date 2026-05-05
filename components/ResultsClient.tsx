@@ -225,13 +225,13 @@ export default function ResultsClient() {
                         {items.length === 0 ? (
                           <p className="text-sm text-slate-400">No significant sources here based on your answers.</p>
                         ) : (
-                          <div className="flex flex-col gap-4">
+                          <div className="flex flex-col divide-y divide-slate-100">
                             {items.map(({ question, selected }) => (
-                              <div key={question.id}>
+                              <div key={question.id} className="py-3 first:pt-0 last:pb-0">
                                 <p className="text-xs font-semibold text-slate-700 leading-snug">{question.question}</p>
-                                <p className="text-xs text-slate-400 mt-0.5 mb-1">Your answer: "{selected.label}"</p>
+                                <p className="text-xs text-slate-400 mt-0.5 mb-1.5">Your answer: "{selected.label}"</p>
                                 {question.studyCallout && (
-                                  <div className="flex items-baseline justify-between gap-2 mt-1.5">
+                                  <div className="flex items-baseline justify-between gap-2">
                                     <p className="text-sm text-slate-700">
                                       <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
                                       {question.studyCallout.unit}
