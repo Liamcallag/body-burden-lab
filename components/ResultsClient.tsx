@@ -180,13 +180,11 @@ export default function ResultsClient() {
         return (
           <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
             <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
-            <p className="text-xs text-slate-400 mb-4">Tap a bar to see what's driving it</p>
+            <p className="text-xs text-slate-400 mb-5">Tap a row to see what's driving it</p>
 
-            {/* Chart — items-end aligns all bars to the same baseline */}
-            <div className="flex items-end justify-between gap-3">
+            <div className="flex flex-col gap-1">
               {sorted.map((cat) => {
                 const normPct = Math.round((cat.score / globalMaxPossible) * 100);
-                const barHeightPx = Math.max((normPct / 100) * BAR_MAX_PX, 8);
                 const barColor =
                   normPct >= 76 ? "#dc2626" :
                   normPct >= 51 ? "#f97316" :
@@ -198,77 +196,60 @@ export default function ResultsClient() {
                   normPct >= 26 ? "Moderate" :
                   "Low";
                 const isExpanded = expandedCategory === cat.category;
+                const items = isExpanded ? categoryBreakdown(cat.category) : [];
+
                 return (
-                  <div
-                    key={cat.category}
-                    className="relative flex flex-col items-center flex-1 cursor-pointer group"
-                    onClick={() => setExpandedCategory(isExpanded ? null : cat.category)}
-                  >
-                    {/* Label sits directly above its own bar */}
-                    <div className="flex flex-col items-center mb-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wide" style={{ color: barColor }}>{tierLabel}</span>
-                    </div>
-                    {/* Bar */}
+                  <div key={cat.category}>
                     <div
-                      className="w-full rounded-t-lg transition-all duration-700 group-hover:opacity-80"
-                      style={{
-                        height: barHeightPx,
-                        backgroundColor: barColor,
-                        outline: isExpanded ? `2px solid ${barColor}` : "none",
-                        outlineOffset: 2,
-                      }}
-                    />
-                    {/* Category label */}
-                    <div className="mt-2 text-center">
-                      <span className="text-[11px] font-medium text-slate-600 leading-tight block">
-                        {cat.label.split(" & ").map((part, i, arr) => (
-                          <span key={i}>{part}{i < arr.length - 1 ? " &" : ""}<br /></span>
-                        ))}
-                      </span>
+                      className="group cursor-pointer rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors"
+                      onClick={() => setExpandedCategory(isExpanded ? null : cat.category)}
+                    >
+                      {/* Label row */}
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm font-semibold text-slate-800">{cat.label}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: barColor }}>{tierLabel}</span>
+                          <span className="text-slate-300 text-xs">{isExpanded ? "▲" : "▼"}</span>
+                        </div>
+                      </div>
+                      {/* Bar */}
+                      <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div
+                          className="h-full rounded-full transition-all duration-700"
+                          style={{ width: `${Math.max(normPct, 1)}%`, backgroundColor: barColor }}
+                        />
+                      </div>
                     </div>
+
+                    {/* Expanded breakdown */}
+                    {isExpanded && (
+                      <div className="mx-4 mb-3 mt-1 border border-slate-100 rounded-xl p-4 bg-slate-50">
+                        {items.length === 0 ? (
+                          <p className="text-sm text-slate-400">No significant sources here based on your answers.</p>
+                        ) : (
+                          <div className="flex flex-col gap-4">
+                            {items.map(({ question, selected }) => (
+                              <div key={question.id}>
+                                <p className="text-xs font-semibold text-slate-700 leading-snug">{question.question}</p>
+                                <p className="text-xs text-slate-400 mt-0.5 mb-1">Your answer: "{selected.label}"</p>
+                                {question.studyCallout && (
+                                  <div className="border-l-2 pl-3 mt-2" style={{ borderColor: barColor }}>
+                                    <span className="text-base font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                                    <span className="text-xs text-slate-600">{question.studyCallout.unit}</span>
+                                    <p className="text-[10px] font-medium mt-0.5" style={{ color: barColor }}>{question.studyCallout.citation}</p>
+                                    <p className="text-[10px] text-slate-400 italic">{question.studyCallout.caveat}</p>
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 );
               })}
             </div>
-
-            {/* Expanded breakdown */}
-            {expandedCategory && (() => {
-              const items = categoryBreakdown(expandedCategory);
-              const cat = sorted.find((c) => c.category === expandedCategory)!;
-              const catNormPct = Math.round((cat.score / globalMaxPossible) * 100);
-              const barColor =
-                catNormPct >= 76 ? "#dc2626" :
-                catNormPct >= 51 ? "#f97316" :
-                catNormPct >= 26 ? "#f59e0b" :
-                "#10b981";
-              return (
-                <div className="mt-5 border-t border-slate-100 pt-4">
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">
-                    {cat.label} — what's contributing
-                  </p>
-                  {items.length === 0 ? (
-                    <p className="text-sm text-slate-400">No significant sources in this category based on your answers.</p>
-                  ) : (
-                    <div className="flex flex-col gap-4">
-                      {items.map(({ question, selected }) => (
-                        <div key={question.id}>
-                          <p className="text-xs font-medium text-slate-700 leading-snug">{question.question}</p>
-                          <p className="text-xs text-slate-400 mt-0.5 mb-1">Your answer: "{selected.label}"</p>
-                          {question.studyCallout && (
-                            <div className="bg-slate-50 rounded-lg px-3 py-2 mt-1">
-                              <span className="text-base font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                              <span className="text-xs text-slate-600">{question.studyCallout.unit}</span>
-                              <p className="text-[10px] text-teal-700 font-medium mt-0.5">{question.studyCallout.citation}</p>
-                              <p className="text-[10px] text-slate-400 italic">{question.studyCallout.caveat}</p>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })()}
           </div>
         );
       })()}
