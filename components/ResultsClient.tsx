@@ -157,8 +157,8 @@ export default function ResultsClient() {
 
       {/* Category breakdown — vertical bar chart */}
       {(() => {
+        // Sort by absolute score so highest-contributing category appears first
         const sorted = [...result.categories].sort((a, b) => b.score - a.score);
-        const maxScore = Math.max(...sorted.map((c) => c.score), 1);
         const BAR_MAX_PX = 180;
         const LABEL_AREA_PX = 44; // fixed height above all bars for labels
 
@@ -182,17 +182,19 @@ export default function ResultsClient() {
             {/* Chart — items-end aligns all bars to the same baseline */}
             <div className="flex items-end justify-between gap-3">
               {sorted.map((cat) => {
-                const relPct = Math.round((cat.score / maxScore) * 100);
-                const barHeightPx = Math.max((relPct / 100) * BAR_MAX_PX, 8);
+                // Height based on cat.percentage — how much of this category's
+                // maximum possible risk the user actually scored
+                const pct = cat.percentage;
+                const barHeightPx = Math.max((pct / 100) * BAR_MAX_PX, 8);
                 const barColor =
-                  relPct >= 76 ? "#dc2626" :
-                  relPct >= 51 ? "#f97316" :
-                  relPct >= 26 ? "#f59e0b" :
+                  pct >= 76 ? "#dc2626" :
+                  pct >= 51 ? "#f97316" :
+                  pct >= 26 ? "#f59e0b" :
                   "#10b981";
                 const tierLabel =
-                  relPct >= 76 ? "Very high" :
-                  relPct >= 51 ? "High" :
-                  relPct >= 26 ? "Moderate" :
+                  pct >= 76 ? "Very high" :
+                  pct >= 51 ? "High" :
+                  pct >= 26 ? "Moderate" :
                   "Low";
                 const isExpanded = expandedCategory === cat.category;
                 return (
@@ -233,9 +235,9 @@ export default function ResultsClient() {
               const items = categoryBreakdown(expandedCategory);
               const cat = sorted.find((c) => c.category === expandedCategory)!;
               const barColor =
-                Math.round((cat.score / maxScore) * 100) >= 76 ? "#dc2626" :
-                Math.round((cat.score / maxScore) * 100) >= 51 ? "#f97316" :
-                Math.round((cat.score / maxScore) * 100) >= 26 ? "#f59e0b" :
+                cat.percentage >= 76 ? "#dc2626" :
+                cat.percentage >= 51 ? "#f97316" :
+                cat.percentage >= 26 ? "#f59e0b" :
                 "#10b981";
               return (
                 <div className="mt-5 border-t border-slate-100 pt-4">
