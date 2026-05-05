@@ -166,22 +166,23 @@ export default function ResultsClient() {
             <div className="flex items-end justify-between gap-3">
               {sorted.map((cat) => {
                 const BAR_MAX_PX = 180;
-                const barHeightPx = Math.max((cat.score / maxScore) * BAR_MAX_PX, 6);
-                const pct = cat.percentage;
+                // Use a single consistent metric for height, colour, and label
+                const relPct = Math.round((cat.score / maxScore) * 100);
+                const barHeightPx = Math.max((relPct / 100) * BAR_MAX_PX, 6);
                 const barColor =
-                  pct >= 76 ? "#dc2626" :
-                  pct >= 51 ? "#f97316" :
-                  pct >= 26 ? "#f59e0b" :
+                  relPct >= 76 ? "#dc2626" :
+                  relPct >= 51 ? "#f97316" :
+                  relPct >= 26 ? "#f59e0b" :
                   "#10b981";
                 const tierLabel =
-                  pct >= 76 ? "Very high" :
-                  pct >= 51 ? "High" :
-                  pct >= 26 ? "Moderate" :
+                  relPct >= 76 ? "Very high" :
+                  relPct >= 51 ? "High" :
+                  relPct >= 26 ? "Moderate" :
                   "Low";
                 return (
                   <div key={cat.category} className="flex flex-col items-center flex-1">
                     {/* Labels above bar */}
-                    <span className="text-sm font-bold tabular-nums mb-0.5" style={{ color: barColor }}>{pct}%</span>
+                    <span className="text-sm font-bold tabular-nums mb-0.5" style={{ color: barColor }}>{relPct}%</span>
                     <span className="text-[10px] font-semibold uppercase tracking-wide mb-2" style={{ color: barColor }}>{tierLabel}</span>
                     {/* Bar */}
                     <div
