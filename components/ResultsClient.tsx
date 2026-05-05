@@ -16,7 +16,6 @@ export default function ResultsClient() {
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [copied, setCopied] = useState(false);
   const [noAnswers, setNoAnswers] = useState(false);
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
   useEffect(() => {
     if (sharedScore) {
@@ -99,15 +98,6 @@ export default function ResultsClient() {
       ? { color: "text-red-600", bg: "bg-red-50 border-red-100", barColor: "#ef4444" }
       : { color: "text-red-800", bg: "bg-red-100 border-red-200", barColor: "#b91c1c" };
 
-  // Study callouts — only for questions with callout data where user selected non-zero risk
-  const activeCallouts = QUESTIONS
-    .filter((q) => {
-      if (!q.studyCallout) return false;
-      const idx = answers[q.id] ?? 0;
-      return (q.options[idx]?.riskScore ?? 0) > 0;
-    })
-    .map((q) => ({ question: q, callout: q.studyCallout! }));
-
   // Top 3 questions by reduction potential: (selectedRiskScore - minRiskScore) * weight
   const reductionOpportunities = QUESTIONS.map((q) => {
     const idx = answers[q.id] ?? 0;
@@ -155,96 +145,74 @@ export default function ResultsClient() {
         </p>
       </div>
 
-      {/* Category breakdown — vertical bar chart */}
+      {/* Ranked question contributions */}
       {(() => {
-        const sorted = [...result.categories].sort((a, b) => b.score - a.score);
-        // Bar width = this category's share of the user's own total weighted score.
-        // Answers "where is your exposure coming from?" — always proportionally honest.
-        const totalScore = result.categories.reduce((sum, c) => sum + c.score, 0) || 1;
+        const ranked = QUESTIONS.map((q) => {
+          const idx = answers[q.id] ?? 0;
+          const selected = q.options[idx];
+          const contribution = (selected?.riskScore ?? 0) * q.weight;
+          const maxContribution = Math.max(...q.options.map((o) => o.riskScore)) * q.weight;
+          return { question: q, selected, contribution, maxContribution };
+        })
+          .filter((r) => r.contribution > 0)
+          .sort((a, b) => b.contribution - a.contribution);
 
-        // Per-category question breakdown
-        const categoryBreakdown = (categoryId: string) => {
-          const qs = QUESTIONS.filter((q) => q.category === categoryId);
-          return qs.map((q) => {
-            const idx = answers[q.id] ?? 0;
-            const selected = q.options[idx];
-            return { question: q, selected };
-          });
-        };
+        const topContribution = ranked[0]?.contribution || 1;
+
+        if (ranked.length === 0) return null;
 
         return (
           <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-            <h2 className="font-semibold text-slate-900 mb-1">Exposure by category</h2>
-            <p className="text-xs text-slate-400 mb-5">Share of your total exposure · tap a row to see what's driving it</p>
-
-            <div className="flex flex-col gap-1">
-              {sorted.map((cat) => {
-                const normPct = Math.round((cat.score / totalScore) * 100);
+            <h2 className="font-semibold text-slate-900 mb-1">What's driving your score</h2>
+            <p className="text-xs text-slate-400 mb-5">Your habits ranked by their contribution — highest first</p>
+            <div className="flex flex-col divide-y divide-slate-100">
+              {ranked.map(({ question, selected, contribution }, i) => {
+                const barPct = Math.round((contribution / topContribution) * 100);
                 const barColor =
-                  normPct >= 50 ? "#f97316" :
-                  normPct >= 30 ? "#f59e0b" :
-                  "#10b981";
-                const isExpanded = expandedCategory === cat.category;
-                const items = isExpanded ? categoryBreakdown(cat.category) : [];
-
+                  i === 0 ? "#dc2626" :
+                  i === 1 ? "#f97316" :
+                  i === 2 ? "#f59e0b" :
+                  "#94a3b8";
                 return (
-                  <div key={cat.category}>
-                    <div
-                      className="group cursor-pointer rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors"
-                      onClick={() => setExpandedCategory(isExpanded ? null : cat.category)}
-                    >
-                      {/* Label row */}
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-semibold text-slate-800">{cat.label}</span>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-semibold tabular-nums" style={{ color: barColor }}>{normPct}%</span>
-                          <span className="text-slate-300 text-xs">{isExpanded ? "▲" : "▼"}</span>
+                  <div key={question.id} className="py-4 first:pt-0 last:pb-0">
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <div className="flex items-start gap-3 min-w-0">
+                        <span className="flex-shrink-0 text-xs font-bold tabular-nums text-slate-300 w-4 mt-0.5">
+                          {i + 1}
+                        </span>
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-slate-800 leading-snug">{question.question}</p>
+                          <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
                         </div>
                       </div>
-                      {/* Bar */}
-                      <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                    </div>
+                    {/* Bar */}
+                    <div className="ml-7 mb-2">
+                      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all duration-700"
-                          style={{ width: `${Math.max(normPct, 1)}%`, backgroundColor: barColor }}
+                          style={{ width: `${Math.max(barPct, 2)}%`, backgroundColor: barColor }}
                         />
                       </div>
                     </div>
-
-                    {/* Expanded breakdown */}
-                    {isExpanded && (
-                      <div className="mx-4 mb-3 mt-1 border border-slate-100 rounded-xl p-4 bg-slate-50">
-                        {items.length === 0 ? (
-                          <p className="text-sm text-slate-400">No significant sources here based on your answers.</p>
+                    {/* Study callout */}
+                    {question.studyCallout && (
+                      <div className="ml-7 flex items-baseline justify-between gap-2">
+                        <p className="text-sm text-slate-600">
+                          <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                          {question.studyCallout.unit}
+                        </p>
+                        {question.studyCallout.url ? (
+                          <a
+                            href={question.studyCallout.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
+                          >
+                            View study →
+                          </a>
                         ) : (
-                          <div className="flex flex-col divide-y divide-slate-100">
-                            {items.map(({ question, selected }) => (
-                              <div key={question.id} className="py-3 first:pt-0 last:pb-0">
-                                <p className="text-xs font-semibold text-slate-700 leading-snug">{question.question}</p>
-                                <p className="text-xs text-slate-400 mt-0.5 mb-1.5">Your answer: "{selected.label}"</p>
-                                {question.studyCallout && (
-                                  <div className="flex items-baseline justify-between gap-2">
-                                    <p className="text-sm text-slate-700">
-                                      <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                                      {question.studyCallout.unit}
-                                    </p>
-                                    {question.studyCallout.url ? (
-                                      <a
-                                        href={question.studyCallout.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
-                                        onClick={(e) => e.stopPropagation()}
-                                      >
-                                        View study →
-                                      </a>
-                                    ) : (
-                                      <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
-                                    )}
-                                  </div>
-                                )}
-                              </div>
-                            ))}
-                          </div>
+                          <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
                         )}
                       </div>
                     )}
@@ -255,29 +223,6 @@ export default function ResultsClient() {
           </div>
         );
       })()}
-
-      {/* Study callouts — only shown if user has high-risk answers for those questions */}
-      {activeCallouts.length > 0 && (
-        <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-          <h2 className="font-semibold text-slate-900 mb-1">What the research says</h2>
-          <p className="text-xs text-slate-400 mb-5">For your highest-risk habits — figures from peer-reviewed studies</p>
-          <div className="flex flex-col gap-5">
-            {activeCallouts.map(({ question, callout }) => (
-              <div key={question.id} className="border-l-2 border-teal-200 pl-4">
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">
-                  {question.question.replace("?", "")}
-                </p>
-                <div className="flex items-baseline gap-1.5 mb-1">
-                  <span className="text-2xl font-extrabold text-slate-900 tabular-nums">{callout.value}</span>
-                  <span className="text-sm text-slate-600">{callout.unit}</span>
-                </div>
-                <p className="text-xs text-teal-700 font-medium mb-1">{callout.citation}</p>
-                <p className="text-xs text-slate-400 italic">{callout.caveat}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Share card */}
       <div className="rounded-2xl mb-6 overflow-hidden border border-slate-100 shadow-sm">
