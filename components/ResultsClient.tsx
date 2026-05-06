@@ -36,16 +36,14 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   tierColor: string;
   colorsMap: Record<string, string>;
 }) {
-  const cx = 200, cy = 200, r = 162, holeR = 108;
+  const cx = 200, cy = 200, r = 168, holeR = 96;
   let angle = -Math.PI / 2;
 
   const slices = groups.map(({ cat, catPct }) => {
     const slice = (catPct / 100) * 2 * Math.PI;
-    // Tiny gap between slices for separation
-    const gap = 0.025;
-    const start = angle + gap / 2;
-    const end = angle + slice - gap / 2;
-    angle += slice;
+    const start = angle;
+    const end = angle + slice;
+    angle = end;
 
     const x1 = cx + r * Math.cos(start);
     const y1 = cy + r * Math.sin(start);
@@ -57,13 +55,14 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
     const iy2 = cy + holeR * Math.sin(start);
     const large = slice > Math.PI ? 1 : 0;
 
-    const midAngle = (angle - slice / 2);
+    const midAngle = start + slice / 2;
     const labelR = (r + holeR) / 2;
     const lx = cx + labelR * Math.cos(midAngle);
     const ly = cy + labelR * Math.sin(midAngle);
 
-    const popX = Math.cos(midAngle) * 16;
-    const popY = Math.sin(midAngle) * 16;
+    // Pop-out direction vector (unit vector × 18px)
+    const popX = Math.cos(midAngle) * 18;
+    const popY = Math.sin(midAngle) * 18;
 
     const d = [
       `M ${x1} ${y1}`,
@@ -78,9 +77,6 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
 
   return (
     <svg viewBox="0 0 400 400" className="w-full max-w-[320px] sm:max-w-[380px] mx-auto">
-      {/* Subtle background ring */}
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#e2e8f0" strokeWidth="2" />
-
       {slices.map(({ cat, catPct, d, lx, ly, popX, popY, color }) => {
         const isSelected = selected === cat;
         const dimmed = selected !== null && !isSelected;
@@ -91,16 +87,15 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
             style={{
               cursor: "pointer",
               transform: isSelected ? `translate(${popX}px, ${popY}px)` : "translate(0px, 0px)",
-              transition: "transform 0.4s cubic-bezier(0.34,1.56,0.64,1)",
+              transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1)",
             }}
           >
             <path
               d={d}
               fill={color}
               style={{
-                opacity: dimmed ? 0.25 : 1,
-                transition: "opacity 0.3s ease",
-                filter: isSelected ? `drop-shadow(0 4px 12px ${color}55)` : "none",
+                opacity: dimmed ? 0.3 : 1,
+                transition: "opacity 0.25s ease",
               }}
             />
             {catPct >= 5 && (
@@ -109,10 +104,10 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
                 y={ly}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fontSize="18"
+                fontSize="20"
                 fontWeight="800"
                 fill="white"
-                style={{ pointerEvents: "none", opacity: dimmed ? 0.2 : 1, transition: "opacity 0.3s ease" }}
+                style={{ pointerEvents: "none", opacity: dimmed ? 0.35 : 1, transition: "opacity 0.25s ease" }}
               >
                 {catPct}%
               </text>
@@ -121,31 +116,28 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
         );
       })}
 
-      {/* Center hole — white fill */}
-      <circle cx={cx} cy={cy} r={holeR - 1} fill="white" />
-
       {/* Center content */}
       {selected ? (() => {
         const g = groups.find(g => g.cat === selected);
         return g ? (
           <>
-            <text x={cx} y={cy - 14} textAnchor="middle" fontSize="11" fill="#94a3b8" fontWeight="600" letterSpacing="1">
-              {CATEGORY_LABELS[selected].toUpperCase()}
+            <text x={cx} y={cy - 10} textAnchor="middle" fontSize="12" fill="#94a3b8" fontWeight="500">
+              {CATEGORY_LABELS[selected]}
             </text>
-            <text x={cx} y={cy + 20} textAnchor="middle" fontSize="38" fill={colorsMap[selected]} fontWeight="900">
+            <text x={cx} y={cy + 22} textAnchor="middle" fontSize="32" fill={colorsMap[selected]} fontWeight="800">
               {g.catPct}%
             </text>
           </>
         ) : null;
       })() : (
         <>
-          <text x={cx} y={cy - 28} textAnchor="middle" fontSize="9.5" fill="#94a3b8" fontWeight="700" letterSpacing="2">
+          <text x={cx} y={cy - 26} textAnchor="middle" fontSize="10" fill="#94a3b8" fontWeight="600" letterSpacing="1.5">
             YOUR SCORE
           </text>
-          <text x={cx} y={cy + 18} textAnchor="middle" fontSize="62" fill={tierColor} fontWeight="900">
+          <text x={cx} y={cy + 22} textAnchor="middle" fontSize="56" fill={tierColor} fontWeight="800">
             {score}
           </text>
-          <text x={cx} y={cy + 42} textAnchor="middle" fontSize="10" fill={tierColor} fontWeight="700" letterSpacing="1.5" opacity="0.8">
+          <text x={cx} y={cy + 44} textAnchor="middle" fontSize="11" fill={tierColor} fontWeight="700" letterSpacing="1">
             {tier.toUpperCase()}
           </text>
         </>
