@@ -203,21 +203,11 @@ export default function ResultsClient() {
                             <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
                             {question.studyCallout.unit}
                           </p>
-                          {question.studyCallout.severityTier && (() => {
-                            const tier = question.studyCallout!.severityTier!;
-                            const tierStyles: Record<number, { bg: string; text: string; label: string }> = {
-                              1: { bg: "bg-slate-100", text: "text-slate-500", label: "Low" },
-                              2: { bg: "bg-amber-50", text: "text-amber-600", label: "Moderate" },
-                              3: { bg: "bg-orange-50", text: "text-orange-600", label: "High" },
-                              4: { bg: "bg-red-50", text: "text-red-600", label: "Extreme" },
-                            };
-                            const s = tierStyles[tier];
-                            return (
-                              <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${s.bg} ${s.text}`}>
-                                {s.label}
-                              </span>
-                            );
-                          })()}
+                          {question.studyCallout.unitContext && (
+                            <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
+                              {question.studyCallout.unitContext}
+                            </span>
+                          )}
                         </div>
                         {question.studyCallout.url ? (
                           <a
