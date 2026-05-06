@@ -6,6 +6,7 @@ export interface StudyCallout {
   citation: string;     // e.g. "Hussain et al., ES&T, 2023"
   caveat: string;       // shown on methodology page, not in main UI
   url?: string;         // link to the study
+  severityTier?: 1 | 2 | 3 | 4; // 1=Low(<1K), 2=Moderate(1K-999K), 3=High(1M-999M), 4=Extreme(1B+)
 }
 
 export interface Option {
@@ -38,6 +39,7 @@ export const QUESTIONS: Question[] = [
       citation: "Mason et al., Frontiers in Chemistry, 2018",
       caveat: "Average across 11 brands — varies significantly by brand and bottle type",
       url: "https://www.frontiersin.org/articles/10.3389/fchem.2018.00407/full",
+      severityTier: 1,
     },
     options: [
       { label: "Only bottled water", riskScore: 10 },
@@ -60,6 +62,7 @@ export const QUESTIONS: Question[] = [
       citation: "Hernandez et al., Environmental Science & Technology, 2019",
       caveat: "Includes particles across a wide size range — methodology disputed, likely an overcount of true microplastics",
       url: "https://pubs.acs.org/doi/10.1021/acs.est.9b02540",
+      severityTier: 4,
     },
     options: [
       { label: "Yes, most days", riskScore: 10 },
@@ -80,6 +83,7 @@ export const QUESTIONS: Question[] = [
       citation: "Hussain et al., Environmental Science & Technology, 2023",
       caveat: "Peak measurement under 3-min heating using food simulants · real food may release more",
       url: "https://pubs.acs.org/doi/10.1021/acs.est.3c01942",
+      severityTier: 3,
     },
     options: [
       { label: "Yes, several times a week or more", riskScore: 10 },
@@ -99,6 +103,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per cup",
       citation: "Estimated from polyethylene cup lining studies",
       caveat: "Peer-reviewed data on this specific source is limited — figure is an estimate",
+      severityTier: 2,
     },
     options: [
       { label: "Yes, most days", riskScore: 10 },
@@ -118,6 +123,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per year from plastic utensil use",
       citation: "Estimated from plastic leaching studies",
       caveat: "Direct peer-reviewed data on utensil MPs is limited — figure is a conservative estimate",
+      severityTier: 2,
     },
     options: [
       { label: "Mostly plastic utensils — spatulas, spoons etc", riskScore: 10 },
@@ -137,6 +143,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per year from a damaged non-stick pan",
       citation: "Kjellin et al., Science of the Total Environment, 2023",
       caveat: "Based on scratched or worn PTFE coating — newer undamaged pans release significantly fewer particles",
+      severityTier: 3,
     },
     options: [
       { label: "Yes, regularly — some are old or scratched", riskScore: 10 },
@@ -157,6 +164,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per year",
       citation: "Environmental Science & Technology, 2023",
       caveat: "Varies by board age, material type and usage intensity",
+      severityTier: 3,
     },
     options: [
       { label: "Plastic, use it regularly", riskScore: 10 },
@@ -177,6 +185,7 @@ export const QUESTIONS: Question[] = [
       citation: "Cox et al., Environmental Science & Technology, 2019",
       caveat: "Total dietary estimate across all food contact sources — packaging is one component of this figure",
       url: "https://pubs.acs.org/doi/10.1021/acs.est.9b01517",
+      severityTier: 2,
     },
     options: [
       { label: "Most of it — cling film, plastic trays, canned food, plastic bags", riskScore: 10 },
@@ -197,6 +206,7 @@ export const QUESTIONS: Question[] = [
       citation: "Van Cauwenberghe & Janssen, Environmental Pollution, 2014",
       caveat: "Shellfish are significantly higher than finfish — MPs accumulate in digestive tissue that is consumed whole",
       url: "https://www.sciencedirect.com/science/article/pii/S0269749114000815",
+      severityTier: 1,
     },
     options: [
       { label: "Daily", riskScore: 10 },
@@ -219,6 +229,7 @@ export const QUESTIONS: Question[] = [
       citation: "Schymanski et al., Food Additives & Contaminants, 2018",
       caveat: "Measured across 14 brands — attributed to airborne deposition during the brewing process",
       url: "https://www.tandfonline.com/doi/full/10.1080/19440049.2018.1430186",
+      severityTier: 1,
     },
     options: [
       { label: "Daily", riskScore: 10 },
@@ -240,6 +251,7 @@ export const QUESTIONS: Question[] = [
       citation: "Karami et al., Scientific Reports, 2017",
       caveat: "Sea salt consistently shows highest contamination — rock and mined salts are significantly lower",
       url: "https://www.nature.com/articles/srep46173",
+      severityTier: 1,
     },
     options: [
       { label: "Sea salt", riskScore: 10 },
@@ -260,6 +272,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per litre from can linings",
       citation: "Estimated from food contact material migration studies",
       caveat: "Specific particle count data is limited — epoxy can linings are a documented source, particularly for acidic foods",
+      severityTier: 2,
     },
     options: [
       { label: "Daily", riskScore: 10 },
@@ -281,6 +294,7 @@ export const QUESTIONS: Question[] = [
       citation: "Browne et al., Environmental Science & Technology, 2011",
       caveat: "Measures fibres entering wastewater — airborne inhalation from wearing synthetic clothing adds additional exposure not yet well quantified",
       url: "https://pubs.acs.org/doi/10.1021/es201811s",
+      severityTier: 2,
     },
     options: [
       { label: "Mostly synthetic — polyester, nylon, acrylic", riskScore: 10 },
@@ -300,6 +314,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per cubic metre of urban air",
       citation: "Dris et al., Environmental Chemistry, 2017",
       caveat: "Measured in Paris — varies significantly by city, season and proximity to industrial areas",
+      severityTier: 1,
     },
     options: [
       { label: "Dense city centre", riskScore: 10 },
@@ -319,6 +334,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per cubic metre of indoor air",
       citation: "Dris et al., Environmental Pollution, 2017",
       caveat: "Indoor air can exceed outdoor levels due to synthetic textiles, carpets and furnishings — HEPA filtration significantly reduces this",
+      severityTier: 2,
     },
     options: [
       { label: "No air filter, carpet floors, rarely vacuum", riskScore: 10 },
