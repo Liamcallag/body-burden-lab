@@ -156,7 +156,7 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
   const isTopRisk = color === "#dc2626";
 
   return (
-    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-lg" style={{ background: "#f8f9fa", animation: "fadeSlideIn 0.25s ease" }}>
+    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-lg" style={{ background: "white", animation: "fadeSlideIn 0.25s ease" }}>
       {/* Coloured header bar */}
       <div className="px-5 pt-5 pb-4" style={{ background: `linear-gradient(135deg, ${color}18 0%, ${color}08 100%)`, borderBottom: `2px solid ${color}30` }}>
         <div className="flex items-start justify-between gap-3">
@@ -250,7 +250,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
           <div
             className="flex flex-col items-center flex-shrink-0"
             style={{
-              width: expanded ? "360px" : "100%",
+              width: expanded ? "280px" : "100%",
               transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
             }}
           >
@@ -476,7 +476,7 @@ export default function ResultsClient() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-3xl mx-auto">
 
       {/* Minimal page label */}
       <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">
