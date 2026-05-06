@@ -76,7 +76,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   });
 
   return (
-    <svg viewBox="0 0 400 400" className="w-full max-w-[320px] sm:max-w-[480px] mx-auto">
+    <svg viewBox="0 0 400 400" className="w-full max-w-[320px] sm:max-w-[380px] mx-auto">
       {slices.map(({ cat, catPct, d, lx, ly, popX, popY, color }) => {
         const isSelected = selected === cat;
         const dimmed = selected !== null && !isSelected;
