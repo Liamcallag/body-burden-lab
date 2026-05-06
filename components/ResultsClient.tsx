@@ -459,7 +459,82 @@ export default function ResultsClient() {
         );
       })()}
 
-      {/* Share card */}
+      {/* ── Top 3 changes ── */}
+      {reductionOpportunities.length > 0 && (
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-slate-900 mb-1">Your top changes</h2>
+          <p className="text-sm text-slate-400 mb-5">The habits that would cut your score the most</p>
+          <ol className="flex flex-col gap-3">
+            {reductionOpportunities.map((r, i) => {
+              const productSwap: Record<string, { label: string; url: string }> = {
+                microwave: { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
+                tea:       { label: "Shop loose leaf tea", url: "https://www.amazon.com/s?k=loose+leaf+tea+infuser" },
+                water:     { label: "Shop water filters", url: "https://www.amazon.com/s?k=clearly+filtered+water+pitcher" },
+                nonstick:  { label: "Shop stainless pans", url: "https://www.amazon.com/s?k=stainless+steel+frying+pan" },
+                cuttingboard: { label: "Shop wood boards", url: "https://www.amazon.com/s?k=bamboo+cutting+board" },
+                utensils:  { label: "Shop wood utensils", url: "https://www.amazon.com/s?k=wooden+cooking+utensils" },
+                hotdrinks: { label: "Shop reusable cups", url: "https://www.amazon.com/s?k=reusable+travel+coffee+cup" },
+                airquality:{ label: "Shop HEPA filters", url: "https://www.amazon.com/s?k=hepa+air+purifier" },
+                clothing:  { label: "Shop laundry bags", url: "https://www.amazon.com/s?k=microfiber+laundry+bag+washing" },
+              };
+              const swap = productSwap[r.question.id];
+              return (
+                <li key={r.question.id} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                  <div className="flex items-start gap-4 p-5">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-600 text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                      {i + 1}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-bold text-slate-900 mb-1">{r.question.question}</p>
+                      {r.tip && <p className="text-sm text-slate-500 leading-relaxed">{r.tip}</p>}
+                    </div>
+                  </div>
+                  {swap && (
+                    <div className="px-5 pb-4 pl-16">
+                      <a
+                        href={swap.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-700 bg-teal-50 border border-teal-200 px-3 py-1.5 rounded-full hover:bg-teal-100 transition-colors"
+                      >
+                        {swap.label} →
+                      </a>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      )}
+
+      {/* ── What the science says (scannable stats) ── */}
+      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+        <h2 className="font-bold text-slate-900 mb-1">What the science says</h2>
+        <p className="text-xs text-slate-400 mb-5">Observational findings — detection does not prove causation</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="bg-slate-50 rounded-xl p-4">
+            <p className="text-2xl font-extrabold text-slate-900 tabular-nums mb-1">77%</p>
+            <p className="text-xs text-slate-600 leading-snug">of healthy adults tested had microplastics detected in their blood</p>
+            <p className="text-[10px] text-slate-400 mt-2">Leslie et al., 2022</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4">
+            <p className="text-2xl font-extrabold text-slate-900 tabular-nums mb-1">4.5×</p>
+            <p className="text-xs text-slate-600 leading-snug">higher risk of heart attack or stroke in patients with microplastics in arterial plaque</p>
+            <p className="text-[10px] text-slate-400 mt-2">Marfella et al., NEJM 2024</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4">
+            <p className="text-2xl font-extrabold text-slate-900 tabular-nums mb-1">+50%</p>
+            <p className="text-xs text-slate-600 leading-snug">increase in microplastic concentration in human brain tissue between 2016 and 2024</p>
+            <p className="text-[10px] text-slate-400 mt-2">Nihart et al., Nature Medicine 2025</p>
+          </div>
+        </div>
+        <p className="text-xs text-slate-400 mt-4">
+          These are observational findings. Full citations on our <Link href="/methodology" className="underline hover:text-teal-700">methodology page</Link>.
+        </p>
+      </div>
+
+      {/* ── Share card ── */}
       <div className="rounded-2xl mb-6 overflow-hidden border border-slate-100 shadow-sm">
         <div className="bg-gradient-to-br from-teal-700 to-teal-900 px-6 pt-8 pb-6 text-white text-center">
           <p className="text-xs uppercase tracking-widest text-teal-300 mb-3">My microplastic risk score</p>
@@ -486,79 +561,13 @@ export default function ResultsClient() {
         </div>
       </div>
 
-      {/* Health context */}
-      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-        <h2 className="font-semibold text-slate-900 mb-1">What this means for your health</h2>
-        <p className="text-xs text-slate-400 mb-4">Based on peer-reviewed research — detection does not prove causation</p>
-        <div className="flex flex-col gap-3 text-sm text-slate-600 leading-relaxed">
-          {result.exposureTier === "Low" && (
-            <>
-              <p>Your exposure is below the estimated average. Microplastics have been confirmed in human blood, lung tissue, and organs regardless of exposure level — there is no threshold below which accumulation stops entirely.</p>
-              <p>At lower exposure levels, the current evidence does not clearly establish harm. The most important finding from lower-exposure groups is that accumulation occurs over a lifetime, making ongoing reduction worthwhile even at modest current levels.</p>
-            </>
-          )}
-          {result.exposureTier === "Moderate" && (
-            <>
-              <p>Your exposure is around the estimated average. Research has confirmed microplastics in the blood of 77% of healthy adults (Leslie et al., 2022) and in lung tissue of 85% of patients tested (Jenner et al., 2022) — suggesting this level of exposure is consistent with detectable tissue accumulation.</p>
-              <p>The most significant study at typical population exposure levels — Marfella et al. (2024) in the New England Journal of Medicine — found microplastics in the arterial plaque of 58% of cardiovascular patients and linked their presence to a 4.5× higher risk of heart attack or stroke. This was an observational study and cannot prove causation.</p>
-            </>
-          )}
-          {result.exposureTier === "High" && (
-            <>
-              <p>Your exposure is above the estimated average. Studies have consistently found that microplastics accumulate in human organs including the brain, lungs, liver, and arterial plaque — with concentrations that have risen measurably over just the past decade (Nihart et al., Nature Medicine, 2025).</p>
-              <p>At higher exposure levels, the research suggests the most actionable risk areas are cardiovascular health and reproductive health. The Marfella et al. (2024) NEJM study found people with microplastics in arterial plaque had a 4.5× higher risk of cardiovascular events. Zhang et al. (2024) found higher polymer exposure correlated with lower sperm count and motility in 100% of male samples tested.</p>
-              <p className="text-xs text-slate-400">These are observational findings. Causation has not been established. See our <a href="/methodology" className="underline hover:text-teal-700">methodology page</a> for full citations.</p>
-            </>
-          )}
-          {result.exposureTier === "Very High" && (
-            <>
-              <p>Your score places you in the highest-exposure bracket. This is typically driven by a combination of daily microwaving in plastic, regular use of plastic tea bags, and reliance on bottled water — also the habits with the largest reduction potential.</p>
-              <p>At this level, the research on microplastic accumulation in human organs is most directly relevant. Nihart et al. (2025, Nature Medicine) found that microplastic concentrations in human brain tissue increased by approximately 50% between 2016 and 2024. The Marfella et al. (2024) NEJM cardiovascular findings — a 4.5× elevated risk of heart attack or stroke in patients with detectable arterial microplastics — apply with particular force at higher cumulative exposure levels.</p>
-              <p className="text-xs text-slate-400">These are observational findings. Causation has not been established. See our <a href="/methodology" className="underline hover:text-teal-700">methodology page</a> for full citations.</p>
-            </>
-          )}
-        </div>
-      </div>
+      {/* ── Nanoplastics note ── */}
+      <p className="text-xs text-slate-400 text-center mb-8 px-4">
+        Note: this score covers microplastics only. Nanoplastics — smaller, more cell-penetrating — are not yet measurable across sources and are not included.{" "}
+        <Link href="/methodology" className="underline hover:text-slate-600">Learn more</Link>
+      </p>
 
-      {/* Nanoplastics callout */}
-      <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 mb-6">
-        <div className="flex gap-3 items-start">
-          <span className="text-amber-500 text-xl flex-shrink-0">⚠</span>
-          <div>
-            <p className="text-base font-bold text-slate-900 mb-2">Your true exposure is likely far higher</p>
-            <p className="text-sm text-slate-700 leading-relaxed mb-2">
-              This score is based on microplastic exposure only. Nanoplastic particles — far smaller, more numerous, and more likely to penetrate cells and tissues — are not included because consistent measurement data across sources does not yet exist.
-            </p>
-            <p className="text-sm text-slate-600 leading-relaxed mb-2">
-              For context: microwaving polypropylene containers releases up to <strong>2.11 billion nanoplastic particles</strong> per cm² in a single 3-minute session alongside the microplastics counted here — none of those nanoplastics appear in your score.
-            </p>
-            <p className="text-xs text-slate-400">Hussain et al., Environmental Science & Technology, 2023</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Top 3 changes */}
-      {reductionOpportunities.length > 0 && (
-        <div className="bg-slate-900 rounded-2xl p-6 mb-6">
-          <h2 className="font-semibold text-white mb-1">Your top {reductionOpportunities.length} changes</h2>
-          <p className="text-xs text-slate-400 mb-5">The single habits that would reduce your risk score the most</p>
-          <ol className="flex flex-col gap-4">
-            {reductionOpportunities.map((r, i) => (
-              <li key={r.question.id} className="bg-white/5 rounded-xl p-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 text-white text-xs font-bold flex items-center justify-center">
-                    {i + 1}
-                  </span>
-                </div>
-                <p className="text-sm font-semibold text-white mb-1">{r.question.question}</p>
-                {r.tip && <p className="text-xs text-slate-400 leading-relaxed">{r.tip}</p>}
-              </li>
-            ))}
-          </ol>
-        </div>
-      )}
-
-      {/* CTAs */}
+      {/* ── CTAs ── */}
       <div className="flex flex-col sm:flex-row gap-3">
         <Link
           href="/methodology"
