@@ -149,7 +149,7 @@ export default function CalculatorClient() {
                 onClick={() => handleSelect(idx)}
                 className={`w-full text-left px-5 py-4 rounded-xl border text-sm font-medium transition-all flex items-center gap-3 ${
                   isChosen
-                    ? "border-teal-500 bg-teal-500/10 text-teal-300"
+                    ? "border-teal-500 bg-teal-500/10 text-slate-700"
                     : "border-slate-200 text-slate-700 hover:border-teal-400 hover:bg-white"
                 }`}
               >
