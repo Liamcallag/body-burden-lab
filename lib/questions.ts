@@ -54,7 +54,7 @@ export const QUESTIONS: Question[] = [
     category: "kitchen",
     question: "Do you use plastic or nylon tea bags?",
     resultLabel: "Plastic tea bags",
-    weight: 13,
+    weight: 15,
     tipKey: "tea",
     studyCallout: {
       value: "11.6 billion",
@@ -75,7 +75,7 @@ export const QUESTIONS: Question[] = [
     category: "kitchen",
     question: "Do you microwave food in plastic containers?",
     resultLabel: "Microwaving in plastic",
-    weight: 15,
+    weight: 13,
     tipKey: "microwave",
     studyCallout: {
       value: "4.22 million",
