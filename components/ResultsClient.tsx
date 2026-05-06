@@ -24,7 +24,7 @@ function PieChart({ groups, selected, onSelect }: {
   selected: Category | null;
   onSelect: (cat: Category) => void;
 }) {
-  const cx = 100, cy = 100, r = 80, holeR = 48;
+  const cx = 200, cy = 200, r = 168, holeR = 96;
   let angle = -Math.PI / 2;
 
   const slices = groups.map(({ cat, catPct }) => {
@@ -48,6 +48,10 @@ function PieChart({ groups, selected, onSelect }: {
     const lx = cx + labelR * Math.cos(midAngle);
     const ly = cy + labelR * Math.sin(midAngle);
 
+    // Pop-out direction vector (unit vector × 18px)
+    const popX = Math.cos(midAngle) * 18;
+    const popY = Math.sin(midAngle) * 18;
+
     const d = [
       `M ${x1} ${y1}`,
       `A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`,
@@ -56,32 +60,45 @@ function PieChart({ groups, selected, onSelect }: {
       "Z",
     ].join(" ");
 
-    return { cat, catPct, d, lx, ly, color: CAT_COLORS[cat] };
+    return { cat, catPct, d, lx, ly, popX, popY, color: CAT_COLORS[cat] };
   });
 
   return (
-    <svg viewBox="0 0 200 200" className="w-full max-w-[220px] mx-auto">
-      {slices.map(({ cat, catPct, d, lx, ly, color }) => {
+    <svg viewBox="0 0 400 400" className="w-full max-w-[400px] mx-auto" style={{ filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.10))" }}>
+      {slices.map(({ cat, catPct, d, lx, ly, popX, popY, color }) => {
         const isSelected = selected === cat;
+        const dimmed = selected !== null && !isSelected;
         return (
-          <g key={cat} onClick={() => onSelect(cat)} style={{ cursor: "pointer" }}>
+          <g
+            key={cat}
+            onClick={() => onSelect(cat)}
+            style={{
+              cursor: "pointer",
+              transform: isSelected ? `translate(${popX}px, ${popY}px)` : "translate(0px, 0px)",
+              transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1)",
+            }}
+          >
             <path
               d={d}
               fill={color}
-              opacity={selected === null || isSelected ? 1 : 0.3}
-              transform={isSelected ? `translate(${(lx - cx) * 0.06} ${(ly - cy) * 0.06})` : undefined}
-              style={{ transition: "opacity 0.2s, transform 0.2s" }}
+              style={{
+                opacity: dimmed ? 0.22 : 1,
+                transition: "opacity 0.25s ease",
+                filter: isSelected ? `drop-shadow(0 0 14px ${color}90)` : "none",
+              }}
             />
-            {catPct >= 8 && (
+            {/* Hover hit target (invisible, slightly larger) */}
+            <path d={d} fill="transparent" stroke="none" />
+            {catPct >= 7 && (
               <text
                 x={lx}
                 y={ly}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fontSize="10"
-                fontWeight="700"
+                fontSize="20"
+                fontWeight="800"
                 fill="white"
-                style={{ pointerEvents: "none" }}
+                style={{ pointerEvents: "none", opacity: dimmed ? 0.3 : 1, transition: "opacity 0.25s ease" }}
               >
                 {catPct}%
               </text>
@@ -89,94 +106,184 @@ function PieChart({ groups, selected, onSelect }: {
           </g>
         );
       })}
+
+      {/* Center label when a slice is selected */}
+      {selected && (() => {
+        const g = groups.find(g => g.cat === selected);
+        return g ? (
+          <>
+            <text x={cx} y={cy - 14} textAnchor="middle" fontSize="13" fill="#64748b" fontWeight="500">
+              {CATEGORY_LABELS[selected]}
+            </text>
+            <text x={cx} y={cy + 14} textAnchor="middle" fontSize="26" fill={CAT_COLORS[selected]} fontWeight="800">
+              {g.catPct}%
+            </text>
+          </>
+        ) : null;
+      })()}
     </svg>
   );
 }
 
-function CategorySection({ groups, totalContribution }: { groups: CategoryGroup[]; totalContribution: number }) {
+function CategorySection({ groups }: { groups: CategoryGroup[]; totalContribution: number }) {
   const [selectedCat, setSelectedCat] = useState<Category | null>(null);
+  const [visible, setVisible] = useState(false);
 
   function handleSliceClick(cat: Category) {
-    setSelectedCat((prev) => (prev === cat ? null : cat));
+    setSelectedCat((prev) => {
+      if (prev === cat) { setVisible(false); return null; }
+      setVisible(true);
+      return cat;
+    });
   }
 
+  // When selectedCat changes to a new category, keep visible true
   const activeGroup = groups.find((g) => g.cat === selectedCat) ?? null;
 
   return (
-    <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-      <h2 className="font-semibold text-slate-900 mb-1">What's driving your score</h2>
-      <p className="text-xs text-slate-400 mb-5">Each category's share of your total risk score — tap a slice to see individual habits</p>
+    <div className="mb-12">
+      {/* Section heading */}
+      <div className="text-center mb-2">
+        <h2 className="text-2xl font-bold text-slate-900">What's driving your score</h2>
+        <p className="text-sm text-slate-400 mt-1">Click a slice to explore each category</p>
+      </div>
 
-      {/* Pie chart + legend */}
-      <div className="flex items-center gap-6 mb-6">
-        <div className="flex-shrink-0 w-[160px]">
+      {/* Large centered pie chart */}
+      <div className="flex justify-center my-6">
+        <div className="w-full max-w-[380px]">
           <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} />
-        </div>
-        <div className="flex flex-col gap-2">
-          {groups.map(({ cat, catPct }) => (
-            <button
-              key={cat}
-              onClick={() => handleSliceClick(cat)}
-              className="flex items-center gap-2 text-left"
-            >
-              <span
-                className="flex-shrink-0 w-2.5 h-2.5 rounded-full"
-                style={{ backgroundColor: CAT_COLORS[cat], opacity: selectedCat === null || selectedCat === cat ? 1 : 0.3 }}
-              />
-              <span className={`text-xs ${selectedCat === cat ? "font-bold text-slate-900" : "text-slate-600"}`}>
-                {CATEGORY_LABELS[cat]}
-              </span>
-              <span className="text-xs font-bold tabular-nums text-slate-400 ml-auto pl-2">{catPct}%</span>
-            </button>
-          ))}
         </div>
       </div>
 
-      {/* Expanded habit detail */}
-      {activeGroup && (
-        <div className="border-t border-slate-100 pt-4">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: CAT_COLORS[activeGroup.cat] }} />
-            <p className="text-sm font-semibold text-slate-800">{CATEGORY_LABELS[activeGroup.cat]}</p>
-            <span className="text-xs text-slate-400 ml-auto">{activeGroup.catPct}% of your score</span>
-          </div>
-          <div className="flex flex-col divide-y divide-slate-50">
-            {activeGroup.items.map(({ question, selected }) => (
-              <div key={question.id} className="py-3">
-                <p className="text-sm font-medium text-slate-700 leading-snug">{question.resultLabel}</p>
-                <p className="text-xs text-slate-400 mt-0.5 mb-1.5">"{selected.label}"</p>
-                {question.studyCallout && (
-                  <div className="flex items-center justify-between gap-2 flex-wrap">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <p className="text-sm text-slate-600">
-                        <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                        {question.studyCallout.unit}
-                      </p>
-                      {question.studyCallout.unitContext && (
-                        <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
-                          {question.studyCallout.unitContext}
-                        </span>
+      {/* Legend pills */}
+      <div className="flex flex-wrap justify-center gap-2 mb-8">
+        {groups.map(({ cat, catPct }) => {
+          const isActive = selectedCat === cat;
+          const isDimmed = selectedCat !== null && !isActive;
+          return (
+            <button
+              key={cat}
+              onClick={() => handleSliceClick(cat)}
+              style={{
+                borderColor: isActive ? CAT_COLORS[cat] : undefined,
+                backgroundColor: isActive ? CAT_COLORS[cat] + "12" : undefined,
+                opacity: isDimmed ? 0.4 : 1,
+                transition: "all 0.2s ease",
+              }}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all duration-200 ${
+                isActive
+                  ? "shadow-md scale-105"
+                  : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"
+              }`}
+            >
+              <span
+                className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                style={{ backgroundColor: CAT_COLORS[cat] }}
+              />
+              <span className={isActive ? "text-slate-900 font-semibold" : "text-slate-600"}>
+                {CATEGORY_LABELS[cat]}
+              </span>
+              <span
+                className="font-bold tabular-nums"
+                style={{ color: isActive ? CAT_COLORS[cat] : "#94a3b8" }}
+              >
+                {catPct}%
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Animated detail panel */}
+      <div
+        style={{
+          maxHeight: visible && activeGroup ? "800px" : "0px",
+          opacity: visible && activeGroup ? 1 : 0,
+          transform: visible && activeGroup ? "translateY(0)" : "translateY(-12px)",
+          transition: "max-height 0.45s ease, opacity 0.3s ease, transform 0.3s ease",
+          overflow: "hidden",
+        }}
+      >
+        {activeGroup && (
+          <div
+            className="rounded-2xl overflow-hidden shadow-xl border"
+            style={{
+              borderColor: CAT_COLORS[activeGroup.cat] + "35",
+              boxShadow: `0 8px 40px ${CAT_COLORS[activeGroup.cat]}20`,
+            }}
+          >
+            {/* Coloured header bar */}
+            <div
+              className="px-6 py-5 flex items-center justify-between"
+              style={{ background: `linear-gradient(135deg, ${CAT_COLORS[activeGroup.cat]}18, ${CAT_COLORS[activeGroup.cat]}08)` }}
+            >
+              <div className="flex items-center gap-3">
+                <span
+                  className="w-4 h-4 rounded-full flex-shrink-0 shadow-sm"
+                  style={{ backgroundColor: CAT_COLORS[activeGroup.cat] }}
+                />
+                <h3 className="font-bold text-slate-900 text-base">{CATEGORY_LABELS[activeGroup.cat]}</h3>
+              </div>
+              <div className="flex items-center gap-4">
+                <span
+                  className="text-sm font-bold px-3 py-1 rounded-full"
+                  style={{
+                    backgroundColor: CAT_COLORS[activeGroup.cat] + "20",
+                    color: CAT_COLORS[activeGroup.cat],
+                  }}
+                >
+                  {activeGroup.catPct}% of score
+                </span>
+                <button
+                  onClick={() => { setVisible(false); setTimeout(() => setSelectedCat(null), 300); }}
+                  className="text-slate-400 hover:text-slate-600 transition-colors text-lg leading-none"
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+
+            {/* Habit rows */}
+            <div className="bg-white divide-y divide-slate-50">
+              {activeGroup.items.map(({ question, selected }) => (
+                <div key={question.id} className="px-6 py-4">
+                  <p className="text-sm font-semibold text-slate-800 leading-snug mb-1">{question.resultLabel}</p>
+                  <p className="text-xs text-slate-400 mb-2 italic">"{selected.label}"</p>
+                  {question.studyCallout && (
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <p className="text-sm text-slate-600">
+                          <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                          {question.studyCallout.unit}
+                        </p>
+                        {question.studyCallout.unitContext && (
+                          <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
+                            {question.studyCallout.unitContext}
+                          </span>
+                        )}
+                      </div>
+                      {question.studyCallout.url ? (
+                        <a
+                          href={question.studyCallout.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-semibold hover:underline whitespace-nowrap shrink-0"
+                          style={{ color: CAT_COLORS[activeGroup.cat] }}
+                        >
+                          View study →
+                        </a>
+                      ) : (
+                        <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
                       )}
                     </div>
-                    {question.studyCallout.url ? (
-                      <a
-                        href={question.studyCallout.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
-                      >
-                        View study →
-                      </a>
-                    ) : (
-                      <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
