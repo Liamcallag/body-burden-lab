@@ -157,25 +157,20 @@ export default function ResultsClient() {
           .filter((r) => r.contribution > 0)
           .sort((a, b) => b.contribution - a.contribution);
 
-        const topContribution = ranked[0]?.contribution || 1;
+        const totalContribution = ranked.reduce((sum, r) => sum + r.contribution, 0) || 1;
 
         if (ranked.length === 0) return null;
 
         return (
           <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
             <h2 className="font-semibold text-slate-900 mb-1">What's driving your score</h2>
-            <p className="text-xs text-slate-400 mb-5">Bar length shows how much each habit contributes to your score — based on how often you're exposed, not the raw particle count</p>
+            <p className="text-xs text-slate-400 mb-5">Each habit's share of your total risk score, based on your answers</p>
             <div className="flex flex-col divide-y divide-slate-100">
               {ranked.map(({ question, selected, contribution }, i) => {
-                const barPct = Math.round((contribution / topContribution) * 100);
-                const barColor =
-                  i === 0 ? "#dc2626" :
-                  i === 1 ? "#f97316" :
-                  i === 2 ? "#f59e0b" :
-                  "#94a3b8";
+                const pct = Math.round((contribution / totalContribution) * 100);
                 return (
                   <div key={question.id} className="py-4 first:pt-0 last:pb-0">
-                    <div className="flex items-start justify-between gap-3 mb-2">
+                    <div className="flex items-start justify-between gap-3 mb-1.5">
                       <div className="flex items-start gap-3 min-w-0">
                         <span className="flex-shrink-0 text-xs font-bold tabular-nums text-slate-300 w-4 mt-0.5">
                           {i + 1}
@@ -185,17 +180,9 @@ export default function ResultsClient() {
                           <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
                         </div>
                       </div>
+                      <span className="flex-shrink-0 text-sm font-bold tabular-nums text-slate-700">{pct}%</span>
                     </div>
-                    {/* Bar */}
-                    <div className="ml-7 mb-2">
-                      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full transition-all duration-700"
-                          style={{ width: `${Math.max(barPct, 2)}%`, backgroundColor: barColor }}
-                        />
-                      </div>
-                    </div>
-                    {/* Study callout */}
+                    {/* Study callout — indented under rank number */}
                     {question.studyCallout && (
                       <div className="ml-7 flex items-center justify-between gap-2 flex-wrap">
                         <div className="flex items-center gap-2 flex-wrap">
