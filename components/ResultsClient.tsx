@@ -221,23 +221,93 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
 
   const activeGroup = groups.find((g) => g.cat === selectedCat) ?? null;
 
+  const expanded = selectedCat !== null;
+
   return (
     <div className="mb-12">
-      {/* Desktop: side-by-side. Mobile: chart + legend, detail as bottom sheet */}
-      <div className="flex flex-col sm:flex-row gap-6 items-start">
 
-        {/* Left: chart + legend */}
-        <div className="flex flex-col items-center w-full sm:w-auto sm:flex-shrink-0">
+      {/* Desktop layout */}
+      <div className="hidden sm:block">
+        <div className="relative flex items-start gap-6">
+
+          {/* Chart column — centered when idle, slides left when expanded */}
+          <div
+            className="flex flex-col items-center flex-shrink-0"
+            style={{
+              width: expanded ? "340px" : "100%",
+              transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
+            }}
+          >
+            <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
+
+            {/* Legend */}
+            <div
+              className="flex flex-col gap-1.5 mt-4"
+              style={{
+                width: expanded ? "100%" : "300px",
+                transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
+              }}
+            >
+              {groups.map(({ cat, catPct }) => {
+                const isActive = selectedCat === cat;
+                const isDimmed = selectedCat !== null && !isActive;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => handleSliceClick(cat)}
+                    style={{
+                      borderColor: isActive ? colorsMap[cat] : "transparent",
+                      backgroundColor: isActive ? colorsMap[cat] + "10" : "#e4efed",
+                      opacity: isDimmed ? 0.4 : 1,
+                      transition: "all 0.2s ease",
+                    }}
+                    className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : "hover:border-slate-300"}`}
+                  >
+                    <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorsMap[cat] }} />
+                    <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
+                    <span className="font-bold tabular-nums text-xs" style={{ color: isActive ? colorsMap[cat] : "#94a3b8" }}>{catPct}%</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Detail panel — slides in from right */}
+          <div
+            className="flex-1 overflow-hidden"
+            style={{
+              opacity: expanded ? 1 : 0,
+              transform: expanded ? "translateX(0)" : "translateX(40px)",
+              transition: "opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.4,0,0.2,1) 0.05s",
+              pointerEvents: expanded ? "auto" : "none",
+            }}
+          >
+            {activeGroup && (
+              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile layout — chart full width, detail as bottom sheet */}
+      <div className="sm:hidden">
+        <div className="flex flex-col items-center">
           <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
           <div className="flex flex-col gap-1.5 mt-4 w-full max-w-[300px]">
             {groups.map(({ cat, catPct }) => {
               const isActive = selectedCat === cat;
               const isDimmed = selectedCat !== null && !isActive;
               return (
-                <button key={cat} onClick={() => handleSliceClick(cat)}
-                  style={{ borderColor: isActive ? colorsMap[cat] : undefined, backgroundColor: isActive ? colorsMap[cat] + "10" : undefined, opacity: isDimmed ? 0.4 : 1, transition: "all 0.2s ease" }}
-                  className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : "border-transparent hover:border-slate-300"}`}
-                  style={!isActive ? { backgroundColor: "#e4efed" } : undefined}
+                <button
+                  key={cat}
+                  onClick={() => handleSliceClick(cat)}
+                  style={{
+                    borderColor: isActive ? colorsMap[cat] : "transparent",
+                    backgroundColor: isActive ? colorsMap[cat] + "10" : "#e4efed",
+                    opacity: isDimmed ? 0.4 : 1,
+                    transition: "all 0.2s ease",
+                  }}
+                  className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : ""}`}
                 >
                   <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorsMap[cat] }} />
                   <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
@@ -248,30 +318,15 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
           </div>
         </div>
 
-        {/* Right: detail panel — desktop only */}
-        <div className="hidden sm:block flex-1 w-full min-h-[320px]">
-          {activeGroup ? (
-            <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
-          ) : (
-            <div className="h-full min-h-[320px] flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 text-center p-8">
-              <p className="text-sm font-medium text-slate-400">Select a slice</p>
-              <p className="text-xs text-slate-300 mt-1">to see what's driving that category</p>
+        {activeGroup && (
+          <>
+            <div className="fixed inset-0 bg-black/30 z-40" onClick={handleClose} style={{ animation: "fadeIn 0.2s ease" }} />
+            <div className="fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl overflow-hidden max-h-[75vh] overflow-y-auto" style={{ animation: "slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1)" }}>
+              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
             </div>
-          )}
-        </div>
+          </>
+        )}
       </div>
-
-      {/* Mobile bottom sheet */}
-      {activeGroup && (
-        <>
-          {/* Backdrop */}
-          <div className="fixed inset-0 bg-black/30 z-40 sm:hidden" onClick={handleClose} style={{ animation: "fadeIn 0.2s ease" }} />
-          {/* Sheet */}
-          <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden rounded-t-2xl overflow-hidden max-h-[75vh] overflow-y-auto" style={{ animation: "slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1)" }}>
-            <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
-          </div>
-        </>
-      )}
 
       <style>{`
         @keyframes fadeSlideIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
