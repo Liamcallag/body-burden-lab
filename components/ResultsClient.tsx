@@ -12,88 +12,171 @@ type CategoryGroup = {
   catPct: number;
 };
 
-function CategorySection({ groups, totalContribution }: { groups: CategoryGroup[]; totalContribution: number }) {
-  const [openCats, setOpenCats] = useState<Set<string>>(new Set([groups[0]?.cat]));
+const CAT_COLORS: Record<Category, string> = {
+  kitchen: "#0d9488",
+  water:   "#3b82f6",
+  food:    "#f59e0b",
+  air:     "#8b5cf6",
+};
 
-  function toggle(cat: string) {
-    setOpenCats((prev) => {
-      const next = new Set(prev);
-      next.has(cat) ? next.delete(cat) : next.add(cat);
-      return next;
-    });
+function PieChart({ groups, selected, onSelect }: {
+  groups: CategoryGroup[];
+  selected: Category | null;
+  onSelect: (cat: Category) => void;
+}) {
+  const cx = 100, cy = 100, r = 80, holeR = 48;
+  let angle = -Math.PI / 2;
+
+  const slices = groups.map(({ cat, catPct }) => {
+    const slice = (catPct / 100) * 2 * Math.PI;
+    const start = angle;
+    const end = angle + slice;
+    angle = end;
+
+    const x1 = cx + r * Math.cos(start);
+    const y1 = cy + r * Math.sin(start);
+    const x2 = cx + r * Math.cos(end);
+    const y2 = cy + r * Math.sin(end);
+    const ix1 = cx + holeR * Math.cos(end);
+    const iy1 = cy + holeR * Math.sin(end);
+    const ix2 = cx + holeR * Math.cos(start);
+    const iy2 = cy + holeR * Math.sin(start);
+    const large = slice > Math.PI ? 1 : 0;
+
+    const midAngle = start + slice / 2;
+    const labelR = (r + holeR) / 2;
+    const lx = cx + labelR * Math.cos(midAngle);
+    const ly = cy + labelR * Math.sin(midAngle);
+
+    const d = [
+      `M ${x1} ${y1}`,
+      `A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`,
+      `L ${ix1} ${iy1}`,
+      `A ${holeR} ${holeR} 0 ${large} 0 ${ix2} ${iy2}`,
+      "Z",
+    ].join(" ");
+
+    return { cat, catPct, d, lx, ly, color: CAT_COLORS[cat] };
+  });
+
+  return (
+    <svg viewBox="0 0 200 200" className="w-full max-w-[220px] mx-auto">
+      {slices.map(({ cat, catPct, d, lx, ly, color }) => {
+        const isSelected = selected === cat;
+        return (
+          <g key={cat} onClick={() => onSelect(cat)} style={{ cursor: "pointer" }}>
+            <path
+              d={d}
+              fill={color}
+              opacity={selected === null || isSelected ? 1 : 0.3}
+              transform={isSelected ? `translate(${(lx - cx) * 0.06} ${(ly - cy) * 0.06})` : undefined}
+              style={{ transition: "opacity 0.2s, transform 0.2s" }}
+            />
+            {catPct >= 8 && (
+              <text
+                x={lx}
+                y={ly}
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontSize="10"
+                fontWeight="700"
+                fill="white"
+                style={{ pointerEvents: "none" }}
+              >
+                {catPct}%
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+function CategorySection({ groups, totalContribution }: { groups: CategoryGroup[]; totalContribution: number }) {
+  const [selectedCat, setSelectedCat] = useState<Category | null>(null);
+
+  function handleSliceClick(cat: Category) {
+    setSelectedCat((prev) => (prev === cat ? null : cat));
   }
+
+  const activeGroup = groups.find((g) => g.cat === selectedCat) ?? null;
 
   return (
     <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
       <h2 className="font-semibold text-slate-900 mb-1">What's driving your score</h2>
-      <p className="text-xs text-slate-400 mb-5">Each category's share of your total risk score — tap to see individual habits</p>
-      <div className="flex flex-col divide-y divide-slate-100">
-        {groups.map(({ cat, items, catPct }) => {
-          const isOpen = openCats.has(cat);
-          return (
-            <div key={cat} className="first:pt-0 last:pb-0">
-              <button
-                onClick={() => toggle(cat)}
-                className="w-full flex items-center justify-between gap-3 py-4 text-left"
-              >
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-semibold text-slate-800">{CATEGORY_LABELS[cat]}</span>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
-                    {items.length} habit{items.length !== 1 ? "s" : ""}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <span className="text-sm font-bold tabular-nums text-slate-700">{catPct}%</span>
-                  <span className="text-slate-300 text-xs">{isOpen ? "▲" : "▼"}</span>
-                </div>
-              </button>
-              {isOpen && (
-                <div className="flex flex-col divide-y divide-slate-50 pb-3">
-                  {items.map(({ question, selected }) => {
-                    return (
-                      <div key={question.id} className="py-3 pl-3">
-                        <div className="flex items-start gap-3 mb-1.5">
-                          <div className="min-w-0">
-                            <p className="text-sm font-medium text-slate-700 leading-snug">{question.resultLabel}</p>
-                            <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
-                          </div>
-                        </div>
-                        {question.studyCallout && (
-                          <div className="flex items-center justify-between gap-2 flex-wrap mt-1">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <p className="text-sm text-slate-600">
-                                <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                                {question.studyCallout.unit}
-                              </p>
-                              {question.studyCallout.unitContext && (
-                                <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
-                                  {question.studyCallout.unitContext}
-                                </span>
-                              )}
-                            </div>
-                            {question.studyCallout.url ? (
-                              <a
-                                href={question.studyCallout.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
-                              >
-                                View study →
-                              </a>
-                            ) : (
-                              <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          );
-        })}
+      <p className="text-xs text-slate-400 mb-5">Each category's share of your total risk score — tap a slice to see individual habits</p>
+
+      {/* Pie chart + legend */}
+      <div className="flex items-center gap-6 mb-6">
+        <div className="flex-shrink-0 w-[160px]">
+          <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} />
+        </div>
+        <div className="flex flex-col gap-2">
+          {groups.map(({ cat, catPct }) => (
+            <button
+              key={cat}
+              onClick={() => handleSliceClick(cat)}
+              className="flex items-center gap-2 text-left"
+            >
+              <span
+                className="flex-shrink-0 w-2.5 h-2.5 rounded-full"
+                style={{ backgroundColor: CAT_COLORS[cat], opacity: selectedCat === null || selectedCat === cat ? 1 : 0.3 }}
+              />
+              <span className={`text-xs ${selectedCat === cat ? "font-bold text-slate-900" : "text-slate-600"}`}>
+                {CATEGORY_LABELS[cat]}
+              </span>
+              <span className="text-xs font-bold tabular-nums text-slate-400 ml-auto pl-2">{catPct}%</span>
+            </button>
+          ))}
+        </div>
       </div>
+
+      {/* Expanded habit detail */}
+      {activeGroup && (
+        <div className="border-t border-slate-100 pt-4">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: CAT_COLORS[activeGroup.cat] }} />
+            <p className="text-sm font-semibold text-slate-800">{CATEGORY_LABELS[activeGroup.cat]}</p>
+            <span className="text-xs text-slate-400 ml-auto">{activeGroup.catPct}% of your score</span>
+          </div>
+          <div className="flex flex-col divide-y divide-slate-50">
+            {activeGroup.items.map(({ question, selected }) => (
+              <div key={question.id} className="py-3">
+                <p className="text-sm font-medium text-slate-700 leading-snug">{question.resultLabel}</p>
+                <p className="text-xs text-slate-400 mt-0.5 mb-1.5">"{selected.label}"</p>
+                {question.studyCallout && (
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="text-sm text-slate-600">
+                        <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                        {question.studyCallout.unit}
+                      </p>
+                      {question.studyCallout.unitContext && (
+                        <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
+                          {question.studyCallout.unitContext}
+                        </span>
+                      )}
+                    </div>
+                    {question.studyCallout.url ? (
+                      <a
+                        href={question.studyCallout.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
+                      >
+                        View study →
+                      </a>
+                    ) : (
+                      <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
