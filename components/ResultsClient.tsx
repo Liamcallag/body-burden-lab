@@ -13,7 +13,7 @@ type CategoryGroup = {
 };
 
 // Colors assigned by rank (largest slice → most alarming, then distinct hues)
-const RANK_COLORS = ["#ef4444", "#3b82f6", "#10b981", "#8b5cf6"];
+const RANK_COLORS = ["#ef4444", "#f97316", "#3b82f6", "#8b5cf6"];
 
 const PRODUCT_SWAPS: Record<string, { label: string; url: string }> = {
   microwave:    { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
