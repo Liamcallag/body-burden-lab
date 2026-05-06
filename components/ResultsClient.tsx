@@ -12,20 +12,17 @@ type CategoryGroup = {
   catPct: number;
 };
 
-const CAT_COLORS: Record<Category, string> = {
-  kitchen: "#0d9488",
-  water:   "#3b82f6",
-  food:    "#f59e0b",
-  air:     "#8b5cf6",
-};
+// Colors assigned by rank (largest slice → most alarming)
+const RANK_COLORS = ["#ef4444", "#f97316", "#eab308", "#94a3b8"];
 
-function PieChart({ groups, selected, onSelect, score, tier, tierColor }: {
+function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMap }: {
   groups: CategoryGroup[];
   selected: Category | null;
   onSelect: (cat: Category) => void;
   score: number;
   tier: string;
   tierColor: string;
+  colorsMap: Record<string, string>;
 }) {
   const cx = 200, cy = 200, r = 168, holeR = 96;
   let angle = -Math.PI / 2;
@@ -63,7 +60,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor }: {
       "Z",
     ].join(" ");
 
-    return { cat, catPct, d, lx, ly, popX, popY, color: CAT_COLORS[cat] };
+    return { cat, catPct, d, lx, ly, popX, popY, color: colorsMap[cat] };
   });
 
   return (
@@ -115,7 +112,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor }: {
             <text x={cx} y={cy - 10} textAnchor="middle" fontSize="12" fill="#94a3b8" fontWeight="500">
               {CATEGORY_LABELS[selected]}
             </text>
-            <text x={cx} y={cy + 22} textAnchor="middle" fontSize="32" fill={CAT_COLORS[selected]} fontWeight="800">
+            <text x={cx} y={cy + 22} textAnchor="middle" fontSize="32" fill={colorsMap[selected]} fontWeight="800">
               {g.catPct}%
             </text>
           </>
@@ -137,12 +134,13 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor }: {
   );
 }
 
-function CategorySection({ groups, score, tier, tierColor }: {
+function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
   groups: CategoryGroup[];
   totalContribution: number;
   score: number;
   tier: string;
   tierColor: string;
+  colorsMap: Record<string, string>;
 }) {
   const [selectedCat, setSelectedCat] = useState<Category | null>(null);
 
@@ -159,7 +157,7 @@ function CategorySection({ groups, score, tier, tierColor }: {
 
         {/* Left column: chart + legend */}
         <div className="flex flex-col items-center w-full sm:w-auto sm:flex-shrink-0">
-          <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} />
+          <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
 
           {/* Legend */}
           <div className="flex flex-col gap-1.5 mt-4 w-full max-w-[300px]">
@@ -171,8 +169,8 @@ function CategorySection({ groups, score, tier, tierColor }: {
                   key={cat}
                   onClick={() => handleSliceClick(cat)}
                   style={{
-                    borderColor: isActive ? CAT_COLORS[cat] : undefined,
-                    backgroundColor: isActive ? CAT_COLORS[cat] + "10" : undefined,
+                    borderColor: isActive ? colorsMap[cat] : undefined,
+                    backgroundColor: isActive ? colorsMap[cat] + "10" : undefined,
                     opacity: isDimmed ? 0.4 : 1,
                     transition: "all 0.2s ease",
                   }}
@@ -182,11 +180,11 @@ function CategorySection({ groups, score, tier, tierColor }: {
                       : "border-slate-200 bg-white hover:border-slate-300"
                   }`}
                 >
-                  <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: CAT_COLORS[cat] }} />
+                  <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorsMap[cat] }} />
                   <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>
                     {CATEGORY_LABELS[cat]}
                   </span>
-                  <span className="font-bold tabular-nums text-xs" style={{ color: isActive ? CAT_COLORS[cat] : "#94a3b8" }}>
+                  <span className="font-bold tabular-nums text-xs" style={{ color: isActive ? colorsMap[cat] : "#94a3b8" }}>
                     {catPct}%
                   </span>
                 </button>
@@ -202,23 +200,23 @@ function CategorySection({ groups, score, tier, tierColor }: {
               key={activeGroup.cat}
               className="rounded-2xl overflow-hidden border h-full"
               style={{
-                borderColor: CAT_COLORS[activeGroup.cat] + "40",
-                boxShadow: `0 4px 24px ${CAT_COLORS[activeGroup.cat]}18`,
+                borderColor: colorsMap[activeGroup.cat] + "40",
+                boxShadow: `0 4px 24px ${colorsMap[activeGroup.cat]}18`,
                 animation: "fadeSlideIn 0.25s ease",
               }}
             >
               {/* Header */}
               <div
                 className="px-5 py-4 flex items-center justify-between"
-                style={{ background: `linear-gradient(135deg, ${CAT_COLORS[activeGroup.cat]}18, ${CAT_COLORS[activeGroup.cat]}06)` }}
+                style={{ background: `linear-gradient(135deg, ${colorsMap[activeGroup.cat]}18, ${colorsMap[activeGroup.cat]}06)` }}
               >
                 <div className="flex items-center gap-2.5">
-                  <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: CAT_COLORS[activeGroup.cat] }} />
+                  <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: colorsMap[activeGroup.cat] }} />
                   <h3 className="font-bold text-slate-900">{CATEGORY_LABELS[activeGroup.cat]}</h3>
                 </div>
                 <span
                   className="text-xs font-bold px-2.5 py-1 rounded-full"
-                  style={{ backgroundColor: CAT_COLORS[activeGroup.cat] + "20", color: CAT_COLORS[activeGroup.cat] }}
+                  style={{ backgroundColor: colorsMap[activeGroup.cat] + "20", color: colorsMap[activeGroup.cat] }}
                 >
                   {activeGroup.catPct}% of score
                 </span>
@@ -252,7 +250,7 @@ function CategorySection({ groups, score, tier, tierColor }: {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-[11px] font-semibold hover:underline whitespace-nowrap"
-                              style={{ color: CAT_COLORS[activeGroup.cat] }}
+                              style={{ color: colorsMap[activeGroup.cat] }}
                             >
                               View study →
                             </a>
@@ -445,6 +443,10 @@ export default function ResultsClient() {
 
         if (groups.length === 0) return null;
 
+        // Assign alarm colors by rank: largest slice = red, descending
+        const colorsMap: Record<string, string> = {};
+        groups.forEach((g, i) => { colorsMap[g.cat] = RANK_COLORS[i] ?? RANK_COLORS[RANK_COLORS.length - 1]; });
+
         return (
           <CategorySection
             groups={groups}
@@ -452,6 +454,7 @@ export default function ResultsClient() {
             score={result.riskScore}
             tier={result.exposureTier}
             tierColor={exposureLevel.barColor}
+            colorsMap={colorsMap}
           />
         );
       })()}
