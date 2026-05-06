@@ -55,8 +55,8 @@ export default function CalculatorClient() {
   /* ── Mobile layout ── */
   const mobileLayout = (
     <div className="md:hidden w-full max-w-xl">
-      {/* Progress bar — flush to top, sticks right under the nav */}
-      <div className="fixed top-[57px] left-0 right-0 z-30 h-1 bg-slate-200">
+      {/* Progress bar — flush under the nav */}
+      <div className="fixed top-[72px] left-0 right-0 z-50 h-1 bg-slate-200">
         <div
           className="h-full bg-teal-600 transition-all duration-300"
           style={{ width: `${progress}%` }}
