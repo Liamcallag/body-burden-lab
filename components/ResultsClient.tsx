@@ -49,16 +49,14 @@ function CategorySection({ groups, totalContribution }: { groups: CategoryGroup[
               </button>
               {isOpen && (
                 <div className="flex flex-col divide-y divide-slate-50 pb-3">
-                  {items.map(({ question, selected, contribution }) => {
-                    const pct = Math.round((contribution / totalContribution) * 100);
+                  {items.map(({ question, selected }) => {
                     return (
                       <div key={question.id} className="py-3 pl-3">
-                        <div className="flex items-start justify-between gap-3 mb-1.5">
+                        <div className="flex items-start gap-3 mb-1.5">
                           <div className="min-w-0">
                             <p className="text-sm font-medium text-slate-700 leading-snug">{question.resultLabel}</p>
                             <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
                           </div>
-                          <span className="flex-shrink-0 text-sm font-bold tabular-nums text-slate-500">{pct}%</span>
                         </div>
                         {question.studyCallout && (
                           <div className="flex items-center justify-between gap-2 flex-wrap mt-1">
