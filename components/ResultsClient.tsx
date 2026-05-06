@@ -13,7 +13,7 @@ type CategoryGroup = {
 };
 
 // Colors assigned by rank (largest slice → most alarming, then distinct hues)
-const RANK_COLORS = ["#ef4444", "#3b82f6", "#0891b2", "#8b5cf6"];
+const RANK_COLORS = ["#ef4444", "#3b82f6", "#10b981", "#8b5cf6"];
 
 const PRODUCT_SWAPS: Record<string, { label: string; url: string }> = {
   microwave:    { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
@@ -441,16 +441,23 @@ export default function ResultsClient() {
 
         const totalContribution = allItems.reduce((sum, r) => sum + r.contribution, 0) || 1;
 
-        // Group by category, sorted by category total descending
+        // Group by category
         const categoryOrder: Category[] = ["kitchen", "water", "food", "air"];
-        const groups = categoryOrder.map((cat) => {
+        const rawGroups = categoryOrder.map((cat) => {
           const items = allItems
             .filter((r) => r.question.category === cat)
             .sort((a, b) => b.contribution - a.contribution);
           const catTotal = items.reduce((sum, r) => sum + r.contribution, 0);
-          const catPct = Math.round((catTotal / totalContribution) * 100);
-          return { cat, items, catPct };
-        }).filter((g) => g.items.length > 0)
+          const exact = (catTotal / totalContribution) * 100;
+          return { cat, items, exact, catPct: Math.floor(exact) };
+        }).filter((g) => g.items.length > 0);
+
+        // Largest remainder method — ensures percentages always sum to 100
+        const remainder = 100 - rawGroups.reduce((s, g) => s + g.catPct, 0);
+        const groups = rawGroups
+          .map((g) => ({ ...g, frac: g.exact - g.catPct }))
+          .sort((a, b) => b.frac - a.frac)
+          .map((g, i) => ({ ...g, catPct: g.catPct + (i < remainder ? 1 : 0) }))
           .sort((a, b) => b.catPct - a.catPct);
 
         if (groups.length === 0) return null;
