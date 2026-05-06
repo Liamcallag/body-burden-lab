@@ -19,10 +19,13 @@ const CAT_COLORS: Record<Category, string> = {
   air:     "#8b5cf6",
 };
 
-function PieChart({ groups, selected, onSelect }: {
+function PieChart({ groups, selected, onSelect, score, tier, tierColor }: {
   groups: CategoryGroup[];
   selected: Category | null;
   onSelect: (cat: Category) => void;
+  score: number;
+  tier: string;
+  tierColor: string;
 }) {
   const cx = 200, cy = 200, r = 168, holeR = 96;
   let angle = -Math.PI / 2;
@@ -104,25 +107,43 @@ function PieChart({ groups, selected, onSelect }: {
         );
       })}
 
-      {/* Center label when a slice is selected */}
-      {selected && (() => {
+      {/* Center content */}
+      {selected ? (() => {
         const g = groups.find(g => g.cat === selected);
         return g ? (
           <>
-            <text x={cx} y={cy - 14} textAnchor="middle" fontSize="13" fill="#64748b" fontWeight="500">
+            <text x={cx} y={cy - 10} textAnchor="middle" fontSize="12" fill="#94a3b8" fontWeight="500">
               {CATEGORY_LABELS[selected]}
             </text>
-            <text x={cx} y={cy + 14} textAnchor="middle" fontSize="26" fill={CAT_COLORS[selected]} fontWeight="800">
+            <text x={cx} y={cy + 22} textAnchor="middle" fontSize="32" fill={CAT_COLORS[selected]} fontWeight="800">
               {g.catPct}%
             </text>
           </>
         ) : null;
-      })()}
+      })() : (
+        <>
+          <text x={cx} y={cy - 26} textAnchor="middle" fontSize="10" fill="#94a3b8" fontWeight="600" letterSpacing="1.5">
+            YOUR SCORE
+          </text>
+          <text x={cx} y={cy + 22} textAnchor="middle" fontSize="56" fill={tierColor} fontWeight="800">
+            {score}
+          </text>
+          <text x={cx} y={cy + 44} textAnchor="middle" fontSize="11" fill={tierColor} fontWeight="700" letterSpacing="1">
+            {tier.toUpperCase()}
+          </text>
+        </>
+      )}
     </svg>
   );
 }
 
-function CategorySection({ groups }: { groups: CategoryGroup[]; totalContribution: number }) {
+function CategorySection({ groups, score, tier, tierColor }: {
+  groups: CategoryGroup[];
+  totalContribution: number;
+  score: number;
+  tier: string;
+  tierColor: string;
+}) {
   const [selectedCat, setSelectedCat] = useState<Category | null>(null);
 
   function handleSliceClick(cat: Category) {
@@ -133,17 +154,12 @@ function CategorySection({ groups }: { groups: CategoryGroup[]; totalContributio
 
   return (
     <div className="mb-12">
-      <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-slate-900">What's driving your score</h2>
-        <p className="text-sm text-slate-400 mt-1">Click a slice to explore each category</p>
-      </div>
-
       {/* Side-by-side: chart left, detail right */}
       <div className="flex flex-col sm:flex-row gap-6 items-start">
 
         {/* Left column: chart + legend */}
         <div className="flex flex-col items-center w-full sm:w-auto sm:flex-shrink-0">
-          <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} />
+          <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} />
 
           {/* Legend */}
           <div className="flex flex-col gap-1.5 mt-4 w-full max-w-[300px]">
@@ -393,21 +409,10 @@ export default function ResultsClient() {
   return (
     <div className="max-w-2xl mx-auto">
 
-      {/* Header */}
-      <div className="text-center mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-6">
-          Your microplastic risk score
-        </h1>
-        <div className={`inline-flex items-center gap-2 border px-5 py-2.5 rounded-full mb-4 ${exposureLevel.bg} ${exposureLevel.color}`}>
-          <span className={`text-3xl font-extrabold tabular-nums`}>{result.riskScore}</span>
-          <span className="text-sm font-semibold">/ 100</span>
-          <span className="w-px h-5 bg-current opacity-30 mx-1" />
-          <span className="text-sm font-bold uppercase tracking-wide">{result.exposureTier}</span>
-        </div>
-        <p className="text-xs text-slate-400 mt-3 max-w-sm mx-auto">
-          Based on your habits across 15 questions — higher score means higher relative exposure risk
-        </p>
-      </div>
+      {/* Minimal page label */}
+      <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">
+        Your microplastic risk score
+      </p>
 
       {/* Ranked question contributions */}
       {(() => {
@@ -435,7 +440,13 @@ export default function ResultsClient() {
         if (groups.length === 0) return null;
 
         return (
-          <CategorySection groups={groups} totalContribution={totalContribution} />
+          <CategorySection
+            groups={groups}
+            totalContribution={totalContribution}
+            score={result.riskScore}
+            tier={result.exposureTier}
+            tierColor={exposureLevel.barColor}
+          />
         );
       })()}
 
