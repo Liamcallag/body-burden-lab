@@ -164,7 +164,7 @@ export default function ResultsClient() {
         return (
           <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
             <h2 className="font-semibold text-slate-900 mb-1">What's driving your score</h2>
-            <p className="text-xs text-slate-400 mb-5">Your habits ranked by their contribution — highest first</p>
+            <p className="text-xs text-slate-400 mb-5">Bar length shows how much each habit contributes to your score — based on how often you're exposed, not the raw particle count</p>
             <div className="flex flex-col divide-y divide-slate-100">
               {ranked.map(({ question, selected, contribution }, i) => {
                 const barPct = Math.round((contribution / topContribution) * 100);
