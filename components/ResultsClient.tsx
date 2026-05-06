@@ -146,6 +146,61 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   );
 }
 
+function DetailPanel({ activeGroup, colorsMap, onClose }: {
+  activeGroup: CategoryGroup;
+  colorsMap: Record<string, string>;
+  onClose: () => void;
+}) {
+  const color = colorsMap[activeGroup.cat];
+  return (
+    <div className="rounded-2xl overflow-hidden border" style={{ borderColor: color + "40", boxShadow: `0 4px 24px ${color}18`, animation: "fadeSlideIn 0.25s ease" }}>
+      <div className="px-5 py-4 flex items-center justify-between" style={{ background: `linear-gradient(135deg, ${color}18, ${color}06)` }}>
+        <div className="flex items-center gap-2.5">
+          <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: color }} />
+          <h3 className="font-bold text-slate-900">{CATEGORY_LABELS[activeGroup.cat]}</h3>
+        </div>
+        <div className="flex items-center gap-3">
+          <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: color + "20", color }}>
+            {activeGroup.catPct}% of score
+          </span>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none sm:hidden">×</button>
+        </div>
+      </div>
+      <div className="bg-white grid grid-cols-2 divide-x divide-slate-50">
+        {activeGroup.items.map(({ question, selected }, i) => (
+          <div key={question.id} className="px-4 py-3.5" style={{ borderTop: i >= 2 ? "1px solid #f8fafc" : undefined }}>
+            <p className="text-xs font-semibold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
+            <p className="text-[11px] text-slate-400 mb-2 italic">"{selected.label}"</p>
+            {question.studyCallout && (
+              <div className="flex flex-col gap-1">
+                <p className="text-xs text-slate-600">
+                  <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                  {question.studyCallout.unit}
+                </p>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {question.studyCallout.unitContext && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
+                      {question.studyCallout.unitContext}
+                    </span>
+                  )}
+                  {question.studyCallout.url ? (
+                    <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
+                      className="text-[11px] font-semibold hover:underline whitespace-nowrap" style={{ color }}>
+                      View study →
+                    </a>
+                  ) : (
+                    <span className="text-[11px] text-slate-400">Est.</span>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
   groups: CategoryGroup[];
   totalContribution: number;
@@ -160,131 +215,42 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
     setSelectedCat((prev) => (prev === cat ? null : cat));
   }
 
+  function handleClose() { setSelectedCat(null); }
+
   const activeGroup = groups.find((g) => g.cat === selectedCat) ?? null;
 
   return (
     <div className="mb-12">
-      {/* Side-by-side: chart left, detail right */}
+      {/* Desktop: side-by-side. Mobile: chart + legend, detail as bottom sheet */}
       <div className="flex flex-col sm:flex-row gap-6 items-start">
 
-        {/* Left column: chart + legend */}
+        {/* Left: chart + legend */}
         <div className="flex flex-col items-center w-full sm:w-auto sm:flex-shrink-0">
           <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
-
-          {/* Legend */}
           <div className="flex flex-col gap-1.5 mt-4 w-full max-w-[300px]">
             {groups.map(({ cat, catPct }) => {
               const isActive = selectedCat === cat;
               const isDimmed = selectedCat !== null && !isActive;
               return (
-                <button
-                  key={cat}
-                  onClick={() => handleSliceClick(cat)}
-                  style={{
-                    borderColor: isActive ? colorsMap[cat] : undefined,
-                    backgroundColor: isActive ? colorsMap[cat] + "10" : undefined,
-                    opacity: isDimmed ? 0.4 : 1,
-                    transition: "all 0.2s ease",
-                  }}
-                  className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${
-                    isActive
-                      ? "shadow-sm"
-                      : "border-slate-200 bg-white hover:border-slate-300"
-                  }`}
+                <button key={cat} onClick={() => handleSliceClick(cat)}
+                  style={{ borderColor: isActive ? colorsMap[cat] : undefined, backgroundColor: isActive ? colorsMap[cat] + "10" : undefined, opacity: isDimmed ? 0.4 : 1, transition: "all 0.2s ease" }}
+                  className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : "border-slate-200 bg-white hover:border-slate-300"}`}
                 >
                   <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorsMap[cat] }} />
-                  <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>
-                    {CATEGORY_LABELS[cat]}
-                  </span>
-                  <span className="font-bold tabular-nums text-xs" style={{ color: isActive ? colorsMap[cat] : "#94a3b8" }}>
-                    {catPct}%
-                  </span>
+                  <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
+                  <span className="font-bold tabular-nums text-xs" style={{ color: isActive ? colorsMap[cat] : "#94a3b8" }}>{catPct}%</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Right column: detail panel */}
-        <div className="flex-1 w-full min-h-[320px]">
+        {/* Right: detail panel — desktop only */}
+        <div className="hidden sm:block flex-1 w-full min-h-[320px]">
           {activeGroup ? (
-            <div
-              key={activeGroup.cat}
-              className="rounded-2xl overflow-hidden border h-full"
-              style={{
-                borderColor: colorsMap[activeGroup.cat] + "40",
-                boxShadow: `0 4px 24px ${colorsMap[activeGroup.cat]}18`,
-                animation: "fadeSlideIn 0.25s ease",
-              }}
-            >
-              {/* Header */}
-              <div
-                className="px-5 py-4 flex items-center justify-between"
-                style={{ background: `linear-gradient(135deg, ${colorsMap[activeGroup.cat]}18, ${colorsMap[activeGroup.cat]}06)` }}
-              >
-                <div className="flex items-center gap-2.5">
-                  <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: colorsMap[activeGroup.cat] }} />
-                  <h3 className="font-bold text-slate-900">{CATEGORY_LABELS[activeGroup.cat]}</h3>
-                </div>
-                <span
-                  className="text-xs font-bold px-2.5 py-1 rounded-full"
-                  style={{ backgroundColor: colorsMap[activeGroup.cat] + "20", color: colorsMap[activeGroup.cat] }}
-                >
-                  {activeGroup.catPct}% of score
-                </span>
-              </div>
-
-              {/* Habit grid — 2 columns so everything fits without scrolling */}
-              <div className="bg-white grid grid-cols-2 divide-x divide-slate-50">
-                {activeGroup.items.map(({ question, selected }, i) => (
-                  <div
-                    key={question.id}
-                    className="px-4 py-3.5"
-                    style={{ borderTop: i >= 2 ? "1px solid #f8fafc" : undefined }}
-                  >
-                    <p className="text-xs font-semibold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
-                    <p className="text-[11px] text-slate-400 mb-2 italic">"{selected.label}"</p>
-                    {question.studyCallout && (
-                      <div className="flex flex-col gap-1">
-                        <p className="text-xs text-slate-600">
-                          <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                          {question.studyCallout.unit}
-                        </p>
-                        <div className="flex items-center gap-2 flex-wrap">
-                          {question.studyCallout.unitContext && (
-                            <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
-                              {question.studyCallout.unitContext}
-                            </span>
-                          )}
-                          {question.studyCallout.url ? (
-                            <a
-                              href={question.studyCallout.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[11px] font-semibold hover:underline whitespace-nowrap"
-                              style={{ color: colorsMap[activeGroup.cat] }}
-                            >
-                              View study →
-                            </a>
-                          ) : (
-                            <span className="text-[11px] text-slate-400">Est.</span>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
           ) : (
-            /* Placeholder when nothing selected */
             <div className="h-full min-h-[320px] flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 text-center p-8">
-              <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-3">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 4v6l4 2" stroke="#94a3b8" strokeWidth="1.8" strokeLinecap="round"/>
-                  <circle cx="10" cy="10" r="8" stroke="#94a3b8" strokeWidth="1.8"/>
-                </svg>
-              </div>
               <p className="text-sm font-medium text-slate-400">Select a slice</p>
               <p className="text-xs text-slate-300 mt-1">to see what's driving that category</p>
             </div>
@@ -292,11 +258,22 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
         </div>
       </div>
 
+      {/* Mobile bottom sheet */}
+      {activeGroup && (
+        <>
+          {/* Backdrop */}
+          <div className="fixed inset-0 bg-black/30 z-40 sm:hidden" onClick={handleClose} style={{ animation: "fadeIn 0.2s ease" }} />
+          {/* Sheet */}
+          <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden rounded-t-2xl overflow-hidden max-h-[75vh] overflow-y-auto" style={{ animation: "slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1)" }}>
+            <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
+          </div>
+        </>
+      )}
+
       <style>{`
-        @keyframes fadeSlideIn {
-          from { opacity: 0; transform: translateY(6px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeSlideIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes slideUp { from { transform:translateY(100%); } to { transform:translateY(0); } }
       `}</style>
     </div>
   );

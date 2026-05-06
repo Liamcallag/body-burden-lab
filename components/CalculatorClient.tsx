@@ -70,9 +70,7 @@ export default function CalculatorClient() {
         </div>
       </div>
 
-      <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
-        <div className="h-1 bg-teal-600 w-full" />
-        <div className="p-6">
+      <div className="px-1">
           <div className="mb-1">
             <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">{categoryLabel}</span>
           </div>
@@ -86,8 +84,8 @@ export default function CalculatorClient() {
                   onClick={() => handleSelect(idx)}
                   className={`w-full text-left px-4 py-3.5 rounded-xl border text-sm font-medium transition-all ${
                     isChosen
-                      ? "border-teal-600 bg-teal-50 text-teal-800 shadow-sm"
-                      : "border-slate-200 text-slate-700 hover:border-teal-300 hover:bg-slate-50"
+                      ? "border-teal-600 bg-white text-teal-800 shadow-sm"
+                      : "border-transparent bg-white text-slate-700 hover:border-teal-300"
                   }`}
                 >
                   <span className={`inline-block w-5 h-5 rounded-full border-2 mr-3 align-middle flex-shrink-0 transition-colors ${
@@ -103,7 +101,6 @@ export default function CalculatorClient() {
               ← Back
             </button>
           </div>
-        </div>
       </div>
 
       <p className="text-center text-xs text-slate-400 mt-5">
