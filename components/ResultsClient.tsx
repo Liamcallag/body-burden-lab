@@ -152,52 +152,71 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
   onClose: () => void;
 }) {
   const color = colorsMap[activeGroup.cat];
+  // Use red accent for alarm feel on the top-ranked (red) category
+  const isTopRisk = color === "#dc2626";
+
   return (
-    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden" style={{ background: "#f0f7f5", animation: "fadeSlideIn 0.25s ease" }}>
-      {/* Header */}
-      <div className="px-5 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
-          <h3 className="font-bold text-slate-800">{CATEGORY_LABELS[activeGroup.cat]}</h3>
-        </div>
-        <div className="flex items-center gap-3">
-          <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: color + "22", color }}>
-            {activeGroup.catPct}% of score
-          </span>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none">×</button>
+    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-lg" style={{ background: "#f8f9fa", animation: "fadeSlideIn 0.25s ease" }}>
+      {/* Coloured header bar */}
+      <div className="px-5 pt-5 pb-4" style={{ background: `linear-gradient(135deg, ${color}18 0%, ${color}08 100%)`, borderBottom: `2px solid ${color}30` }}>
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+              <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color }}>
+                {isTopRisk ? "Highest risk category" : "Risk category"}
+              </span>
+            </div>
+            <h3 className="text-xl font-extrabold text-slate-900 leading-tight">{CATEGORY_LABELS[activeGroup.cat]}</h3>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="text-right">
+              <div className="text-3xl font-black tabular-nums leading-none" style={{ color }}>{activeGroup.catPct}%</div>
+              <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">of score</div>
+            </div>
+            <button onClick={onClose} className="ml-1 w-7 h-7 flex items-center justify-center rounded-full bg-white/70 text-slate-400 hover:text-slate-700 hover:bg-white text-lg leading-none shadow-sm transition-all">×</button>
+          </div>
         </div>
       </div>
-      {/* Habit cards — white pills on mint background */}
-      <div className="grid grid-cols-2 gap-2 px-3 pb-4">
-        {activeGroup.items.map(({ question, selected }) => (
-          <div key={question.id} className="bg-white rounded-xl px-3.5 py-3 shadow-sm">
-            <p className="text-xs font-semibold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
-            <p className="text-[11px] text-slate-400 mb-2 italic">"{selected.label}"</p>
-            {question.studyCallout && (
-              <div className="flex flex-col gap-1">
-                <p className="text-xs text-slate-600">
-                  <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                  {question.studyCallout.unit}
-                </p>
-                <div className="flex items-center gap-2 flex-wrap">
-                  {question.studyCallout.unitContext && (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
-                      {question.studyCallout.unitContext}
-                    </span>
-                  )}
-                  {question.studyCallout.url ? (
-                    <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
-                      className="text-[11px] font-semibold hover:underline whitespace-nowrap" style={{ color }}>
-                      View study →
-                    </a>
-                  ) : (
-                    <span className="text-[11px] text-slate-400">Est.</span>
-                  )}
-                </div>
+
+      {/* Habit cards */}
+      <div className="grid grid-cols-2 gap-2 p-3">
+        {activeGroup.items.map(({ question, selected }) => {
+          const isHighRisk = selected.riskScore >= 7;
+          return (
+            <div key={question.id} className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ borderTop: isHighRisk ? `3px solid ${color}` : "3px solid #e2e8f0" }}>
+              <div className="px-3.5 pt-3 pb-3">
+                <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
+                <p className="text-[11px] text-slate-400 mb-2.5 italic">"{selected.label}"</p>
+                {question.studyCallout ? (
+                  <div>
+                    <p className="text-lg font-black tabular-nums leading-tight" style={{ color: isHighRisk ? color : "#334155" }}>
+                      {question.studyCallout.value}
+                    </p>
+                    <p className="text-[10px] text-slate-500 leading-snug mt-0.5 mb-2">{question.studyCallout.unit}</p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {question.studyCallout.unitContext && (
+                        <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: color + "15", color }}>
+                          {question.studyCallout.unitContext}
+                        </span>
+                      )}
+                      {question.studyCallout.url ? (
+                        <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
+                          className="text-[10px] font-semibold hover:underline" style={{ color }}>
+                          View study →
+                        </a>
+                      ) : (
+                        <span className="text-[10px] text-slate-400 italic">Est.</span>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-[11px] text-slate-400 italic">No study data available</p>
+                )}
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -230,24 +249,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
       <div className="hidden sm:block">
         <div className="relative flex items-start gap-8">
 
-          {/* Detail panel — slides in from left */}
-          <div
-            className="overflow-hidden"
-            style={{
-              flex: expanded ? "1 1 0%" : "0 0 0%",
-              width: expanded ? "auto" : "0px",
-              opacity: expanded ? 1 : 0,
-              transform: expanded ? "translateX(0)" : "translateX(-40px)",
-              transition: "flex 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.4,0,0.2,1) 0.05s",
-              pointerEvents: expanded ? "auto" : "none",
-            }}
-          >
-            {activeGroup && (
-              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
-            )}
-          </div>
-
-          {/* Chart column — centered when idle, shrinks right when expanded */}
+          {/* Chart column — centered when idle, shrinks left when expanded */}
           <div
             className="flex flex-col items-center flex-shrink-0"
             style={{
@@ -287,6 +289,23 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                 );
               })}
             </div>
+          </div>
+
+          {/* Detail panel — slides in from right */}
+          <div
+            className="overflow-hidden"
+            style={{
+              flex: expanded ? "1 1 0%" : "0 0 0%",
+              width: expanded ? "auto" : "0px",
+              opacity: expanded ? 1 : 0,
+              transform: expanded ? "translateX(0)" : "translateX(40px)",
+              transition: "flex 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.4,0,0.2,1) 0.05s",
+              pointerEvents: expanded ? "auto" : "none",
+            }}
+          >
+            {activeGroup && (
+              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
+            )}
           </div>
         </div>
       </div>
