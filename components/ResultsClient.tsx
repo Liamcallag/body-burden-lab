@@ -224,36 +224,42 @@ function CategorySection({ groups, score, tier, tierColor }: {
                 </span>
               </div>
 
-              {/* Habit rows */}
-              <div className="bg-white divide-y divide-slate-50">
-                {activeGroup.items.map(({ question, selected }) => (
-                  <div key={question.id} className="px-5 py-3.5">
-                    <p className="text-sm font-semibold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
-                    <p className="text-xs text-slate-400 mb-2 italic">"{selected.label}"</p>
+              {/* Habit grid — 2 columns so everything fits without scrolling */}
+              <div className="bg-white grid grid-cols-2 divide-x divide-slate-50">
+                {activeGroup.items.map(({ question, selected }, i) => (
+                  <div
+                    key={question.id}
+                    className="px-4 py-3.5"
+                    style={{ borderTop: i >= 2 ? "1px solid #f8fafc" : undefined }}
+                  >
+                    <p className="text-xs font-semibold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
+                    <p className="text-[11px] text-slate-400 mb-2 italic">"{selected.label}"</p>
                     {question.studyCallout && (
-                      <div className="flex items-center justify-between gap-2 flex-wrap">
-                        <p className="text-sm text-slate-600">
+                      <div className="flex flex-col gap-1">
+                        <p className="text-xs text-slate-600">
                           <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
                           {question.studyCallout.unit}
+                        </p>
+                        <div className="flex items-center gap-2 flex-wrap">
                           {question.studyCallout.unitContext && (
-                            <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 ml-1.5">
+                            <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
                               {question.studyCallout.unitContext}
                             </span>
                           )}
-                        </p>
-                        {question.studyCallout.url ? (
-                          <a
-                            href={question.studyCallout.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] font-semibold hover:underline whitespace-nowrap shrink-0"
-                            style={{ color: CAT_COLORS[activeGroup.cat] }}
-                          >
-                            View study →
-                          </a>
-                        ) : (
-                          <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
-                        )}
+                          {question.studyCallout.url ? (
+                            <a
+                              href={question.studyCallout.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[11px] font-semibold hover:underline whitespace-nowrap"
+                              style={{ color: CAT_COLORS[activeGroup.cat] }}
+                            >
+                              View study →
+                            </a>
+                          ) : (
+                            <span className="text-[11px] text-slate-400">Est.</span>
+                          )}
+                        </div>
                       </div>
                     )}
                   </div>
