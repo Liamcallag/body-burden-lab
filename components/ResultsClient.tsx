@@ -12,8 +12,8 @@ type CategoryGroup = {
   catPct: number;
 };
 
-// Colors assigned by rank (largest slice → most alarming)
-const RANK_COLORS = ["#be123c", "#c2410c", "#b45309", "#78716c"];
+// Colors assigned by rank (largest slice → most alarming, then distinct hues)
+const RANK_COLORS = ["#ef4444", "#3b82f6", "#f59e0b", "#8b5cf6"];
 
 function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMap }: {
   groups: CategoryGroup[];
