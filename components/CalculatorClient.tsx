@@ -52,60 +52,55 @@ export default function CalculatorClient() {
   const displaySelected = selected !== null ? selected : answers[question.id] ?? null;
   const categoryLabel = CATEGORY_LABELS[question.category];
 
-  /* ── Mobile layout (unchanged) ── */
+  /* ── Mobile layout ── */
   const mobileLayout = (
     <div className="md:hidden w-full max-w-xl">
-      <div className="mb-8">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-xs text-slate-400 font-medium">
-            Question {currentQ + 1} of {total}
-          </span>
-          <span className="text-xs text-slate-400">{Math.round(progress)}% complete</span>
-        </div>
-        <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-teal-600 rounded-full transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+      {/* Progress bar — flush to top, sticks right under the nav */}
+      <div className="fixed top-[57px] left-0 right-0 z-30 h-1 bg-slate-200">
+        <div
+          className="h-full bg-teal-600 transition-all duration-300"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      {/* Question counter */}
+      <div className="flex justify-between items-center mb-6 pt-2">
+        <span className="text-xs text-slate-400 font-medium">Question {currentQ + 1} of {total}</span>
+        <span className="text-xs text-slate-400">{Math.round(progress)}% complete</span>
       </div>
 
       <div className="px-1">
-          <div className="mb-1">
-            <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">{categoryLabel}</span>
-          </div>
-          <h2 className="text-xl font-semibold text-slate-900 mb-6 leading-snug">{question.question}</h2>
-          <div className="flex flex-col gap-2.5">
-            {question.options.map((option, idx) => {
-              const isChosen = displaySelected === idx;
-              return (
-                <button
-                  key={idx}
-                  onClick={() => handleSelect(idx)}
-                  className={`w-full text-left px-4 py-3.5 rounded-xl border text-sm font-medium transition-all ${
-                    isChosen
-                      ? "border-teal-600 bg-white text-teal-800 shadow-sm"
-                      : "border-transparent bg-white text-slate-700 hover:border-teal-300"
-                  }`}
-                >
-                  <span className={`inline-block w-5 h-5 rounded-full border-2 mr-3 align-middle flex-shrink-0 transition-colors ${
-                    isChosen ? "border-teal-600 bg-teal-600" : "border-slate-300"
-                  }`} />
-                  {option.label}
-                </button>
-              );
-            })}
-          </div>
-          <div className="mt-7">
-            <button onClick={handleBack} className="text-sm text-slate-400 hover:text-slate-600 transition-colors">
-              ← Back
-            </button>
-          </div>
+        <div className="mb-1">
+          <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">{categoryLabel}</span>
+        </div>
+        <h2 className="text-xl font-semibold text-slate-900 mb-6 leading-snug">{question.question}</h2>
+        <div className="flex flex-col gap-2.5">
+          {question.options.map((option, idx) => {
+            const isChosen = displaySelected === idx;
+            return (
+              <button
+                key={idx}
+                onClick={() => handleSelect(idx)}
+                className={`w-full text-left px-4 py-3.5 rounded-xl border text-sm font-medium transition-all ${
+                  isChosen
+                    ? "border-teal-600 bg-white text-teal-800 shadow-sm"
+                    : "border-transparent bg-white text-slate-700 hover:border-teal-300"
+                }`}
+              >
+                <span className={`inline-block w-5 h-5 rounded-full border-2 mr-3 align-middle flex-shrink-0 transition-colors ${
+                  isChosen ? "border-teal-600 bg-teal-600" : "border-slate-300"
+                }`} />
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+        <div className="mt-7">
+          <button onClick={handleBack} className="text-sm text-slate-400 hover:text-slate-600 transition-colors">
+            ← Back
+          </button>
+        </div>
       </div>
-
-      <p className="text-center text-xs text-slate-400 mt-5">
-        No account needed. Results are calculated in your browser.
-      </p>
     </div>
   );
 
@@ -178,6 +173,7 @@ export default function CalculatorClient() {
 
   return (
     <>
+      <style>{`footer { display: none !important; }`}</style>
       {mobileLayout}
       {desktopLayout}
     </>
