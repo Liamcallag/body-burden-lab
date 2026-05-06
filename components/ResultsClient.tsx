@@ -13,7 +13,7 @@ type CategoryGroup = {
 };
 
 // Colors assigned by rank (largest slice → most alarming, then distinct hues)
-const RANK_COLORS = ["#ef4444", "#f97316", "#3b82f6", "#8b5cf6"];
+const RANK_COLORS = ["#dc2626", "#2563eb", "#0891b2", "#7c3aed"];
 
 const PRODUCT_SWAPS: Record<string, { label: string; url: string }> = {
   microwave:    { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
@@ -236,7 +236,8 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
               return (
                 <button key={cat} onClick={() => handleSliceClick(cat)}
                   style={{ borderColor: isActive ? colorsMap[cat] : undefined, backgroundColor: isActive ? colorsMap[cat] + "10" : undefined, opacity: isDimmed ? 0.4 : 1, transition: "all 0.2s ease" }}
-                  className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : "border-slate-200 bg-white hover:border-slate-300"}`}
+                  className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : "border-transparent hover:border-slate-300"}`}
+                  style={!isActive ? { backgroundColor: "#e4efed" } : undefined}
                 >
                   <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorsMap[cat] }} />
                   <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
@@ -466,9 +467,9 @@ export default function ResultsClient() {
             {reductionOpportunities.map((r, i) => {
               const swap = PRODUCT_SWAPS[r.question.id];
               return (
-                <li key={r.question.id} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <li key={r.question.id} className="rounded-2xl overflow-hidden" style={{ backgroundColor: "#e4efed" }}>
                   <div className="flex items-start gap-4 p-5">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-600 text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center mt-0.5">
                       {i + 1}
                     </span>
                     <div className="flex-1 min-w-0">
@@ -484,21 +485,21 @@ export default function ResultsClient() {
       )}
 
       {/* ── What the science says (scannable stats) ── */}
-      <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+      <div className="rounded-2xl p-6 mb-6" style={{ backgroundColor: "#e4efed" }}>
         <h2 className="font-bold text-slate-900 mb-1">What the science says</h2>
-        <p className="text-xs text-slate-400 mb-5">Observational findings — detection does not prove causation</p>
+        <p className="text-xs text-slate-500 mb-5">Observational findings — detection does not prove causation</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-slate-50 rounded-xl p-4">
+          <div className="bg-white rounded-xl p-4 shadow-sm">
             <p className="text-2xl font-extrabold text-slate-900 tabular-nums mb-1">77%</p>
             <p className="text-xs text-slate-600 leading-snug">of healthy adults tested had microplastics detected in their blood</p>
             <p className="text-[10px] text-slate-400 mt-2">Leslie et al., 2022</p>
           </div>
-          <div className="bg-slate-50 rounded-xl p-4">
+          <div className="bg-white rounded-xl p-4 shadow-sm">
             <p className="text-2xl font-extrabold text-slate-900 tabular-nums mb-1">4.5×</p>
             <p className="text-xs text-slate-600 leading-snug">higher risk of heart attack or stroke in patients with microplastics in arterial plaque</p>
             <p className="text-[10px] text-slate-400 mt-2">Marfella et al., NEJM 2024</p>
           </div>
-          <div className="bg-slate-50 rounded-xl p-4">
+          <div className="bg-white rounded-xl p-4 shadow-sm">
             <p className="text-2xl font-extrabold text-slate-900 tabular-nums mb-1">+50%</p>
             <p className="text-xs text-slate-600 leading-snug">increase in microplastic concentration in human brain tissue between 2016 and 2024</p>
             <p className="text-[10px] text-slate-400 mt-2">Nihart et al., Nature Medicine 2025</p>
@@ -525,7 +526,7 @@ export default function ResultsClient() {
           </div>
           <p className="text-xs text-teal-400">bodyburdenlab.com</p>
         </div>
-        <div className="bg-white px-6 py-4">
+        <div className="px-6 py-4" style={{ backgroundColor: "#e4efed" }}>
           <button
             onClick={handleShare}
             className="w-full text-center bg-slate-900 text-white font-semibold py-2.5 rounded-full text-sm hover:bg-slate-700 transition-colors"
