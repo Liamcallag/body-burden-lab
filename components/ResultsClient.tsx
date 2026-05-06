@@ -153,22 +153,24 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
 }) {
   const color = colorsMap[activeGroup.cat];
   return (
-    <div className="rounded-2xl overflow-hidden border" style={{ borderColor: color + "40", boxShadow: `0 4px 24px ${color}18`, animation: "fadeSlideIn 0.25s ease" }}>
-      <div className="px-5 py-4 flex items-center justify-between" style={{ background: `linear-gradient(135deg, ${color}18, ${color}06)` }}>
+    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden" style={{ background: "#f0f7f5", animation: "fadeSlideIn 0.25s ease" }}>
+      {/* Header */}
+      <div className="px-5 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: color }} />
-          <h3 className="font-bold text-slate-900">{CATEGORY_LABELS[activeGroup.cat]}</h3>
+          <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+          <h3 className="font-bold text-slate-800">{CATEGORY_LABELS[activeGroup.cat]}</h3>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: color + "20", color }}>
+          <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: color + "22", color }}>
             {activeGroup.catPct}% of score
           </span>
           <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none sm:hidden">×</button>
         </div>
       </div>
-      <div className="bg-white grid grid-cols-2 divide-x divide-slate-50">
-        {activeGroup.items.map(({ question, selected }, i) => (
-          <div key={question.id} className="px-4 py-3.5" style={{ borderTop: i >= 2 ? "1px solid #f8fafc" : undefined }}>
+      {/* Habit cards — white pills on mint background */}
+      <div className="grid grid-cols-2 gap-2 px-3 pb-4">
+        {activeGroup.items.map(({ question, selected }) => (
+          <div key={question.id} className="bg-white rounded-xl px-3.5 py-3 shadow-sm">
             <p className="text-xs font-semibold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
             <p className="text-[11px] text-slate-400 mb-2 italic">"{selected.label}"</p>
             {question.studyCallout && (
