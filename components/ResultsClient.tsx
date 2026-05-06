@@ -490,18 +490,6 @@ export default function ResultsClient() {
                       {r.tip && <p className="text-sm text-slate-500 leading-relaxed">{r.tip}</p>}
                     </div>
                   </div>
-                  {swap && (
-                    <div className="px-5 pb-4 pl-16">
-                      <a
-                        href={swap.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-700 bg-teal-50 border border-teal-200 px-3 py-1.5 rounded-full hover:bg-teal-100 transition-colors"
-                      >
-                        {swap.label} →
-                      </a>
-                    </div>
-                  )}
                 </li>
               );
             })}
