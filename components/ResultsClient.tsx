@@ -228,13 +228,30 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
 
       {/* Desktop layout */}
       <div className="hidden sm:block">
-        <div className="relative flex items-start gap-6">
+        <div className="relative flex items-start gap-8">
 
-          {/* Chart column — centered when idle, slides left when expanded */}
+          {/* Detail panel — slides in from left */}
+          <div
+            className="overflow-hidden"
+            style={{
+              flex: expanded ? "1 1 0%" : "0 0 0%",
+              width: expanded ? "auto" : "0px",
+              opacity: expanded ? 1 : 0,
+              transform: expanded ? "translateX(0)" : "translateX(-40px)",
+              transition: "flex 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.4,0,0.2,1) 0.05s",
+              pointerEvents: expanded ? "auto" : "none",
+            }}
+          >
+            {activeGroup && (
+              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
+            )}
+          </div>
+
+          {/* Chart column — centered when idle, shrinks right when expanded */}
           <div
             className="flex flex-col items-center flex-shrink-0"
             style={{
-              width: expanded ? "420px" : "100%",
+              width: expanded ? "360px" : "100%",
               transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
             }}
           >
@@ -270,21 +287,6 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                 );
               })}
             </div>
-          </div>
-
-          {/* Detail panel — slides in from right */}
-          <div
-            className="flex-1 overflow-hidden"
-            style={{
-              opacity: expanded ? 1 : 0,
-              transform: expanded ? "translateX(0)" : "translateX(40px)",
-              transition: "opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.4,0,0.2,1) 0.05s",
-              pointerEvents: expanded ? "auto" : "none",
-            }}
-          >
-            {activeGroup && (
-              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
-            )}
           </div>
         </div>
       </div>
