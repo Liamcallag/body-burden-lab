@@ -15,6 +15,18 @@ type CategoryGroup = {
 // Colors assigned by rank (largest slice → most alarming, then distinct hues)
 const RANK_COLORS = ["#ef4444", "#3b82f6", "#f59e0b", "#8b5cf6"];
 
+const PRODUCT_SWAPS: Record<string, { label: string; url: string }> = {
+  microwave:    { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
+  tea:          { label: "Shop loose leaf tea", url: "https://www.amazon.com/s?k=loose+leaf+tea+infuser" },
+  water:        { label: "Shop water filters", url: "https://www.amazon.com/s?k=clearly+filtered+water+pitcher" },
+  nonstick:     { label: "Shop stainless pans", url: "https://www.amazon.com/s?k=stainless+steel+frying+pan" },
+  cuttingboard: { label: "Shop wood boards", url: "https://www.amazon.com/s?k=bamboo+cutting+board" },
+  utensils:     { label: "Shop wood utensils", url: "https://www.amazon.com/s?k=wooden+cooking+utensils" },
+  hotdrinks:    { label: "Shop reusable cups", url: "https://www.amazon.com/s?k=reusable+travel+coffee+cup" },
+  airquality:   { label: "Shop HEPA purifiers", url: "https://www.amazon.com/s?k=hepa+air+purifier" },
+  clothing:     { label: "Shop laundry bags", url: "https://www.amazon.com/s?k=microfiber+laundry+bag+washing" },
+};
+
 function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMap }: {
   groups: CategoryGroup[];
   selected: Category | null;
@@ -391,7 +403,7 @@ export default function ResultsClient() {
     const tip = REDUCTION_TIPS[q.tipKey];
     return { question: q, potential, tip, selectedScore };
   })
-    .filter((r) => r.potential > 0 && r.tip)
+    .filter((r) => r.potential > 0 && r.tip && PRODUCT_SWAPS[r.question.id])
     .sort((a, b) => b.potential - a.potential)
     .slice(0, 5);
 
@@ -466,18 +478,7 @@ export default function ResultsClient() {
           <p className="text-sm text-slate-400 mb-5">The habits that would cut your score the most</p>
           <ol className="flex flex-col gap-3">
             {reductionOpportunities.map((r, i) => {
-              const productSwap: Record<string, { label: string; url: string }> = {
-                microwave: { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
-                tea:       { label: "Shop loose leaf tea", url: "https://www.amazon.com/s?k=loose+leaf+tea+infuser" },
-                water:     { label: "Shop water filters", url: "https://www.amazon.com/s?k=clearly+filtered+water+pitcher" },
-                nonstick:  { label: "Shop stainless pans", url: "https://www.amazon.com/s?k=stainless+steel+frying+pan" },
-                cuttingboard: { label: "Shop wood boards", url: "https://www.amazon.com/s?k=bamboo+cutting+board" },
-                utensils:  { label: "Shop wood utensils", url: "https://www.amazon.com/s?k=wooden+cooking+utensils" },
-                hotdrinks: { label: "Shop reusable cups", url: "https://www.amazon.com/s?k=reusable+travel+coffee+cup" },
-                airquality:{ label: "Shop HEPA filters", url: "https://www.amazon.com/s?k=hepa+air+purifier" },
-                clothing:  { label: "Shop laundry bags", url: "https://www.amazon.com/s?k=microfiber+laundry+bag+washing" },
-              };
-              const swap = productSwap[r.question.id];
+              const swap = PRODUCT_SWAPS[r.question.id];
               return (
                 <li key={r.question.id} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
                   <div className="flex items-start gap-4 p-5">
