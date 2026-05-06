@@ -22,4 +22,5 @@ html {
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  background-color: #f8f7f5;
 }
