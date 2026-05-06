@@ -29,10 +29,6 @@ export default function CalculatorClient() {
   // Progress: age step is step 0, questions follow
   const progress = phase === "age" ? 0 : ((currentQ + 1) / total) * 100;
 
-  function handleSelect(idx: number) {
-    setSelected(idx);
-  }
-
   function trackEvent(name: string, params?: Record<string, string | number>) {
     if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
       (window as any).gtag("event", name, params);
@@ -46,22 +42,24 @@ export default function CalculatorClient() {
     trackEvent("calculator_question_viewed", { question_number: 1, question_id: QUESTIONS[0].id });
   }
 
-  function handleNext() {
-    if (selected === null) return;
-    const updated = { ...answers, [question.id]: selected };
+  function handleSelect(idx: number) {
+    setSelected(idx);
+    const updated = { ...answers, [question.id]: idx };
     setAnswers(updated);
 
-    if (isLast) {
-      localStorage.setItem("bbl_answers", JSON.stringify(updated));
-      trackEvent("calculator_completed");
-      router.push("/results");
-    } else {
-      const nextIndex = currentQ + 1;
-      setCurrentQ(nextIndex);
-      const nextQ = QUESTIONS[nextIndex];
-      setSelected(updated[nextQ.id] !== undefined ? updated[nextQ.id] : null);
-      trackEvent("calculator_question_viewed", { question_number: nextIndex + 1, question_id: nextQ.id });
-    }
+    setTimeout(() => {
+      if (isLast) {
+        localStorage.setItem("bbl_answers", JSON.stringify(updated));
+        trackEvent("calculator_completed");
+        router.push("/results");
+      } else {
+        const nextIndex = currentQ + 1;
+        setCurrentQ(nextIndex);
+        const nextQ = QUESTIONS[nextIndex];
+        setSelected(updated[nextQ.id] !== undefined ? updated[nextQ.id] : null);
+        trackEvent("calculator_question_viewed", { question_number: nextIndex + 1, question_id: nextQ.id });
+      }
+    }, 300);
   }
 
   function handleBack() {
@@ -75,12 +73,7 @@ export default function CalculatorClient() {
     setSelected(answers[prevId] !== undefined ? answers[prevId] : null);
   }
 
-  const displaySelected =
-    selected !== null
-      ? selected
-      : answers[question.id] !== undefined
-      ? answers[question.id]
-      : null;
+  const displaySelected = selected !== null ? selected : answers[question.id] ?? null;
 
   if (phase === "age") {
     return (
@@ -210,23 +203,12 @@ export default function CalculatorClient() {
           })}
         </div>
 
-        <div className="flex gap-3 mt-7">
+        <div className="mt-7">
           <button
             onClick={handleBack}
-            className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors"
+            className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
           >
             ← Back
-          </button>
-          <button
-            onClick={handleNext}
-            disabled={displaySelected === null}
-            className={`flex-1 py-3 rounded-xl text-sm font-semibold transition-all ${
-              displaySelected !== null
-                ? "bg-teal-700 text-white hover:bg-teal-800 shadow-sm"
-                : "bg-slate-100 text-slate-400 cursor-not-allowed"
-            }`}
-          >
-            {isLast ? "See My Results →" : "Next →"}
           </button>
         </div>
         </div>
