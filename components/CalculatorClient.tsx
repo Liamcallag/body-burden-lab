@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { QUESTIONS } from "@/lib/questions";
+import { QUESTIONS, CATEGORY_LABELS } from "@/lib/questions";
 
 export default function CalculatorClient() {
   const router = useRouter();
@@ -50,10 +50,11 @@ export default function CalculatorClient() {
   }
 
   const displaySelected = selected !== null ? selected : answers[question.id] ?? null;
+  const categoryLabel = CATEGORY_LABELS[question.category];
 
-  return (
-    <div className="w-full max-w-xl">
-      {/* Progress bar */}
+  /* ── Mobile layout (unchanged) ── */
+  const mobileLayout = (
+    <div className="md:hidden w-full max-w-xl">
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
           <span className="text-xs text-slate-400 font-medium">
@@ -69,55 +70,39 @@ export default function CalculatorClient() {
         </div>
       </div>
 
-      {/* Question card */}
       <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
         <div className="h-1 bg-teal-600 w-full" />
-        <div className="p-6 sm:p-8">
-        <div className="mb-1">
-          <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">
-            {question.category === "water"
-              ? "Drinking Water"
-              : question.category === "kitchen"
-              ? "Kitchen & Cooking"
-              : question.category === "food"
-              ? "Food"
-              : "Air & Clothing"}
-          </span>
-        </div>
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-6 leading-snug">
-          {question.question}
-        </h2>
-
-        <div className="flex flex-col gap-2.5">
-          {question.options.map((option, idx) => {
-            const isChosen = displaySelected === idx;
-            return (
-              <button
-                key={idx}
-                onClick={() => handleSelect(idx)}
-                className={`w-full text-left px-4 py-3.5 rounded-xl border text-sm font-medium transition-all ${
-                  isChosen
-                    ? "border-teal-600 bg-teal-50 text-teal-800 shadow-sm"
-                    : "border-slate-200 text-slate-700 hover:border-teal-300 hover:bg-slate-50"
-                }`}
-              >
-                <span className={`inline-block w-5 h-5 rounded-full border-2 mr-3 align-middle flex-shrink-0 transition-colors ${
-                  isChosen ? "border-teal-600 bg-teal-600" : "border-slate-300"
-                }`} />
-                {option.label}
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="mt-7">
-          <button
-            onClick={handleBack}
-            className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
-          >
-            ← Back
-          </button>
-        </div>
+        <div className="p-6">
+          <div className="mb-1">
+            <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">{categoryLabel}</span>
+          </div>
+          <h2 className="text-xl font-semibold text-slate-900 mb-6 leading-snug">{question.question}</h2>
+          <div className="flex flex-col gap-2.5">
+            {question.options.map((option, idx) => {
+              const isChosen = displaySelected === idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => handleSelect(idx)}
+                  className={`w-full text-left px-4 py-3.5 rounded-xl border text-sm font-medium transition-all ${
+                    isChosen
+                      ? "border-teal-600 bg-teal-50 text-teal-800 shadow-sm"
+                      : "border-slate-200 text-slate-700 hover:border-teal-300 hover:bg-slate-50"
+                  }`}
+                >
+                  <span className={`inline-block w-5 h-5 rounded-full border-2 mr-3 align-middle flex-shrink-0 transition-colors ${
+                    isChosen ? "border-teal-600 bg-teal-600" : "border-slate-300"
+                  }`} />
+                  {option.label}
+                </button>
+              );
+            })}
+          </div>
+          <div className="mt-7">
+            <button onClick={handleBack} className="text-sm text-slate-400 hover:text-slate-600 transition-colors">
+              ← Back
+            </button>
+          </div>
         </div>
       </div>
 
@@ -125,5 +110,79 @@ export default function CalculatorClient() {
         No account needed. Results are calculated in your browser.
       </p>
     </div>
+  );
+
+  /* ── Desktop layout (full screen) ── */
+  const desktopLayout = (
+    <div className="hidden md:flex fixed inset-0 z-50 flex-col bg-slate-900">
+      {/* Progress bar — full width at very top */}
+      <div className="h-0.5 bg-slate-700 w-full flex-shrink-0">
+        <div
+          className="h-full bg-teal-500 transition-all duration-500"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      {/* Top bar */}
+      <div className="flex items-center justify-between px-12 py-5 flex-shrink-0">
+        <span className="text-sm text-slate-400 tabular-nums">
+          {currentQ + 1} <span className="text-slate-600">/ {total}</span>
+        </span>
+        <span className="text-sm text-slate-400 tabular-nums">{Math.round(progress)}%</span>
+      </div>
+
+      {/* Main content — vertically centred */}
+      <div className="flex-1 flex items-center px-12 gap-16 min-h-0">
+        {/* Left — question */}
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-4">{categoryLabel}</p>
+          <h2 className="text-4xl xl:text-5xl font-bold text-white leading-tight">{question.question}</h2>
+        </div>
+
+        {/* Right — options */}
+        <div className="w-[400px] xl:w-[460px] flex-shrink-0 flex flex-col gap-3">
+          {question.options.map((option, idx) => {
+            const isChosen = displaySelected === idx;
+            return (
+              <button
+                key={idx}
+                onClick={() => handleSelect(idx)}
+                className={`w-full text-left px-5 py-4 rounded-xl border text-sm font-medium transition-all flex items-center gap-3 ${
+                  isChosen
+                    ? "border-teal-500 bg-teal-500/10 text-teal-300"
+                    : "border-slate-700 text-slate-300 hover:border-slate-500 hover:bg-slate-800"
+                }`}
+              >
+                <span className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-colors ${
+                  isChosen ? "border-teal-500 bg-teal-500 text-slate-900" : "border-slate-600 text-slate-500"
+                }`}>
+                  {idx + 1}
+                </span>
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="flex items-center justify-between px-12 py-5 border-t border-slate-800 flex-shrink-0">
+        <button
+          onClick={handleBack}
+          className={`text-sm transition-colors ${currentQ === 0 ? "text-slate-700 cursor-default" : "text-slate-400 hover:text-white"}`}
+          disabled={currentQ === 0}
+        >
+          ← Previous
+        </button>
+        <p className="text-xs text-slate-600">Click an option to continue</p>
+      </div>
+    </div>
+  );
+
+  return (
+    <>
+      {mobileLayout}
+      {desktopLayout}
+    </>
   );
 }
