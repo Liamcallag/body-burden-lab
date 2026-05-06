@@ -3,8 +3,102 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { QUESTIONS, REDUCTION_TIPS } from "@/lib/questions";
+import { QUESTIONS, REDUCTION_TIPS, CATEGORY_LABELS, type Category } from "@/lib/questions";
 import { calculateScore, type AnswerMap, type ScoreResult } from "@/lib/scoring";
+
+type CategoryGroup = {
+  cat: Category;
+  items: { question: (typeof QUESTIONS)[number]; selected: { label: string; riskScore: number }; contribution: number }[];
+  catPct: number;
+};
+
+function CategorySection({ groups, totalContribution }: { groups: CategoryGroup[]; totalContribution: number }) {
+  const [openCats, setOpenCats] = useState<Set<string>>(new Set([groups[0]?.cat]));
+
+  function toggle(cat: string) {
+    setOpenCats((prev) => {
+      const next = new Set(prev);
+      next.has(cat) ? next.delete(cat) : next.add(cat);
+      return next;
+    });
+  }
+
+  return (
+    <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
+      <h2 className="font-semibold text-slate-900 mb-1">What's driving your score</h2>
+      <p className="text-xs text-slate-400 mb-5">Each category's share of your total risk score — tap to see individual habits</p>
+      <div className="flex flex-col divide-y divide-slate-100">
+        {groups.map(({ cat, items, catPct }) => {
+          const isOpen = openCats.has(cat);
+          return (
+            <div key={cat} className="first:pt-0 last:pb-0">
+              <button
+                onClick={() => toggle(cat)}
+                className="w-full flex items-center justify-between gap-3 py-4 text-left"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-slate-800">{CATEGORY_LABELS[cat]}</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
+                    {items.length} habit{items.length !== 1 ? "s" : ""}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="text-sm font-bold tabular-nums text-slate-700">{catPct}%</span>
+                  <span className="text-slate-300 text-xs">{isOpen ? "▲" : "▼"}</span>
+                </div>
+              </button>
+              {isOpen && (
+                <div className="flex flex-col divide-y divide-slate-50 pb-3">
+                  {items.map(({ question, selected, contribution }) => {
+                    const pct = Math.round((contribution / totalContribution) * 100);
+                    return (
+                      <div key={question.id} className="py-3 pl-3">
+                        <div className="flex items-start justify-between gap-3 mb-1.5">
+                          <div className="min-w-0">
+                            <p className="text-sm font-medium text-slate-700 leading-snug">{question.resultLabel}</p>
+                            <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
+                          </div>
+                          <span className="flex-shrink-0 text-sm font-bold tabular-nums text-slate-500">{pct}%</span>
+                        </div>
+                        {question.studyCallout && (
+                          <div className="flex items-center justify-between gap-2 flex-wrap mt-1">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <p className="text-sm text-slate-600">
+                                <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
+                                {question.studyCallout.unit}
+                              </p>
+                              {question.studyCallout.unitContext && (
+                                <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
+                                  {question.studyCallout.unitContext}
+                                </span>
+                              )}
+                            </div>
+                            {question.studyCallout.url ? (
+                              <a
+                                href={question.studyCallout.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
+                              >
+                                View study →
+                              </a>
+                            ) : (
+                              <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export default function ResultsClient() {
   const router = useRouter();
@@ -147,74 +241,31 @@ export default function ResultsClient() {
 
       {/* Ranked question contributions */}
       {(() => {
-        const ranked = QUESTIONS.map((q) => {
+        const allItems = QUESTIONS.map((q) => {
           const idx = answers[q.id] ?? 0;
           const selected = q.options[idx];
           const contribution = (selected?.riskScore ?? 0) * q.weight;
-          const maxContribution = Math.max(...q.options.map((o) => o.riskScore)) * q.weight;
-          return { question: q, selected, contribution, maxContribution };
-        })
-          .filter((r) => r.contribution > 0)
-          .sort((a, b) => b.contribution - a.contribution);
+          return { question: q, selected, contribution };
+        }).filter((r) => r.contribution > 0);
 
-        const totalContribution = ranked.reduce((sum, r) => sum + r.contribution, 0) || 1;
+        const totalContribution = allItems.reduce((sum, r) => sum + r.contribution, 0) || 1;
 
-        if (ranked.length === 0) return null;
+        // Group by category, sorted by category total descending
+        const categoryOrder: Category[] = ["kitchen", "water", "food", "air"];
+        const groups = categoryOrder.map((cat) => {
+          const items = allItems
+            .filter((r) => r.question.category === cat)
+            .sort((a, b) => b.contribution - a.contribution);
+          const catTotal = items.reduce((sum, r) => sum + r.contribution, 0);
+          const catPct = Math.round((catTotal / totalContribution) * 100);
+          return { cat, items, catPct };
+        }).filter((g) => g.items.length > 0)
+          .sort((a, b) => b.catPct - a.catPct);
+
+        if (groups.length === 0) return null;
 
         return (
-          <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
-            <h2 className="font-semibold text-slate-900 mb-1">What's driving your score</h2>
-            <p className="text-xs text-slate-400 mb-5">Each habit's share of your total risk score, based on your answers</p>
-            <div className="flex flex-col divide-y divide-slate-100">
-              {ranked.map(({ question, selected, contribution }, i) => {
-                const pct = Math.round((contribution / totalContribution) * 100);
-                return (
-                  <div key={question.id} className="py-4 first:pt-0 last:pb-0">
-                    <div className="flex items-start justify-between gap-3 mb-1.5">
-                      <div className="flex items-start gap-3 min-w-0">
-                        <span className="flex-shrink-0 text-xs font-bold tabular-nums text-slate-300 w-4 mt-0.5">
-                          {i + 1}
-                        </span>
-                        <div className="min-w-0">
-                          <p className="text-sm font-semibold text-slate-800 leading-snug">{question.resultLabel}</p>
-                          <p className="text-xs text-slate-400 mt-0.5">"{selected.label}"</p>
-                        </div>
-                      </div>
-                      <span className="flex-shrink-0 text-sm font-bold tabular-nums text-slate-700">{pct}%</span>
-                    </div>
-                    {/* Study callout — indented under rank number */}
-                    {question.studyCallout && (
-                      <div className="ml-7 flex items-center justify-between gap-2 flex-wrap">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <p className="text-sm text-slate-600">
-                            <span className="font-extrabold text-slate-900 tabular-nums">{question.studyCallout.value} </span>
-                            {question.studyCallout.unit}
-                          </p>
-                          {question.studyCallout.unitContext && (
-                            <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
-                              {question.studyCallout.unitContext}
-                            </span>
-                          )}
-                        </div>
-                        {question.studyCallout.url ? (
-                          <a
-                            href={question.studyCallout.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[11px] text-teal-600 hover:text-teal-800 whitespace-nowrap shrink-0"
-                          >
-                            View study →
-                          </a>
-                        ) : (
-                          <span className="text-[11px] text-slate-400 whitespace-nowrap shrink-0">Est.</span>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <CategorySection groups={groups} totalContribution={totalContribution} />
         );
       })()}
 
