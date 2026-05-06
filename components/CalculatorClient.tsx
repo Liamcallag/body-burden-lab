@@ -114,7 +114,7 @@ export default function CalculatorClient() {
 
   /* ── Desktop layout (full screen) ── */
   const desktopLayout = (
-    <div className="hidden md:flex fixed inset-x-0 bottom-0 top-[72px] z-40 flex-col bg-[#faf9f7]">
+    <div className="hidden md:flex fixed inset-x-0 bottom-0 top-[72px] z-40 flex-col bg-[#f0f7f5]">
       {/* Progress bar — full width at top of overlay */}
       <div className="h-0.5 bg-slate-200 w-full flex-shrink-0">
         <div
