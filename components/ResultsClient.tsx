@@ -164,7 +164,7 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
           <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: color + "22", color }}>
             {activeGroup.catPct}% of score
           </span>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none sm:hidden">×</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none">×</button>
         </div>
       </div>
       {/* Habit cards — white pills on mint background */}
