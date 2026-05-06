@@ -114,9 +114,9 @@ export default function CalculatorClient() {
 
   /* ── Desktop layout (full screen) ── */
   const desktopLayout = (
-    <div className="hidden md:flex fixed inset-x-0 bottom-0 top-[72px] z-40 flex-col bg-[#0d1f1a]">
+    <div className="hidden md:flex fixed inset-x-0 bottom-0 top-[72px] z-40 flex-col bg-[#12110f]">
       {/* Progress bar — full width at top of overlay */}
-      <div className="h-0.5 bg-[#1a3a2e] w-full flex-shrink-0">
+      <div className="h-0.5 bg-[#2a2825] w-full flex-shrink-0">
         <div
           className="h-full bg-teal-500 transition-all duration-500"
           style={{ width: `${progress}%` }}
@@ -150,11 +150,11 @@ export default function CalculatorClient() {
                 className={`w-full text-left px-5 py-4 rounded-xl border text-sm font-medium transition-all flex items-center gap-3 ${
                   isChosen
                     ? "border-teal-500 bg-teal-500/10 text-teal-300"
-                    : "border-[#1a3a2e] text-slate-300 hover:border-teal-700 hover:bg-[#112218]"
+                    : "border-[#2a2825] text-slate-300 hover:border-[#3a3733] hover:bg-[#1c1b18]"
                 }`}
               >
                 <span className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-colors ${
-                  isChosen ? "border-teal-500 bg-teal-500 text-slate-900" : "border-[#2a5a44] text-slate-500"
+                  isChosen ? "border-teal-500 bg-teal-500 text-slate-900" : "border-[#3a3733] text-slate-500"
                 }`}>
                   {idx + 1}
                 </span>
@@ -166,7 +166,7 @@ export default function CalculatorClient() {
       </div>
 
       {/* Bottom bar */}
-      <div className="flex items-center justify-between px-12 py-5 border-t border-[#1a3a2e] flex-shrink-0">
+      <div className="flex items-center justify-between px-12 py-5 border-t border-[#2a2825] flex-shrink-0">
         <button
           onClick={handleBack}
           className={`text-sm transition-colors ${currentQ === 0 ? "text-slate-700 cursor-default" : "text-slate-400 hover:text-white"}`}
