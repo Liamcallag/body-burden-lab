@@ -98,7 +98,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
                 transition: "opacity 0.25s ease",
               }}
             />
-            {catPct >= 7 && (
+            {catPct >= 5 && (
               <text
                 x={lx}
                 y={ly}
