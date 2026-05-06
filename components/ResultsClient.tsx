@@ -403,7 +403,7 @@ export default function ResultsClient() {
     const tip = REDUCTION_TIPS[q.tipKey];
     return { question: q, potential, tip, selectedScore };
   })
-    .filter((r) => r.potential > 0 && r.tip && PRODUCT_SWAPS[r.question.id])
+    .filter((r) => r.potential > 0 && r.tip)
     .sort((a, b) => b.potential - a.potential)
     .slice(0, 5);
 
