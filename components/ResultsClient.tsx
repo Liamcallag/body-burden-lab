@@ -181,42 +181,39 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
 
       {/* Habit cards */}
       <div className="grid grid-cols-2 gap-2 p-3">
-        {activeGroup.items.map(({ question, selected }) => {
-          const isHighRisk = selected.riskScore >= 7;
-          return (
-            <div key={question.id} className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ borderTop: isHighRisk ? `3px solid ${color}` : "3px solid #e2e8f0" }}>
-              <div className="px-3.5 pt-3 pb-3">
-                <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
-                <p className="text-[11px] text-slate-400 mb-2.5 italic">"{selected.label}"</p>
-                {question.studyCallout ? (
-                  <div>
-                    <p className="text-lg font-black tabular-nums leading-tight" style={{ color: isHighRisk ? color : "#334155" }}>
-                      {question.studyCallout.value}
-                    </p>
-                    <p className="text-[10px] text-slate-500 leading-snug mt-0.5 mb-2">{question.studyCallout.unit}</p>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      {question.studyCallout.unitContext && (
-                        <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: color + "15", color }}>
-                          {question.studyCallout.unitContext}
-                        </span>
-                      )}
-                      {question.studyCallout.url ? (
-                        <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
-                          className="text-[10px] font-semibold hover:underline" style={{ color }}>
-                          View study →
-                        </a>
-                      ) : (
-                        <span className="text-[10px] text-slate-400 italic">Est.</span>
-                      )}
-                    </div>
+        {activeGroup.items.map(({ question, selected }) => (
+          <div key={question.id} className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ borderTop: `3px solid ${color}` }}>
+            <div className="px-3.5 pt-3 pb-3">
+              <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
+              <p className="text-[11px] text-slate-400 mb-2.5 italic">"{selected.label}"</p>
+              {question.studyCallout ? (
+                <div>
+                  <p className="text-lg font-black tabular-nums leading-tight" style={{ color }}>
+                    {question.studyCallout.value}
+                  </p>
+                  <p className="text-[10px] text-slate-500 leading-snug mt-0.5 mb-2">{question.studyCallout.unit}</p>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {question.studyCallout.unitContext && (
+                      <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: color + "15", color }}>
+                        {question.studyCallout.unitContext}
+                      </span>
+                    )}
+                    {question.studyCallout.url ? (
+                      <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
+                        className="text-[10px] font-semibold hover:underline" style={{ color }}>
+                        View study →
+                      </a>
+                    ) : (
+                      <span className="text-[10px] text-slate-400 italic">Est.</span>
+                    )}
                   </div>
-                ) : (
-                  <p className="text-[11px] text-slate-400 italic">No study data available</p>
-                )}
-              </div>
+                </div>
+              ) : (
+                <p className="text-[11px] text-slate-400 italic">No study data available</p>
+              )}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
