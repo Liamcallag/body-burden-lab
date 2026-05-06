@@ -76,7 +76,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   });
 
   return (
-    <svg viewBox="0 0 400 400" className="w-full max-w-[320px] mx-auto">
+    <svg viewBox="0 0 400 400" className="w-full max-w-[320px] sm:max-w-[640px] mx-auto">
       {slices.map(({ cat, catPct, d, lx, ly, popX, popY, color }) => {
         const isSelected = selected === cat;
         const dimmed = selected !== null && !isSelected;
@@ -234,7 +234,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
           <div
             className="flex flex-col items-center flex-shrink-0"
             style={{
-              width: expanded ? "340px" : "100%",
+              width: expanded ? "560px" : "100%",
               transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
             }}
           >
