@@ -393,7 +393,7 @@ export default function ResultsClient() {
   })
     .filter((r) => r.potential > 0 && r.tip)
     .sort((a, b) => b.potential - a.potential)
-    .slice(0, 3);
+    .slice(0, 5);
 
   function handleShare() {
     const shareUrl = `https://bodyburdenlab.com/results?score=${result!.riskScore}&level=${encodeURIComponent(result!.exposureTier)}`;
@@ -462,7 +462,7 @@ export default function ResultsClient() {
       {/* ── Top 3 changes ── */}
       {reductionOpportunities.length > 0 && (
         <div className="mb-8">
-          <h2 className="text-xl font-bold text-slate-900 mb-1">Your top changes</h2>
+          <h2 className="text-xl font-bold text-slate-900 mb-1">Your top {reductionOpportunities.length} changes</h2>
           <p className="text-sm text-slate-400 mb-5">The habits that would cut your score the most</p>
           <ol className="flex flex-col gap-3">
             {reductionOpportunities.map((r, i) => {
