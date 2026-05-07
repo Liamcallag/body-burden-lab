@@ -45,54 +45,69 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   colorsMap: Record<string, string>;
 }) {
   const cx = 200, cy = 200, holeR = 96;
-  const maxR = 175, minR = 110; // variable outer radius range
-  const maxPct = Math.max(...groups.map(g => g.catPct));
+  const maxR = 178, minR = 108;
+  const GAP_CAT = 0.04;   // gap between categories
+  const GAP_ITEM = 0.012; // gap between sub-slices within a category
+
+  // Max contribution across all individual questions (for radius scaling)
+  const maxContrib = Math.max(...groups.flatMap(g => g.items.map(i => i.contribution)));
+
   let angle = -Math.PI / 2;
 
-  const GAP = 0.028;
+  const categorySlices = groups.map(({ cat, catPct, items }) => {
+    const color = colorsMap[cat];
+    const catSlice = (catPct / 100) * 2 * Math.PI;
+    const catStart = angle + GAP_CAT / 2;
+    const catEnd = angle + catSlice - GAP_CAT / 2;
+    angle += catSlice;
 
-  const slices = groups.map(({ cat, catPct }) => {
-    // Each slice radius proportional to its share — largest slice = maxR, smallest = minR
-    const sliceR = minR + ((catPct / maxPct) * (maxR - minR));
-
-    const slice = (catPct / 100) * 2 * Math.PI;
-    const start = angle + GAP / 2;
-    const end = angle + slice - GAP / 2;
-    angle += slice;
-
-    const x1 = cx + sliceR * Math.cos(start);
-    const y1 = cy + sliceR * Math.sin(start);
-    const x2 = cx + sliceR * Math.cos(end);
-    const y2 = cy + sliceR * Math.sin(end);
-    const ix1 = cx + holeR * Math.cos(end);
-    const iy1 = cy + holeR * Math.sin(end);
-    const ix2 = cx + holeR * Math.cos(start);
-    const iy2 = cy + holeR * Math.sin(start);
-    const large = slice > Math.PI ? 1 : 0;
-
-    const midAngle = start + (end - start) / 2;
-    const labelR = (sliceR + holeR) / 2;
-    const lx = cx + labelR * Math.cos(midAngle);
-    const ly = cy + labelR * Math.sin(midAngle);
-
+    const midAngle = (catStart + catEnd) / 2;
     const popX = Math.cos(midAngle) * 14;
     const popY = Math.sin(midAngle) * 14;
 
-    const d = [
-      `M ${x1} ${y1}`,
-      `A ${sliceR} ${sliceR} 0 ${large} 1 ${x2} ${y2}`,
-      `L ${ix1} ${iy1}`,
-      `A ${holeR} ${holeR} 0 ${large} 0 ${ix2} ${iy2}`,
-      "Z",
-    ].join(" ");
+    // Divide category angular range equally among its questions
+    const itemCount = items.length;
+    const itemSlice = (catEnd - catStart) / itemCount;
 
-    return { cat, catPct, sliceR, d, lx, ly, popX, popY, color: colorsMap[cat] };
+    const subSlices = items.map((item, idx) => {
+      const iStart = catStart + idx * itemSlice + GAP_ITEM / 2;
+      const iEnd = catStart + (idx + 1) * itemSlice - GAP_ITEM / 2;
+      // Radius proportional to this question's contribution
+      const r = minR + (item.contribution / maxContrib) * (maxR - minR);
+      const large = (iEnd - iStart) > Math.PI ? 1 : 0;
+
+      const x1 = cx + r * Math.cos(iStart);
+      const y1 = cy + r * Math.sin(iStart);
+      const x2 = cx + r * Math.cos(iEnd);
+      const y2 = cy + r * Math.sin(iEnd);
+      const ix1 = cx + holeR * Math.cos(iEnd);
+      const iy1 = cy + holeR * Math.sin(iEnd);
+      const ix2 = cx + holeR * Math.cos(iStart);
+      const iy2 = cy + holeR * Math.sin(iStart);
+
+      const d = [
+        `M ${x1} ${y1}`,
+        `A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`,
+        `L ${ix1} ${iy1}`,
+        `A ${holeR} ${holeR} 0 ${large} 0 ${ix2} ${iy2}`,
+        "Z",
+      ].join(" ");
+
+      return { d, r, iStart, iEnd };
+    });
+
+    // Label at mid of category, mid radius of tallest sub-slice
+    const avgR = (maxR + holeR) / 2;
+    const lx = cx + avgR * Math.cos(midAngle);
+    const ly = cy + avgR * Math.sin(midAngle);
+
+    return { cat, catPct, color, subSlices, midAngle, lx, ly, popX, popY };
   });
 
   return (
     <svg viewBox="10 10 380 380" className="w-full max-w-[280px] sm:max-w-[360px] mx-auto">
       <defs>
-        {slices.map(({ cat, color }) => {
+        {categorySlices.map(({ cat, color }) => {
           const [light, dark] = RANK_GRADIENTS[color] ?? [color, color];
           return (
             <linearGradient key={cat} id={`grad-${cat}`} x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
@@ -103,7 +118,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
         })}
       </defs>
 
-      {slices.map(({ cat, catPct, d, lx, ly, popX, popY, color }) => {
+      {categorySlices.map(({ cat, catPct, color, subSlices, lx, ly, popX, popY }) => {
         const isSelected = selected === cat;
         const dimmed = selected !== null && !isSelected;
         return (
@@ -117,24 +132,27 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
               transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1)",
             }}
           >
-            <path
-              d={d}
-              fill={`url(#grad-${cat})`}
-              style={{
-                opacity: dimmed ? 0.3 : 1,
-                transition: "opacity 0.25s ease",
-              }}
-            />
+            {subSlices.map((sub, idx) => (
+              <path
+                key={idx}
+                d={sub.d}
+                fill={`url(#grad-${cat})`}
+                style={{
+                  opacity: dimmed ? 0.25 : 1,
+                  transition: "opacity 0.25s ease",
+                }}
+              />
+            ))}
             {catPct >= 5 && (
               <text
                 x={lx}
                 y={ly}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fontSize="20"
+                fontSize="18"
                 fontWeight="800"
                 fill="white"
-                style={{ pointerEvents: "none", opacity: dimmed ? 0.35 : 1, transition: "opacity 0.25s ease" }}
+                style={{ pointerEvents: "none", opacity: dimmed ? 0.25 : 1, transition: "opacity 0.25s ease" }}
               >
                 {catPct}%
               </text>
