@@ -13,12 +13,12 @@ type CategoryGroup = {
 };
 
 // Colors assigned by rank (largest slice → most alarming, then distinct hues)
-const RANK_COLORS = ["#dc2626", "#2563eb", "#0891b2", "#7c3aed"];
+const RANK_COLORS = ["#dc2626", "#3b82f6", "#0891b2", "#7c3aed"];
 
 // Gradient stops: [light, dark] for each rank color
 const RANK_GRADIENTS: Record<string, [string, string]> = {
   "#dc2626": ["#ff6b6b", "#b91c1c"],
-  "#2563eb": ["#60a5fa", "#1e3a8a"],
+  "#3b82f6": ["#93c5fd", "#1d4ed8"],
   "#0891b2": ["#22d3ee", "#0e4f63"],
   "#7c3aed": ["#c084fc", "#4c1d95"],
 };
@@ -85,7 +85,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   });
 
   return (
-    <svg viewBox="0 0 400 400" className="w-full max-w-[320px] sm:max-w-[380px] mx-auto">
+    <svg viewBox="0 0 400 400" className="w-full max-w-[280px] sm:max-w-[340px] mx-auto">
       <defs>
         {slices.map(({ cat, color }) => {
           const [light, dark] = RANK_GRADIENTS[color] ?? [color, color];
@@ -514,10 +514,10 @@ export default function ResultsClient() {
     <div>
       {/* ── Dark section: heading + chart ── */}
       <div style={{ backgroundColor: "#1e293b" }}>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-8">
 
         {/* Page heading */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] mb-1" style={{ color: "#64748b" }}>Body Burden Lab</p>
           <h1 className="text-2xl font-extrabold tracking-tight text-white">Your microplastic risk score</h1>
         </div>
@@ -575,7 +575,7 @@ export default function ResultsClient() {
 
       {/* ── White section: everything below ── */}
       <div style={{ backgroundColor: "#ffffff" }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-12">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-16">
 
       {/* ── Top 3 changes ── */}
       {reductionOpportunities.length > 0 && (
