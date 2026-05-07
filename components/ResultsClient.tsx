@@ -203,7 +203,7 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
       {/* Habit cards */}
       <div className="grid grid-cols-2 gap-2 p-3">
         {activeGroup.items.map(({ question, selected }) => (
-          <div key={question.id} className="bg-white rounded-xl overflow-hidden" style={{ borderTop: `3px solid ${color}`, border: `1px solid #e2e8f0`, borderTopWidth: "3px", borderTopColor: color }}>
+          <div key={question.id} className="bg-white rounded-xl overflow-hidden" style={{ border: `2px solid ${color}40`, borderTop: `3px solid ${color}` }}>
             <div className="px-3.5 pt-3 pb-3">
               <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
               <p className="text-[11px] text-slate-400 mb-2.5 italic">"{selected.label}"</p>
