@@ -177,62 +177,46 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
   const isTopRisk = color === "#dc2626";
 
   return (
-    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-lg" style={{ background: "white", border: `2px solid ${color}`, animation: "fadeSlideIn 0.25s ease" }}>
-      {/* Coloured header bar */}
-      <div className="px-5 pt-5 pb-4" style={{ background: `linear-gradient(135deg, ${color}18 0%, ${color}08 100%)`, borderBottom: `2px solid ${color}30` }}>
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
-              <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color }}>
-                {isTopRisk ? "Highest risk category" : "Risk category"}
-              </span>
-            </div>
-            <h3 className="text-xl font-extrabold text-slate-900 leading-tight">{CATEGORY_LABELS[activeGroup.cat]}</h3>
-          </div>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <div className="text-right">
-              <div className="text-3xl font-black tabular-nums leading-none" style={{ color }}>{activeGroup.catPct}%</div>
-              <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">of score</div>
-            </div>
-            <button onClick={onClose} className="ml-1 w-7 h-7 flex items-center justify-center rounded-full bg-white/70 text-slate-400 hover:text-slate-700 hover:bg-white text-lg leading-none shadow-sm transition-all">×</button>
-          </div>
+    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden" style={{ background: "white", border: `2px solid ${color}`, animation: "fadeSlideIn 0.25s ease" }}>
+      {/* Header */}
+      <div className="px-5 pt-4 pb-3 flex items-center justify-between border-b border-slate-100">
+        <div className="flex items-center gap-2.5">
+          <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+          <h3 className="font-bold text-slate-900 text-base">{CATEGORY_LABELS[activeGroup.cat]}</h3>
+          <span className="text-sm font-bold tabular-nums" style={{ color }}>{activeGroup.catPct}%</span>
         </div>
+        <button onClick={onClose} className="w-7 h-7 flex items-center justify-center rounded-full bg-slate-100 text-slate-400 hover:text-slate-700 hover:bg-slate-200 text-lg leading-none transition-all">×</button>
       </div>
 
       {/* Habit cards */}
       <div className="grid grid-cols-2 gap-2 p-3">
         {activeGroup.items.map(({ question, selected }) => (
-          <div key={question.id} className="bg-white rounded-xl overflow-hidden" style={{ borderTop: `3px solid ${color}` }}>
-            <div className="px-3.5 pt-3 pb-3">
-              <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
-              <p className="text-[11px] text-slate-400 mb-2.5 italic">"{selected.label}"</p>
-              {question.studyCallout ? (
-                <div>
-                  <p className="text-lg font-black tabular-nums leading-tight" style={{ color }}>
-                    {question.studyCallout.value}
-                  </p>
-                  <p className="text-[10px] text-slate-500 leading-snug mt-0.5 mb-2">{question.studyCallout.unit}</p>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    {question.studyCallout.unitContext && (
-                      <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: color + "15", color }}>
-                        {question.studyCallout.unitContext}
-                      </span>
-                    )}
-                    {question.studyCallout.url ? (
-                      <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
-                        className="text-[10px] font-semibold hover:underline" style={{ color }}>
-                        View study →
-                      </a>
-                    ) : (
-                      <span className="text-[10px] text-slate-400 italic">Est.</span>
-                    )}
-                  </div>
+          <div key={question.id} className="rounded-xl p-3.5" style={{ backgroundColor: color + "0d" }}>
+            <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
+            <p className="text-[11px] text-slate-400 mb-2 italic">"{selected.label}"</p>
+            {question.studyCallout && (
+              <>
+                <p className="text-base font-black tabular-nums leading-tight" style={{ color }}>
+                  {question.studyCallout.value}
+                </p>
+                <p className="text-[10px] text-slate-500 leading-snug mt-0.5 mb-2">{question.studyCallout.unit}</p>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {question.studyCallout.unitContext && (
+                    <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-white" style={{ color }}>
+                      {question.studyCallout.unitContext}
+                    </span>
+                  )}
+                  {question.studyCallout.url ? (
+                    <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
+                      className="text-[10px] font-semibold hover:underline" style={{ color }}>
+                      View study →
+                    </a>
+                  ) : (
+                    <span className="text-[10px] text-slate-400 italic">Est.</span>
+                  )}
                 </div>
-              ) : (
-                <p className="text-[11px] text-slate-400 italic">No study data available</p>
-              )}
-            </div>
+              </>
+            )}
           </div>
         ))}
       </div>
