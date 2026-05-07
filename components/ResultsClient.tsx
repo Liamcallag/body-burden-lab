@@ -203,7 +203,7 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
       {/* Habit cards */}
       <div className="grid grid-cols-2 gap-2 p-3">
         {activeGroup.items.map(({ question, selected }) => (
-          <div key={question.id} className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ borderTop: `3px solid ${color}` }}>
+          <div key={question.id} className="bg-white rounded-xl overflow-hidden" style={{ borderTop: `3px solid ${color}`, border: `1px solid #e2e8f0`, borderTopWidth: "3px", borderTopColor: color }}>
             <div className="px-3.5 pt-3 pb-3">
               <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
               <p className="text-[11px] text-slate-400 mb-2.5 italic">"{selected.label}"</p>
@@ -297,7 +297,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                       opacity: isDimmed ? 0.35 : 1,
                       transition: "all 0.2s ease",
                     }}
-                    className="flex flex-col gap-1.5 px-4 py-3 rounded-2xl bg-white shadow-sm hover:shadow-md w-full text-left transition-shadow"
+                    className="flex flex-col gap-1.5 px-4 py-3 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm w-full text-left transition-all"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
