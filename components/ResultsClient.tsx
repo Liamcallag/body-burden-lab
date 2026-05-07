@@ -104,6 +104,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
         return (
           <g
             key={cat}
+            data-slice={cat}
             onClick={() => onSelect(cat)}
             style={{
               cursor: "pointer",
@@ -261,6 +262,17 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
           >
             <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
 
+            {/* Click hint — fades out once a slice is selected */}
+            <p
+              className="text-xs text-slate-400 text-center mt-2 flex items-center gap-1.5 justify-center"
+              style={{ opacity: expanded ? 0 : 1, transition: "opacity 0.3s ease", pointerEvents: "none" }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+              Click a slice to explore
+            </p>
+
             {/* Legend */}
             <div
               className="flex flex-col gap-2 mt-5"
@@ -371,6 +383,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
         @keyframes fadeSlideIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
         @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
         @keyframes slideUp { from { transform:translateY(100%); } to { transform:translateY(0); } }
+        svg g[data-slice]:hover path { filter: brightness(1.12); }
       `}</style>
     </div>
   );
