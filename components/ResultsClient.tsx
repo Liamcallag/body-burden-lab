@@ -15,6 +15,14 @@ type CategoryGroup = {
 // Colors assigned by rank (largest slice → most alarming, then distinct hues)
 const RANK_COLORS = ["#dc2626", "#2563eb", "#0891b2", "#7c3aed"];
 
+// Gradient stops: [light, dark] for each rank color
+const RANK_GRADIENTS: Record<string, [string, string]> = {
+  "#dc2626": ["#ff6b6b", "#b91c1c"],
+  "#2563eb": ["#60a5fa", "#1e3a8a"],
+  "#0891b2": ["#22d3ee", "#0e4f63"],
+  "#7c3aed": ["#c084fc", "#4c1d95"],
+};
+
 const PRODUCT_SWAPS: Record<string, { label: string; url: string }> = {
   microwave:    { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
   tea:          { label: "Shop loose leaf tea", url: "https://www.amazon.com/s?k=loose+leaf+tea+infuser" },
@@ -77,6 +85,18 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
 
   return (
     <svg viewBox="0 0 400 400" className="w-full max-w-[320px] sm:max-w-[380px] mx-auto">
+      <defs>
+        {slices.map(({ cat, color }) => {
+          const [light, dark] = RANK_GRADIENTS[color] ?? [color, color];
+          return (
+            <linearGradient key={cat} id={`grad-${cat}`} x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor={light} />
+              <stop offset="100%" stopColor={dark} />
+            </linearGradient>
+          );
+        })}
+      </defs>
+
       {slices.map(({ cat, catPct, d, lx, ly, popX, popY, color }) => {
         const isSelected = selected === cat;
         const dimmed = selected !== null && !isSelected;
@@ -92,7 +112,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
           >
             <path
               d={d}
-              fill={color}
+              fill={`url(#grad-${cat})`}
               style={{
                 opacity: dimmed ? 0.3 : 1,
                 transition: "opacity 0.25s ease",
