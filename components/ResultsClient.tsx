@@ -47,11 +47,13 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   const cx = 200, cy = 200, r = 168, holeR = 96;
   let angle = -Math.PI / 2;
 
+  const GAP = 0.022; // radians gap between slices
+
   const slices = groups.map(({ cat, catPct }) => {
     const slice = (catPct / 100) * 2 * Math.PI;
-    const start = angle;
-    const end = angle + slice;
-    angle = end;
+    const start = angle + GAP / 2;
+    const end = angle + slice - GAP / 2;
+    angle += slice;
 
     const x1 = cx + r * Math.cos(start);
     const y1 = cy + r * Math.sin(start);
@@ -63,12 +65,11 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
     const iy2 = cy + holeR * Math.sin(start);
     const large = slice > Math.PI ? 1 : 0;
 
-    const midAngle = start + slice / 2;
+    const midAngle = start + (end - start) / 2;
     const labelR = (r + holeR) / 2;
     const lx = cx + labelR * Math.cos(midAngle);
     const ly = cy + labelR * Math.sin(midAngle);
 
-    // Pop-out direction vector (unit vector × 18px)
     const popX = Math.cos(midAngle) * 18;
     const popY = Math.sin(midAngle) * 18;
 
@@ -278,30 +279,40 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
 
             {/* Legend */}
             <div
-              className="flex flex-col gap-1.5 mt-4"
+              className="flex flex-col gap-2 mt-5"
               style={{
-                width: expanded ? "100%" : "300px",
+                width: expanded ? "100%" : "320px",
                 transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
               }}
             >
               {groups.map(({ cat, catPct }) => {
                 const isActive = selectedCat === cat;
                 const isDimmed = selectedCat !== null && !isActive;
+                const color = colorsMap[cat];
                 return (
                   <button
                     key={cat}
                     onClick={() => handleSliceClick(cat)}
                     style={{
-                      borderColor: isActive ? colorsMap[cat] : "transparent",
-                      backgroundColor: isActive ? colorsMap[cat] + "10" : "#e4efed",
-                      opacity: isDimmed ? 0.4 : 1,
+                      opacity: isDimmed ? 0.35 : 1,
                       transition: "all 0.2s ease",
                     }}
-                    className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : "hover:border-slate-300"}`}
+                    className="flex flex-col gap-1.5 px-4 py-3 rounded-2xl bg-white shadow-sm hover:shadow-md w-full text-left transition-shadow"
                   >
-                    <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorsMap[cat] }} />
-                    <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
-                    <span className="font-bold tabular-nums text-xs" style={{ color: isActive ? colorsMap[cat] : "#94a3b8" }}>{catPct}%</span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+                        <span className={`text-sm ${isActive ? "font-bold text-slate-900" : "font-medium text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
+                      </div>
+                      <span className="text-sm font-bold tabular-nums" style={{ color }}>{catPct}%</span>
+                    </div>
+                    {/* Progress bar */}
+                    <div className="h-1.5 rounded-full bg-slate-100 overflow-hidden">
+                      <div
+                        className="h-full rounded-full transition-all duration-500"
+                        style={{ width: `${catPct}%`, background: `linear-gradient(to right, ${RANK_GRADIENTS[color]?.[0] ?? color}, ${RANK_GRADIENTS[color]?.[1] ?? color})` }}
+                      />
+                    </div>
                   </button>
                 );
               })}
@@ -331,25 +342,31 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
       <div className="sm:hidden">
         <div className="flex flex-col items-center">
           <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
-          <div className="flex flex-col gap-1.5 mt-4 w-full max-w-[300px]">
+          <div className="flex flex-col gap-2 mt-4 w-full max-w-[320px]">
             {groups.map(({ cat, catPct }) => {
               const isActive = selectedCat === cat;
               const isDimmed = selectedCat !== null && !isActive;
+              const color = colorsMap[cat];
               return (
                 <button
                   key={cat}
                   onClick={() => handleSliceClick(cat)}
-                  style={{
-                    borderColor: isActive ? colorsMap[cat] : "transparent",
-                    backgroundColor: isActive ? colorsMap[cat] + "10" : "#e4efed",
-                    opacity: isDimmed ? 0.4 : 1,
-                    transition: "all 0.2s ease",
-                  }}
-                  className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl border text-sm w-full ${isActive ? "shadow-sm" : ""}`}
+                  style={{ opacity: isDimmed ? 0.35 : 1, transition: "all 0.2s ease" }}
+                  className="flex flex-col gap-1.5 px-4 py-3 rounded-2xl bg-white shadow-sm w-full text-left"
                 >
-                  <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorsMap[cat] }} />
-                  <span className={`flex-1 text-left ${isActive ? "font-semibold text-slate-900" : "text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
-                  <span className="font-bold tabular-nums text-xs" style={{ color: isActive ? colorsMap[cat] : "#94a3b8" }}>{catPct}%</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+                      <span className={`text-sm ${isActive ? "font-bold text-slate-900" : "font-medium text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
+                    </div>
+                    <span className="text-sm font-bold tabular-nums" style={{ color }}>{catPct}%</span>
+                  </div>
+                  <div className="h-1.5 rounded-full bg-slate-100 overflow-hidden">
+                    <div
+                      className="h-full rounded-full"
+                      style={{ width: `${catPct}%`, background: `linear-gradient(to right, ${RANK_GRADIENTS[color]?.[0] ?? color}, ${RANK_GRADIENTS[color]?.[1] ?? color})` }}
+                    />
+                  </div>
                 </button>
               );
             })}
@@ -498,10 +515,11 @@ export default function ResultsClient() {
   return (
     <div className="max-w-3xl mx-auto">
 
-      {/* Minimal page label */}
-      <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">
-        Your microplastic risk score
-      </p>
+      {/* Page heading */}
+      <div className="text-center mb-8">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Body Burden Lab</p>
+        <h1 className="text-2xl font-extrabold text-slate-800 tracking-tight">Your microplastic risk score</h1>
+      </div>
 
       {/* Ranked question contributions */}
       {(() => {
