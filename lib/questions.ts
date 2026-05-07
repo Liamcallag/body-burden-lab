@@ -226,14 +226,6 @@ export const QUESTIONS: Question[] = [
     resultLabel: "Beer",
     weight: 2,
     tipKey: "beer",
-    studyCallout: {
-      value: "2–79",
-      unit: "synthetic fibres per litre across 24 German beer brands",
-      citation: "Liebezeit & Liebezeit, Food Additives & Contaminants, 2014",
-      caveat: "Also found 12–109 fragments/L and 2–66 granules/L — attributed to airborne deposition during brewing",
-      url: "https://www.tandfonline.com/doi/abs/10.1080/19440049.2014.945099",
-      unitContext: "per litre",
-    },
     options: [
       { label: "Daily", riskScore: 10 },
       { label: "A few times a week", riskScore: 5 },
