@@ -204,12 +204,12 @@ export const QUESTIONS: Question[] = [
     weight: 7,
     tipKey: "seafood",
     studyCallout: {
-      value: "~90",
-      unit: "microplastic particles per serving of shellfish (mussels)",
+      value: "~0.36",
+      unit: "microplastic particles per gram of mussel tissue (~90 per 250g serving)",
       citation: "Van Cauwenberghe & Janssen, Environmental Pollution, 2014",
-      caveat: "Shellfish are significantly higher than finfish — MPs accumulate in digestive tissue that is consumed whole",
+      caveat: "The per-serving figure is derived from 0.36 particles/g wet weight — the paper's headline finding is ~11,000 particles/year for regular European shellfish consumers",
       url: "https://www.sciencedirect.com/science/article/pii/S0269749114000815",
-      unitContext: "per serving",
+      unitContext: "per gram",
     },
     options: [
       { label: "Daily", riskScore: 10 },
@@ -227,11 +227,11 @@ export const QUESTIONS: Question[] = [
     weight: 2,
     tipKey: "beer",
     studyCallout: {
-      value: "~32",
-      unit: "microplastic particles per litre of beer",
-      citation: "Schymanski et al., Food Additives & Contaminants, 2018",
-      caveat: "Measured across 14 brands — attributed to airborne deposition during the brewing process",
-      url: "https://www.tandfonline.com/doi/full/10.1080/19440049.2018.1430186",
+      value: "2–79",
+      unit: "synthetic fibres per litre across 24 German beer brands",
+      citation: "Liebezeit & Liebezeit, Food Additives & Contaminants, 2014",
+      caveat: "Also found 12–109 fragments/L and 2–66 granules/L — attributed to airborne deposition during brewing",
+      url: "https://www.tandfonline.com/doi/abs/10.1080/19440049.2014.945099",
       unitContext: "per litre",
     },
     options: [
