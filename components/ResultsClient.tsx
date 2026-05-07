@@ -513,15 +513,17 @@ export default function ResultsClient() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div>
+      {/* ── Mint section: heading + chart ── */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
 
-      {/* Page heading */}
-      <div className="text-center mb-8">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Body Burden Lab</p>
-        <h1 className="text-2xl font-extrabold text-slate-800 tracking-tight">Your microplastic risk score</h1>
-      </div>
+        {/* Page heading */}
+        <div className="text-center mb-8">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Body Burden Lab</p>
+          <h1 className="text-2xl font-extrabold text-slate-800 tracking-tight">Your microplastic risk score</h1>
+        </div>
 
-      {/* Ranked question contributions */}
+        {/* Ranked question contributions */}
       {(() => {
         const allItems = QUESTIONS.map((q) => {
           const idx = answers[q.id] ?? 0;
@@ -569,28 +571,31 @@ export default function ResultsClient() {
         );
       })()}
 
+      </div>{/* end mint section */}
+
+      {/* ── White section: everything below ── */}
+      <div style={{ backgroundColor: "#ffffff" }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-12">
+
       {/* ── Top 3 changes ── */}
       {reductionOpportunities.length > 0 && (
         <div className="mb-8">
           <h2 className="text-xl font-bold text-slate-900 mb-1">Your top {reductionOpportunities.length} changes</h2>
           <p className="text-sm text-slate-400 mb-5">The habits that would cut your score the most</p>
           <ol className="flex flex-col gap-3">
-            {reductionOpportunities.map((r, i) => {
-              const swap = PRODUCT_SWAPS[r.question.id];
-              return (
-                <li key={r.question.id} className="rounded-2xl overflow-hidden" style={{ backgroundColor: "#e4efed" }}>
-                  <div className="flex items-start gap-4 p-5">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center mt-0.5">
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold text-slate-900 mb-1">{r.question.question}</p>
-                      {r.tip && <p className="text-sm text-slate-500 leading-relaxed">{r.tip}</p>}
-                    </div>
+            {reductionOpportunities.map((r, i) => (
+              <li key={r.question.id} className="rounded-2xl overflow-hidden" style={{ backgroundColor: "#e4efed" }}>
+                <div className="flex items-start gap-4 p-5">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                    {i + 1}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold text-slate-900 mb-1">{r.question.question}</p>
+                    {r.tip && <p className="text-sm text-slate-500 leading-relaxed">{r.tip}</p>}
                   </div>
-                </li>
-              );
-            })}
+                </div>
+              </li>
+            ))}
           </ol>
         </div>
       )}
@@ -669,6 +674,9 @@ export default function ResultsClient() {
           Retake the calculator
         </Link>
       </div>
+
+        </div>{/* end max-w inner */}
+      </div>{/* end white section */}
 
     </div>
   );
