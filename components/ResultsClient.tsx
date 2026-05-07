@@ -177,7 +177,7 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
   const isTopRisk = color === "#dc2626";
 
   return (
-    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-lg" style={{ background: "white", animation: "fadeSlideIn 0.25s ease" }}>
+    <div className="rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-lg" style={{ background: "white", border: `2px solid ${color}`, animation: "fadeSlideIn 0.25s ease" }}>
       {/* Coloured header bar */}
       <div className="px-5 pt-5 pb-4" style={{ background: `linear-gradient(135deg, ${color}18 0%, ${color}08 100%)`, borderBottom: `2px solid ${color}30` }}>
         <div className="flex items-start justify-between gap-3">
@@ -203,7 +203,7 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
       {/* Habit cards */}
       <div className="grid grid-cols-2 gap-2 p-3">
         {activeGroup.items.map(({ question, selected }) => (
-          <div key={question.id} className="bg-white rounded-xl overflow-hidden" style={{ border: `2px solid ${color}40`, borderTop: `3px solid ${color}` }}>
+          <div key={question.id} className="bg-white rounded-xl overflow-hidden" style={{ borderTop: `3px solid ${color}` }}>
             <div className="px-3.5 pt-3 pb-3">
               <p className="text-xs font-bold text-slate-800 leading-snug mb-0.5">{question.resultLabel}</p>
               <p className="text-[11px] text-slate-400 mb-2.5 italic">"{selected.label}"</p>
