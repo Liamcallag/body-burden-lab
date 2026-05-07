@@ -141,10 +141,11 @@ export const QUESTIONS: Question[] = [
     tipKey: "nonstick",
     studyCallout: {
       value: "~2.3 million",
-      unit: "microplastic particles per year from a damaged non-stick pan",
-      citation: "Kjellin et al., Science of the Total Environment, 2023",
-      caveat: "Based on scratched or worn PTFE coating — newer undamaged pans release significantly fewer particles",
-      unitContext: "per year",
+      unit: "microplastic particles released per cooking event from a cracked PTFE coating",
+      citation: "Luo et al., Science of the Total Environment, 2022",
+      caveat: "2.3M particles is from a cracked/broken coating in a single simulated cooking event — scratched (not broken) coatings released ~9,100 particles per event",
+      url: "https://doi.org/10.1016/j.scitotenv.2022.158293",
+      unitContext: "per use",
     },
     options: [
       { label: "Yes, regularly — some are old or scratched", riskScore: 10 },
@@ -161,10 +162,11 @@ export const QUESTIONS: Question[] = [
     weight: 10,
     tipKey: "cuttingboard",
     studyCallout: {
-      value: "7–14 million",
-      unit: "microplastic particles per year",
-      citation: "Environmental Science & Technology, 2023",
-      caveat: "Varies by board age, material type and usage intensity",
+      value: "14.5–79 million",
+      unit: "microplastic particles per year from plastic cutting boards",
+      citation: "Yadav et al., Environmental Science & Technology, 2023",
+      caveat: "14.5M from polyethylene boards, up to 79M from polypropylene — varies significantly by board material and usage",
+      url: "https://doi.org/10.1021/acs.est.3c00924",
       unitContext: "per year",
     },
     options: [
