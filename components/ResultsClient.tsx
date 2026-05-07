@@ -264,7 +264,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
 
             {/* Click hint — fades out once a slice is selected */}
             <p
-              className="text-xs text-slate-400 text-center mt-2 flex items-center gap-1.5 justify-center"
+              className="text-xs text-center mt-2 flex items-center gap-1.5 justify-center" style={{ color: "#475569" }}
               style={{ opacity: expanded ? 0 : 1, transition: "opacity 0.3s ease", pointerEvents: "none" }}
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -293,17 +293,18 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                       opacity: isDimmed ? 0.35 : 1,
                       transition: "all 0.2s ease",
                     }}
-                    className="flex flex-col gap-1.5 px-4 py-3 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm w-full text-left transition-all"
+                    className="flex flex-col gap-1.5 px-4 py-3 rounded-2xl w-full text-left transition-all"
+                    style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
-                        <span className={`text-sm ${isActive ? "font-bold text-slate-900" : "font-medium text-slate-600"}`}>{CATEGORY_LABELS[cat]}</span>
+                        <span className={`text-sm ${isActive ? "font-bold text-white" : "font-medium"}`} style={{ color: isActive ? "white" : "#94a3b8" }}>{CATEGORY_LABELS[cat]}</span>
                       </div>
                       <span className="text-sm font-bold tabular-nums" style={{ color }}>{catPct}%</span>
                     </div>
                     {/* Progress bar */}
-                    <div className="h-1.5 rounded-full bg-slate-100 overflow-hidden">
+                    <div className="h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.1)" }}>
                       <div
                         className="h-full rounded-full transition-all duration-500"
                         style={{ width: `${catPct}%`, background: `linear-gradient(to right, ${RANK_GRADIENTS[color]?.[0] ?? color}, ${RANK_GRADIENTS[color]?.[1] ?? color})` }}
@@ -511,13 +512,14 @@ export default function ResultsClient() {
 
   return (
     <div>
-      {/* ── Mint section: heading + chart ── */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      {/* ── Dark section: heading + chart ── */}
+      <div style={{ backgroundColor: "#1e293b" }}>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
 
         {/* Page heading */}
         <div className="text-center mb-8">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Body Burden Lab</p>
-          <h1 className="text-2xl font-extrabold text-slate-800 tracking-tight">Your microplastic risk score</h1>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] mb-1" style={{ color: "#64748b" }}>Body Burden Lab</p>
+          <h1 className="text-2xl font-extrabold tracking-tight text-white">Your microplastic risk score</h1>
         </div>
 
         {/* Ranked question contributions */}
@@ -568,7 +570,8 @@ export default function ResultsClient() {
         );
       })()}
 
-      </div>{/* end mint section */}
+      </div>{/* end max-w inner */}
+      </div>{/* end dark section */}
 
       {/* ── White section: everything below ── */}
       <div style={{ backgroundColor: "#ffffff" }}>
