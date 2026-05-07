@@ -44,7 +44,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   tierColor: string;
   colorsMap: Record<string, string>;
 }) {
-  const cx = 200, cy = 200, r = 168, holeR = 96;
+  const cx = 200, cy = 200, r = 168, holeR = 118;
   let angle = -Math.PI / 2;
 
   const GAP = 0.022; // radians gap between slices
