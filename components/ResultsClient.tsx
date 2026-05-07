@@ -264,7 +264,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
 
             {/* Click hint — fades out once a slice is selected */}
             <p
-              className="text-xs text-center mt-2 flex items-center gap-1.5 justify-center" style={{ color: "#475569" }}
+              className="text-xs text-center mt-2 flex items-center gap-1.5 justify-center" style={{ color: "#64748b" }}
               style={{ opacity: expanded ? 0 : 1, transition: "opacity 0.3s ease", pointerEvents: "none" }}
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
