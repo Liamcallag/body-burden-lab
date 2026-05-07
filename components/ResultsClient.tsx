@@ -44,7 +44,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   tierColor: string;
   colorsMap: Record<string, string>;
 }) {
-  const cx = 200, cy = 200, r = 168, holeR = 118;
+  const cx = 200, cy = 200, r = 168, holeR = 96;
   let angle = -Math.PI / 2;
 
   const GAP = 0.022; // radians gap between slices
@@ -153,13 +153,13 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
         ) : null;
       })() : (
         <>
-          <text x={cx} y={cy - 26} textAnchor="middle" fontSize="10" fill="#64748b" fontWeight="600" letterSpacing="1.5">
+          <text x={cx} y={cy - 36} textAnchor="middle" fontSize="10" fill="#64748b" fontWeight="600" letterSpacing="1.5">
             YOUR SCORE
           </text>
-          <text x={cx} y={cy + 22} textAnchor="middle" fontSize="56" fill="white" fontWeight="900">
+          <text x={cx} y={cy + 16} textAnchor="middle" fontSize="56" fill="white" fontWeight="900">
             {score}
           </text>
-          <text x={cx} y={cy + 44} textAnchor="middle" fontSize="11" fill={tierColor} fontWeight="700" letterSpacing="1">
+          <text x={cx} y={cy + 42} textAnchor="middle" fontSize="11" fill={tierColor} fontWeight="700" letterSpacing="1">
             {tier.toUpperCase()}
           </text>
         </>
