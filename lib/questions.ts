@@ -249,10 +249,11 @@ export const QUESTIONS: Question[] = [
     weight: 4,
     tipKey: "canned",
     studyCallout: {
-      value: "~1,000–2,000",
-      unit: "microplastic particles per litre from can linings",
-      citation: "Estimated from food contact material migration studies",
-      caveat: "Specific particle count data is limited — epoxy can linings are a documented source, particularly for acidic foods",
+      value: "134 ± 14",
+      unit: "microplastic particles per litre in canned beverages",
+      citation: "Socas-Hernández et al., Food Chemistry, 2024",
+      caveat: "Tested 73 beverages across container types — canned drinks ranked second-highest, above PET bottles (95/L) but below glass (151/L). PP was the dominant polymer.",
+      url: "https://www.sciencedirect.com/science/article/pii/S0308814624006514",
       unitContext: "per litre",
     },
     options: [
