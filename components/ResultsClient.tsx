@@ -44,21 +44,26 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   tierColor: string;
   colorsMap: Record<string, string>;
 }) {
-  const cx = 200, cy = 200, r = 168, holeR = 96;
+  const cx = 200, cy = 200, holeR = 96;
+  const maxR = 175, minR = 110; // variable outer radius range
+  const maxPct = Math.max(...groups.map(g => g.catPct));
   let angle = -Math.PI / 2;
 
-  const GAP = 0.022; // radians gap between slices
+  const GAP = 0.028;
 
   const slices = groups.map(({ cat, catPct }) => {
+    // Each slice radius proportional to its share — largest slice = maxR, smallest = minR
+    const sliceR = minR + ((catPct / maxPct) * (maxR - minR));
+
     const slice = (catPct / 100) * 2 * Math.PI;
     const start = angle + GAP / 2;
     const end = angle + slice - GAP / 2;
     angle += slice;
 
-    const x1 = cx + r * Math.cos(start);
-    const y1 = cy + r * Math.sin(start);
-    const x2 = cx + r * Math.cos(end);
-    const y2 = cy + r * Math.sin(end);
+    const x1 = cx + sliceR * Math.cos(start);
+    const y1 = cy + sliceR * Math.sin(start);
+    const x2 = cx + sliceR * Math.cos(end);
+    const y2 = cy + sliceR * Math.sin(end);
     const ix1 = cx + holeR * Math.cos(end);
     const iy1 = cy + holeR * Math.sin(end);
     const ix2 = cx + holeR * Math.cos(start);
@@ -66,26 +71,26 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
     const large = slice > Math.PI ? 1 : 0;
 
     const midAngle = start + (end - start) / 2;
-    const labelR = (r + holeR) / 2;
+    const labelR = (sliceR + holeR) / 2;
     const lx = cx + labelR * Math.cos(midAngle);
     const ly = cy + labelR * Math.sin(midAngle);
 
-    const popX = Math.cos(midAngle) * 18;
-    const popY = Math.sin(midAngle) * 18;
+    const popX = Math.cos(midAngle) * 14;
+    const popY = Math.sin(midAngle) * 14;
 
     const d = [
       `M ${x1} ${y1}`,
-      `A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`,
+      `A ${sliceR} ${sliceR} 0 ${large} 1 ${x2} ${y2}`,
       `L ${ix1} ${iy1}`,
       `A ${holeR} ${holeR} 0 ${large} 0 ${ix2} ${iy2}`,
       "Z",
     ].join(" ");
 
-    return { cat, catPct, d, lx, ly, popX, popY, color: colorsMap[cat] };
+    return { cat, catPct, sliceR, d, lx, ly, popX, popY, color: colorsMap[cat] };
   });
 
   return (
-    <svg viewBox="0 0 400 400" className="w-full max-w-[280px] sm:max-w-[340px] mx-auto">
+    <svg viewBox="10 10 380 380" className="w-full max-w-[280px] sm:max-w-[360px] mx-auto">
       <defs>
         {slices.map(({ cat, color }) => {
           const [light, dark] = RANK_GRADIENTS[color] ?? [color, color];
