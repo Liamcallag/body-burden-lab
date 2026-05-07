@@ -249,10 +249,10 @@ export const QUESTIONS: Question[] = [
     weight: 1,
     tipKey: "salt",
     studyCallout: {
-      value: "~600",
-      unit: "microplastic particles per kg of sea salt",
+      value: "0–10",
+      unit: "microplastic particles per kg of sea salt (max 37 particles per person per year)",
       citation: "Karami et al., Scientific Reports, 2017",
-      caveat: "Sea salt consistently shows highest contamination — rock and mined salts are significantly lower",
+      caveat: "Used micro-Raman spectroscopy to confirm every particle — more rigorous than earlier visual-only studies that reported much higher counts",
       url: "https://www.nature.com/articles/srep46173",
       unitContext: "per kg",
     },
