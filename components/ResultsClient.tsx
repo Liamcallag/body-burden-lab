@@ -153,10 +153,10 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
         ) : null;
       })() : (
         <>
-          <text x={cx} y={cy - 26} textAnchor="middle" fontSize="10" fill="#94a3b8" fontWeight="600" letterSpacing="1.5">
+          <text x={cx} y={cy - 26} textAnchor="middle" fontSize="10" fill="#64748b" fontWeight="600" letterSpacing="1.5">
             YOUR SCORE
           </text>
-          <text x={cx} y={cy + 22} textAnchor="middle" fontSize="56" fill={tierColor} fontWeight="800">
+          <text x={cx} y={cy + 22} textAnchor="middle" fontSize="56" fill="white" fontWeight="900">
             {score}
           </text>
           <text x={cx} y={cy + 44} textAnchor="middle" fontSize="11" fill={tierColor} fontWeight="700" letterSpacing="1">
@@ -293,13 +293,13 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                       opacity: isDimmed ? 0.35 : 1,
                       transition: "all 0.2s ease",
                     }}
-                    className="flex flex-col gap-1.5 px-4 py-3 rounded-2xl w-full text-left transition-all"
-                    style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}
+                    className="flex flex-col gap-1.5 pl-4 pr-4 py-3 rounded-xl w-full text-left transition-all"
+                    style={{ backgroundColor: "rgba(255,255,255,0.05)", borderLeft: `4px solid ${color}`, borderTop: "1px solid rgba(255,255,255,0.08)", borderRight: "1px solid rgba(255,255,255,0.08)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
-                        <span className={`text-sm ${isActive ? "font-bold text-white" : "font-medium"}`} style={{ color: isActive ? "white" : "#94a3b8" }}>{CATEGORY_LABELS[cat]}</span>
+                        <span className={`text-sm ${isActive ? "font-bold" : "font-medium"}`} style={{ color: isActive ? "white" : "#cbd5e1" }}>{CATEGORY_LABELS[cat]}</span>
                       </div>
                       <span className="text-sm font-bold tabular-nums" style={{ color }}>{catPct}%</span>
                     </div>
