@@ -249,7 +249,7 @@ export const QUESTIONS: Question[] = [
     weight: 4,
     tipKey: "canned",
     studyCallout: {
-      value: "134 ± 14",
+      value: "~134",
       unit: "microplastic particles per litre in canned beverages",
       citation: "Socas-Hernández et al., Food Chemistry, 2024",
       caveat: "Tested 73 beverages across container types — canned drinks ranked second-highest, above PET bottles (95/L) but below glass (151/L). PP was the dominant polymer.",
