@@ -136,7 +136,7 @@ const referenceTable = [
   { question: "Tea & coffee", answer: "Plastic/nylon tea bags daily", weekly: "7,000", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
   { question: "Tea & coffee", answer: "Plastic/nylon tea bags few times/week", weekly: "3,000", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
   { question: "Tea & coffee", answer: "Plastic/nylon tea bags occasionally", weekly: "800", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
-  { question: "Tea & coffee", answer: "Paper bags / loose leaf", weekly: "10", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+
   { question: "Tea & coffee", answer: "Coffee machine / pods", weekly: "200", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
   { question: "Microwaving plastic", answer: "Daily", weekly: "28,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
   { question: "Microwaving plastic", answer: "Few times/week", weekly: "12,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },

@@ -4,13 +4,13 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
   description:
-    "Most advice gets the priorities wrong. We ranked every change by actual particle reduction — one swap alone cuts 28,000 particles a week. Based on peer-reviewed research.",
+    "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
     title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
     description:
-      "Most advice gets the priorities wrong. We ranked every change by actual particle reduction — one swap alone cuts 28,000 particles a week. Based on peer-reviewed research.",
+      "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/api/og-image?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
     description:
-      "Most advice gets the priorities wrong. We ranked every change by actual particle reduction — one swap alone cuts 28,000 particles a week. Based on peer-reviewed research.",
+      "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
     images: [
       "https://www.bodyburdenlab.com/api/og-image?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
     ],
@@ -99,7 +99,7 @@ export default function BlogPost() {
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your current exposure level</p>
-          <p className="text-xs text-slate-500">15 questions · 2 minutes · based on peer-reviewed science</p>
+          <p className="text-xs text-slate-500">14 questions · 2 minutes · based on peer-reviewed science</p>
         </div>
         <Link href="/calculator" className="bg-teal-700 text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-teal-800 transition-colors whitespace-nowrap">
           Take the calculator →
@@ -129,17 +129,17 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">2. Switch from plastic to paper tea bags or loose leaf</h2>
 
         <p>
-          Hernandez et al. (2019) in <em>Environmental Science & Technology</em> found that steeping a single plastic or nylon tea bag at brewing temperature releases approximately <strong>11.6 billion nanoplastic and microplastic particles</strong> into the cup. For daily tea drinkers, this represents one of the largest single controllable exposure sources.
+          Hernandez et al. (2019) in <em>Environmental Science & Technology</em> found that steeping a single plastic or nylon tea bag at brewing temperature releases approximately <strong>11.6 billion microplastic particles and 3.1 billion nanoplastic particles</strong> into the cup. For daily tea drinkers, this represents one of the largest single controllable exposure sources.
         </p>
 
         <p>
-          Paper tea bags and loose leaf tea release negligible particles by comparison — around 10 microplastic particles per week for regular use. This is one of the easiest swaps to make and one of the largest reductions available.
+          Paper tea bags and loose leaf tea release negligible particles by comparison. This is one of the easiest swaps to make and one of the largest reductions available.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">3. Filter or boil your drinking water</h2>
 
         <p>
-          Cox et al. (2019) found that people drinking only bottled water consume approximately 1,730 additional microplastic particles per week from that source alone compared to filtered tap water users. Bottled water is not cleaner — the packaging process introduces particles, and PET bottles continue to leach plastics into the water over time.
+          Mason et al. (2018) in <em>Frontiers in Chemistry</em> tested 259 bottles across 11 brands from nine countries and found microplastic contamination in 93% of samples — an average of 325 particles per litre, with the highest-contaminated bottles exceeding 10,000 particles per litre. Bottled water is not cleaner — the packaging process itself is a primary source, with particles entering the water during bottling and from the PET container over time.
         </p>
 
         <p>
@@ -163,11 +163,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">5. Reduce synthetic clothing and use a microfibre filter</h2>
 
         <p>
-          Dris et al. (2017) in <em>Environmental Pollution</em> documented that synthetic fabrics — polyester, nylon, acrylic — shed microplastic fibres into indoor air during wear and washing, where they are subsequently inhaled. Indoor air contains significantly elevated microplastic concentrations compared to outdoor air, driven primarily by synthetic textiles.
+          Jenner et al. (2022) in <em>Science of the Total Environment</em> detected microplastics in the lung tissue of 11 out of 13 living surgical patients, including deep in the lower lung — demonstrating that inhalation is a proven exposure route, not a theoretical one. Dris et al. (2017) in <em>Environmental Pollution</em> documented that both synthetic and natural textile fibres accumulate in indoor environments; the microplastic fraction (around 33% of total fibres) enters the body primarily via dust ingestion rather than inhalation, and is a particular concern for young children.
         </p>
 
         <p>
-          Practical steps: wash synthetic clothing less frequently, use a cold wash cycle (lower temperatures release fewer fibres), and fit a microfibre-catching laundry bag or washing machine filter. Choosing natural fibre clothing (cotton, wool, linen) for items worn close to the skin also reduces shedding.
+          Practical steps: wash synthetic clothing less frequently, use a cold wash cycle (lower temperatures release fewer fibres), and fit a microfibre-catching laundry bag or washing machine filter. Choosing natural fibre clothing (cotton, wool, linen) for items worn close to the skin also reduces fibre shedding into the home environment.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">6. Add a HEPA air purifier to your home</h2>
@@ -185,13 +185,13 @@ export default function BlogPost() {
         <p>For most people, the priority order is:</p>
 
         <ol className="list-decimal list-inside space-y-2 text-slate-700">
-          <li><strong>Stop microwaving in plastic</strong> — potential reduction of up to 28,000 particles/week</li>
-          <li><strong>Switch from plastic tea bags to paper or loose leaf</strong> — up to 6,990 particles/week</li>
-          <li><strong>Switch from bottled water to filtered tap</strong> — up to 1,653 particles/week</li>
+          <li><strong>Stop microwaving in plastic</strong> — releases the highest particle counts of any tested domestic scenario, exceeding bottled water by more than 1,000-fold (Hussain et al., 2023)</li>
+          <li><strong>Switch from plastic tea bags to paper or loose leaf</strong> — each plastic tea bag releases billions of particles per cup at brewing temperature (Hernandez et al., 2019)</li>
+          <li><strong>Switch from bottled water to filtered tap</strong> — 93% of bottled water brands are contaminated, averaging 325 particles per litre (Mason et al., 2018)</li>
         </ol>
 
         <p className="mt-4">
-          These three changes together can reduce estimated microplastic intake by more than 36,000 particles per week for heavy users — more than the entire estimated annual American average divided by 52.
+          These three changes address the highest-documented domestic exposure sources. Individually, each represents one of the largest controllable contributors to weekly microplastic intake identified in the peer-reviewed literature.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What doesn't have strong evidence yet</h2>
@@ -205,7 +205,7 @@ export default function BlogPost() {
       <div className="mt-10 border-t border-slate-100 pt-8 mb-8">
         <h3 className="text-sm font-semibold text-slate-900 mb-4">Related articles</h3>
         <div className="flex flex-col gap-3">
-          <Link href="/blog/how-many-microplastics-do-you-consume" className="text-sm text-teal-700 hover:underline">How Many Microplastics Do You Consume Per Week? →</Link>
+          <Link href="/blog/how-many-microplastics-do-you-consume" className="text-sm text-teal-700 hover:underline">How Many Microplastics Do You Consume Per Week? What the Research Shows →</Link>
           <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-sm text-teal-700 hover:underline">Does Reverse Osmosis Remove Microplastics? →</Link>
           <Link href="/blog/microplastics-in-bottled-water" className="text-sm text-teal-700 hover:underline">Microplastics in Bottled Water — What the Research Shows →</Link>
         </div>
@@ -213,7 +213,7 @@ export default function BlogPost() {
 
       <div className="bg-teal-700 rounded-2xl p-6 mt-10 text-white text-center">
         <p className="font-semibold text-lg mb-1">Find out your personal exposure</p>
-        <p className="text-teal-200 text-sm mb-4">15 questions · 2 minutes · peer-reviewed science</p>
+        <p className="text-teal-200 text-sm mb-4">14 questions · 2 minutes · peer-reviewed science</p>
         <Link href="/calculator" className="bg-white text-teal-700 font-semibold px-7 py-2.5 rounded-full text-sm hover:bg-teal-50 transition-colors">
           Start the calculator →
         </Link>
@@ -224,10 +224,11 @@ export default function BlogPost() {
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
           <li>Hernandez LM et al. Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b02540</li>
-          <li>Cox KD et al. Human Consumption of Microplastics. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b01517</li>
+          <li>Mason SA et al. Microplastic Pollution is Widely Detected in US Municipal Wastewater Treatment Plant Effluent. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
           <li>Yu Z et al. Drinking Boiled Tap Water Reduces Human Intake of Nanoplastics and Microplastics. <em>Environ Sci Technol Lett</em>. 2024. DOI: 10.1021/acs.estlett.4c00081</li>
           <li>Snekkevik VK et al. Beyond the Food on Your Plate: Investigating Sources of Microplastic Contamination in Home Kitchens. <em>Heliyon</em>. 2024. DOI: 10.1016/j.heliyon.2024.e35022</li>
           <li>Cole M et al. Microplastic and PTFE contamination of food from cookware. <em>Sci Total Environ</em>. 2024. DOI: 10.1016/j.scitotenv.2024.172577</li>
+          <li>Jenner LC et al. Detection of microplastics in human lung tissue using μFTIR spectroscopy. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.154907</li>
           <li>Dris R et al. A first overview of textile fibers, including microplastics, in indoor and outdoor environments. <em>Environ Pollut</em>. 2017. DOI: 10.1016/j.envpol.2016.12.013</li>
           <li>Amato-Lourenço LF et al. An emerging class of air pollutants: Potential effects of microplastics to respiratory human health? <em>Sci Total Environ</em>. 2020. DOI: 10.1016/j.scitotenv.2020.141676</li>
         </ol>
