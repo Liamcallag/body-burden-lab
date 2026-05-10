@@ -199,7 +199,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              { slug: "how-to-avoid-microplastics", title: "How to Avoid Microplastics — A Science-Based Guide", tag: "Guide", image: "/blog-avoid.png" },
+              { slug: "how-to-avoid-microplastics", title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", tag: "Guide", image: "/blog-avoid.png" },
               { slug: "how-many-microplastics-do-you-consume", title: "How Many Microplastics Do You Consume Per Week?", tag: "Science", image: "/blog-how-many.png" },
               { slug: "microplastics-in-bottled-water", title: "Microplastics in Bottled Water — What the Research Shows", tag: "Science", image: "/blog-bottled-water.png" },
             ].map((post) => (

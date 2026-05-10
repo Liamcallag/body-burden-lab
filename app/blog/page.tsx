@@ -87,7 +87,7 @@ const posts = [
   },
   {
     slug: "how-to-avoid-microplastics",
-    title: "How to Avoid Microplastics — A Science-Based Guide",
+    title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
     excerpt:
       "You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can reduce your intake by tens of thousands of particles per week.",
     date: "2026-04-06",

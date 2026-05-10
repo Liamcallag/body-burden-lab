@@ -170,7 +170,7 @@ export default function BlogPost() {
         <h3 className="text-sm font-semibold text-slate-900 mb-4">Related articles</h3>
         <div className="flex flex-col gap-3">
           <Link href="/blog/how-many-microplastics-do-you-consume" className="text-sm text-teal-700 hover:underline">How Many Microplastics Do You Consume Per Week? →</Link>
-          <Link href="/blog/how-to-avoid-microplastics" className="text-sm text-teal-700 hover:underline">How to Avoid Microplastics — A Science-Based Guide →</Link>
+          <Link href="/blog/how-to-avoid-microplastics" className="text-sm text-teal-700 hover:underline">How to Avoid Microplastics: The Highest-Impact Changes, Ranked →</Link>
           <Link href="/blog/does-silicone-have-microplastics" className="text-sm text-teal-700 hover:underline">Does Silicone Release Microplastics? →</Link>
         </div>
       </div>
