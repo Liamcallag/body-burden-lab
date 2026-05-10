@@ -84,11 +84,11 @@ export default function BlogPost() {
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <p>
-          Microplastics are particles of plastic smaller than 5 millimetres. They are found in drinking water, seafood, table salt, honey, beer, indoor air, and the human body. In 2019, a landmark study by Cox et al. in <em>Environmental Science & Technology</em> estimated that Americans consume between 74,000 and 121,000 microplastic particles per year through food and drink alone — a figure the authors described as likely conservative, because many exposure pathways were not yet studied.
+          Microplastics are particles of plastic smaller than 5 millimetres. They are found in drinking water, seafood, table salt, honey, beer, indoor air, and the human body. Researchers have attempted to quantify average human exposure, but estimates vary significantly depending on the detection methods used and the size range of particles counted — and the science is moving fast. What is consistent across studies is that exposure differs dramatically between individuals, driven by a small number of specific daily habits.
         </p>
 
         <p>
-          Since then, microplastics have been detected in human blood, lungs, liver, kidney, testicular tissue, breast milk, and — in a 2024 study published in <em>The New England Journal of Medicine</em> — in arterial plaques associated with significantly elevated risk of heart attack and stroke.
+          Microplastics have been detected in human blood, lungs, liver, kidney, testicular tissue, breast milk, and — in Marfella et al. (2024) in <em>The New England Journal of Medicine</em> — in arterial plaques associated with significantly elevated risk of heart attack and stroke.
         </p>
 
         <p>
@@ -98,11 +98,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The single biggest source: microwaving plastic</h2>
 
         <p>
-          In 2023, researchers at the University of Nebraska published a study in <em>Environmental Science & Technology</em> that sent shockwaves through the field. When polypropylene plastic food containers were microwaved for three minutes, up to <strong>4.22 million microplastic particles and 2.1 billion nanoplastic particles</strong> were released per square centimetre of plastic surface.
+          Hussain et al. (2023) in <em>Environmental Science & Technology</em> found that microwaving polypropylene food containers for three minutes released up to <strong>4.22 million microplastic particles and 2.11 billion nanoplastic particles per square centimetre</strong> of plastic surface. A typical food container has a surface area of several hundred square centimetres, meaning total particle release per use is orders of magnitude higher than the per-cm² figure alone suggests.
         </p>
 
         <p>
-          Per litre of food, the study found concentrations exceeding 1,000 times what has been detected in bottled water. Daily microwaving of food in plastic containers could contribute tens of thousands of particles per week to an individual's exposure — by far the single largest controllable variable in the Body Burden calculator.
+          Of all the scenarios tested — including refrigeration and room-temperature storage over six months — microwaving produced the highest particle release by a significant margin. Concentrations in the food exceeded those found in bottled water by over 1,000 times. The study specifically flagged infants and toddlers as the highest-risk group, given the common practice of microwaving formula and dairy products in plastic containers.
         </p>
 
         <p>
@@ -112,11 +112,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Plastic tea bags: 11.6 billion particles per cup</h2>
 
         <p>
-          In 2019, a study by Hernandez et al. — also in <em>Environmental Science & Technology</em> — found that steeping a single plastic or nylon tea bag at brewing temperature releases approximately <strong>11.6 billion microplastic and nanoplastic particles</strong> into the cup.
+          Hernandez et al. (2019) in <em>Environmental Science & Technology</em> found that steeping a single plastic or nylon tea bag at brewing temperature releases approximately <strong>11.6 billion microplastic particles and 3.1 billion nanoplastic particles</strong> into the cup — with the composition matched to the original bag material (nylon and PET) using FTIR and XPS spectroscopy.
         </p>
 
         <p>
-          For regular tea drinkers using plastic bags, this is the second-largest exposure pathway after microwaving. The solution is equally simple: switch to paper tea bags or loose leaf tea. The exposure from paper bags is negligible — approximately 10 particles per week.
+          For regular tea drinkers using plastic bags, this is the second-largest exposure pathway after microwaving. The solution is simple: switch to paper tea bags or loose leaf tea.
         </p>
 
         <p>
@@ -144,7 +144,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          EFSA (the European Food Safety Authority) has estimated that heavy shellfish consumers may ingest up to 11,000 microplastic particles per year from that source alone. Daily seafood consumption is estimated to contribute around 2,100 particles per week across all seafood types.
+          The EFSA Panel on Contaminants (2016) estimated that heavy shellfish consumers may ingest up to 11,000 microplastic particles per year from that source alone.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">You inhale them too: air and clothing</h2>
@@ -164,7 +164,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What does it actually mean for health?</h2>
 
         <p>
-          The honest answer is: researchers don't yet know the full picture. Microplastics carry associated chemicals — plasticisers, flame retardants, surface coatings — which are often biologically active. In laboratory settings, microplastics have been shown to induce oxidative stress, inflammatory responses, and cell death. In the 2024 NEJM study, patients with microplastics in their arterial plaques had a 4.5x higher risk of heart attack, stroke, or death over the following 34 months.
+          The honest answer is: researchers don't yet know the full picture. Microplastics carry associated chemicals — plasticisers, flame retardants, surface coatings — which are often biologically active. In laboratory settings, microplastics have been shown to induce oxidative stress, inflammatory responses, and cell death. In Marfella et al. (2024) in <em>The New England Journal of Medicine</em>, patients with microplastics detected in their arterial plaques had a 4.5x higher risk of heart attack, stroke, or death over the following 34 months.
         </p>
 
         <p>
@@ -175,19 +175,15 @@ export default function BlogPost() {
 
         <ol className="list-decimal list-inside space-y-3 text-slate-700">
           <li>
-            <strong>Stop microwaving in plastic.</strong> Use glass or ceramic containers. This single change can reduce exposure by up to 28,000 particles per week for daily microwave users.
+            <strong>Stop microwaving in plastic.</strong> Transfer food to glass or ceramic before heating. Given the surface area of a typical container and the particle counts measured by Hussain et al. (2023), this is the single highest-impact change most people can make.
           </li>
           <li>
-            <strong>Switch from plastic tea bags to paper or loose leaf.</strong> Exposure reduction: up to 6,990 particles per week.
+            <strong>Switch from plastic tea bags to paper or loose leaf.</strong> Each cup steeped in a plastic bag releases billions of particles. Paper bags and loose leaf tea eliminate this source entirely.
           </li>
           <li>
-            <strong>Replace bottled water with filtered tap.</strong> A quality filter pays for itself quickly and reduces water-based exposure by up to 1,653 particles per week compared to bottled water.
+            <strong>Replace bottled water with filtered tap.</strong> Cox et al. (2019) found that switching from bottled to filtered tap water reduces water-sourced microplastic intake substantially. A quality reverse osmosis or activated carbon filter pays for itself quickly.
           </li>
         </ol>
-
-        <p className="mt-5">
-          Together, these three changes alone can reduce estimated exposure by more than 36,000 particles per week — more than the entire average American annual exposure divided by 52.
-        </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Find out where you stand</h2>
 
@@ -227,7 +223,7 @@ export default function BlogPost() {
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
           <li>Marfella R et al. Microplastics and Nanoplastics in Atheromas and Cardiovascular Events. <em>NEJM</em>. 2024. DOI: 10.1056/NEJMoa2309822</li>
           <li>EFSA Panel on Contaminants. Presence of Microplastics and Nanoplastics in Food. <em>EFSA Journal</em>. 2016. DOI: 10.2903/j.efsa.2016.4501</li>
-          <li>Dris R et al. A first overview of textile fibers, including microplastics, in indoor and outdoor environments. <em>Environmental Pollution</em>. 2017. DOI: 10.1016/j.envpol.2016.12.013</li>
+          <li>Dris R et al. A first overview of textile fibers, including microplastics, in indoor and outdoor environments. <em>Environ Pollut</em>. 2017. DOI: 10.1016/j.envpol.2016.12.013</li>
         </ol>
       </div>
     </article>
