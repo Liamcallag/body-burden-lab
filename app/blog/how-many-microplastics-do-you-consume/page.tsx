@@ -126,15 +126,15 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Bottled water vs. tap: the data may surprise you</h2>
 
         <p>
-          Cox et al. (2019) found that people who drink only bottled water consume an estimated 1,730 additional microplastic particles per week from that source alone, compared to approximately 77 per week for those drinking only tap or filtered tap water.
+          Mason et al. (2018) in <em>Frontiers in Chemistry</em> tested 259 bottles from 11 globally recognised brands purchased across 19 locations in nine countries. Ninety-three percent showed signs of microplastic contamination, at an average of <strong>325 microplastic particles per litre</strong>. Some individual bottles exceeded 10,000 particles per litre.
         </p>
 
         <p>
-          Bottled water is not cleaner than filtered tap water in terms of microplastic content — in most cases the reverse is true. The packaging process itself introduces particles, and PET bottles continue to leach plastics into the water over time, particularly when exposed to heat.
+          The most common polymer found was polypropylene — the same material used to manufacture bottle caps — accounting for 54% of identified particles. Combined with the fragment morphology of most particles, the data pointed to the packaging and bottling process itself as the primary contamination source, not the water supply. When the same brand of water was tested in glass versus plastic packaging, the glass-packaged version showed dramatically lower contamination (204 vs. 1,410 particles per litre).
         </p>
 
         <p>
-          A quality water filter — such as those using <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">reverse osmosis</Link> or activated carbon — can reduce microplastic content in tap water to near-undetectable levels. Some brands test and certify specifically for microplastic removal.
+          In the same particle size range, bottled water contained nearly twice the microplastic contamination of tap water. A quality water filter — such as those using <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">reverse osmosis</Link> or activated carbon — can reduce microplastic content in tap water significantly. Some brands test and certify specifically for microplastic removal.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Seafood: it's the digestive tract, not the muscle</h2>
@@ -181,7 +181,7 @@ export default function BlogPost() {
             <strong>Switch from plastic tea bags to paper or loose leaf.</strong> Each cup steeped in a plastic bag releases billions of particles. Paper bags and loose leaf tea eliminate this source entirely.
           </li>
           <li>
-            <strong>Replace bottled water with filtered tap.</strong> Cox et al. (2019) found that switching from bottled to filtered tap water reduces water-sourced microplastic intake substantially. A quality reverse osmosis or activated carbon filter pays for itself quickly.
+            <strong>Replace bottled water with filtered tap.</strong> Mason et al. (2018) found an average of 325 microplastic particles per litre in bottled water, with contamination traced primarily to the packaging itself. Filtered tap water eliminates that source entirely.
           </li>
         </ol>
 
@@ -218,7 +218,7 @@ export default function BlogPost() {
       <div className="mt-10 border-t border-slate-100 pt-8">
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
-          <li>Cox KD et al. Human Consumption of Microplastics. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b01517</li>
+          <li>Mason SA et al. Synthetic Polymer Contamination in Bottled Water. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
           <li>Hernandez LM et al. Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b02540</li>
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
           <li>Marfella R et al. Microplastics and Nanoplastics in Atheromas and Cardiovascular Events. <em>NEJM</em>. 2024. DOI: 10.1056/NEJMoa2309822</li>
