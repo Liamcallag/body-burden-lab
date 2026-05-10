@@ -137,14 +137,67 @@ export default function BlogPost() {
           Tang and Hadibarata (2021) in <em>Environmental Challenges</em> reviewed a range of microplastic removal technologies and found a clear performance hierarchy:
         </p>
 
+        <div className="overflow-x-auto my-6">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-slate-100">
+                <th className="text-left px-4 py-3 font-semibold text-slate-900 border border-slate-200">Filter type</th>
+                <th className="text-left px-4 py-3 font-semibold text-slate-900 border border-slate-200">Removal rate</th>
+                <th className="text-left px-4 py-3 font-semibold text-slate-900 border border-slate-200">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white">
+                <td className="px-4 py-3 border border-slate-200 font-medium">Reverse osmosis</td>
+                <td className="px-4 py-3 border border-slate-200 text-teal-700 font-semibold">&gt;99%</td>
+                <td className="px-4 py-3 border border-slate-200">Most effective, wastes some water</td>
+              </tr>
+              <tr className="bg-slate-50">
+                <td className="px-4 py-3 border border-slate-200 font-medium">Ultrafiltration membrane</td>
+                <td className="px-4 py-3 border border-slate-200 text-teal-700 font-semibold">85–99%</td>
+                <td className="px-4 py-3 border border-slate-200">Retains minerals, less water waste</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="px-4 py-3 border border-slate-200 font-medium">Activated carbon block</td>
+                <td className="px-4 py-3 border border-slate-200 text-amber-600 font-semibold">70–90%</td>
+                <td className="px-4 py-3 border border-slate-200">Less effective below 10 µm</td>
+              </tr>
+              <tr className="bg-slate-50">
+                <td className="px-4 py-3 border border-slate-200 font-medium">Boiling (hard water)</td>
+                <td className="px-4 py-3 border border-slate-200 text-amber-600 font-semibold">80–90%</td>
+                <td className="px-4 py-3 border border-slate-200">Free, requires hard water</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="px-4 py-3 border border-slate-200 font-medium">Pitcher filter (Brita-style)</td>
+                <td className="px-4 py-3 border border-slate-200 text-red-500 font-semibold">Inconsistent</td>
+                <td className="px-4 py-3 border border-slate-200">Not reliable for sub-10 µm particles</td>
+              </tr>
+              <tr className="bg-slate-50">
+                <td className="px-4 py-3 border border-slate-200 font-medium">Bottled water</td>
+                <td className="px-4 py-3 border border-slate-200 text-red-500 font-semibold">Adds particles</td>
+                <td className="px-4 py-3 border border-slate-200">Not a solution — averages 325/litre</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className="text-xs text-slate-400">Sources: Cherian et al. (2023) Polymers; Acarer (2023) Water Sci Technol; Tang &amp; Hadibarata (2021) Environ Challenges; Yu et al. (2024) EST Letters.</p>
+
+        <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Under-sink vs countertop RO — which is right for you?</h2>
+
+        <p>
+          Both deliver the same &gt;99% removal performance. The difference is practical:
+        </p>
+
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Reverse osmosis:</strong> &gt;99% removal — the highest of any household technology</li>
-          <li><strong>Ultrafiltration membranes:</strong> 85–99% — effective but less thorough than RO</li>
-          <li><strong>Activated carbon block filters:</strong> 70–90% for larger particles — less effective for particles below 10 microns</li>
-          <li><strong>Standard pitcher filters (Brita-style):</strong> Variable — may remove larger particles but inconsistent for smaller ones</li>
-          <li><strong>Boiling tap water:</strong> 80–90% for hard water (as per Yu et al. 2024) — free and highly accessible</li>
-          <li><strong>Bottled water:</strong> Adds microplastics rather than removing them — not a solution</li>
+          <li><strong>Under-sink RO:</strong> Installed permanently beneath the kitchen sink with a dedicated tap. Stores filtered water in a tank ready to use. Best for homeowners or long-term renters. Higher upfront cost but more convenient day-to-day.</li>
+          <li><strong>Countertop RO:</strong> Sits on the counter, connects to the tap via an adaptor. No installation required. Good for renters or those who want to avoid plumbing work. Slower output than under-sink systems.</li>
+          <li><strong>RO water jugs:</strong> A newer category — gravity-fed RO units that require no installation. Slower than plumbed systems but portable and low-cost to start.</li>
         </ul>
+
+        <p>
+          For households with infants where <Link href="/blog/microplastics-in-baby-formula" className="text-teal-700 hover:underline">formula preparation is a significant exposure source</Link>, using RO-filtered water to prepare formula is one of the highest-impact changes available. The exposure reduction from switching formula water source alone is meaningful given the particle release rates documented in plastic bottles.
+        </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Does RO remove nanoplastics too?</h2>
 
