@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://bodyburdenlab.com/sitemap.xml",
+    sitemap: "https://www.bodyburdenlab.com/sitemap.xml",
   };
 }

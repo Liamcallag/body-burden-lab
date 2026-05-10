@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Avoid Microplastics — A Science-Based Guide",
+  title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
   description:
-    "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
+    "Most advice gets the priorities wrong. We ranked every change by actual particle reduction — one swap alone cuts 28,000 particles a week. Based on peer-reviewed research.",
   openGraph: {
     type: "article",
-    publishedTime: "2026-04-06",
-    title: "How to Avoid Microplastics — A Science-Based Guide",
+    publishedTime: "2026-04-19",
+    title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
     description:
-      "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
+      "Most advice gets the priorities wrong. We ranked every change by actual particle reduction — one swap alone cuts 28,000 particles a week. Based on peer-reviewed research.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/api/og-image?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Avoid Microplastics — A Science-Based Guide",
+    title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
     description:
-      "The evidence-based steps that actually reduce your microplastic exposure, ranked by impact. Based on peer-reviewed research.",
+      "Most advice gets the priorities wrong. We ranked every change by actual particle reduction — one swap alone cuts 28,000 particles a week. Based on peer-reviewed research.",
     images: [
       "https://www.bodyburdenlab.com/api/og-image?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
     ],
@@ -34,14 +34,45 @@ export default function BlogPost() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How to Avoid Microplastics — A Science-Based Guide",
+    "headline": "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
     "datePublished": "2026-04-19",
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/how-to-avoid-microplastics",
   };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the single most effective way to reduce microplastic exposure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stopping microwaving food in plastic containers is the highest-impact change for most people. A 2023 study found that microwaving polypropylene containers for three minutes released up to 4.22 million microplastic and 2.11 billion nanoplastic particles per square centimetre of plastic surface — concentrations over 1,000 times higher than bottled water. Transferring food to glass, ceramic, or stainless steel before microwaving eliminates this exposure source entirely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does boiling water remove microplastics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A 2024 study by Yu et al. in Environmental Science & Technology Letters found that boiling hard tap water removed 80–90% of free-floating microplastics and nanoplastics. The mechanism is calcium carbonate encapsulating the particles as it precipitates out during boiling. Soft water boiling removed around 25%. Boiling is one of the cheapest and most accessible interventions supported by peer-reviewed evidence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there microplastic reduction strategies without strong scientific evidence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Saunas have been suggested as a potential route for microplastic excretion via sweat, but no peer-reviewed human studies have confirmed this. Dietary supplements claimed to bind microplastics in the gut have not been tested in controlled human trials. These may prove valuable as research develops, but they are not currently evidence-based interventions."
+        }
+      }
+    ]
+  };
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mb-8">
         <Link href="/blog" className="text-xs text-slate-400 hover:text-teal-700 transition-colors">
           ← Back to Blog

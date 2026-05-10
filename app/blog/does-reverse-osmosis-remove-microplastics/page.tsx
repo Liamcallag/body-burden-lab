@@ -39,9 +39,40 @@ export default function BlogPost() {
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/does-reverse-osmosis-remove-microplastics",
   };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does reverse osmosis remove microplastics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Reverse osmosis consistently achieves microplastic removal rates above 99%, according to multiple peer-reviewed reviews. RO membrane pore sizes (around 0.0001 microns) are orders of magnitude smaller than even the smallest detectable microplastic particles (around 1 micron), making it a purely physical barrier that microplastics cannot pass through."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does reverse osmosis compare to other water filters for microplastics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reverse osmosis is the most effective household filtration method for microplastics at over 99% removal. Ultrafiltration membranes remove 85–99%, activated carbon block filters remove 70–90% (less effective for particles below 10 microns), and standard pitcher filters (Brita-style) are inconsistent. Boiling hard tap water removes 80–90% of microplastics at no cost. Bottled water is not a solution — it adds microplastics rather than removing them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does reverse osmosis remove nanoplastics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On theoretical grounds, yes — RO membrane pore sizes are far smaller than even the smallest nanoplastics. However, peer-reviewed evidence directly measuring RO nanoplastic removal is limited due to the difficulty of detecting and quantifying nanoplastics reliably. The physics strongly supports high removal efficiency, but this hasn't been as thoroughly confirmed at the nanoscale as it has for microplastics."
+        }
+      }
+    ]
+  };
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mb-8">
         <Link href="/blog" className="text-xs text-slate-400 hover:text-teal-700 transition-colors">
           ← Back to Blog

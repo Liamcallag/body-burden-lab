@@ -39,9 +39,40 @@ export default function BlogPost() {
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-baby-formula",
   };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do plastic baby bottles release microplastics into formula?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A 2020 study by Camacho et al. in Nature Food found that polypropylene (PP) baby bottles used with boiling water during sterilisation released up to 16.2 million microplastic particles per litre. The study estimated infants fed formula from PP bottles may ingest up to 2.61 million microplastic particles per day in their first year — among the highest individual daily exposures reported in the literature. Using glass or stainless steel bottles eliminates this source entirely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are microplastics found in breast milk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A 2022 study published in Polymers detected microplastics in 75% of breast milk samples from an Italian cohort. Polymers identified included polyethylene, polypropylene, and PVC. The presence of microplastics in breast milk does not mean breastfeeding should be avoided — the documented benefits of breastfeeding far outweigh the risk posed by microplastic particles at currently detected levels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I reduce my baby's microplastic exposure from bottles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most effective step is switching from polypropylene (plastic) bottles to glass or stainless steel bottles, which release no polymer particles. If using PP bottles, sterilise the bottle separately before adding formula — do not prepare formula inside the bottle during sterilisation. Never microwave formula in plastic bottles. Replace bottles when the interior shows visible scratching, as worn surfaces release significantly more particles."
+        }
+      }
+    ]
+  };
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mb-8">
         <Link href="/blog" className="text-xs text-slate-400 hover:text-teal-700 transition-colors">
           ← Back to Blog
