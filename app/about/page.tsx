@@ -26,7 +26,7 @@ export default function AboutPage() {
 
         <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Who built it</h2>
         <p>
-          Body Burden Lab was built by an independent team of developers and researchers — not scientists or medical professionals. The project began out of genuine concern about microplastic exposure and a frustration with the lack of accessible, evidence-grounded tools for the public. That background has nothing to do with environmental science, which is exactly why every figure is grounded in published research rather than intuition.
+          Body Burden Lab was founded by James Mercer, an independent researcher — not a scientist or medical professional. The project began out of genuine concern about microplastic exposure and a frustration with the lack of accessible, evidence-grounded tools for the public. That background has nothing to do with environmental science, which is exactly why every figure is grounded in published research rather than intuition.
         </p>
         <p>
           It is important to share what the science currently shows — even though it is incomplete. The data we have almost certainly understates the real picture. Measurement technology for nanoplastics is still developing, most studies capture only a fraction of exposure routes, and tissue accumulation is likely higher than current figures suggest. The calculator reflects what can be documented today, not the full reality.
