@@ -140,11 +140,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Seafood: it's the digestive tract, not the muscle</h2>
 
         <p>
-          Microplastics accumulate in the digestive systems of fish and shellfish. For large fish where humans eat only the muscle, exposure is lower because microplastics tend to concentrate in the gut. For shellfish — particularly mussels, clams, and oysters — the entire animal is consumed, including the digestive tract, which can contain significant concentrations.
+          Microplastics accumulate primarily in the digestive systems of fish and shellfish. For finfish, where only the muscle is typically eaten, the gut is discarded before consumption — and that is where most particles concentrate. The EFSA Panel on Contaminants (2016) noted that for fish, the quantity of microplastics in the edible portion is likely to be negligible for consumer exposure.
         </p>
 
         <p>
-          The EFSA Panel on Contaminants (2016) estimated that heavy shellfish consumers may ingest up to 11,000 microplastic particles per year from that source alone.
+          The picture is different for bivalves. Mussels, oysters, and clams are consumed whole — including the digestive tract — and act as filter feeders that accumulate particles from the surrounding water. Using the highest contamination data available at the time, the EFSA Panel worked through a concrete example: at 4 microplastic particles per gram (from commercial mussel samples), a standard 225g serving would represent exposure to approximately <strong>900 microplastic particles</strong> from that single meal alone.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">You inhale them too: air and clothing</h2>
