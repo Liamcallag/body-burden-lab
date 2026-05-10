@@ -9,6 +9,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "best-water-filter-for-microplastics",
+    title: "Best Water Filter for Microplastics: RO vs Carbon vs Pitcher, Ranked",
+    excerpt:
+      "Not all water filters remove microplastics equally. We ranked every major filter type by peer-reviewed removal efficiency — from reverse osmosis (>99%) to pitcher filters (inconsistent).",
+    date: "2026-05-10",
+    readTime: "6 min read",
+    tag: "Guide",
+    image: "/blog-reverse-osmosis.png",
+    imageAlt: "Water filter system for removing microplastics",
+  },
+  {
     slug: "microplastics-in-cutting-boards",
     title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
     excerpt:
