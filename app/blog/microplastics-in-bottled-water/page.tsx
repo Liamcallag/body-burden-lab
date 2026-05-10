@@ -142,7 +142,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The practical takeaway</h2>
 
         <p>
-          If you are drinking bottled water to avoid contaminants, you are solving one problem while introducing another. The evidence consistently shows that filtered tap water — using reverse osmosis, activated carbon block, or even simple boiling for hard water — delivers lower microplastic exposure than bottled water, at lower cost.
+          If you are drinking bottled water to avoid contaminants, you are solving one problem while introducing another. The evidence consistently shows that filtered tap water — using <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">reverse osmosis</Link>, activated carbon block, or even simple boiling for hard water — delivers lower microplastic exposure than bottled water, at lower cost.
         </p>
 
         <p>

@@ -146,7 +146,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Reverse osmosis filters are the most effective technological solution — membrane pore sizes are far smaller than even the smallest microplastic particles, making removal near-complete. A quality pitcher filter with an activated carbon block also performs well for larger particles.
+          <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">Reverse osmosis filters are the most effective technological solution</Link> — membrane pore sizes are far smaller than even the smallest microplastic particles, making removal near-complete (&gt;99% in peer-reviewed testing). A quality pitcher filter with an activated carbon block also performs well for larger particles.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">4. Replace plastic cutting boards and old cookware</h2>

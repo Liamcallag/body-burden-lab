@@ -133,7 +133,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          A quality water filter — such as those using reverse osmosis or activated carbon — can reduce microplastic content in tap water to near-undetectable levels. Some brands test and certify specifically for microplastic removal.
+          A quality water filter — such as those using <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">reverse osmosis</Link> or activated carbon — can reduce microplastic content in tap water to near-undetectable levels. Some brands test and certify specifically for microplastic removal.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Seafood: it's the digestive tract, not the muscle</h2>

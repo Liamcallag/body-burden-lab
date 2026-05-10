@@ -144,7 +144,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Practical steps to reduce infant exposure from bottles</h2>
 
         <p>
-          The Camacho et al. study included practical recommendations for reducing exposure during formula preparation using PP bottles, where glass or stainless steel alternatives are not used:
+          The Camacho et al. study included practical recommendations for reducing exposure during formula preparation using PP bottles, where glass or stainless steel alternatives are not used. Where possible, use water filtered through <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">reverse osmosis or an activated carbon block filter</Link> to prepare formula, as this reduces the microplastic load in the water itself before it contacts the bottle.
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
