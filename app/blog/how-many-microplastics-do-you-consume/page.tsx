@@ -98,7 +98,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The single biggest source: microwaving plastic</h2>
 
         <p>
-          Hussain et al. (2023) in <em>Environmental Science & Technology</em> found that microwaving polypropylene food containers for three minutes released up to <strong>4.22 million microplastic particles and 2.11 billion nanoplastic particles per square centimetre</strong> of plastic surface. A typical food container has a surface area of several hundred square centimetres, meaning total particle release per use is orders of magnitude higher than the per-cm² figure alone suggests.
+          Hussain et al. (2023) in <em>Environmental Science & Technology</em> found that microwaving polypropylene food containers for three minutes released up to <strong>4.22 million microplastic particles and 2.11 billion nanoplastic particles per square centimetre</strong> of plastic surface. A typical food container has a surface area of several hundred square centimetres, meaning total particle release per use is vastly higher than the per-cm² figure alone suggests.
         </p>
 
         <p>
