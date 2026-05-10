@@ -4,13 +4,13 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How Many Microplastics Do You Consume Per Week?",
   description:
-    "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's a significant underestimate. Here's what the science shows, and which daily habits drive the highest exposure.",
+    "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
   openGraph: {
     type: "article",
     publishedTime: "2026-04-01",
     title: "How Many Microplastics Do You Consume Per Week?",
     description:
-      "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's a significant underestimate. Here's what the science shows, and which daily habits drive the highest exposure.",
+      "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/api/og-image?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "How Many Microplastics Do You Consume Per Week?",
     description:
-      "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's a significant underestimate. Here's what the science shows, and which daily habits drive the highest exposure.",
+      "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
       "https://www.bodyburdenlab.com/api/og-image?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
     ],
@@ -57,7 +57,7 @@ export default function BlogPost() {
           How Many Microplastics Do You Consume Per Week?
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
-          The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's almost certainly a significant underestimate. Here's what the science actually shows.
+          Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.
         </p>
         <img
           src="/blog-how-many.png"
