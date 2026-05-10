@@ -9,6 +9,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "microplastics-in-seafood",
+    title: "Microplastics in Seafood: Which Fish and Shellfish Have the Most",
+    excerpt:
+      "Shellfish eaters consume significantly more microplastics than fish eaters — because shellfish are eaten whole, digestive tract included. Here is what the research shows by seafood type.",
+    date: "2026-05-10",
+    readTime: "6 min read",
+    tag: "Science",
+    image: "/blog-bottled-water.png",
+    imageAlt: "Seafood and microplastic contamination",
+  },
+  {
     slug: "what-do-microplastics-do-to-the-body",
     title: "What Do Microplastics Do to the Human Body? The Research So Far",
     excerpt:

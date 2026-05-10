@@ -83,6 +83,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${base}/blog/microplastics-in-seafood`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${base}/blog/what-do-microplastics-do-to-the-body`,
       lastModified: new Date(),
       changeFrequency: "monthly",
