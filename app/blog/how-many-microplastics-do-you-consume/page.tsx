@@ -164,7 +164,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What does it actually mean for health?</h2>
 
         <p>
-          The honest answer is: researchers don't yet know the full picture. Microplastics carry associated chemicals — plasticisers, flame retardants, surface coatings — which are often biologically active. Laboratory studies have suggested potential for oxidative stress and inflammatory responses in cells exposed to microplastics, though much of this research is in early stages. In Marfella et al. (2024) in <em>The New England Journal of Medicine</em>, patients with microplastics detected in their arterial plaques had a 4.5x higher risk of heart attack, stroke, or death over the following 34 months.
+          The honest answer is: researchers don't yet know the full picture. Microplastics carry associated chemicals — plasticisers, flame retardants, surface coatings — which are often biologically active. Laboratory studies have suggested potential for oxidative stress and inflammatory responses in cells exposed to microplastics, though much of this research is in early stages. In Marfella et al. (2024) in <em>The New England Journal of Medicine</em>, patients with microplastics detected in their carotid artery plaque had a 4.53x higher risk of heart attack, stroke, or death over the following 34 months — though the study population comprised patients already undergoing cardiovascular surgery, and the authors caution the findings may not be generalisable to the wider population.
         </p>
 
         <p>
