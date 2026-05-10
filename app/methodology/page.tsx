@@ -63,6 +63,15 @@ const sources = [
     confidence: "High",
   },
   {
+    author: "Jenner et al.",
+    year: 2022,
+    title: "Detection of microplastics in human lung tissue using μFTIR spectroscopy",
+    journal: "Science of the Total Environment",
+    doi: "10.1016/j.scitotenv.2022.154907",
+    usedFor: "Direct evidence of microplastics in human lung tissue from living patients — supporting inhalation as a proven exposure route",
+    confidence: "High",
+  },
+  {
     author: "Amato-Lourenço et al.",
     year: 2020,
     title: "An emerging class of air pollutants: Potential effects of microplastics to respiratory human health?",

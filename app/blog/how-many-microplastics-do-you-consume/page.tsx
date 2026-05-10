@@ -150,15 +150,15 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">You inhale them too: air and clothing</h2>
 
         <p>
-          Inhalation is often overlooked but accounts for a meaningful share of total exposure. Synthetic fabrics — polyester, nylon, acrylic — shed microplastic fibres during wear and washing. In indoor environments, these fibres become airborne and are inhaled. Dris et al. (2017) estimated that indoor air contains significantly elevated microplastic fibre concentrations compared to outdoor air, driven primarily by synthetic textiles.
+          Inhalation is a proven route of microplastic exposure. Jenner et al. (2022) in <em>Science of the Total Environment</em> analysed lung tissue from 13 living surgical patients and found microplastics in 11 of 13 samples — including in the lower lung, the deepest region. Polypropylene and PET were the most commonly identified polymers. The authors concluded the findings directly <strong>"support inhalation as a route of exposure for environmental microplastics."</strong>
         </p>
 
         <p>
-          Urban environments have higher microplastic concentrations in the air due to traffic, construction, and tyre wear. Rural and coastal environments typically have lower concentrations, though ocean-adjacent areas are not free of microplastics.
+          Particle size determines how deep particles penetrate. It is the smaller microplastic particles that reach the deepest lung regions. Indoor environments are a significant source of airborne particles: Dris et al. (2017) in <em>Environmental Pollution</em> measured indoor air fibre concentrations of 1–60 fibres per cubic metre — significantly higher than outdoor air at 0.3–1.5 fibres per cubic metre — with synthetic fabrics identified as the primary driver. Particles shed from polyester, nylon, and acrylic clothing and furnishings accumulate in indoor air and settled dust throughout the day.
         </p>
 
         <p>
-          HEPA air purifiers are effective at capturing microplastic fibres. Washing synthetic clothing in a laundry bag with a microfibre filter can significantly reduce the volume of fibres entering domestic water and air systems.
+          Urban outdoor environments have higher microplastic concentrations due to traffic, tyre wear, and construction. HEPA air purifiers are effective at capturing fine microplastic particles. Washing synthetic clothing less frequently and using a microfibre-catching laundry bag reduces the volume of particles shed into the home environment.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What does it actually mean for health?</h2>
@@ -223,6 +223,7 @@ export default function BlogPost() {
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
           <li>Marfella R et al. Microplastics and Nanoplastics in Atheromas and Cardiovascular Events. <em>NEJM</em>. 2024. DOI: 10.1056/NEJMoa2309822</li>
           <li>EFSA Panel on Contaminants. Presence of Microplastics and Nanoplastics in Food. <em>EFSA Journal</em>. 2016. DOI: 10.2903/j.efsa.2016.4501</li>
+          <li>Jenner LC et al. Detection of microplastics in human lung tissue using μFTIR spectroscopy. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.154907</li>
           <li>Dris R et al. A first overview of textile fibers, including microplastics, in indoor and outdoor environments. <em>Environ Pollut</em>. 2017. DOI: 10.1016/j.envpol.2016.12.013</li>
         </ol>
       </div>
