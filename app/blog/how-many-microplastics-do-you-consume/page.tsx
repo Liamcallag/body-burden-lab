@@ -70,7 +70,7 @@ export default function BlogPost() {
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your personal exposure</p>
-          <p className="text-xs text-slate-500">15 questions, 2 minutes, no account needed</p>
+          <p className="text-xs text-slate-500">14 questions, 2 minutes, no account needed</p>
         </div>
         <Link
           href="/calculator"
@@ -164,7 +164,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What does it actually mean for health?</h2>
 
         <p>
-          The honest answer is: researchers don't yet know the full picture. Microplastics carry associated chemicals — plasticisers, flame retardants, surface coatings — which are often biologically active. In laboratory settings, microplastics have been shown to induce oxidative stress, inflammatory responses, and cell death. In Marfella et al. (2024) in <em>The New England Journal of Medicine</em>, patients with microplastics detected in their arterial plaques had a 4.5x higher risk of heart attack, stroke, or death over the following 34 months.
+          The honest answer is: researchers don't yet know the full picture. Microplastics carry associated chemicals — plasticisers, flame retardants, surface coatings — which are often biologically active. Laboratory studies have suggested potential for oxidative stress and inflammatory responses in cells exposed to microplastics, though much of this research is in early stages. In Marfella et al. (2024) in <em>The New England Journal of Medicine</em>, patients with microplastics detected in their arterial plaques had a 4.5x higher risk of heart attack, stroke, or death over the following 34 months.
         </p>
 
         <p>
@@ -178,7 +178,7 @@ export default function BlogPost() {
             <strong>Stop microwaving in plastic.</strong> Transfer food to glass or ceramic before heating. Given the surface area of a typical container and the particle counts measured by Hussain et al. (2023), this is the single highest-impact change most people can make.
           </li>
           <li>
-            <strong>Switch from plastic tea bags to paper or loose leaf.</strong> Each cup steeped in a plastic bag releases billions of particles. Paper bags and loose leaf tea eliminate this source entirely.
+            <strong>Switch from plastic tea bags to paper or loose leaf.</strong> Each cup steeped in a plastic bag releases billions of particles. Paper bags and loose leaf tea significantly reduce this exposure.
           </li>
           <li>
             <strong>Replace bottled water with filtered tap.</strong> Mason et al. (2018) found an average of 325 microplastic particles per litre in bottled water, with contamination traced primarily to the packaging itself. Filtered tap water eliminates that source entirely.
@@ -188,7 +188,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Find out where you stand</h2>
 
         <p>
-          The Body Burden microplastics calculator takes 15 questions about your specific habits and gives you a personalised weekly particle estimate, a breakdown by source, and your top reduction opportunities — all based on the peer-reviewed studies referenced in this article.
+          The Body Burden microplastics calculator takes 14 questions about your specific habits and gives you a personalised weekly particle estimate, a breakdown by source, and your top reduction opportunities — all based on the peer-reviewed studies referenced in this article.
         </p>
 
       </div>
@@ -205,7 +205,7 @@ export default function BlogPost() {
       {/* End CTA */}
       <div className="bg-teal-700 rounded-2xl p-6 mt-10 text-white text-center">
         <p className="font-semibold text-lg mb-1">Calculate your body burden</p>
-        <p className="text-teal-200 text-sm mb-4">15 questions · 2 minutes · peer-reviewed science</p>
+        <p className="text-teal-200 text-sm mb-4">14 questions · 2 minutes · peer-reviewed science</p>
         <Link
           href="/calculator"
           className="bg-white text-teal-700 font-semibold px-7 py-2.5 rounded-full text-sm hover:bg-teal-50 transition-colors"
