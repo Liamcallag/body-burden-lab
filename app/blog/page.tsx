@@ -131,9 +131,9 @@ const posts = [
   },
   {
     slug: "how-many-microplastics-do-you-consume",
-    title: "How Many Microplastics Do You Consume Per Week?",
+    title: "How Many Microplastics Do You Consume Per Week? What the Research Shows",
     excerpt:
-      "The average American ingests between 74,000 and 121,000 microplastic particles per year — and researchers say that's almost certainly an underestimate. Here's what the science actually shows.",
+      "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous.",
     date: "2026-04-01",
     readTime: "8 min read",
     tag: "Science",
