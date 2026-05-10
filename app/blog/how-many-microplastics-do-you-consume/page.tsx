@@ -154,7 +154,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Particle size determines how deep particles penetrate. It is the smaller microplastic particles that reach the deepest lung regions. Indoor environments are a significant source of airborne particles: Dris et al. (2017) in <em>Environmental Pollution</em> measured indoor air fibre concentrations of 1–60 fibres per cubic metre — significantly higher than outdoor air at 0.3–1.5 fibres per cubic metre — with synthetic fabrics identified as the primary driver. Particles shed from polyester, nylon, and acrylic clothing and furnishings accumulate in indoor air and settled dust throughout the day.
+          One of the study's more striking findings was that particles far larger than conventionally assumed to be inhalable were found in the lower lung — the deepest region. Jenner et al. note that according to established respiratory physiology, only particles smaller than 3 μm should reach the alveolar region, yet particles up to 2,475 μm in length were detected there. The authors suggest this challenges existing assumptions about which particle sizes can be inhaled. Indoor environments are a significant source of airborne microplastics: Dris et al. (2017) in <em>Environmental Pollution</em> measured indoor air fibre concentrations of 1–60 fibres per cubic metre — significantly higher than outdoor air at 0.3–1.5 fibres per cubic metre. Of those indoor fibres, 33% were synthetic (polyester, nylon, acrylic) — the fraction that constitutes microplastics — with the remainder being natural cellulosic fibres from clothing and furnishings.
         </p>
 
         <p>
