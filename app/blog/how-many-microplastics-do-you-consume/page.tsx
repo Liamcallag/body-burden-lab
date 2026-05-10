@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How Many Microplastics Do You Consume Per Week?",
+  title: "How Many Microplastics Do You Consume Per Week? What the Research Shows",
   description:
     "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
   openGraph: {
     type: "article",
     publishedTime: "2026-04-01",
-    title: "How Many Microplastics Do You Consume Per Week?",
+    title: "How Many Microplastics Do You Consume Per Week? What the Research Shows",
     description:
       "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Many Microplastics Do You Consume Per Week?",
+    title: "How Many Microplastics Do You Consume Per Week? What the Research Shows",
     description:
       "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
@@ -34,7 +34,7 @@ export default function BlogPost() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How Many Microplastics Do You Consume Per Week?",
+    "headline": "How Many Microplastics Do You Consume Per Week? What the Research Shows",
     "datePublished": "2026-04-01",
     "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
     "url": "https://www.bodyburdenlab.com/blog/how-many-microplastics-do-you-consume",
@@ -54,7 +54,7 @@ export default function BlogPost() {
           <time className="text-xs text-slate-400" dateTime="2026-04-01">April 1, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
-          How Many Microplastics Do You Consume Per Week?
+          How Many Microplastics Do You Consume Per Week? What the Research Shows
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
           Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.
