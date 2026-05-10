@@ -9,6 +9,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "what-do-microplastics-do-to-the-body",
+    title: "What Do Microplastics Do to the Human Body? The Research So Far",
+    excerpt:
+      "Microplastics have been found in human blood, lungs, brain, arterial plaques, and placenta. A 2024 NEJM study linked them to a 4.5x higher cardiovascular risk. Here is what the science currently shows.",
+    date: "2026-05-10",
+    readTime: "8 min read",
+    tag: "Science",
+    image: "/brain.jpg",
+    imageAlt: "MRI scan of human brain showing microplastic accumulation research",
+  },
+  {
     slug: "best-water-filter-for-microplastics",
     title: "Best Water Filter for Microplastics: RO vs Carbon vs Pitcher, Ranked",
     excerpt:
