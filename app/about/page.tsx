@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Body Burden",
+  title: "About Body Burden Lab — Microplastics Exposure Research",
   description:
-    "Body Burden is an independent educational tool that estimates microplastic exposure using peer-reviewed science.",
+    "Body Burden Lab is an independent research project tracking the science of microplastic exposure. Every figure in the calculator traces back to a peer-reviewed study.",
 };
 
 export default function AboutPage() {
@@ -26,10 +26,10 @@ export default function AboutPage() {
 
         <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Who built it</h2>
         <p>
-          My name is Liam Callaghan. I am a developer based in Stockholm — not a scientist or medical professional. I built this tool because I became genuinely concerned about microplastic exposure and wanted to understand my own. My background has nothing to do with environmental science, which is exactly why I was careful to ground every figure in published research rather than intuition.
+          Body Burden Lab was built by an independent team of developers and researchers — not scientists or medical professionals. The project began out of genuine concern about microplastic exposure and a frustration with the lack of accessible, evidence-grounded tools for the public. That background has nothing to do with environmental science, which is exactly why every figure is grounded in published research rather than intuition.
         </p>
         <p>
-          I think it is important to share what the science currently shows — even though it is incomplete. The data we have almost certainly understates the real picture. Measurement technology for nanoplastics is still developing, most studies capture only a fraction of exposure routes, and tissue accumulation is likely higher than current figures suggest. The calculator reflects what can be documented today, not the full reality.
+          It is important to share what the science currently shows — even though it is incomplete. The data we have almost certainly understates the real picture. Measurement technology for nanoplastics is still developing, most studies capture only a fraction of exposure routes, and tissue accumulation is likely higher than current figures suggest. The calculator reflects what can be documented today, not the full reality.
         </p>
 
         <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Why it matters</h2>
@@ -56,7 +56,7 @@ export default function AboutPage() {
 
         <div className="border-t border-slate-100 pt-8 mt-8">
           <p className="text-xs text-slate-400">
-            Body Burden is an independent educational project built and maintained by Liam Callaghan. If you are a researcher and spot an error in the methodology, corrections are very welcome. Get in touch at{" "}
+            Body Burden Lab is an independent educational project. If you are a researcher and spot an error in the methodology, corrections are very welcome. Get in touch at{" "}
             <a href="mailto:contact@bodyburdenlab.com" className="underline hover:text-teal-700">contact@bodyburdenlab.com</a>.
           </p>
         </div>
