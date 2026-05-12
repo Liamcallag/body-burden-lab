@@ -14,7 +14,16 @@ const sources = [
     title: "Human Consumption of Microplastics",
     journal: "Environmental Science & Technology",
     doi: "10.1021/acs.est.9b01517",
-    usedFor: "Drinking water, seafood, and overall annual exposure estimates",
+    usedFor: "Drinking water exposure estimates across all water source types (bottled, tap, filtered). Used for scoring consistency across answer options.",
+    confidence: "High",
+  },
+  {
+    author: "Mason et al.",
+    year: 2018,
+    title: "Synthetic Polymer Contamination in Bottled Water",
+    journal: "Frontiers in Chemistry",
+    doi: "10.3389/fchem.2018.00407",
+    usedFor: "Bottled water contamination — 325 particles/litre average across 259 bottles from 11 brands in 9 countries (93% of bottles contaminated). Higher than Cox et al. figures due to inclusion of smaller particles (6.5–100 µm). Cox et al. used for calculator scoring to maintain consistency across all water source answer options.",
     confidence: "High",
   },
   {
