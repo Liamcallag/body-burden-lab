@@ -101,7 +101,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How bottled water compares to tap water</h2>
 
         <p>
-          Danopoulos et al. (2020) in <em>PLOS ONE</em> performed a systematic review and meta-analysis of microplastic ingestion across multiple exposure sources, providing one of the clearest comparisons between water types. The analysis found that bottled water consumers ingested significantly more microplastics from their water source than tap water consumers, with the differential driven primarily by PET bottle leaching and the absence of the filtration steps applied to tap water before distribution.
+          Danopoulos et al. (2020) in <em>PLOS ONE</em> performed a systematic review of microplastic contamination in drinking water, covering 12 studies across tap and bottled water. The most common polymers identified were PET and polypropylene — consistent with bottle and cap materials as contamination sources. The maximum reported contamination was 628 MPs/L for tap water and 4,889 MPs/L for bottled water in European samples. The authors noted high statistical heterogeneity across studies, which limits direct comparison, but the direction of the evidence was consistent: bottled water showed higher contamination than tap water across the reviewed literature.
         </p>
 
         <p>
