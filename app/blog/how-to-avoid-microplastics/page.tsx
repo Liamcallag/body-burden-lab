@@ -191,11 +191,11 @@ export default function BlogPost() {
         <ol className="list-decimal list-inside space-y-2 text-slate-700">
           <li><strong>Stop microwaving in plastic</strong> — releases the highest particle counts of any tested domestic scenario, exceeding bottled water by more than 1,000-fold (Hussain et al., 2023)</li>
           <li><strong>Switch from plastic tea bags to paper or loose leaf</strong> — each plastic tea bag releases billions of particles per cup at brewing temperature (Hernandez et al., 2019)</li>
-          <li><strong>Switch from bottled water to filtered tap</strong> — 93% of bottled water brands are contaminated, averaging 325 particles per litre (Mason et al., 2018)</li>
+          <li><strong>Replace plastic cutting boards with wood or bamboo</strong> — a single PP cutting board exposes a person to an estimated 79.4 million microplastic particles per year (Yadav et al., 2023)</li>
         </ol>
 
         <p className="mt-4">
-          These three changes address the highest-documented domestic exposure sources. Individually, each represents one of the largest controllable contributors to weekly microplastic intake identified in the peer-reviewed literature.
+          These three changes address the highest-documented domestic exposure sources by particle count. Switching from bottled to filtered tap water is also a high-impact change — 93% of bottled water brands are contaminated, averaging 325 particles per litre (Mason et al., 2018) — and should be considered alongside these three.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What doesn't have strong evidence yet</h2>
