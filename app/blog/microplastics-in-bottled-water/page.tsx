@@ -98,16 +98,6 @@ export default function BlogPost() {
           The study also identified industrial lubricant particles, consistent with the bottling process. A fragment of blue industrial netting was found in one sample. The findings prompted an inquiry from the World Health Organization, which subsequently launched a review of microplastics in drinking water.
         </p>
 
-        <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">More recent data confirms the pattern</h2>
-
-        <p>
-          Li et al. (2023) in <em>Science of the Total Environment</em> conducted one of the most comprehensive analyses to date, examining bottled water samples across multiple brands and packaging types. The study confirmed elevated microplastic concentrations in bottled water relative to treated tap water, and found that concentrations increased with storage time — suggesting ongoing leaching from the PET bottle into the water over weeks and months. Samples stored for longer periods or exposed to higher temperatures (simulating transport or retail storage) showed higher particle counts.
-        </p>
-
-        <p>
-          The study also found that smaller plastic particles predominated — the majority were below 10 microns in size, putting them firmly in the range that research suggests may be more readily taken up by cells and more difficult for the body to clear.
-        </p>
-
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How bottled water compares to tap water</h2>
 
         <p>
@@ -173,7 +163,7 @@ export default function BlogPost() {
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Mason SA et al. Synthetic Polymer Contamination in Bottled Water. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
-          <li>Li Y et al. Microplastics in bottled water: a review of occurrence, detection, and potential health impacts. <em>Sci Total Environ</em>. 2023. DOI: 10.1016/j.scitotenv.2023.161553</li>
+
           <li>Danopoulos E et al. Microplastic contamination of drinking water: a systematic review. <em>PLOS ONE</em>. 2020. DOI: 10.1371/journal.pone.0236838</li>
         </ol>
       </div>
