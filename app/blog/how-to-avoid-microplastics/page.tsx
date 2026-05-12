@@ -87,7 +87,7 @@ export default function BlogPost() {
           How to Avoid Microplastics: The Highest-Impact Changes, Ranked
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
-          You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can dramatically reduce your intake — some by tens of thousands of particles per week.
+          You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can dramatically reduce your intake — particularly around food preparation, drinking water, and what you heat food in.
         </p>
         <img
           src="/blog-avoid.png"
