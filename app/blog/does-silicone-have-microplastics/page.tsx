@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Does Silicone Release Microplastics?",
   description:
     "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/blog/does-silicone-have-microplastics",
+  },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
@@ -35,9 +38,33 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Does Silicone Release Microplastics?",
+    "description": "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
     "datePublished": "2026-04-19",
-    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "dateModified": "2026-04-19",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
+      "name": "James Mercer",
+      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.bodyburdenlab.com/#organization",
+      "name": "Body Burden",
+      "url": "https://www.bodyburdenlab.com",
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.bodyburdenlab.com/blog-silicone.png",
+      "width": 1200,
+      "height": 630,
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.bodyburdenlab.com/blog/does-silicone-have-microplastics",
+    },
     "url": "https://www.bodyburdenlab.com/blog/does-silicone-have-microplastics",
+    "inLanguage": "en-US",
   };
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">

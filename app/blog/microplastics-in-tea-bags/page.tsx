@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Microplastics in Tea Bags: How Many You're Drinking and What to Use Instead",
   description:
     "A single plastic tea bag releases up to 11.6 billion microplastic particles into your cup. Here's what the research shows and what to use instead.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-tea-bags",
+  },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-23",
@@ -35,9 +38,33 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microplastics in Tea Bags: How Many You're Drinking and What to Use Instead",
+    "description": "A single plastic tea bag releases up to 11.6 billion microplastic particles into your cup. Here's what the research shows and what to use instead.",
     "datePublished": "2026-04-23",
-    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "dateModified": "2026-04-23",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
+      "name": "James Mercer",
+      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.bodyburdenlab.com/#organization",
+      "name": "Body Burden",
+      "url": "https://www.bodyburdenlab.com",
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.bodyburdenlab.com/blog-tea-bags.png",
+      "width": 1200,
+      "height": 630,
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.bodyburdenlab.com/blog/microplastics-in-tea-bags",
+    },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-tea-bags",
+    "inLanguage": "en-US",
   };
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">

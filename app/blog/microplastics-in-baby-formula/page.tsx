@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
   description:
     "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-baby-formula",
+  },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-20",
@@ -35,9 +38,33 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
+    "description": "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
     "datePublished": "2026-04-20",
-    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "dateModified": "2026-05-10",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
+      "name": "James Mercer",
+      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.bodyburdenlab.com/#organization",
+      "name": "Body Burden",
+      "url": "https://www.bodyburdenlab.com",
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.bodyburdenlab.com/blog-baby-formula.png",
+      "width": 1200,
+      "height": 630,
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.bodyburdenlab.com/blog/microplastics-in-baby-formula",
+    },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-baby-formula",
+    "inLanguage": "en-US",
   };
   const faqSchema = {
     "@context": "https://schema.org",

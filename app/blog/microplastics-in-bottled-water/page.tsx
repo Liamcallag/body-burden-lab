@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Microplastics in Bottled Water — What the Research Shows",
   description:
     "Bottled water contains significantly more microplastics than filtered tap water. Here's what peer-reviewed research has found, and what it means for your exposure.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-bottled-water",
+  },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-11",
@@ -35,9 +38,33 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microplastics in Bottled Water — What the Research Shows",
+    "description": "Bottled water contains significantly more microplastics than filtered tap water. Here's what peer-reviewed research has found, and what it means for your exposure.",
     "datePublished": "2026-04-19",
-    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "dateModified": "2026-04-19",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
+      "name": "James Mercer",
+      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.bodyburdenlab.com/#organization",
+      "name": "Body Burden",
+      "url": "https://www.bodyburdenlab.com",
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.bodyburdenlab.com/blog-bottled-water.png",
+      "width": 1200,
+      "height": 630,
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.bodyburdenlab.com/blog/microplastics-in-bottled-water",
+    },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-bottled-water",
+    "inLanguage": "en-US",
   };
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">

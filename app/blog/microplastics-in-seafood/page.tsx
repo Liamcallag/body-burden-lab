@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Microplastics in Seafood: Which Fish and Shellfish Have the Most",
   description:
     "Shellfish eaters consume significantly more microplastics than fish eaters — because shellfish are eaten whole, digestive tract included. Here is what the research shows by seafood type.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-seafood",
+  },
   openGraph: {
     type: "article",
     publishedTime: "2026-05-10",
@@ -35,9 +38,27 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microplastics in Seafood: Which Fish and Shellfish Have the Most",
+    "description": "Shellfish eaters consume significantly more microplastics than fish eaters — because shellfish are eaten whole, digestive tract included. Here is what the research shows by seafood type.",
     "datePublished": "2026-05-10",
-    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "dateModified": "2026-05-10",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
+      "name": "James Mercer",
+      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.bodyburdenlab.com/#organization",
+      "name": "Body Burden",
+      "url": "https://www.bodyburdenlab.com",
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.bodyburdenlab.com/blog/microplastics-in-seafood",
+    },
     "url": "https://www.bodyburdenlab.com/blog/microplastics-in-seafood",
+    "inLanguage": "en-US",
   };
   const faqSchema = {
     "@context": "https://schema.org",

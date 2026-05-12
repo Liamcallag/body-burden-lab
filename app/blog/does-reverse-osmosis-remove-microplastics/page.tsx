@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Does Reverse Osmosis Remove Microplastics?",
   description:
     "Reverse osmosis is among the most effective water filtration methods for microplastics. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/blog/does-reverse-osmosis-remove-microplastics",
+  },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-15",
@@ -35,9 +38,33 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Does Reverse Osmosis Remove Microplastics?",
+    "description": "Reverse osmosis is among the most effective water filtration methods for microplastics. Here's what the peer-reviewed evidence shows — and how it compares to other filters.",
     "datePublished": "2026-04-19",
-    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "dateModified": "2026-05-10",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
+      "name": "James Mercer",
+      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.bodyburdenlab.com/#organization",
+      "name": "Body Burden",
+      "url": "https://www.bodyburdenlab.com",
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.bodyburdenlab.com/blog-reverse-osmosis.png",
+      "width": 1200,
+      "height": 630,
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.bodyburdenlab.com/blog/does-reverse-osmosis-remove-microplastics",
+    },
     "url": "https://www.bodyburdenlab.com/blog/does-reverse-osmosis-remove-microplastics",
+    "inLanguage": "en-US",
   };
   const faqSchema = {
     "@context": "https://schema.org",

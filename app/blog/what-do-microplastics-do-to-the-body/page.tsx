@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "What Do Microplastics Do to the Human Body? The Research So Far",
   description:
     "Microplastics have been found in human blood, lungs, brain, heart, and placenta. Here is what peer-reviewed science currently shows about health effects — and what remains unknown.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/blog/what-do-microplastics-do-to-the-body",
+  },
   openGraph: {
     type: "article",
     publishedTime: "2026-05-10",
@@ -35,9 +38,27 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "What Do Microplastics Do to the Human Body? The Research So Far",
+    "description": "Microplastics have been found in human blood, lungs, brain, heart, and placenta. Here is what peer-reviewed science currently shows about health effects — and what remains unknown.",
     "datePublished": "2026-05-10",
-    "publisher": { "@type": "Organization", "name": "Body Burden Lab", "url": "https://www.bodyburdenlab.com" },
+    "dateModified": "2026-05-10",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
+      "name": "James Mercer",
+      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.bodyburdenlab.com/#organization",
+      "name": "Body Burden",
+      "url": "https://www.bodyburdenlab.com",
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.bodyburdenlab.com/blog/what-do-microplastics-do-to-the-body",
+    },
     "url": "https://www.bodyburdenlab.com/blog/what-do-microplastics-do-to-the-body",
+    "inLanguage": "en-US",
   };
   const faqSchema = {
     "@context": "https://schema.org",

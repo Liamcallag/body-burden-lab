@@ -14,19 +14,12 @@ export const metadata: Metadata = {
   },
   description:
     "Estimate how many microplastic particles you consume and inhale each week based on your lifestyle. Built on peer-reviewed science.",
-  keywords: [
-    "microplastics calculator",
-    "microplastic exposure",
-    "how many microplastics do I consume",
-    "body burden",
-    "microplastics test online",
-  ],
   metadataBase: new URL("https://www.bodyburdenlab.com"),
   alternates: {
     canonical: "https://www.bodyburdenlab.com",
   },
   openGraph: {
-    siteName: "Body Burden Lab",
+    siteName: "Body Burden",
     type: "website",
     title: "Body Burden — Microplastics Exposure Calculator",
     description:
@@ -50,6 +43,31 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.bodyburdenlab.com/#organization",
+  "name": "Body Burden",
+  "url": "https://www.bodyburdenlab.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.bodyburdenlab.com/logo.svg",
+  },
+  "description": "Independent microplastics exposure research and calculator. Every figure derived from peer-reviewed science.",
+  "email": "contact@bodyburdenlab.com",
+  "foundingDate": "2026",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.bodyburdenlab.com/#website",
+  "url": "https://www.bodyburdenlab.com",
+  "name": "Body Burden",
+  "description": "Microplastics exposure calculator and research. Built on peer-reviewed science.",
+  "publisher": { "@id": "https://www.bodyburdenlab.com/#organization" },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -58,6 +76,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head>
+        <Script id="org-schema" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(organizationSchema)}
+        </Script>
+        <Script id="website-schema" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(websiteSchema)}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-PB7R3G61HJ"
           strategy="afterInteractive"
