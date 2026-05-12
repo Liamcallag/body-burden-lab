@@ -177,11 +177,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">6. Add a HEPA air purifier to your home</h2>
 
         <p>
-          Amato-Lourenço et al. (2020) in <em>Science of the Total Environment</em> reviewed evidence on microplastic inhalation and indoor air quality. HEPA filtration captures particles down to 0.3 microns — well within the microplastic range — making HEPA air purifiers an effective tool for reducing inhalation exposure, particularly in urban environments.
+          Amato-Lourenço et al. (2020) in <em>Science of the Total Environment</em> reviewed indoor air quality data and found microplastic concentrations reaching up to 16.2 particles/m³ indoors — significantly higher than outdoor levels — with synthetic fabrics and household objects among the primary sources. Since Americans and Europeans spend an average of 90% of their time indoors, indoor air is a primary exposure environment.
         </p>
 
         <p>
-          Hard floors and regular vacuuming also reduce the accumulation of settled microplastic fibres that can be re-suspended into breathing air.
+          HEPA filters are certified to capture particles down to 0.3 microns. Since microplastics begin at 1 micron, a HEPA air purifier will capture airborne microplastic particles. Hard floors and regular vacuuming also reduce the accumulation of settled microplastic fibres that can be re-suspended into breathing air.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The three changes with the highest impact</h2>
