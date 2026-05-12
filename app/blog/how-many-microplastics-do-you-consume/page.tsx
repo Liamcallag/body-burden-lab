@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "How Many Microplastics Do You Consume Per Week? What the Research Shows",
@@ -86,10 +87,13 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.
         </p>
-        <img
+        <Image
           src="/blog-how-many.png"
           alt="Microplastics entering the food chain and human body"
+          width={800}
+          height={450}
           className="w-full rounded-xl mt-6 mb-2"
+          priority
         />
       </div>
 

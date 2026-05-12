@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Does Silicone Release Microplastics?",
@@ -85,10 +86,13 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Silicone kitchen items — baking moulds, baby bottles, spatulas — are widely promoted as a safer plastic alternative. The picture is more nuanced than the marketing suggests.
         </p>
-        <img
+        <Image
           src="/blog-silicone.png"
           alt="Silicone kitchen utensils"
+          width={800}
+          height={450}
           className="w-full rounded-xl mt-6 mb-2"
+          priority
         />
       </div>
 

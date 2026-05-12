@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Blog — Microplastics Research & Exposure",
@@ -157,9 +158,11 @@ export default function BlogPage() {
         {posts.map((post) => (
           <article key={post.slug} className="border border-slate-100 rounded-2xl bg-white shadow-sm hover:border-teal-200 transition-colors overflow-hidden">
             <Link href={`/blog/${post.slug}`}>
-              <img
+              <Image
                 src={post.image}
                 alt={post.imageAlt}
+                width={600}
+                height={192}
                 className="w-full h-48 object-cover"
               />
             </Link>

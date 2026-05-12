@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?",
@@ -85,10 +86,13 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Sea salt is marketed as natural and minimally processed. Research shows it is also the most microplastic-contaminated type of salt available — a direct consequence of ocean plastic pollution.
         </p>
-        <img
+        <Image
           src="/blog-salt.png"
           alt="Sea salt with microplastic particles"
+          width={800}
+          height={450}
           className="w-full rounded-xl mt-6 mb-2"
+          priority
         />
       </div>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
@@ -116,10 +117,13 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can dramatically reduce your intake — particularly around food preparation, drinking water, and what you heat food in.
         </p>
-        <img
+        <Image
           src="/blog-avoid.png"
           alt="Ways to reduce microplastic exposure in daily life"
+          width={800}
+          height={450}
           className="w-full rounded-xl mt-6 mb-2"
+          priority
         />
       </div>
 

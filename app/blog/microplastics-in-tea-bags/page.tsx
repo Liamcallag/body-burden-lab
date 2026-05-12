@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Microplastics in Tea Bags: How Many You're Drinking and What to Use Instead",
@@ -85,10 +86,13 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Tea is the second most consumed beverage in the world. For the many millions who brew it in a plastic or nylon bag, each cup delivers billions of microplastic and nanoplastic particles alongside the flavour.
         </p>
-        <img
+        <Image
           src="/blog-tea-bags.png"
           alt="Tea bag steeping in hot water with microplastic particles"
+          width={800}
+          height={450}
           className="w-full rounded-xl mt-6 mb-2"
+          priority
         />
       </div>
 

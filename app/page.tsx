@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Heart, Brain, Wind, Baby, Droplets, FlaskConical } from "lucide-react";
 
@@ -35,10 +36,9 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center justify-center text-center px-4 sm:px-6 overflow-hidden">
         {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/brain.jpg')" }}
-        />
+        <div className="absolute inset-0">
+          <Image src="/brain.jpg" alt="" fill className="object-cover object-center" priority quality={85} />
+        </div>
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/70" />
 
@@ -204,7 +204,7 @@ export default function HomePage() {
               { slug: "microplastics-in-bottled-water", title: "Microplastics in Bottled Water — What the Research Shows", tag: "Science", image: "/blog-bottled-water.png" },
             ].map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="border border-slate-100 rounded-xl bg-white shadow-sm hover:border-teal-200 transition-colors overflow-hidden">
-                <img src={post.image} alt={post.title} className="w-full h-36 object-cover" />
+                <Image src={post.image} alt={post.title} width={400} height={144} className="w-full h-36 object-cover" />
                 <div className="p-4">
                   <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">{post.tag}</span>
                   <p className="text-sm font-semibold text-slate-900 mt-2 leading-snug">{post.title}</p>

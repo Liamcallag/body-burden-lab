@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Microplastics in Bottled Water — What the Research Shows",
@@ -88,10 +89,13 @@ export default function BlogPost() {
       </div>
 
       <div className="mb-10 rounded-xl overflow-hidden">
-        <img
+        <Image
           src="/blog-bottled-water.png"
           alt="Illustration of a plastic bottle disintegrating into microplastic particles"
+          width={800}
+          height={450}
           className="w-full object-cover"
+          priority
         />
       </div>
 

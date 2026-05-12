@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
@@ -85,10 +86,13 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Plastic cutting boards are found in most kitchens. Research now shows they are a significant and underappreciated source of microplastic contamination in food — releasing particles with every knife stroke.
         </p>
-        <img
+        <Image
           src="/blog-cutting-boards.png"
           alt="Plastic cutting board with knife marks and microplastic particles"
+          width={800}
+          height={450}
           className="w-full rounded-xl mt-6 mb-2"
+          priority
         />
       </div>
 

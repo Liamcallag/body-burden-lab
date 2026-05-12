@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Does Reverse Osmosis Remove Microplastics?",
@@ -119,10 +120,13 @@ export default function BlogPost() {
       </div>
 
       <div className="mb-10 rounded-xl overflow-hidden">
-        <img
+        <Image
           src="/blog-reverse-osmosis.png"
           alt="Illustration of a reverse osmosis filter system installed under a kitchen sink"
+          width={800}
+          height={450}
           className="w-full object-cover"
+          priority
         />
       </div>
 
