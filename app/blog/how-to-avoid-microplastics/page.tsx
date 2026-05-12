@@ -153,7 +153,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">4. Replace plastic cutting boards and old cookware</h2>
 
         <p>
-          A 2024 study by Snekkevik et al. in <em>Heliyon</em> identified plastic cutting boards, scratched non-stick cookware, and old plastic food storage containers as significant microplastic sources in the home kitchen. Replacing these with wood, bamboo, stainless steel, or cast iron equivalents removes multiple exposure pathways simultaneously.
+          Yadav et al. (2023) in <em>Environmental Science & Technology</em> found that a single polypropylene cutting board exposes a person to an estimated <strong>79.4 million microplastic particles per year</strong>, with polyethylene boards contributing 14.5–71.9 million particles annually. Switching to wood or bamboo eliminates this source entirely.
+        </p>
+
+        <p>
+          Snekkevik et al. (2024) in <em>Heliyon</em> identified scratched non-stick cookware and old plastic food storage containers as additional significant microplastic sources in the home kitchen. Replacing these with stainless steel, cast iron, or glass equivalents removes multiple exposure pathways simultaneously.
         </p>
 
         <p>
@@ -226,6 +230,7 @@ export default function BlogPost() {
           <li>Hernandez LM et al. Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b02540</li>
           <li>Mason SA et al. Microplastic Pollution is Widely Detected in US Municipal Wastewater Treatment Plant Effluent. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
           <li>Yu Z et al. Drinking Boiled Tap Water Reduces Human Intake of Nanoplastics and Microplastics. <em>Environ Sci Technol Lett</em>. 2024. DOI: 10.1021/acs.estlett.4c00081</li>
+          <li>Yadav S et al. Cutting Boards: An Overlooked Source of Microplastics in Human Food? <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c00924</li>
           <li>Snekkevik VK et al. Beyond the Food on Your Plate: Investigating Sources of Microplastic Contamination in Home Kitchens. <em>Heliyon</em>. 2024. DOI: 10.1016/j.heliyon.2024.e35022</li>
           <li>Cole M et al. Microplastic and PTFE contamination of food from cookware. <em>Sci Total Environ</em>. 2024. DOI: 10.1016/j.scitotenv.2024.172577</li>
           <li>Jenner LC et al. Detection of microplastics in human lung tissue using μFTIR spectroscopy. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.154907</li>
