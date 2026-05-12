@@ -228,7 +228,7 @@ export default function BlogPost() {
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
           <li>Hernandez LM et al. Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b02540</li>
-          <li>Mason SA et al. Microplastic Pollution is Widely Detected in US Municipal Wastewater Treatment Plant Effluent. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
+          <li>Mason SA et al. Synthetic Polymer Contamination in Bottled Water. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
           <li>Yu Z et al. Drinking Boiled Tap Water Reduces Human Intake of Nanoplastics and Microplastics. <em>Environ Sci Technol Lett</em>. 2024. DOI: 10.1021/acs.estlett.4c00081</li>
           <li>Yadav S et al. Cutting Boards: An Overlooked Source of Microplastics in Human Food? <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c00924</li>
           <li>Snekkevik VK et al. Beyond the Food on Your Plate: Investigating Sources of Microplastic Contamination in Home Kitchens. <em>Heliyon</em>. 2024. DOI: 10.1016/j.heliyon.2024.e35022</li>
