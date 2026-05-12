@@ -71,7 +71,7 @@ export default function BlogPost() {
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your current exposure level</p>
-          <p className="text-xs text-slate-500">15 questions · 2 minutes · based on peer-reviewed science</p>
+          <p className="text-xs text-slate-500">14 questions · 2 minutes · based on peer-reviewed science</p>
         </div>
         <Link href="/calculator" className="bg-teal-700 text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-teal-800 transition-colors whitespace-nowrap">
           Take the calculator →
@@ -147,7 +147,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          The switch from daily bottled water to filtered tap water represents one of the highest-impact, lowest-effort reductions available. Cox et al. (2019) estimated this switch saves approximately 1,730 microplastic particles per week for daily bottled water drinkers.
+          The switch from daily bottled water to filtered tap water represents one of the highest-impact, lowest-effort reductions available. Mason et al. (2018) found bottled water averages 325 microplastic particles per litre — compared to effectively zero from a well-maintained reverse osmosis filter — making this one of the most straightforward exposure reductions a person can make.
         </p>
 
       </div>
@@ -157,13 +157,13 @@ export default function BlogPost() {
         <div className="flex flex-col gap-3">
           <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-sm text-teal-700 hover:underline">Does Reverse Osmosis Remove Microplastics? →</Link>
           <Link href="/blog/how-to-avoid-microplastics" className="text-sm text-teal-700 hover:underline">How to Avoid Microplastics: The Highest-Impact Changes, Ranked →</Link>
-          <Link href="/blog/how-many-microplastics-do-you-consume" className="text-sm text-teal-700 hover:underline">How Many Microplastics Do You Consume Per Week? →</Link>
+          <Link href="/blog/how-many-microplastics-do-you-consume" className="text-sm text-teal-700 hover:underline">How Many Microplastics Do You Consume Per Week? What the Research Shows →</Link>
         </div>
       </div>
 
       <div className="bg-teal-700 rounded-2xl p-6 mt-10 text-white text-center">
         <p className="font-semibold text-lg mb-1">Find out your personal exposure</p>
-        <p className="text-teal-200 text-sm mb-4">15 questions · 2 minutes · peer-reviewed science</p>
+        <p className="text-teal-200 text-sm mb-4">14 questions · 2 minutes · peer-reviewed science</p>
         <Link href="/calculator" className="bg-white text-teal-700 font-semibold px-7 py-2.5 rounded-full text-sm hover:bg-teal-50 transition-colors">
           Start the calculator →
         </Link>
@@ -175,7 +175,6 @@ export default function BlogPost() {
           <li>Mason SA et al. Synthetic Polymer Contamination in Bottled Water. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
           <li>Li Y et al. Microplastics in bottled water: a review of occurrence, detection, and potential health impacts. <em>Sci Total Environ</em>. 2023. DOI: 10.1016/j.scitotenv.2023.161553</li>
           <li>Danopoulos E et al. Microplastic contamination of drinking water: a systematic review. <em>PLOS ONE</em>. 2020. DOI: 10.1371/journal.pone.0236838</li>
-          <li>Cox KD et al. Human Consumption of Microplastics. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b01517</li>
         </ol>
       </div>
     </article>
