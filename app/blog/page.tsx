@@ -10,6 +10,39 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "microplastics-and-pregnancy",
+    title: "Microplastics and Pregnancy: What the Research Shows",
+    excerpt:
+      "Microplastics have been detected in human placenta, amniotic fluid, and meconium — fetal exposure is confirmed. Here is what the evidence shows and what pregnant women can do to reduce it.",
+    date: "2026-05-13",
+    readTime: "7 min read",
+    tag: "Science",
+    image: "/blog-baby-formula.png",
+    imageAlt: "Pregnancy and microplastic exposure research",
+  },
+  {
+    slug: "microplastics-and-heart-disease",
+    title: "Microplastics and Heart Disease: The NEJM Study Explained",
+    excerpt:
+      "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows.",
+    date: "2026-05-13",
+    readTime: "6 min read",
+    tag: "Science",
+    image: "/blog-how-many.png",
+    imageAlt: "Arterial plaque and microplastics research",
+  },
+  {
+    slug: "microplastics-in-the-brain",
+    title: "Microplastics in the Brain: What the Research Shows",
+    excerpt:
+      "Microplastics have been found in 100% of human brain samples tested — at higher concentrations than in the liver or kidney. Here is what the science shows about how they get there.",
+    date: "2026-05-13",
+    readTime: "7 min read",
+    tag: "Science",
+    image: "/brain.jpg",
+    imageAlt: "Brain scan and microplastics research",
+  },
+  {
     slug: "microplastics-in-tap-water",
     title: "Microplastics in Tap Water: How Much Are You Drinking?",
     excerpt:

@@ -32,6 +32,9 @@ const personSchema = {
 };
 
 const posts = [
+  { slug: "microplastics-and-pregnancy", title: "Microplastics and Pregnancy: What the Research Shows", tag: "Science", date: "May 13, 2026" },
+  { slug: "microplastics-and-heart-disease", title: "Microplastics and Heart Disease: The NEJM Study Explained", tag: "Science", date: "May 13, 2026" },
+  { slug: "microplastics-in-the-brain", title: "Microplastics in the Brain: What the Research Shows", tag: "Science", date: "May 13, 2026" },
   { slug: "microplastics-in-tap-water", title: "Microplastics in Tap Water: How Much Are You Drinking?", tag: "Science", date: "May 13, 2026" },
   { slug: "how-to-avoid-microplastics", title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", tag: "Guide", date: "April 19, 2026" },
   { slug: "what-do-microplastics-do-to-the-body", title: "What Do Microplastics Do to the Human Body? The Research So Far", tag: "Science", date: "May 10, 2026" },

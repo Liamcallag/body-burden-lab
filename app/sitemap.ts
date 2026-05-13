@@ -24,5 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/microplastics-in-salt`, lastModified: "2026-04-19", changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/blog/does-silicone-have-microplastics`, lastModified: "2026-04-19", changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/blog/microplastics-in-tap-water`, lastModified: "2026-05-13", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/microplastics-in-the-brain`, lastModified: "2026-05-13", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/microplastics-and-heart-disease`, lastModified: "2026-05-13", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/microplastics-and-pregnancy`, lastModified: "2026-05-13", changeFrequency: "monthly", priority: 0.8 },
   ];
 }
