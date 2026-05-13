@@ -155,7 +155,7 @@ export default function BlogPost() {
           <li>→ Reverse osmosis achieves among the highest microplastic removal rates of any household filtration technology — some studies report above 99% removal (Acarer, 2023)</li>
           <li>→ RO membrane pore size is less than 1 nanometre (Acarer, 2023) — far smaller than the smallest routinely detectable microplastic particles (~1 micron)</li>
           <li>→ For comparison: ultrafiltration removes 85–99%, boiling hard tap water 80–90% (Yu et al., 2024), carbon-only pitcher-style filters are unreliable and can worsen results (Cherian et al., 2023)</li>
-          <li>→ Bottled water averages 325 microplastic particles per litre — switching to RO-filtered tap water eliminates this exposure</li>
+          <li>→ Bottled water adds microplastics from plastic packaging — switching to RO-filtered tap water eliminates this exposure source</li>
           <li>→ RO systems waste water (typically 3–4 litres per litre filtered) and remove beneficial minerals — a remineralisation filter is recommended</li>
         </ul>
       </div>
@@ -221,12 +221,12 @@ export default function BlogPost() {
               <tr className="bg-white">
                 <td className="px-4 py-3 border border-slate-200 font-medium">Pitcher filter (Brita-style)</td>
                 <td className="px-4 py-3 border border-slate-200 text-red-500 font-semibold">Inconsistent</td>
-                <td className="px-4 py-3 border border-slate-200">Not reliable for sub-10 µm particles</td>
+                <td className="px-4 py-3 border border-slate-200">Carbon + ion exchange only — no physical membrane barrier</td>
               </tr>
               <tr className="bg-slate-50">
                 <td className="px-4 py-3 border border-slate-200 font-medium">Bottled water</td>
                 <td className="px-4 py-3 border border-slate-200 text-red-500 font-semibold">Adds particles</td>
-                <td className="px-4 py-3 border border-slate-200">Not a solution — averages 325/litre</td>
+                <td className="px-4 py-3 border border-slate-200">Not a solution — adds microplastics from packaging</td>
               </tr>
             </tbody>
           </table>
@@ -253,7 +253,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Does RO remove nanoplastics too?</h2>
 
         <p>
-          This is where the evidence is more limited. Nanoplastics are defined as particles below 1 micron, though in practice researchers often use a threshold of 100 nanometres. The membrane pore size of a standard RO system (0.0001 microns = 0.1 nm) is still smaller than even the smallest nanoplastics measured in studies. On theoretical grounds, RO should remove nanoplastics with similar efficiency to microplastics.
+          This is where the evidence is more limited. Nanoplastics are defined as particles below 1 micron. The membrane pore size of a standard RO system is less than 1 nm (Acarer, 2023) — still smaller than even the smallest nanoplastics measured in studies. On theoretical grounds, RO should remove nanoplastics with similar efficiency to microplastics.
         </p>
 
         <p>
@@ -267,7 +267,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          For most households, the choice between RO and a quality activated carbon block filter (such as those from Berkey or ZeroWater) comes down to cost versus performance. An activated carbon block filter at ~£50–150 removes 70–90% of microplastics. RO removes &gt;99% but costs more to install and maintain, and wastes water. Both are dramatically better than bottled water or no filtration.
+          For most households, the choice between RO and a quality filter incorporating a physical membrane barrier comes down to cost versus performance. RO removes microplastics to a very high degree but costs more to install and maintain, and wastes water. A device with a sub-micron membrane (such as a solid block carbon filter rated to 0.2–0.5 µm) provides meaningful removal at lower cost. Both are dramatically better than bottled water or no filtration.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The bottom line</h2>
