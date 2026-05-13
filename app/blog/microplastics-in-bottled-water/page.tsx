@@ -109,6 +109,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ 93% of bottled water samples across 11 global brands contained microplastics, averaging 325 particles per litre (Mason et al., 2018)</li>
+          <li>→ Some bottles exceeded 10,000 microplastic particles per litre — far higher than filtered tap water</li>
+          <li>→ The PET bottle and polypropylene cap are the primary contamination sources — not the water supply itself</li>
+          <li>→ Filtered tap water consistently has lower microplastic content than bottled water across the reviewed literature</li>
+          <li>→ Reverse osmosis filtered tap water reduces microplastic content to near zero — the single highest-impact water switch available</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <p>

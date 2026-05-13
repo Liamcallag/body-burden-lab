@@ -106,6 +106,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ A plastic cutting board sheds 7.4–50.7 grams of microplastics per year into food, releasing 100–300 particles per knife stroke (Yadav et al., 2023)</li>
+          <li>→ Polypropylene boards release 71% more particles than polyethylene boards</li>
+          <li>→ An estimated 50% of shed particles are ingested with food; 50% are washed away</li>
+          <li>→ PP cutting board particles have been shown to impair the intestinal barrier; PE particles disrupt gut microbiota in laboratory studies (Gan et al., 2025)</li>
+          <li>→ Switching to wood or bamboo eliminates this exposure source entirely — these materials do not shed plastic particles</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research found</h2>

@@ -122,6 +122,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ Reverse osmosis removes more than 99% of microplastics — the most effective home water filter technology, with pore sizes orders of magnitude smaller than detectable microplastic particles</li>
+          <li>→ Activated carbon block filters remove 70–90% of microplastics; weaker for particles below 10 microns</li>
+          <li>→ Boiling hard tap water removes 80–90% of microplastics at no cost (Yu et al., 2024); soft water boiling achieves only ~25%</li>
+          <li>→ Standard pitcher filters (Brita-style) are inconsistent and not reliably effective for microplastic removal</li>
+          <li>→ Bottled water is not a solution — it adds microplastics (avg. 325 particles/litre) rather than removing them</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <p>

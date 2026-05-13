@@ -137,6 +137,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ Polypropylene baby bottles used with boiling water release up to 16.2 million microplastic particles per litre (Camacho et al., 2020)</li>
+          <li>→ Infants fed formula from PP bottles may ingest up to 2.61 million microplastic particles per day in their first year — among the highest individual daily exposures in the literature</li>
+          <li>→ Microplastics were detected in 75% of breast milk samples in a peer-reviewed study (Notarstefano et al., 2022)</li>
+          <li>→ Microplastics have also been found in human placenta, meconium, and amniotic fluid — exposure begins before birth</li>
+          <li>→ Switching to glass or stainless steel bottles eliminates the bottle as an exposure source; never microwave formula in plastic</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Plastic baby bottles: a major exposure source</h2>

@@ -106,6 +106,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ A single plastic tea bag releases approximately 11.6 billion microplastic and 3.1 billion nanoplastic particles per cup at brewing temperature (Hernandez et al., 2019)</li>
+          <li>→ Daily plastic tea drinkers add ~4.2 billion microplastic particles per week from tea alone — dwarfing most other individual exposure pathways</li>
+          <li>→ The particles come from the nylon or PET mesh bag itself disintegrating under heat — not from the tea or water</li>
+          <li>→ Paper bags with staple or folded seals (no plastic adhesive) release negligible particle counts by comparison</li>
+          <li>→ Loose-leaf tea in a stainless steel or glass infuser eliminates this exposure source entirely</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The 2019 study that changed the picture</h2>

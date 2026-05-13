@@ -123,6 +123,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ Heavy shellfish consumers ingest up to 11,000 microplastic particles per year from shellfish alone (EFSA, 2016)</li>
+          <li>→ Shellfish (mussels, oysters, clams) are eaten whole including the digestive tract — where microplastics accumulate — giving them far higher particle loads than fish fillets</li>
+          <li>→ Average mussel tissue contains 0.36 microplastic particles per gram (Van Cauwenberghe &amp; Janssen, 2014)</li>
+          <li>→ Fish fillets have low microplastic content because the digestive tract — where particles concentrate — is removed before eating</li>
+          <li>→ Seafood is not a reason to avoid fish; it is a reason to understand that shellfish contribute more to dietary microplastic intake than finfish</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Why it matters which part of the fish you eat</h2>

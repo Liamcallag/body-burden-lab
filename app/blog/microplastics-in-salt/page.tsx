@@ -106,6 +106,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ 90% of commercial salt brands globally contain microplastics — tested across 39 brands from 21 countries (Kim et al., 2018)</li>
+          <li>→ Sea salt is the most contaminated type, with concentrations up to 1,674 particles/kg; rock salt is the least contaminated (0–148 particles/kg)</li>
+          <li>→ An adult consuming the WHO-recommended 5g of salt per day ingests approximately 2,000 microplastic particles per year from salt alone</li>
+          <li>→ Salt contamination reflects ocean plastic pollution — sea salt harvested from contaminated coastal waters carries the highest particle loads</li>
+          <li>→ Switching to rock salt or refined table salt is a simple swap that reduces exposure from this source</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The global study: 39 brands, 21 countries</h2>

@@ -140,6 +140,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ Reverse osmosis removes more than 99% of microplastics — the highest removal rate of any readily available home filtration technology (Cherian et al., 2023)</li>
+          <li>→ RO membrane pore size is 0.0001 microns — 10,000 times smaller than the smallest microplastic particles (1 micron)</li>
+          <li>→ For comparison: ultrafiltration removes 85–99%, activated carbon block 70–90%, boiling hard tap water 80–90%, pitcher filters inconsistently</li>
+          <li>→ Bottled water averages 325 microplastic particles per litre — switching to RO-filtered tap water eliminates this exposure</li>
+          <li>→ RO systems waste water (typically 3–4 litres per litre filtered) and remove beneficial minerals — a remineralisation filter is recommended</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How reverse osmosis works</h2>

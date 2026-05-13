@@ -106,6 +106,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ Silicone does release particles under mechanical stress and high heat, but at significantly lower rates than polypropylene or polyethylene (Ekvall et al., 2023)</li>
+          <li>→ Worn or scratched silicone releases considerably more particles than new silicone — the same principle as plastic cutting boards</li>
+          <li>→ Commercial silicone products often contain fillers and colorants that can migrate into food, particularly under acidic conditions and high temperatures (Fang et al., 2023)</li>
+          <li>→ Silicone is a reasonable choice vs. heated plastics — but glass, stainless steel, and cast iron remain the best-evidenced options for zero polymer particle release</li>
+          <li>→ The highest-risk silicone use cases are: abrasive cleaning, visibly degraded items, and cooking above 200°C</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What is silicone?</h2>
