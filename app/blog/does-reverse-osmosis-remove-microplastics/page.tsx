@@ -76,7 +76,7 @@ export default function BlogPost() {
         "name": "Does reverse osmosis remove microplastics?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Reverse osmosis consistently achieves microplastic removal rates above 99%, according to multiple peer-reviewed reviews. RO membrane pore sizes (around 0.0001 microns) are orders of magnitude smaller than even the smallest detectable microplastic particles (around 1 micron), making it a purely physical barrier that microplastics cannot pass through."
+          "text": "Yes. Peer-reviewed studies report RO achieving among the highest microplastic removal rates of any household filtration technology, with some studies reporting above 99% removal (Acarer, 2023). RO membrane pore sizes are less than 1 nanometre — far smaller than even the smallest detectable microplastic particles (around 1 micron). The membranes operate via a sorption-diffusion mechanism, meaning microplastic particles cannot pass through."
         }
       },
       {
@@ -84,7 +84,7 @@ export default function BlogPost() {
         "name": "How does reverse osmosis compare to other water filters for microplastics?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reverse osmosis is the most effective household filtration method for microplastics at over 99% removal. Ultrafiltration membranes remove 85–99%, activated carbon block filters remove 70–90% (less effective for particles below 10 microns), and standard pitcher filters (Brita-style) are inconsistent. Boiling hard tap water removes 80–90% of microplastics at no cost. Bottled water is not a solution — it adds microplastics rather than removing them."
+          "text": "Reverse osmosis consistently achieves some of the highest microplastic removal rates of any household filtration method, with studies reporting above 99% in some settings (Acarer, 2023). Ultrafiltration membranes remove 85–99%, and boiling hard tap water removes 80–90% (Yu et al., 2024). Carbon-only pitcher-style filters are unreliable for microplastics — point-of-use devices using only activated carbon and ion exchange resin can sometimes increase particle counts in the effluent (Cherian et al., 2023). Bottled water is not a solution — it adds microplastics rather than removing them."
         }
       },
       {
@@ -152,9 +152,9 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ Reverse osmosis removes more than 99% of microplastics — the highest removal rate of any readily available home filtration technology (Cherian et al., 2023)</li>
-          <li>→ RO membrane pore size is 0.0001 microns — 10,000 times smaller than the smallest microplastic particles (1 micron)</li>
-          <li>→ For comparison: ultrafiltration removes 85–99%, activated carbon block 70–90%, boiling hard tap water 80–90%, pitcher filters inconsistently</li>
+          <li>→ Reverse osmosis achieves among the highest microplastic removal rates of any household filtration technology — some studies report above 99% removal (Acarer, 2023)</li>
+          <li>→ RO membrane pore size is less than 1 nanometre (Acarer, 2023) — far smaller than the smallest routinely detectable microplastic particles (~1 micron)</li>
+          <li>→ For comparison: ultrafiltration removes 85–99%, boiling hard tap water 80–90% (Yu et al., 2024), carbon-only pitcher-style filters are unreliable and can worsen results (Cherian et al., 2023)</li>
           <li>→ Bottled water averages 325 microplastic particles per litre — switching to RO-filtered tap water eliminates this exposure</li>
           <li>→ RO systems waste water (typically 3–4 litres per litre filtered) and remove beneficial minerals — a remineralisation filter is recommended</li>
         </ul>
@@ -165,27 +165,27 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How reverse osmosis works</h2>
 
         <p>
-          Reverse osmosis (RO) forces water under pressure through a semi-permeable membrane with pore sizes typically in the range of 0.0001 microns (0.1 nanometres). To put this in context, the smallest microplastic particles that researchers routinely detect are around 1 micron — roughly 10,000 times larger than an RO membrane pore. Even nanoplastic particles, which are far smaller than microplastics, are typically 100–1,000 nanometres in size, still orders of magnitude larger than what passes through an RO membrane.
+          Reverse osmosis (RO) forces water under pressure through a semi-permeable membrane with pore sizes less than 1 nanometre (Acarer, 2023). To put this in context, the smallest microplastic particles that researchers routinely detect are around 1 micron — far larger than an RO membrane pore. Even nanoplastic particles, which are far smaller than microplastics, are typically 100–1,000 nanometres in size, still orders of magnitude larger than an RO membrane pore.
         </p>
 
         <p>
-          This size mismatch is why RO is so effective. It is not relying on chemical affinity or adsorption — it is a purely physical barrier that microplastic and nanoplastic particles simply cannot pass through.
+          This size mismatch is why RO is so effective. Unlike simple sieving, RO membranes operate via a sorption-diffusion mechanism — but the practical outcome for particles as large as microplastics is the same: they cannot pass through (Acarer, 2023).
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research shows</h2>
 
         <p>
-          A 2023 review by Cherian et al. in <em>Polymers</em> assessed multiple filtration technologies against microplastic removal efficiency. The review found that reverse osmosis consistently achieved removal rates above 99%, outperforming all other common household filtration methods including activated carbon filters, ultrafiltration, and sand filtration. The near-complete removal was attributed to the membrane pore size being orders of magnitude smaller than even the smallest detectable microplastic particles.
+          A 2023 study by Cherian et al. in <em>Polymers</em> evaluated common point-of-use devices using granular activated carbon (GAC), ion exchange resin, and microfiltration. The GAC and ion exchange device — with no physical membrane — resulted in effluent particle counts that exceeded the influent under some test conditions, meaning it added microplastics rather than removing them. By contrast, the device incorporating a 0.2 µm microfiltration membrane achieved 90–100% removal of plastic fragments. The authors concluded that point-of-use devices incorporating physical membrane barriers are the most suitable for microplastic removal, and explicitly called for future research into RO and solid block activated carbon devices.
         </p>
 
         <p>
-          Acarer (2023) in <em>Water Science and Technology</em> reviewed removal efficiencies across conventional and advanced water treatment processes, confirming that membrane-based technologies — particularly RO and nanofiltration — provide the highest and most reliable microplastic removal. Conventional water treatment (coagulation, sedimentation, sand filtration) removed 40–80% of microplastics, while membrane processes consistently achieved 99%+ removal.
+          Acarer (2023) in <em>Water Science and Technology</em> reviewed membrane technologies specifically for microplastic removal. The review confirmed that RO and nanofiltration membranes — with pore sizes below 1 nm — achieve some of the highest removal rates, with one study (Sun et al., 2021) reporting approximately 99.8% removal in a drinking water treatment setting. The review also noted that membrane technologies as a class outperform conventional treatment, and that conventional treatment plants show wide variation in removal efficiency depending on the technologies used.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How does it compare to other filters?</h2>
 
         <p>
-          Tang and Hadibarata (2021) in <em>Environmental Challenges</em> reviewed a range of microplastic removal technologies and found a clear performance hierarchy:
+          Across the reviewed literature, a clear performance hierarchy emerges for household and treatment-level filtration technologies:
         </p>
 
         <div className="overflow-x-auto my-6">
@@ -210,8 +210,8 @@ export default function BlogPost() {
               </tr>
               <tr className="bg-white">
                 <td className="px-4 py-3 border border-slate-200 font-medium">Activated carbon block</td>
-                <td className="px-4 py-3 border border-slate-200 text-amber-600 font-semibold">70–90%</td>
-                <td className="px-4 py-3 border border-slate-200">Less effective below 10 µm</td>
+                <td className="px-4 py-3 border border-slate-200 text-amber-600 font-semibold">Variable</td>
+                <td className="px-4 py-3 border border-slate-200">Depends on pore size; carbon-only devices unreliable</td>
               </tr>
               <tr className="bg-slate-50">
                 <td className="px-4 py-3 border border-slate-200 font-medium">Boiling (hard water)</td>
@@ -232,7 +232,7 @@ export default function BlogPost() {
           </table>
         </div>
 
-        <p className="text-xs text-slate-400">Sources: Cherian et al. (2023) Polymers; Acarer (2023) Water Sci Technol; Tang &amp; Hadibarata (2021) Environ Challenges; Yu et al. (2024) EST Letters.</p>
+        <p className="text-xs text-slate-400">Sources: Acarer (2023) Water Sci Technol; Cherian et al. (2023) Polymers; Tang &amp; Hadibarata (2021) Environ Challenges; Yu et al. (2024) EST Letters.</p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Under-sink vs countertop RO — which is right for you?</h2>
 
@@ -299,7 +299,7 @@ export default function BlogPost() {
       <div className="mt-10 border-t border-slate-100 pt-8">
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
-          <li>Cherian AG et al. A Review of Microplastics in Water: Occurrence, Fate, and Removal. <em>Polymers</em>. 2023. DOI: 10.3390/polym15061331</li>
+          <li>Cherian AG et al. Microplastic Removal from Drinking Water Using Point-of-Use Devices. <em>Polymers</em>. 2023. DOI: 10.3390/polym15061331</li>
           <li>Acarer S. A review of microplastic removal from water and wastewater by membrane technologies. <em>Water Sci Technol</em>. 2023. DOI: 10.2166/wst.2023.186</li>
           <li>Tang KHD &amp; Hadibarata T. Microplastics removal through water treatment processes: a critical review. <em>Environ Challenges</em>. 2021. DOI: 10.1016/j.envc.2021.100264</li>
           <li>Yu Z et al. Drinking Boiled Tap Water Reduces Human Intake of Nanoplastics and Microplastics. <em>Environ Sci Technol Lett</em>. 2024. DOI: 10.1021/acs.estlett.4c00081</li>
