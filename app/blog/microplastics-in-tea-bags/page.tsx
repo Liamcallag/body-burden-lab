@@ -76,7 +76,7 @@ export default function BlogPost() {
         </Link>
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Science</span>
-          <span className="text-xs text-slate-400">By Liam Murphy</span>
+          <Link href="/author/liam-murphy" className="text-xs text-slate-400 hover:text-teal-700 transition-colors">Liam Murphy</Link>
           <span className="text-xs text-slate-400">·</span>
           <time className="text-xs text-slate-400" dateTime="2026-04-23">April 23, 2026</time>
         </div>

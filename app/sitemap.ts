@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/methodology`, lastModified: "2026-05-10", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/about`, lastModified: "2026-05-10", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/faq`, lastModified: "2026-05-10", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/author/liam-murphy`, lastModified: "2026-05-13", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/blog`, lastModified: "2026-05-13", changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/blog/how-to-avoid-microplastics`, lastModified: "2026-05-10", changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/blog/how-many-microplastics-do-you-consume`, lastModified: "2026-04-19", changeFrequency: "monthly", priority: 0.8 },
