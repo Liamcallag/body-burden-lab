@@ -5,6 +5,31 @@ export const metadata: Metadata = {
   title: "Methodology — How We Calculate Your Microplastic Exposure",
   description:
     "Full scientific methodology and source reference table for the Body Burden microplastics calculator. Every estimate is traceable to peer-reviewed research.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/methodology",
+  },
+  openGraph: {
+    type: "website",
+    title: "Methodology — How We Calculate Your Microplastic Exposure",
+    description:
+      "Full scientific methodology and source reference table for the Body Burden microplastics calculator. Every estimate is traceable to peer-reviewed research.",
+    images: [
+      {
+        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+Calculator+Methodology&tag=Science",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Methodology — How We Calculate Your Microplastic Exposure",
+    description:
+      "Full scientific methodology and source reference table for the Body Burden microplastics calculator. Every estimate is traceable to peer-reviewed research.",
+    images: [
+      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+Calculator+Methodology&tag=Science",
+    ],
+  },
 };
 
 const sources = [
