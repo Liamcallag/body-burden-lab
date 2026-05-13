@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Body Burden Lab — Microplastics Exposure Research",
+  title: "About Body Burden — Microplastics Exposure Research",
   description:
-    "Body Burden Lab is an independent research project tracking the science of microplastic exposure. Every figure in the calculator traces back to a peer-reviewed study.",
+    "Body Burden is an independent research project tracking the science of microplastic exposure. Every figure in the calculator traces back to a peer-reviewed study.",
 };
 
 export default function AboutPage() {
@@ -26,7 +26,7 @@ export default function AboutPage() {
 
         <h2 className="text-lg font-semibold text-slate-900 mt-8 mb-2">Who built it</h2>
         <p>
-          Body Burden Lab was founded by James Mercer, an independent researcher — not a scientist or medical professional. The project began out of genuine concern about microplastic exposure and a frustration with the lack of accessible, evidence-grounded tools for the public. That background has nothing to do with environmental science, which is exactly why every figure is grounded in published research rather than intuition.
+          Body Burden was founded by Liam Murphy, an independent science communicator who has tracked the microplastics research literature since 2025. Every figure on this site is verified against the original peer-reviewed paper before publication — DOI citations are provided for every claim. The project began out of genuine concern about microplastic exposure and a frustration with the lack of accessible, evidence-grounded tools for the public.
         </p>
         <p>
           It is important to share what the science currently shows — even though it is incomplete. The data we have almost certainly understates the real picture. Measurement technology for nanoplastics is still developing, most studies capture only a fraction of exposure routes, and tissue accumulation is likely higher than current figures suggest. The calculator reflects what can be documented today, not the full reality.
@@ -56,7 +56,7 @@ export default function AboutPage() {
 
         <div className="border-t border-slate-100 pt-8 mt-8">
           <p className="text-xs text-slate-400">
-            Body Burden Lab is an independent educational project. If you are a researcher and spot an error in the methodology, corrections are very welcome. Get in touch at{" "}
+            Body Burden is an independent educational project. If you are a researcher and spot an error in the methodology, corrections are very welcome. Get in touch at{" "}
             <a href="mailto:contact@bodyburdenlab.com" className="underline hover:text-teal-700">contact@bodyburdenlab.com</a>.
           </p>
         </div>

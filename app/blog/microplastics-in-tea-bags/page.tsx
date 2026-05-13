@@ -44,9 +44,9 @@ export default function BlogPost() {
     "dateModified": "2026-04-23",
     "author": {
       "@type": "Person",
-      "@id": "https://www.bodyburdenlab.com/author/james-mercer#person",
-      "name": "James Mercer",
-      "url": "https://www.bodyburdenlab.com/author/james-mercer",
+      "@id": "https://www.bodyburdenlab.com/author/liam-murphy#person",
+      "name": "Liam Murphy",
+      "url": "https://www.bodyburdenlab.com/author/liam-murphy",
     },
     "publisher": {
       "@type": "Organization",
@@ -76,7 +76,7 @@ export default function BlogPost() {
         </Link>
         <div className="flex items-center gap-3 mt-4 mb-4">
           <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">Science</span>
-          <span className="text-xs text-slate-400">By James Mercer</span>
+          <span className="text-xs text-slate-400">By Liam Murphy</span>
           <span className="text-xs text-slate-400">·</span>
           <time className="text-xs text-slate-400" dateTime="2026-04-23">April 23, 2026</time>
         </div>
