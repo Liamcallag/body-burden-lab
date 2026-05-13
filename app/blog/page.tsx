@@ -10,6 +10,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "microplastics-in-tap-water",
+    title: "Microplastics in Tap Water: How Much Are You Drinking?",
+    excerpt:
+      "Tap water is not microplastic-free — but it contains far fewer particles than bottled water. Here's what the research shows about contamination levels, sources, and how to reduce exposure.",
+    date: "2026-05-13",
+    readTime: "6 min read",
+    tag: "Science",
+    image: "/blog-reverse-osmosis.png",
+    imageAlt: "Tap water running from a faucet",
+  },
+  {
     slug: "microplastics-in-seafood",
     title: "Microplastics in Seafood: Which Fish and Shellfish Have the Most",
     excerpt:
