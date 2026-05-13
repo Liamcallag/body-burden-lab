@@ -200,8 +200,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               { slug: "how-to-avoid-microplastics", title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", tag: "Guide", image: "/blog-avoid.png" },
-              { slug: "how-many-microplastics-do-you-consume", title: "How Many Microplastics Do You Consume Per Week?", tag: "Science", image: "/blog-how-many.png" },
-              { slug: "microplastics-in-bottled-water", title: "Microplastics in Bottled Water — What the Research Shows", tag: "Science", image: "/blog-bottled-water.png" },
+              { slug: "what-do-microplastics-do-to-the-body", title: "What Do Microplastics Do to the Human Body? The Research So Far", tag: "Science", image: "/blog-how-many.png" },
+              { slug: "how-many-microplastics-do-you-consume", title: "How Many Microplastics Do You Consume Per Week?", tag: "Science", image: "/blog-bottled-water.png" },
             ].map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="border border-slate-100 rounded-xl bg-white shadow-sm hover:border-teal-200 transition-colors overflow-hidden">
                 <Image src={post.image} alt={post.title} width={400} height={144} className="w-full h-36 object-cover" />

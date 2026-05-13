@@ -151,7 +151,8 @@ export default function BlogPage() {
           Blog
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Microplastics Research</h1>
-        <p className="text-slate-500">Science-backed articles on exposure, research, and reducing your body burden.</p>
+        <p className="text-slate-500 mb-2">Science-backed articles on exposure, research, and reducing your body burden.</p>
+        <p className="text-slate-500 text-sm">Every figure is verified against the original peer-reviewed study. Where evidence is uncertain, that uncertainty is stated. Articles cover the major exposure pathways — drinking water, food preparation, diet, air, and clothing — and what the research shows about health effects.</p>
       </div>
 
       <div className="flex flex-col gap-6">

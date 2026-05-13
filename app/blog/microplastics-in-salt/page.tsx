@@ -172,6 +172,7 @@ export default function BlogPost() {
           <Link href="/blog/how-many-microplastics-do-you-consume" className="text-sm text-teal-700 hover:underline">How Many Microplastics Do You Consume Per Week? →</Link>
           <Link href="/blog/how-to-avoid-microplastics" className="text-sm text-teal-700 hover:underline">How to Avoid Microplastics: The Highest-Impact Changes, Ranked →</Link>
           <Link href="/blog/microplastics-in-bottled-water" className="text-sm text-teal-700 hover:underline">Microplastics in Bottled Water — What the Research Shows →</Link>
+          <Link href="/blog/microplastics-in-seafood" className="text-sm text-teal-700 hover:underline">Microplastics in Seafood: Which Fish and Shellfish Have the Most →</Link>
         </div>
       </div>
 

@@ -210,6 +210,7 @@ export default function BlogPost() {
           <Link href="/blog/how-to-avoid-microplastics" className="text-sm text-teal-700 hover:underline">How to Avoid Microplastics: The Highest-Impact Changes, Ranked →</Link>
           <Link href="/blog/how-many-microplastics-do-you-consume" className="text-sm text-teal-700 hover:underline">How Many Microplastics Do You Consume Per Week? →</Link>
           <Link href="/blog/what-do-microplastics-do-to-the-body" className="text-sm text-teal-700 hover:underline">What Do Microplastics Do to the Human Body? →</Link>
+          <Link href="/blog/microplastics-in-baby-formula" className="text-sm text-teal-700 hover:underline">Microplastics in Baby Formula and Breast Milk: What Parents Need to Know →</Link>
         </div>
       </div>
 
