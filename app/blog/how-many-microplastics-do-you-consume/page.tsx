@@ -111,6 +111,17 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ The average person consumes an estimated 74,000–121,000 microplastic particles per year — but habits vary this figure enormously (Cox et al., 2019)</li>
+          <li>→ Microwaving in plastic and drinking from plastic tea bags are the two highest single-source exposures documented in domestic settings</li>
+          <li>→ Bottled water drinkers consume an additional ~90,000 particles/year compared to tap water drinkers (Cox et al., 2019)</li>
+          <li>→ Shellfish eaters have significantly higher dietary intake than fish-only consumers — shellfish are eaten whole, including the digestive tract</li>
+          <li>→ Inhalation is a confirmed route — microplastics have been found in living human lung tissue (Jenner et al., 2022)</li>
+        </ul>
+      </div>
+
       {/* Article body */}
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 

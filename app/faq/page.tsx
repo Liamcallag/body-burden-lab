@@ -56,6 +56,20 @@ const faqs = [
     q: "Why doesn't the calculator include nanoplastics?",
     a: "Because the measurement methods used across studies are inconsistent, making it impossible to reliably aggregate figures from different sources. Microplastics (≥1 micron) can be detected using Fourier-transform infrared spectroscopy (FTIR) with reasonable consistency. Nanoplastics require different detection methods, and particle counts vary enormously depending on the technique used — making study-to-study comparisons unreliable. We would rather show you a conservative, defensible number than include figures that cannot be meaningfully compared. Research suggests nanoplastics may be present at 10 to 100 times higher concentrations than microplastics, so your true exposure is likely significantly higher than what we calculate.",
   },
+  {
+    q: "Is tap water safe to drink in terms of microplastics?",
+    a: "Tap water contains microplastics, but typically at lower concentrations than bottled water. A 2018 Orb Media investigation found microplastics in 83% of global tap water samples. However, a 2018 study by Mason et al. in Frontiers in Chemistry found that bottled water averaged 325 microplastic particles per litre — significantly higher than filtered tap water in most markets. The most effective approach is to filter tap water rather than switch to bottled water. Boiling hard tap water removes 80–90% of free-floating microplastics (Yu et al., 2024). Reverse osmosis removes more than 99%. Standard tap water, while not microplastic-free, is generally a lower-exposure option than bottled water.",
+    readMore: { href: "/blog/best-water-filter-for-microplastics", label: "Best water filter for microplastics" },
+  },
+  {
+    q: "What is the safest plastic for food and drink?",
+    a: "No plastic is entirely microplastic-free, but some release significantly fewer particles than others. Polypropylene (PP, recycling code 5) and high-density polyethylene (HDPE, code 2) are among the most stable at room temperature. The highest-risk scenarios are: polypropylene containers heated in a microwave (releasing millions of particles per use), scratched non-stick coatings (releasing both microplastics and PTFE particles), and worn plastic cutting boards. The safest approach for food contact is glass, stainless steel, or ceramic — particularly for hot food and liquids. If using plastic, avoid heating it and replace scratched or worn items.",
+  },
+  {
+    q: "How do microplastics get into the brain?",
+    a: "The most likely route is via the bloodstream. Microplastics have been detected in human blood (Leslie et al., 2022), confirming they can cross the gut lining and enter systemic circulation. From the blood, very small particles — particularly those in the nanoplastic range (below 1 micron) — are thought to cross the blood-brain barrier, a membrane that normally restricts what enters brain tissue. Larger microplastic particles may also reach the brain via the olfactory nerve (through nasal inhalation) or via macrophage transport. Nihart et al. (2025) in Nature Medicine found microplastics in 100% of human brain samples tested, at concentrations higher than those found in liver or kidney — suggesting the brain accumulates plastic particles preferentially, though the mechanism is not yet fully understood.",
+    readMore: { href: "/blog/what-do-microplastics-do-to-the-body", label: "What do microplastics do to the human body?" },
+  },
 ];
 
 const faqSchema = {

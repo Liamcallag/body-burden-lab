@@ -67,6 +67,50 @@ export default function BlogPost() {
     "url": "https://www.bodyburdenlab.com/blog/how-to-avoid-microplastics",
     "inLanguage": "en-US",
   };
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Reduce Microplastic Exposure",
+    "description": "Science-based steps to reduce your weekly microplastic intake, ranked by particle reduction potential.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Stop microwaving food in plastic containers",
+        "text": "Transfer food to glass, ceramic, or stainless steel before microwaving. Microwaving polypropylene for 3 minutes releases up to 4.22 million microplastic particles per cm² (Hussain et al., 2023).",
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Switch from plastic tea bags to paper or loose leaf",
+        "text": "Plastic tea bags release approximately 11.6 billion microplastic particles per cup at brewing temperature (Hernandez et al., 2019). Paper tea bags and loose leaf release negligible particles.",
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Filter or boil your drinking water",
+        "text": "Reverse osmosis removes >99% of microplastics. Boiling hard tap water removes 80–90% of free-floating particles (Yu et al., 2024). Bottled water averages 325 particles/litre — not a solution.",
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Replace plastic cutting boards with wood or bamboo",
+        "text": "A polypropylene cutting board releases an estimated 79.4 million microplastic particles per year into food (Yadav et al., 2023). Wood and bamboo boards release negligible particles.",
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Reduce synthetic clothing fibre exposure",
+        "text": "Wash synthetic clothing less frequently on cold cycles, use a microfibre-catching laundry bag, and choose natural fibres (cotton, wool, linen) for items worn close to skin.",
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Add a HEPA air purifier to your home",
+        "text": "HEPA filters capture particles down to 0.3 microns — well below the 1-micron microplastic threshold. Indoor air microplastic concentrations can reach 16.2 particles/m³ (Amato-Lourenço et al., 2020).",
+      },
+    ],
+  };
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -100,6 +144,7 @@ export default function BlogPost() {
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mb-8">
         <Link href="/blog" className="text-xs text-slate-400 hover:text-teal-700 transition-colors">
@@ -135,6 +180,18 @@ export default function BlogPost() {
         <Link href="/calculator" className="bg-teal-700 text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-teal-800 transition-colors whitespace-nowrap">
           Take the calculator →
         </Link>
+      </div>
+
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ Microwaving food in plastic releases up to 4.22 million microplastic particles per cm² in 3 minutes — the highest single exposure source documented in domestic settings (Hussain et al., 2023)</li>
+          <li>→ Plastic tea bags release 11.6 billion particles per cup at brewing temperature (Hernandez et al., 2019)</li>
+          <li>→ Boiling hard tap water removes 80–90% of free-floating microplastics at no cost (Yu et al., 2024)</li>
+          <li>→ Reverse osmosis filters remove &gt;99% of microplastics — the most effective home filtration technology</li>
+          <li>→ A plastic cutting board sheds an estimated 79.4 million microplastic particles into food per year (Yadav et al., 2023)</li>
+          <li>→ Bottled water is not a solution — 93% of brands are contaminated, averaging 325 particles/litre (Mason et al., 2018)</li>
+        </ul>
       </div>
 
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">

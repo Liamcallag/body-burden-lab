@@ -122,6 +122,18 @@ export default function BlogPost() {
         </Link>
       </div>
 
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>→ Microplastics have been detected in human blood, lungs, brain, arterial plaques, placenta, breast milk, and semen</li>
+          <li>→ 100% of human brain samples tested contain microplastics — at higher concentrations than liver or kidney (Nihart et al., Nature Medicine, 2025)</li>
+          <li>→ People with microplastics in arterial plaque had a 4.5× higher risk of heart attack, stroke, or death over 3 years (Marfella et al., NEJM, 2024)</li>
+          <li>→ Brain microplastic concentrations rose significantly between 2016 and 2024, tracking global plastic production increases</li>
+          <li>→ Causation has not been definitively established — but the associations are large and the detection data is not in dispute</li>
+          <li>→ No peer-reviewed method currently exists to remove microplastics from human tissue</li>
+        </ul>
+      </div>
+
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <p>
