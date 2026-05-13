@@ -23,6 +23,23 @@ const RANK_GRADIENTS: Record<string, [string, string]> = {
   "#7c3aed": ["#c084fc", "#4c1d95"],
 };
 
+const BLOG_LINKS: Record<string, { title: string; slug: string }> = {
+  water:        { title: "Best Water Filter for Microplastics: RO vs Carbon vs Pitcher, Ranked", slug: "best-water-filter-for-microplastics" },
+  tea:          { title: "Microplastics in Tea Bags: How Many You're Drinking and What to Use Instead", slug: "microplastics-in-tea-bags" },
+  microwave:    { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
+  hotdrinks:    { title: "Microplastics in Tea Bags: How Many You're Drinking and What to Use Instead", slug: "microplastics-in-tea-bags" },
+  utensils:     { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
+  nonstick:     { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
+  cuttingboard: { title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?", slug: "microplastics-in-cutting-boards" },
+  diet:         { title: "How Many Microplastics Do You Consume Per Week? What the Research Shows", slug: "how-many-microplastics-do-you-consume" },
+  seafood:      { title: "Microplastics in Seafood: Which Fish and Shellfish Have the Most", slug: "microplastics-in-seafood" },
+  salt:         { title: "Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?", slug: "microplastics-in-salt" },
+  canned:       { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
+  clothing:     { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
+  environment:  { title: "How Many Microplastics Do You Consume Per Week? What the Research Shows", slug: "how-many-microplastics-do-you-consume" },
+  airquality:   { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
+};
+
 const PRODUCT_SWAPS: Record<string, { label: string; url: string }> = {
   microwave:    { label: "Shop glass containers", url: "https://www.amazon.com/s?k=glass+food+storage+containers" },
   tea:          { label: "Shop loose leaf tea", url: "https://www.amazon.com/s?k=loose+leaf+tea+infuser" },
@@ -518,7 +535,7 @@ export default function ResultsClient() {
 
         {/* Page heading */}
         <div className="text-center mb-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] mb-1" style={{ color: "#64748b" }}>Body Burden Lab</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] mb-1" style={{ color: "#64748b" }}>Body Burden</p>
           <h1 className="text-2xl font-extrabold tracking-tight text-white">Your microplastic risk score</h1>
         </div>
 
@@ -674,6 +691,28 @@ export default function ResultsClient() {
           Retake the calculator
         </Link>
       </div>
+
+      {/* ── Related reading ── */}
+      {(() => {
+        const seen = new Set<string>();
+        const links = reductionOpportunities
+          .map((r) => BLOG_LINKS[r.question.tipKey])
+          .filter((l): l is { title: string; slug: string } => !!l && !seen.has(l.slug) && !!seen.add(l.slug))
+          .slice(0, 4);
+        if (links.length === 0) return null;
+        return (
+          <div className="mt-8 border-t border-slate-100 pt-8">
+            <h3 className="text-sm font-semibold text-slate-900 mb-4">Read more about your top risk areas</h3>
+            <div className="flex flex-col gap-3">
+              {links.map((link) => (
+                <Link key={link.slug} href={`/blog/${link.slug}`} className="text-sm text-teal-700 hover:underline">
+                  {link.title} →
+                </Link>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
 
         </div>{/* end max-w inner */}
       </div>{/* end white section */}

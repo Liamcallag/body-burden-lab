@@ -12,7 +12,7 @@ export async function generateMetadata({
   if (score) {
     const ogUrl = `https://www.bodyburdenlab.com/api/og-image?score=${score}&level=${encodeURIComponent(level)}`;
     const title = `My microplastic risk score is ${score}/100 (${level} exposure)`;
-    const description = `I scored ${score}/100 on the microplastic risk index. How does yours compare? Take the calculator at Body Burden Lab.`;
+    const description = `I scored ${score}/100 on the microplastic risk index. How does yours compare? Take the calculator at Body Burden.`;
     return {
       title,
       description,
