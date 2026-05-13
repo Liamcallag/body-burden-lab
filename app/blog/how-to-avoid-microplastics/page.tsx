@@ -144,6 +144,15 @@ export default function BlogPost() {
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bodyburdenlab.com" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bodyburdenlab.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", "item": "https://www.bodyburdenlab.com/blog/how-to-avoid-microplastics" },
+  ]
+}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mb-8">

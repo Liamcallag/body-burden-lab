@@ -5,6 +5,31 @@ export const metadata: Metadata = {
   title: "Microplastics FAQ — Common Questions Answered",
   description:
     "Answers to the most common questions about microplastics — what they are, whether they're dangerous, how to reduce exposure, and what the science actually shows.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/faq",
+  },
+  openGraph: {
+    type: "website",
+    title: "Microplastics FAQ — Common Questions Answered",
+    description:
+      "Answers to the most common questions about microplastics — what they are, whether they're dangerous, how to reduce exposure, and what the science actually shows.",
+    images: [
+      {
+        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+FAQ&tag=Science",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Microplastics FAQ — Common Questions Answered",
+    description:
+      "Answers to the most common questions about microplastics — what they are, whether they're dangerous, how to reduce exposure, and what the science actually shows.",
+    images: [
+      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+FAQ&tag=Science",
+    ],
+  },
 };
 
 const faqs = [

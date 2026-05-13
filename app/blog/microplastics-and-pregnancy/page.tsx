@@ -94,6 +94,15 @@ export default function BlogPost() {
   return (
     <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bodyburdenlab.com" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bodyburdenlab.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Microplastics and Pregnancy: What the Research Shows", "item": "https://www.bodyburdenlab.com/blog/microplastics-and-pregnancy" },
+  ]
+}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mb-8">
         <Link href="/blog" className="text-xs text-slate-400 hover:text-teal-700 transition-colors">

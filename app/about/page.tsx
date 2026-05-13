@@ -5,6 +5,31 @@ export const metadata: Metadata = {
   title: "About Body Burden — Microplastics Exposure Research",
   description:
     "Body Burden is an independent research project tracking the science of microplastic exposure. Every figure in the calculator traces back to a peer-reviewed study.",
+  alternates: {
+    canonical: "https://www.bodyburdenlab.com/about",
+  },
+  openGraph: {
+    type: "website",
+    title: "About Body Burden — Microplastics Exposure Research",
+    description:
+      "Body Burden is an independent research project tracking the science of microplastic exposure. Every figure in the calculator traces back to a peer-reviewed study.",
+    images: [
+      {
+        url: "https://www.bodyburdenlab.com/api/og-image?title=About+Body+Burden&tag=Science",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Body Burden — Microplastics Exposure Research",
+    description:
+      "Body Burden is an independent research project tracking the science of microplastic exposure. Every figure in the calculator traces back to a peer-reviewed study.",
+    images: [
+      "https://www.bodyburdenlab.com/api/og-image?title=About+Body+Burden&tag=Science",
+    ],
+  },
 };
 
 export default function AboutPage() {
