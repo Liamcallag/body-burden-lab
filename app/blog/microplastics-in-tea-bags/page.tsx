@@ -144,7 +144,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the broader research shows</h2>
 
         <p>
-          A 2025 systematic review by Fard et al. in <em>Food Chemistry</em> synthesised 19 published studies on MNPs in tea-based beverages and confirmed that plastic teabags are consistently the dominant source — with particle concentrations from steeped plastic bags several orders of magnitude higher than those found in bottled tea or beverages made from loose leaves. The review also noted that particle release increases with steeping time, meaning leaving a bag in the cup while drinking compounds the exposure.
+          A 2025 systematic review by Fard et al. in <em>Food Chemistry</em> synthesised 19 published studies on MNPs in tea-based beverages and confirmed that plastic teabags are consistently the dominant source — with particle concentrations from steeped plastic bags several orders of magnitude higher than those found in bottled tea or beverages made from loose leaves. The review also noted that at least one study examined the effects of varying steeping time up to 12 hours, suggesting that leaving a bag in the cup while drinking may compound the exposure.
         </p>
 
         <p>
@@ -182,7 +182,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          For daily tea drinkers using plastic bags, this is one of the single largest controllable microplastic exposure sources — comparable in magnitude to microwaving food in plastic containers. The fix is both cheap and simple.
+          For daily tea drinkers using plastic bags, this is one of the single largest controllable microplastic exposure sources. The fix is both cheap and simple.
         </p>
 
       </div>
