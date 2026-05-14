@@ -118,7 +118,7 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ 84% of silicone kitchenwares tested showed endocrine disrupting activity, and 96% showed cytotoxicity — driven by chemical migration at cooking temperatures (Feng et al., 2023)</li>
+          <li>→ 84% of silicone kitchenwares tested showed endocrine disrupting activity, and 96% showed mild or above cytotoxicity — driven by chemical migration at cooking temperatures (Feng et al., 2023)</li>
           <li>→ The main migrants are methylsiloxanes including D4, D5, and D6 — substances flagged by EU regulators as of very high concern due to links with hormone disruption and fertility effects (Feng et al., 2023)</li>
           <li>→ Migration increases at high temperatures — the risk is meaningfully higher when silicone kitchenware is used for hot or baked food (Feng et al., 2023)</li>
           <li>→ Silicone also releases nanoparticles under mechanical stress, and boiling silicone approximately doubles subsequent particle release (Ekvall et al., 2023)</li>
@@ -141,11 +141,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research shows</h2>
 
         <p>
-          Feng et al. (2023) in <em>Science of the Total Environment</em> tested 31 silicone kitchenwares purchased from the Chinese market — including baking moulds, plates, chopping boards, and cups. Migration was measured using ethanol as a food simulant at 70°C. The results were striking: 96% of products showed cytotoxicity, and 84% showed at least one form of hormonal activity, including estrogenic, anti-estrogenic, androgenic, and anti-androgenic effects. The study identified migration of at least 26 organic compounds and 21 metals across the products tested.
+          Feng et al. (2023) in <em>Science of the Total Environment</em> tested 31 silicone kitchenwares purchased from the Chinese market — including baking moulds, plates, chopping boards, and cups. Migration was measured using ethanol as a food simulant at 70°C. The results were striking: 96% of products showed mild or above cytotoxicity, and 84% showed at least one form of hormonal activity, including estrogenic, anti-estrogenic, androgenic, and anti-androgenic effects. The study identified migration of at least 26 organic compounds and 21 metals across the products tested.
         </p>
 
         <p>
-          The main compounds driving these effects were methylsiloxanes — a family of chemicals that includes D4, D5, and D6, all of which are listed by the European Chemicals Agency as substances of very high concern. Evidence from animal studies links D4, D5, and D6 to fertility damage and estrogen disruption. Critically, the study found that the risk of endocrine disruption was higher when products were used at elevated temperatures, which is exactly how most silicone bakeware and cooking tools are used.
+          The main compounds driving these effects were methylsiloxanes — a family of chemicals that includes D4, D5, and D6. Evidence from animal studies links these compounds to fertility damage and estrogen disruption, and they appear on the European Chemicals Agency's list of substances of very high concern. Critically, the study found that the risk of endocrine disruption was higher when products were used at elevated temperatures, which is exactly how most silicone bakeware and cooking tools are used.
         </p>
 
         <p>
