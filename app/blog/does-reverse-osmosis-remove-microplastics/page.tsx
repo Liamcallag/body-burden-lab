@@ -232,7 +232,7 @@ export default function BlogPost() {
           </table>
         </div>
 
-        <p className="text-xs text-slate-400">Sources: Acarer (2023) Water Sci Technol; Cherian et al. (2023) Polymers; Tang &amp; Hadibarata (2021) Environ Challenges; Yu et al. (2024) EST Letters.</p>
+        <p className="text-xs text-slate-400">Sources: Acarer (2023) Water Sci Technol; Cherian et al. (2023) Polymers; Yu et al. (2024) EST Letters.</p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Under-sink vs countertop RO — which is right for you?</h2>
 
