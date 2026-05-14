@@ -176,7 +176,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Microplastics in breast milk</h2>
 
         <p>
-          A 2022 study published in <em>Polymers</em> detected microplastics in 26 out of 34 breast milk samples collected from a cohort of Italian mothers. The polymers identified included polyethylene, polypropylene, and PVC — all common in food packaging and household plastics. This was the first peer-reviewed confirmation of microplastic presence in human breast milk, though the finding has since been replicated in other cohorts.
+          A 2022 study published in <em>Polymers</em> detected microplastics in 26 out of 34 breast milk samples collected from a cohort of Italian mothers. The polymers identified included polyethylene, polypropylene, and PVC — all common in food packaging and household plastics. This was the first peer-reviewed confirmation of microplastic presence in human breast milk.
         </p>
 
         <p>
