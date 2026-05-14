@@ -208,7 +208,6 @@ export default function BlogPost() {
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Kim JS et al. Global Pattern of Microplastics (MPs) in Commercial Food-Grade Salts: Sea Salt as an Indicator of Seawater MP Pollution. <em>Environ Sci Technol</em>. 2018. DOI: 10.1021/acs.est.8b04180</li>
-          <li>Karami A et al. The presence of microplastics in commercial salts from different countries. <em>Sci Rep</em>. 2017. DOI: 10.1038/srep46173</li>
           <li>Chell S et al. Microplastics in salt: A critical review of contamination, analytical methodologies, and health implications. <em>J Chromatogr Open</em>. 2025;8:100276. DOI: 10.1016/j.jcoa.2025.100276</li>
         </ol>
       </div>
