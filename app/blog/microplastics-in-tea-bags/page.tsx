@@ -119,7 +119,6 @@ export default function BlogPost() {
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
           <li>→ A single plastic tea bag releases approximately 11.6 billion microplastic and 3.1 billion nanoplastic particles per cup at brewing temperature (Hernandez et al., 2019)</li>
-          <li>→ Daily plastic tea drinkers add ~4.2 billion microplastic particles per week from tea alone — dwarfing most other individual exposure pathways</li>
           <li>→ The particles come from the nylon or PET mesh bag itself disintegrating under heat — not from the tea or water</li>
           <li>→ Paper bags with staple or folded seals (no plastic adhesive) release negligible particle counts by comparison</li>
           <li>→ Loose-leaf tea in a stainless steel or glass infuser eliminates this exposure source entirely</li>
@@ -139,17 +138,21 @@ export default function BlogPost() {
         </p>
 
         <p>
-          The primary polymers identified were nylon-6 and polyethylene terephthalate (PET) — the same materials used to make the mesh bags themselves. The particles were not coming from the tea or the water; they were coming from the bag disintegrating under heat.
+          The primary polymers identified were nylon-6,6 and polyethylene terephthalate (PET) — the same materials used to make the mesh bags themselves. The particles were not coming from the tea or the water; they were coming from the bag disintegrating under heat.
         </p>
 
-        <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Follow-up research confirms the finding</h2>
+        <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the broader research shows</h2>
 
         <p>
-          A 2024 study in <em>Food Chemistry</em> examined multiple polymer types used in tea bags and confirmed that releases exceeding one billion particles per bag are consistent across nylon-6, polypropylene, and PET bags. The study found that particle release was significantly higher at brewing temperatures than at room temperature, and increased further with steeping time — meaning the common habit of leaving a bag in the cup while drinking compounds the exposure.
+          A 2025 systematic review by Fard et al. in <em>Food Chemistry</em> synthesised 19 published studies on MNPs in tea-based beverages and confirmed that plastic teabags are consistently the dominant source — with particle concentrations from steeped plastic bags several orders of magnitude higher than those found in bottled tea or beverages made from loose leaves. The review also noted that particle release increases with steeping time, meaning leaving a bag in the cup while drinking compounds the exposure.
         </p>
 
         <p>
-          Both studies found that the particles released were predominantly nanoplastics — particles below 1 micron — which are considered more concerning than larger microplastic particles because they can more readily cross biological barriers including the gut wall and the blood-brain barrier.
+          Reported particle counts vary considerably across studies, partly due to differences in analytical methods and size detection limits, and partly due to variation between brands and bag materials. What is consistent across studies is the direction: plastic teabags in hot water release far more MNPs than virtually any other dietary source.
+        </p>
+
+        <p>
+          Hernandez et al. also found that the vast majority of released particles were submicron — 14.7 billion submicron particles versus 2.3 million micro-sized particles per bag. Submicron and nanoplastic particles are considered more concerning than larger microplastics because of their greater capacity to cross biological barriers including the gut wall.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Are paper tea bags safe?</h2>
@@ -182,12 +185,6 @@ export default function BlogPost() {
           For daily tea drinkers using plastic bags, this is one of the single largest controllable microplastic exposure sources — comparable in magnitude to microwaving food in plastic containers. The fix is both cheap and simple.
         </p>
 
-        <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How this compares to other exposure sources</h2>
-
-        <p>
-          Cox et al. (2019) estimated that the average American ingests between 74,000 and 121,000 microplastic particles per year from all sources. A daily plastic tea drinker adds approximately <strong>4.2 billion particles per week</strong> from tea alone — dwarfing most other individual exposure pathways. Switching to loose leaf or staple-sealed paper bags reduces this to near zero.
-        </p>
-
       </div>
 
       <div className="mt-10 border-t border-slate-100 pt-8 mb-8">
@@ -211,8 +208,7 @@ export default function BlogPost() {
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Hernandez LM et al. Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b02540</li>
-          <li>Li S et al. Microplastics and nanoplastics released from plastic tea bags into tea. <em>Food Chem</em>. 2024. DOI: 10.1016/j.foodchem.2024.138093</li>
-          <li>Cox KD et al. Human Consumption of Microplastics. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b01517</li>
+          <li>Fard NJH et al. Microplastics and nanoplastics in tea: Sources, characteristics and potential impacts. <em>Food Chem</em>. 2025;466:142111. DOI: 10.1016/j.foodchem.2024.142111</li>
         </ol>
       </div>
     </article>
