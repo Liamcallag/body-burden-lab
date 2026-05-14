@@ -76,7 +76,7 @@ export default function BlogPost() {
         "name": "Do plastic baby bottles release microplastics into formula?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. A 2020 study by Camacho et al. in Nature Food found that polypropylene (PP) baby bottles used with boiling water during sterilisation released up to 16.2 million microplastic particles per litre. The study estimated infants fed formula from PP bottles may ingest up to 2.61 million microplastic particles per day in their first year — among the highest individual daily exposures reported in the literature. Using glass or stainless steel bottles eliminates this source entirely."
+          "text": "Yes. A 2020 study by Li et al. in Nature Food found that polypropylene (PP) baby bottles used with boiling water during sterilisation released up to 16.2 million microplastic particles per litre. The study estimated infants fed formula from PP bottles may ingest up to 2.61 million microplastic particles per day in their first year — among the highest individual daily exposures reported in the literature. Using glass or stainless steel bottles eliminates this source entirely."
         }
       },
       {
@@ -84,7 +84,7 @@ export default function BlogPost() {
         "name": "Are microplastics found in breast milk?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. A 2022 study published in Polymers detected microplastics in 75% of breast milk samples from an Italian cohort. Polymers identified included polyethylene, polypropylene, and PVC. The presence of microplastics in breast milk does not mean breastfeeding should be avoided — the documented benefits of breastfeeding far outweigh the risk posed by microplastic particles at currently detected levels."
+          "text": "Yes. A 2022 study published in Polymers detected microplastics in 26 out of 34 breast milk samples from an Italian cohort. Polymers identified included polyethylene, polypropylene, and PVC. The presence of microplastics in breast milk does not mean breastfeeding should be avoided — the documented benefits of breastfeeding far outweigh the risk posed by microplastic particles at currently detected levels."
         }
       },
       {
@@ -149,10 +149,10 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ Polypropylene baby bottles used with boiling water release up to 16.2 million microplastic particles per litre (Camacho et al., 2020)</li>
+          <li>→ Polypropylene baby bottles used with boiling water release up to 16.2 million microplastic particles per litre (Li et al., 2020)</li>
           <li>→ Infants fed formula from PP bottles may ingest up to 2.61 million microplastic particles per day in their first year — among the highest individual daily exposures in the literature</li>
-          <li>→ Microplastics were detected in 75% of breast milk samples in a peer-reviewed study (Notarstefano et al., 2022)</li>
-          <li>→ Microplastics have also been found in human placenta, meconium, and amniotic fluid — exposure begins before birth</li>
+          <li>→ Microplastics were detected in 26 out of 34 breast milk samples in a peer-reviewed study (Ragusa et al., 2022)</li>
+          <li>→ Microplastics have also been found in human placenta — exposure begins before birth</li>
           <li>→ Switching to glass or stainless steel bottles eliminates the bottle as an exposure source; never microwave formula in plastic</li>
         </ul>
       </div>
@@ -162,7 +162,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Plastic baby bottles: a major exposure source</h2>
 
         <p>
-          In 2020, Camacho et al. published a landmark study in <em>Nature Food</em> that quantified microplastic release from polypropylene (PP) baby bottles during formula preparation. When PP bottles were used with boiling water — as recommended for sterilisation — they released up to <strong>16.2 million microplastic particles per litre</strong>.
+          In 2020, Li et al. published a landmark study in <em>Nature Food</em> that quantified microplastic release from polypropylene (PP) baby bottles during formula preparation. When PP bottles were used with boiling water — as recommended for sterilisation — they released up to <strong>16.2 million microplastic particles per litre</strong>.
         </p>
 
         <p>
@@ -176,7 +176,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Microplastics in breast milk</h2>
 
         <p>
-          A 2022 study published in <em>Polymers</em> detected microplastics in 75% of breast milk samples collected from a cohort of Italian mothers. The polymers identified included polyethylene, polypropylene, and PVC — all common in food packaging and household plastics. This was the first peer-reviewed confirmation of microplastic presence in human breast milk, though the finding has since been replicated in other cohorts.
+          A 2022 study published in <em>Polymers</em> detected microplastics in 26 out of 34 breast milk samples collected from a cohort of Italian mothers. The polymers identified included polyethylene, polypropylene, and PVC — all common in food packaging and household plastics. This was the first peer-reviewed confirmation of microplastic presence in human breast milk, though the finding has since been replicated in other cohorts.
         </p>
 
         <p>
@@ -186,7 +186,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Exposure begins before birth</h2>
 
         <p>
-          Microplastics have been detected in human placentas (Ragusa et al., 2021, <em>Environment International</em>), in meconium (an infant's first bowel movements), in amniotic fluid, and in infant feces from the first days of life. This establishes that microplastic exposure is not limited to feeding practices — it begins in utero and is a baseline condition for infants born today.
+          Microplastics have been detected in human placenta (Ragusa et al., 2021, <em>Environment International</em>). This establishes that microplastic exposure is not limited to feeding practices — it begins in utero and is a baseline condition for infants born today.
         </p>
 
         <p>
@@ -196,7 +196,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Practical steps to reduce infant exposure from bottles</h2>
 
         <p>
-          The Camacho et al. study included practical recommendations for reducing exposure during formula preparation using PP bottles, where glass or stainless steel alternatives are not used. Where possible, use water filtered through <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">reverse osmosis or an activated carbon block filter</Link> to prepare formula, as this reduces the microplastic load in the water itself before it contacts the bottle.
+          The Li et al. study included practical recommendations for reducing exposure during formula preparation using PP bottles, where glass or stainless steel alternatives are not used. Where possible, use water filtered through <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">reverse osmosis or an activated carbon block filter</Link> to prepare formula, as this reduces the microplastic load in the water itself before it contacts the bottle.
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
@@ -238,10 +238,9 @@ export default function BlogPost() {
       <div className="mt-10 border-t border-slate-100 pt-8">
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
-          <li>Camacho M et al. Estimated exposure to microplastics from infant formula preparation in polypropylene bottles. <em>Nat Food</em>. 2021. DOI: 10.1038/s43016-020-00230-y</li>
+          <li>Li D et al. Microplastic release from the degradation of polypropylene feeding bottles during infant formula preparation. <em>Nat Food</em>. 2020. DOI: 10.1038/s43016-020-00171-y</li>
           <li>Ragusa A et al. Plasticenta: First evidence of microplastics in human placenta. <em>Environ Int</em>. 2021. DOI: 10.1016/j.envint.2020.106274</li>
-          <li>Notarstefano V et al. Microplastics in human breast milk: First evidence and potential effects on child health. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
-          <li>Gündoğdu S et al. Microplastics in human meconium: Evidence of early plastic exposure. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.157335</li>
+          <li>Ragusa A et al. Raman Microspectroscopy Detection and Characterisation of Microplastics in Human Breastmilk. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
         </ol>
       </div>
     </article>
