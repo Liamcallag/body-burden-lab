@@ -118,7 +118,7 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ 90% of commercial salt brands globally contain microplastics — tested across 39 brands from 21 countries (Kim et al., 2018)</li>
+          <li>→ 92% of commercial salt brands globally contain microplastics — tested across 39 brands from 21 countries (Kim et al., 2018)</li>
           <li>→ Sea salt is the most contaminated type, with concentrations up to 1,674 particles/kg; rock salt is the least contaminated (0–148 particles/kg)</li>
           <li>→ An adult consuming the WHO-recommended 5g of salt per day ingests approximately 2,000 microplastic particles per year from salt alone</li>
           <li>→ Salt contamination reflects ocean plastic pollution — sea salt harvested from contaminated coastal waters carries the highest particle loads</li>
@@ -131,11 +131,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The global study: 39 brands, 21 countries</h2>
 
         <p>
-          Kim et al. (2018) in <em>Environmental Science & Technology</em> conducted the most comprehensive analysis of microplastics in commercial salt to date. The team sampled 39 salt brands purchased from 21 countries across Europe, North America, and Asia. The findings were unambiguous: <strong>90% of salt brands contained microplastic particles</strong>.
+          Kim et al. (2018) in <em>Environmental Science & Technology</em> conducted the most comprehensive analysis of microplastics in commercial salt to date. The team sampled 39 salt brands purchased from 21 countries across Europe, North America, and Asia. The findings were unambiguous: <strong>92% of salt brands contained microplastic particles</strong>.
         </p>
 
         <p>
-          The contamination varied significantly by salt type. Sea salt showed the highest concentrations — ranging from 0 to 1,674 microplastic particles per kilogram, with a mean substantially higher than other salt types. Lake salt showed moderate contamination (28–462 particles/kg), while rock salt had the lowest (0–148 particles/kg). Refined table salt, which undergoes additional processing, tended to have lower particle counts than unrefined sea salt.
+          The contamination varied significantly by salt type. Sea salt showed the highest concentrations — ranging from 0 to 1,674 microplastic particles per kilogram (excluding one Indonesian outlier at 13,629 n/kg), with a mean substantially higher than other salt types. Lake salt showed moderate contamination (28–462 particles/kg), while rock salt had the lowest (0–148 particles/kg). Refined table salt, which undergoes additional processing, tended to have lower particle counts than unrefined sea salt.
         </p>
 
         <p>
@@ -155,7 +155,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How much do you ingest from salt?</h2>
 
         <p>
-          Using the Kim et al. data and standard dietary sodium intake figures, an adult consuming the WHO-recommended maximum of 5g of salt per day would ingest approximately <strong>2,000 microplastic particles per year from salt alone</strong> if using a mid-range sea salt. At higher consumption levels — more typical of average Western diets — this figure rises proportionally.
+          Using the Kim et al. data and standard dietary sodium intake figures, an adult consuming the WHO-recommended maximum of 5g of salt per day would ingest anywhere from under 100 to over 2,000 microplastic particles per year from salt alone, depending on the origin of the salt. European and North American sea salts typically sit at the lower end of this range; highly contaminated Asian sea salts at the higher end.
         </p>
 
         <p>
