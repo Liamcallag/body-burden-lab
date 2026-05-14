@@ -118,11 +118,11 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ Silicone does release nanoparticles under mechanical stress, confirmed in peer-reviewed research (Ekvall et al., 2023)</li>
-          <li>→ Boiling silicone before mechanical use approximately doubles nanoparticle release — heat treatment weakens the material (Ekvall et al., 2023)</li>
-          <li>→ Silicone sealant in kitchens releases both microplastics and nanoplastics through normal wear and cleaning; food should not be prepared in direct contact with it (Fang et al., 2023)</li>
-          <li>→ Silicone is a reasonable choice vs. heated plastics — but glass, stainless steel, and cast iron remain the best-evidenced options for zero polymer particle release</li>
-          <li>→ The highest-risk silicone use cases are: abrasive cleaning, visibly degraded items, and cooking above 200°C</li>
+          <li>→ 84% of silicone kitchenwares tested showed endocrine disrupting activity, and 96% showed cytotoxicity — driven by chemical migration at cooking temperatures (Feng et al., 2023)</li>
+          <li>→ The main migrants are methylsiloxanes including D4, D5, and D6 — substances flagged by EU regulators as of very high concern due to links with hormone disruption and fertility effects (Feng et al., 2023)</li>
+          <li>→ Migration increases at high temperatures — the risk is meaningfully higher when silicone kitchenware is used for hot or baked food (Feng et al., 2023)</li>
+          <li>→ Silicone also releases nanoparticles under mechanical stress, and boiling silicone approximately doubles subsequent particle release (Ekvall et al., 2023)</li>
+          <li>→ Glass, stainless steel, and cast iron remain the safest choices for food contact — none release synthetic polymer particles or methylsiloxanes</li>
         </ul>
       </div>
 
@@ -141,45 +141,48 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research shows</h2>
 
         <p>
-          Ekvall et al. (2023) in <em>PLOS ONE</em> studied nanoparticle release from silicone pacifiers under mechanical stress, using an immersion blender protocol to simulate wear. The study confirmed that silicone does release particles in the nano-size range under mechanical breakdown. Notably, boiling the silicone pacifier before mechanical stress approximately doubled the number of nanoparticles subsequently released — suggesting that heat treatment weakens the material and increases its susceptibility to particle release. The silicone nanoparticles produced were not acutely toxic to the freshwater organism <em>Daphnia magna</em>, in contrast to latex nanoparticles tested under the same conditions.
+          Feng et al. (2023) in <em>Science of the Total Environment</em> tested 31 silicone kitchenwares purchased from the Chinese market — including baking moulds, plates, chopping boards, and cups. Migration was measured using ethanol as a food simulant at 70°C. The results were striking: 96% of products showed cytotoxicity, and 84% showed at least one form of hormonal activity, including estrogenic, anti-estrogenic, androgenic, and anti-androgenic effects. The study identified migration of at least 26 organic compounds and 21 metals across the products tested.
         </p>
 
         <p>
-          Fang et al. (2023) in <em>Frontiers in Chemistry</em> used Raman imaging to characterise micro and nanoplastics released from silicone sealant used around a kitchen sink. The study confirmed that silicone sealant can release both microplastics and nanoplastics — including particles smaller than 1 micron — through normal wear, aging, and cleaning. The authors noted that silicone products may also contain additives such as phthalates, and recommended that food not be prepared in direct contact with silicone sealant, and that the area around sealant be cleaned regularly to remove detached fragments.
+          The main compounds driving these effects were methylsiloxanes — a family of chemicals that includes D4, D5, and D6, all of which are listed by the European Chemicals Agency as substances of very high concern. Evidence from animal studies links D4, D5, and D6 to fertility damage and estrogen disruption. Critically, the study found that the risk of endocrine disruption was higher when products were used at elevated temperatures, which is exactly how most silicone bakeware and cooking tools are used.
+        </p>
+
+        <p>
+          Notably, the 11 baby bottle nipples in the same study performed significantly better — none showed cytotoxic or hormonal activity. This suggests that regulatory scrutiny applied specifically to infant products may result in meaningfully safer silicone formulations.
+        </p>
+
+        <p>
+          Separately, Ekvall et al. (2023) in <em>PLOS ONE</em> confirmed that silicone releases nanoparticles under mechanical stress. Their experiments with silicone pacifiers showed that boiling the material before mechanical breakdown approximately doubled the number of nanoparticles released — pointing to heat as a factor that weakens silicone's structure over time.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Is silicone safer than plastic?</h2>
 
         <p>
-          For most applications, yes — but the comparison depends heavily on what you are comparing it to and under what conditions. Key points from the evidence:
+          The honest answer is: it depends on what you're comparing and how you're using it. Silicone doesn't carry the same BPA or phthalate concerns associated with some hard plastics, and it doesn't melt or degrade in the way thin polypropylene does when heated. But the Feng et al. findings make clear it's not inert — chemical migration happens, and it increases with heat.
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Silicone does release particles under mechanical stress</strong> — this is confirmed by peer-reviewed research, though the silicone nanoparticles tested by Ekvall et al. (2023) were not acutely toxic to aquatic organisms, unlike latex nanoparticles tested under the same conditions.</li>
-          <li><strong>Heat exposure increases subsequent particle release</strong> — boiling silicone before mechanical use approximately doubled nanoparticle release in Ekvall et al. (2023). Items that are regularly boiled or exposed to high heat may release more particles over time.</li>
-          <li><strong>High temperatures increase release</strong> — silicone is rated safe to around 230°C for food contact, but the research suggests heat can weaken the material's structure.</li>
-          <li><strong>Not all silicone products are equivalent</strong> — food-grade silicone with minimal fillers is likely to perform better than cheaper products with added colorants or reinforcing fillers.</li>
-          <li><strong>The long-term health effects of inhaled or ingested silica particles are not fully established</strong> — this is different from the more studied microplastic polymers, and research is ongoing.</li>
+          <li><strong>High-temperature use carries the most risk</strong> — baking moulds and oven-safe cookware are the use cases where migration of methylsiloxanes is most likely to occur.</li>
+          <li><strong>Not all silicone products are the same</strong> — the study found variation between products, and the better-performing bottle nipples suggest formulation matters. Cheaper products with more additives and colorants may carry higher risk.</li>
+          <li><strong>Mechanical wear also releases particles</strong> — silicone used with abrasive cleaners or utensils will shed nanoparticles over time.</li>
+          <li><strong>Cold storage is lower risk</strong> — the migration effects in Feng et al. were measured at cooking temperatures; using silicone bags for cold food storage is a different risk profile.</li>
         </ul>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Practical guidance</h2>
 
         <p>
-          Silicone is a reasonable choice for kitchen items like spatulas, baking moulds, and food storage bags, particularly compared to thin plastics that are regularly heated. The evidence does not support silicone as zero-risk, but it is meaningfully lower-risk than polypropylene containers microwaved with food, or scratched non-stick cookware.
+          For high-heat applications — baking moulds, oven trays, cooking utensils — glass, stainless steel, and cast iron are the safest choices based on current evidence. These materials don't release methylsiloxanes or nanoparticles into food. For cold food storage or low-temperature uses, silicone is lower risk, though not zero risk.
         </p>
 
         <p>
-          The highest-risk use cases for silicone are: using abrasive cleaners that scratch the surface, using visibly degraded or worn items, and cooking at very high temperatures (above 200°C) for extended periods. The lowest-risk use cases are: cold food storage, room-temperature uses, and low-temperature baking where the silicone is not directly contacting the food surface under mechanical stress.
-        </p>
-
-        <p>
-          If the goal is to minimise particle exposure from cookware entirely, glass, stainless steel, and cast iron remain the best-evidenced choices — none of these release synthetic polymer particles into food. Silicone occupies a reasonable middle ground, particularly for uses where glass or metal are impractical (flexible baking moulds, collapsible containers).
+          If you do use silicone kitchenware, replacing items that are visibly degraded, discoloured, or heavily scratched is reasonable — wear increases particle release. Avoiding abrasive scouring pads when cleaning silicone also helps.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research doesn't yet tell us</h2>
 
         <p>
-          The evidence on silicone particle release is newer and less developed than the evidence on conventional plastics. Most studies to date have used simulated conditions that approximate but do not perfectly replicate real-world kitchen use. Long-term studies measuring actual human exposure from silicone kitchen products — as opposed to lab measurements of particle release — have not yet been published. This is not a reason for alarm, but it is a reason for the same honest uncertainty that applies to all areas of microplastic research.
+          The Feng et al. study used accelerated migration conditions — 95% ethanol at 70°C — which are designed to simulate extended real-world use in a shorter timeframe. Whether everyday cooking at typical oven temperatures produces the same migration levels in actual food is not yet established. The study also sourced products from the Chinese market, so it isn't directly generalisable to products sold elsewhere under different regulatory frameworks. What it does establish is that chemical migration from silicone kitchenware is real and measurable, and that the compounds migrating have known biological activity.
         </p>
 
       </div>
@@ -204,8 +207,8 @@ export default function BlogPost() {
       <div className="mt-10 border-t border-slate-100 pt-8">
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
-          <li>Ekvall MT et al. Particle release from silicone kitchen utensils. <em>PLOS ONE</em>. 2023. DOI: 10.1371/journal.pone.0289377</li>
-          <li>Fang X et al. Migration of chemical substances from food-grade silicone products. <em>Front Chem</em>. 2023. DOI: 10.3389/fchem.2023.1165523</li>
+          <li>Feng D et al. Cytotoxicity, endocrine disrupting activity, and chemical analysis of 42 food contact silicone rubber products. <em>Sci Total Environ</em>. 2023. DOI: 10.1016/j.scitotenv.2023.162298</li>
+          <li>Ekvall MT et al. Nanoplastics released from daily used silicone and latex products during mechanical breakdown. <em>PLOS ONE</em>. 2023. DOI: 10.1371/journal.pone.0289377</li>
         </ol>
       </div>
     </article>
