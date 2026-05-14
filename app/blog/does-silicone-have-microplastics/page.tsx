@@ -118,9 +118,9 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ Silicone does release particles under mechanical stress and high heat, but at significantly lower rates than polypropylene or polyethylene (Ekvall et al., 2023)</li>
-          <li>→ Worn or scratched silicone releases considerably more particles than new silicone — the same principle as plastic cutting boards</li>
-          <li>→ Commercial silicone products often contain fillers and colorants that can migrate into food, particularly under acidic conditions and high temperatures (Fang et al., 2023)</li>
+          <li>→ Silicone does release nanoparticles under mechanical stress, confirmed in peer-reviewed research (Ekvall et al., 2023)</li>
+          <li>→ Boiling silicone before mechanical use approximately doubles nanoparticle release — heat treatment weakens the material (Ekvall et al., 2023)</li>
+          <li>→ Silicone sealant in kitchens releases both microplastics and nanoplastics through normal wear and cleaning; food should not be prepared in direct contact with it (Fang et al., 2023)</li>
           <li>→ Silicone is a reasonable choice vs. heated plastics — but glass, stainless steel, and cast iron remain the best-evidenced options for zero polymer particle release</li>
           <li>→ The highest-risk silicone use cases are: abrasive cleaning, visibly degraded items, and cooking above 200°C</li>
         </ul>
@@ -141,11 +141,11 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research shows</h2>
 
         <p>
-          Ekvall et al. (2023) in <em>PLOS ONE</em> examined particle release from silicone kitchen utensils under simulated use. The study found that silicone did release particles, though the rate was significantly lower than for conventional plastics under the same conditions. Crucially, the study found that particle release increased substantially with mechanical stress — cutting, scraping, and abrasion — and with higher temperatures. Worn or scratched silicone utensils released considerably more particles than new ones.
+          Ekvall et al. (2023) in <em>PLOS ONE</em> studied nanoparticle release from silicone pacifiers under mechanical stress, using an immersion blender protocol to simulate wear. The study confirmed that silicone does release particles in the nano-size range under mechanical breakdown. Notably, boiling the silicone pacifier before mechanical stress approximately doubled the number of nanoparticles subsequently released — suggesting that heat treatment weakens the material and increases its susceptibility to particle release. The silicone nanoparticles produced were not acutely toxic to the freshwater organism <em>Daphnia magna</em>, in contrast to latex nanoparticles tested under the same conditions.
         </p>
 
         <p>
-          Fang et al. (2023) in <em>Frontiers in Chemistry</em> investigated chemical migration from food-grade silicone products, finding that while silicone itself is relatively inert, commercial silicone products often contain additives, fillers, and colorants that can migrate into food — particularly under acidic conditions and at high temperatures. Some commercial silicone products were found to contain silica particles and other fillers not present in pure PDMS, which may migrate under cooking conditions.
+          Fang et al. (2023) in <em>Frontiers in Chemistry</em> used Raman imaging to characterise micro and nanoplastics released from silicone sealant used around a kitchen sink. The study confirmed that silicone sealant can release both microplastics and nanoplastics — including particles smaller than 1 micron — through normal wear, aging, and cleaning. The authors noted that silicone products may also contain additives such as phthalates, and recommended that food not be prepared in direct contact with silicone sealant, and that the area around sealant be cleaned regularly to remove detached fragments.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Is silicone safer than plastic?</h2>
@@ -155,9 +155,9 @@ export default function BlogPost() {
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Silicone releases fewer particles than polypropylene (PP) or polyethylene (PE)</strong> under comparable conditions — this is well-supported across multiple studies.</li>
-          <li><strong>Scratched or degraded silicone is worse than new silicone</strong> — the same principle that applies to Teflon-coated cookware applies here. Worn items should be replaced.</li>
-          <li><strong>High temperatures increase release</strong> — silicone is rated safe to around 230°C, but particle release rises with temperature even within safe ranges.</li>
+          <li><strong>Silicone does release particles under mechanical stress</strong> — this is confirmed by peer-reviewed research, though the silicone nanoparticles tested by Ekvall et al. (2023) were not acutely toxic to aquatic organisms, unlike latex nanoparticles tested under the same conditions.</li>
+          <li><strong>Heat exposure increases subsequent particle release</strong> — boiling silicone before mechanical use approximately doubled nanoparticle release in Ekvall et al. (2023). Items that are regularly boiled or exposed to high heat may release more particles over time.</li>
+          <li><strong>High temperatures increase release</strong> — silicone is rated safe to around 230°C for food contact, but the research suggests heat can weaken the material's structure.</li>
           <li><strong>Not all silicone products are equivalent</strong> — food-grade silicone with minimal fillers is likely to perform better than cheaper products with added colorants or reinforcing fillers.</li>
           <li><strong>The long-term health effects of inhaled or ingested silica particles are not fully established</strong> — this is different from the more studied microplastic polymers, and research is ongoing.</li>
         </ul>
