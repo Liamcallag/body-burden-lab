@@ -155,7 +155,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How much do you ingest from salt?</h2>
 
         <p>
-          Using the Kim et al. data and standard dietary sodium intake figures, an adult consuming the WHO-recommended maximum of 5g of salt per day would ingest anywhere from under 100 to over 2,000 microplastic particles per year from salt alone, depending on the origin of the salt. European and North American sea salts typically sit at the lower end of this range; highly contaminated Asian sea salts at the higher end.
+          Using the Kim et al. data and standard dietary sodium intake figures, an adult consuming the WHO-recommended maximum of 5g of salt per day would ingest anywhere from under 100 to over 2,000 microplastic particles per year from salt alone, depending on the origin of the salt (Peixoto et al., 2019). European and North American sea salts typically sit at the lower end of this range; highly contaminated Asian sea salts at the higher end.
         </p>
 
         <p>
@@ -175,7 +175,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research doesn't yet tell us</h2>
 
         <p>
-          The 2018 Kim et al. study remains the most comprehensive global analysis. Since then, several regional studies have confirmed the pattern of sea salt contamination, and a 2025 critical review by De Nido et al. in the <em>Journal of Chromatography Open</em> (DOI: 10.1016/j.jcoa.2025.100276) confirmed that sea salt consistently shows the highest contamination across salt types globally, with fibres as the most commonly detected morphology and particles under 500 μm as the most frequently reported size class. However, the health effects specifically from salt-derived microplastic ingestion have not been studied in isolation — the data on dose, accumulation, and long-term effects comes from the broader microplastics literature, not salt-specific research.
+          The 2018 Kim et al. study remains the most comprehensive global analysis. Since then, several regional studies have confirmed the pattern of sea salt contamination, and a 2025 critical review by De Nido et al. in the <em>Journal of Chromatography Open</em> confirmed that sea salt consistently shows the highest contamination across salt types globally, with fibres as the most commonly detected morphology and particles under 500 μm as the most frequently reported size class. However, the health effects specifically from salt-derived microplastic ingestion have not been studied in isolation — the data on dose, accumulation, and long-term effects comes from the broader microplastics literature, not salt-specific research.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Practical guidance</h2>
