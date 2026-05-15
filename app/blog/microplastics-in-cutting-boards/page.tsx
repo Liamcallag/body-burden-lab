@@ -3,21 +3,21 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
+  title: "Plastic Cutting Boards as a Source of Microplastics in Food",
   description:
-    "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Here's what the research shows and what to use instead.",
+    "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-cutting-boards",
   },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-24",
-    title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
+    title: "Plastic Cutting Boards as a Source of Microplastics in Food",
     description:
-      "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Here's what the research shows and what to use instead.",
+      "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+from+Plastic+Cutting+Boards%3A+What+the+Research+Shows&tag=Science",
+        url: "https://www.bodyburdenlab.com/api/og-image?title=Plastic+Cutting+Boards+as+a+Source+of+Microplastics+in+Food&tag=Science",
         width: 1200,
         height: 630,
       },
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
+    title: "Plastic Cutting Boards as a Source of Microplastics in Food",
     description:
-      "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Here's what the research shows and what to use instead.",
+      "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+from+Plastic+Cutting+Boards%3A+What+the+Research+Shows&tag=Science",
+      "https://www.bodyburdenlab.com/api/og-image?title=Plastic+Cutting+Boards+as+a+Source+of+Microplastics+in+Food&tag=Science",
     ],
   },
 };
@@ -38,8 +38,8 @@ export default function BlogPost() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?",
-    "description": "A single plastic cutting board can shed up to 50 grams of microplastics into your food per year. Here's what the research shows and what to use instead.",
+    "headline": "Plastic Cutting Boards as a Source of Microplastics in Food",
+    "description": "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
     "datePublished": "2026-04-24",
     "dateModified": "2026-04-24",
     "author": {
@@ -76,7 +76,7 @@ export default function BlogPost() {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bodyburdenlab.com" },
     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bodyburdenlab.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?", "item": "https://www.bodyburdenlab.com/blog/microplastics-in-cutting-boards" },
+    { "@type": "ListItem", "position": 3, "name": "Plastic Cutting Boards as a Source of Microplastics in Food", "item": "https://www.bodyburdenlab.com/blog/microplastics-in-cutting-boards" },
   ]
 }) }} />
       <div className="mb-8">
@@ -90,7 +90,7 @@ export default function BlogPost() {
           <time className="text-xs text-slate-400" dateTime="2026-04-24">April 24, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
-          How Many Microplastics Does a Plastic Cutting Board Add to Your Meals?
+          Plastic Cutting Boards as a Source of Microplastics in Food
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
           Plastic cutting boards are found in most kitchens. Research now shows they are a significant and underappreciated source of microplastic contamination in food — releasing particles with every knife stroke.
@@ -118,7 +118,7 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ A plastic cutting board sheds 7.4–50.7 grams of microplastics per year into food (Yadav et al., 2023)</li>
+          <li>→ Plastic cutting boards are a significant and overlooked source of microplastic contamination in food (Yadav et al., 2023)</li>
           <li>→ Polypropylene boards release more particles than polyethylene boards</li>
           <li>→ PP cutting board particles have been shown to impair the intestinal barrier; PE particles disrupt gut microbiota in laboratory studies (Gan et al., 2025)</li>
           <li>→ Switching to wood or bamboo eliminates this exposure source entirely — these materials do not shed plastic particles</li>
@@ -130,7 +130,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research found</h2>
 
         <p>
-          Yadav et al. (2023) in <em>Environmental Science & Technology</em> conducted one of the most detailed analyses of plastic cutting board particle release to date. The study found that a single plastic cutting board can shed between <strong>7.4 and 50.7 grams of microplastics per year</strong> into food during normal use.
+          Yadav et al. (2023) in <em>Environmental Science & Technology</em> identified plastic cutting boards as a significant and previously overlooked source of microplastic contamination in food, with particles shed directly onto food surfaces during normal cutting use.
         </p>
 
         <p>
