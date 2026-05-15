@@ -118,9 +118,8 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ A plastic cutting board sheds 7.4–50.7 grams of microplastics per year into food, releasing 100–300 particles per knife stroke (Yadav et al., 2023)</li>
-          <li>→ Polypropylene boards release 71% more particles than polyethylene boards</li>
-          <li>→ An estimated 50% of shed particles are ingested with food; 50% are washed away</li>
+          <li>→ A plastic cutting board sheds 7.4–50.7 grams of microplastics per year into food (Yadav et al., 2023)</li>
+          <li>→ Polypropylene boards release more particles than polyethylene boards</li>
           <li>→ PP cutting board particles have been shown to impair the intestinal barrier; PE particles disrupt gut microbiota in laboratory studies (Gan et al., 2025)</li>
           <li>→ Switching to wood or bamboo eliminates this exposure source entirely — these materials do not shed plastic particles</li>
         </ul>
@@ -131,15 +130,15 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research found</h2>
 
         <p>
-          Hernandez et al. (2023) in <em>Environmental Science & Technology</em> conducted one of the most detailed analyses of plastic cutting board particle release to date. The study found that a single plastic cutting board can shed between <strong>7.4 and 50.7 grams of microplastics per year</strong> into food during normal use. Each individual knife stroke releases approximately 100 to 300 microplastic particles directly onto the food surface being cut.
+          Yadav et al. (2023) in <em>Environmental Science & Technology</em> conducted one of the most detailed analyses of plastic cutting board particle release to date. The study found that a single plastic cutting board can shed between <strong>7.4 and 50.7 grams of microplastics per year</strong> into food during normal use.
         </p>
 
         <p>
-          The study examined polypropylene (PP) and polyethylene (PE) boards — the two most common materials in household cutting boards — and found that PP boards released up to 71% more particles by number than PE boards under the same cutting conditions. Both, however, represent a meaningful ongoing exposure source for anyone who cooks regularly.
+          The study examined polypropylene (PP) and polyethylene (PE) boards — the two most common materials in household cutting boards — and found that PP boards released more particles than PE boards under the same cutting conditions. Both, however, represent a meaningful ongoing exposure source for anyone who cooks regularly.
         </p>
 
         <p>
-          Approximately 50% of the released particles were estimated to be ingested with food; the remaining 50% were washed away during cleaning. The study noted that board age and surface damage significantly increased particle release — worn, scratched boards shed substantially more than new ones.
+          The study noted that board age and surface damage significantly increased particle release — worn, scratched boards shed substantially more than new ones.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What happens to the particles in the body</h2>
@@ -149,7 +148,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          These are animal studies and cannot be directly extrapolated to human outcomes. However, they are consistent with the broader body of research showing that ingested microplastic particles accumulate in gut tissue and trigger inflammatory responses — and they were conducted using particles at concentrations comparable to estimated human dietary exposure from cutting board use.
+          These are animal studies and cannot be directly extrapolated to human outcomes, and the concentrations used were relatively high. However, they are consistent with the broader body of research showing that ingested microplastic particles accumulate in gut tissue and trigger inflammatory responses.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How cutting boards compare to other kitchen sources</h2>
@@ -159,7 +158,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Snekkevik et al. (2024) in <em>Heliyon</em> surveyed household kitchens and identified plastic cutting boards as one of the top three microplastic sources in the home kitchen environment, alongside plastic food storage containers and scratched non-stick cookware.
+          Snekkevik et al. (2024) in <em>Heliyon</em> reviewed microplastic sources in the household kitchen and identified plastic cutting boards, plastic food storage containers, and scratched non-stick cookware as significant contributors.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Does washing the board help?</h2>
@@ -207,7 +206,7 @@ export default function BlogPost() {
       <div className="mt-10 border-t border-slate-100 pt-8">
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
-          <li>Hernandez LM et al. Cutting Boards: An Overlooked Source of Microplastics in Human Food? <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c00924</li>
+          <li>Yadav H et al. Cutting Boards: An Overlooked Source of Microplastics in Human Food? <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c00924</li>
           <li>Gan Z, Chen Q et al. Simulated Microplastic Release from Cutting Boards and Evaluation of Intestinal Inflammation and Gut Microbiota in Mice. <em>Environ Health Perspect</em>. 2025;133(3-4). DOI: 10.1289/EHP15472</li>
           <li>Snekkevik VK et al. Beyond the Food on Your Plate: Investigating Sources of Microplastic Contamination in Home Kitchens. <em>Heliyon</em>. 2024. DOI: 10.1016/j.heliyon.2024.e35022</li>
           <li>Hussain KA et al. Assessing the Release of Microplastics and Nanoplastics from Plastic Containers and Reusable Food Pouches. <em>Environ Sci Technol</em>. 2023. DOI: 10.1021/acs.est.3c01942</li>
