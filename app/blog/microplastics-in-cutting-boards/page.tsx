@@ -161,12 +161,6 @@ export default function BlogPost() {
           Snekkevik et al. (2024) in <em>Heliyon</em> reviewed microplastic sources in the household kitchen and identified plastic cutting boards, plastic food storage containers, and scratched non-stick cookware as significant contributors.
         </p>
 
-        <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Does washing the board help?</h2>
-
-        <p>
-          Washing removes loose surface particles but does not remove the underlying grooves and scratches that produce them. Dishwasher cleaning at high temperatures can accelerate surface degradation of plastic boards over time, increasing particle release with each subsequent use. The board surface itself is the source — cleaning addresses contamination of the board, not the structural cause of particle shedding.
-        </p>
-
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What to use instead</h2>
 
         <p>
