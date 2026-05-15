@@ -144,7 +144,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What happens to the particles in the body</h2>
 
         <p>
-          Gan, Chen et al. (2025) in <em>Environmental Health Perspectives</em> (Vol. 133, DOI: 10.1289/EHP15472) examined the downstream effects of cutting board microplastics specifically. Mouse diets were prepared on PP, PE, and wooden cutting boards over 4 and 12 weeks. PP board particles were found to impair intestinal barrier function and induce inflammatory markers in gut tissue. PE board particles were associated with disruption of gut microbiota composition — including a significant decrease in Firmicutes — and altered liver and fecal metabolites in exposed animals.
+          Gan, Chen et al. (2025) in <em>Environmental Health Perspectives</em> examined the downstream effects of cutting board microplastics specifically. Mouse diets were prepared on PP, PE, and wooden cutting boards over 4 and 12 weeks. PP board particles were found to impair intestinal barrier function and induce inflammatory markers in gut tissue. PE board particles were associated with disruption of gut microbiota composition — including a significant decrease in Firmicutes — and altered liver and fecal metabolites in exposed animals.
         </p>
 
         <p>
