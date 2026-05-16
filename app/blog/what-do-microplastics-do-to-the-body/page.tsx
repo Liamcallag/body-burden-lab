@@ -69,7 +69,7 @@ export default function BlogPost() {
         "name": "Are microplastics harmful to human health?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The evidence is accumulating but not yet conclusive on causation. Microplastics have been detected in human blood, lungs, brain, arterial plaques, and placenta. A 2024 study in the New England Journal of Medicine found that patients with microplastics in their arterial plaques had a 4.5 times higher risk of cardiovascular events. Laboratory studies show microplastics can induce oxidative stress, inflammation, and cell death. However, establishing direct causation in humans — rather than association — remains an active area of research."
+          "text": "The evidence is accumulating but not yet conclusive on causation. Microplastics have been detected in human blood, lungs, brain, arterial plaques, and placenta. A 2024 study in the New England Journal of Medicine found that patients with microplastics in their arterial plaques had a 4.5-fold greater risk of a composite endpoint of heart attack, stroke, or death over 34 months. Laboratory studies show microplastics can induce oxidative stress, inflammation, and cell death. However, establishing direct causation in humans — rather than association — remains an active area of research."
         }
       },
       {
@@ -77,7 +77,7 @@ export default function BlogPost() {
         "name": "Where have microplastics been found in the human body?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Microplastics have been detected in human blood (77% of samples tested), lung tissue (85% of live tissue samples), brain tissue (100% of samples tested, with concentrations higher than liver or kidney), arterial plaques (58% of samples), placenta (both fetal and maternal sides), breast milk (75% of samples), semen (100% of samples), and meconium (infant first stool). The ubiquity of detection across tissue types reflects decades of accumulation since mass plastic production began in the 1950s."
+          "text": "Microplastics have been detected in human blood (77% of samples tested), lung tissue (85% of live tissue samples), brain tissue (every sample tested, with concentrations substantially higher than liver or kidney), arterial plaques (58% of samples), placenta (both fetal and maternal sides), breast milk (76% of samples), semen (76% of samples tested), and meconium (infant first stool). The ubiquity of detection across tissue types reflects decades of accumulation since mass plastic production began in the 1950s."
         }
       },
       {
@@ -135,9 +135,9 @@ export default function BlogPost() {
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
           <li>→ Microplastics have been detected in human blood, lungs, brain, arterial plaques, placenta, breast milk, and semen</li>
-          <li>→ 100% of human brain samples tested contain microplastics — at higher concentrations than liver or kidney (Nihart et al., Nature Medicine, 2025)</li>
-          <li>→ People with microplastics in arterial plaque had a 4.5× higher risk of heart attack, stroke, or death over 3 years (Marfella et al., NEJM, 2024)</li>
-          <li>→ Brain microplastic concentrations rose significantly between 2016 and 2024, tracking global plastic production increases</li>
+          <li>→ Every brain sample tested contained microplastics — at concentrations 7–30 times higher than liver or kidney (Nihart et al., Nature Medicine, 2025)</li>
+          <li>→ People with microplastics in arterial plaque had a 4.5-fold greater risk of heart attack, stroke, or death over 34 months (Marfella et al., NEJM, 2024)</li>
+          <li>→ Brain microplastic concentrations rose significantly between 2016 and 2024, broadly aligned with rising global plastic production over the same period</li>
           <li>→ Causation has not been definitively established — but the associations are large and the detection data is not in dispute</li>
           <li>→ No peer-reviewed method currently exists to remove microplastics from human tissue</li>
         </ul>
@@ -153,6 +153,17 @@ export default function BlogPost() {
           The honest position is that the science is young and causation has not been definitively established. But the detection data is no longer in dispute, and the volume and quality of evidence is growing rapidly.
         </p>
 
+        <figure className="my-8">
+          <img
+            src="/blog-microplastics-body.png"
+            alt="Illustration showing how microplastics enter the body through food and water, travel through the digestive tract into the bloodstream, and accumulate in arterial plaque"
+            className="w-full rounded-xl"
+          />
+          <figcaption className="text-xs text-slate-400 text-center mt-2">
+            Microplastics enter the body through ingestion and inhalation, pass into the bloodstream, and have been detected in arterial plaque — where their presence was associated with significantly higher cardiovascular risk in a 2024 NEJM study.
+          </figcaption>
+        </figure>
+
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Where microplastics have been found in the human body</h2>
 
         <p>
@@ -162,12 +173,12 @@ export default function BlogPost() {
         <ul className="list-disc list-inside space-y-2 text-slate-700">
           <li><strong>Blood:</strong> Leslie et al. (2022) in <em>Environment International</em> detected microplastics in 77% of blood samples from healthy adult donors. The most common polymers were PET and polystyrene.</li>
           <li><strong>Lung tissue:</strong> Jenner et al. (2022) in <em>Science of the Total Environment</em> found microplastics in 85% of live human lung tissue samples, concentrated in the lower lobes.</li>
-          <li><strong>Brain tissue:</strong> Nihart et al. (2025) in <em>Nature Medicine</em> detected microplastics in 100% of human brain samples tested, at concentrations higher than those found in liver or kidney. Crucially, samples from 2016–2024 showed significantly rising concentrations over time.</li>
+          <li><strong>Brain tissue:</strong> Nihart et al. (2025) in <em>Nature Medicine</em> detected microplastics in every brain sample tested, at concentrations 7–30 times higher than those found in liver or kidney. Samples from 2016–2024 showed significantly rising concentrations over time.</li>
           <li><strong>Arterial plaques:</strong> Marfella et al. (2024) in the <em>New England Journal of Medicine</em> found microplastics in 58% of arterial plaque samples from cardiovascular patients.</li>
           <li><strong>Placenta:</strong> Ragusa et al. (2021) in <em>Environment International</em> detected microplastics on both the fetal and maternal sides of human placentas.</li>
-          <li><strong>Breast milk:</strong> Notarstefano et al. (2022) in <em>Polymers</em> found microplastics in 75% of breast milk samples, including PE, PP, and PVC.</li>
-          <li><strong>Semen:</strong> Zhang et al. (2024) in <em>eBioMedicine</em> detected microplastics in 100% of human semen samples, with higher concentrations correlating with reduced sperm count and motility.</li>
-          <li><strong>Meconium:</strong> Gündoğdu et al. (2022) detected microplastics in infant first stool, confirming that in utero exposure is now effectively universal.</li>
+          <li><strong>Breast milk:</strong> Ragusa et al. (2022) in <em>Polymers</em> found microplastics in 76% of breast milk samples (26 of 34), with polyethylene, PVC, and polypropylene the most commonly identified polymers.</li>
+          <li><strong>Semen:</strong> Guo et al. (2025) in <em>Toxics</em> detected microplastics in 76% of human semen samples (34 of 45). Men with PET microplastics present showed a trend toward reduced progressive sperm motility, though the association did not reach statistical significance. No significant association was found with sperm count.</li>
+          <li><strong>Meconium:</strong> Liu et al. (2022) in <em>Science of the Total Environment</em> detected microplastics in meconium samples collected from a cohort of mother-infant pairs, alongside detections in placenta, breast milk, and infant formula — indicating that plastic exposure begins before birth.</li>
         </ul>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">The cardiovascular finding — the strongest clinical signal so far</h2>
@@ -177,11 +188,11 @@ export default function BlogPost() {
         </p>
 
         <p>
-          The results were stark: patients whose plaque contained detectable microplastics or nanoplastics had a <strong>4.5 times higher risk of heart attack, stroke, or death</strong> during the follow-up period compared to patients whose plaque was free of plastic particles.
+          The results were stark: patients whose plaque contained detectable microplastics or nanoplastics had a <strong>4.5-fold greater risk of heart attack, stroke, or death</strong> during the follow-up period compared to patients whose plaque was free of plastic particles.
         </p>
 
         <p>
-          This is an association, not proof of causation — it is possible that microplastic accumulation in plaque reflects other risk factors, or that the plastics are a consequence of the same conditions that drive cardiovascular risk rather than a direct cause. The authors acknowledged this. However, the magnitude of the association — 4.5 times — is large enough to be clinically significant, and the study was published in one of the most rigorous medical journals in the world.
+          This is an association, not proof of causation — it is possible that microplastic accumulation in plaque reflects other risk factors, or that the plastics are a consequence of the same conditions that drive cardiovascular risk rather than a direct cause. The authors acknowledged this. However, the magnitude of the association — a 4.5-fold difference — is large enough to be clinically significant, and the study was published in one of the most rigorous medical journals in the world.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Microplastics in the brain — a rising concentration</h2>
@@ -201,7 +212,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Fertility and reproductive effects</h2>
 
         <p>
-          Zhang et al. (2024) detected microplastics in 100% of human semen samples tested and found a significant inverse correlation between microplastic concentration and sperm count and motility. This adds to earlier animal studies showing reproductive disruption from microplastic exposure at concentrations comparable to those now detected in humans.
+          Guo et al. (2025) detected microplastics in 76% of human semen samples tested (34 of 45). Men with PET microplastics present in their semen showed a trend toward reduced progressive sperm motility compared to those without, though the association fell short of statistical significance. No significant association was found with sperm concentration or total sperm count. The authors note that larger studies are needed to confirm whether microplastic exposure affects male fertility. This sits alongside earlier animal studies showing reproductive disruption at microplastic concentrations comparable to those now detected in humans.
         </p>
 
         <p>
@@ -281,9 +292,9 @@ export default function BlogPost() {
           <li>Leslie HA et al. Discovery and quantification of plastic particle pollution in human blood. <em>Environ Int</em>. 2022. DOI: 10.1016/j.envint.2022.107199</li>
           <li>Jenner LC et al. Detection of microplastics in human lung tissue using μFTIR spectroscopy. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.154907</li>
           <li>Ragusa A et al. Plasticenta: First evidence of microplastics in human placenta. <em>Environ Int</em>. 2021. DOI: 10.1016/j.envint.2020.106274</li>
-          <li>Notarstefano V et al. Microplastics in human breast milk. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
-          <li>Zhang J et al. Occurrence of microplastics in human semen and correlation with semen quality. <em>eBioMedicine</em>. 2024. DOI: 10.1016/j.ebiom.2024.105027</li>
-          <li>Gündoğdu S et al. Microplastics in human meconium. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.157335</li>
+          <li>Ragusa A et al. Raman Microspectroscopy Detection and Characterisation of Microplastics in Human Breastmilk. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
+          <li>Guo Y et al. The Presence of Microplastics in Human Semen and Their Associations with Semen Quality. <em>Toxics</em>. 2025. DOI: 10.3390/toxics13070566</li>
+          <li>Liu S et al. Detection of various microplastics in placentas, meconium, infant feces, breastmilk and infant formula: A pilot prospective study. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.158699</li>
         </ol>
       </div>
     </article>
