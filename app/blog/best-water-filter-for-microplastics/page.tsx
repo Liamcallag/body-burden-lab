@@ -145,7 +145,7 @@ export default function BlogPost() {
       <div className="prose prose-slate max-w-none text-[15px] leading-relaxed text-slate-700 space-y-5">
 
         <p>
-          The average person <Link href="/blog/how-many-microplastics-do-you-consume" className="text-teal-700 hover:underline">consuming only bottled water ingests approximately 1,730 additional microplastic particles per week</Link> compared to someone drinking filtered tap water — and <Link href="/blog/microplastics-in-bottled-water" className="text-teal-700 hover:underline">bottled water itself is a significant source</Link>, averaging 325 particles per litre across 11 major brands. Switching your water source is one of the most accessible exposure reductions available. But the filter type matters enormously.
+          Bottled water drinkers consume significantly more microplastics than those drinking filtered tap water — and <Link href="/blog/microplastics-in-bottled-water" className="text-teal-700 hover:underline">bottled water itself is a significant source</Link>, averaging 325 particles per litre across 11 major brands. Switching your water source is one of the most accessible exposure reductions available. But the filter type matters enormously.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How filter pore size determines microplastic removal</h2>
