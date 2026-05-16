@@ -121,6 +121,17 @@ export default function BlogPost() {
         </p>
       </div>
 
+      <figure className="my-8">
+        <img
+          src="/blog-microplastics-body.png"
+          alt="Illustration showing how microplastics enter the body through food and water, travel through the digestive tract into the bloodstream, and accumulate in arterial plaque"
+          className="w-full rounded-xl"
+        />
+        <figcaption className="text-xs text-slate-400 text-center mt-2">
+          Microplastics enter the body through ingestion and inhalation, pass into the bloodstream, and have been detected in arterial plaque — where their presence was associated with significantly higher cardiovascular risk in a 2024 NEJM study.
+        </figcaption>
+      </figure>
+
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your current exposure level</p>
@@ -152,17 +163,6 @@ export default function BlogPost() {
         <p>
           The honest position is that the science is young and causation has not been definitively established. But the detection data is no longer in dispute, and the volume and quality of evidence is growing rapidly.
         </p>
-
-        <figure className="my-8">
-          <img
-            src="/blog-microplastics-body.png"
-            alt="Illustration showing how microplastics enter the body through food and water, travel through the digestive tract into the bloodstream, and accumulate in arterial plaque"
-            className="w-full rounded-xl"
-          />
-          <figcaption className="text-xs text-slate-400 text-center mt-2">
-            Microplastics enter the body through ingestion and inhalation, pass into the bloodstream, and have been detected in arterial plaque — where their presence was associated with significantly higher cardiovascular risk in a 2024 NEJM study.
-          </figcaption>
-        </figure>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Where microplastics have been found in the human body</h2>
 
