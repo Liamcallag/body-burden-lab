@@ -69,7 +69,7 @@ export default function BlogPost() {
         "name": "Do microplastics cause heart attacks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The evidence shows a strong association between microplastics in arterial plaque and higher rates of cardiovascular events, but causation has not been definitively established. Marfella et al. (2024) in the New England Journal of Medicine found that patients with detectable microplastics in carotid artery plaque had a 4.5× higher risk of heart attack, stroke, or death over 34 months of follow-up, compared to those without detectable plaque microplastics. The study adjusted for traditional cardiovascular risk factors. What is not yet established is whether microplastics directly cause or accelerate plaque instability, or whether their presence reflects other risk factors."
+          "text": "The evidence shows a strong association between microplastics in arterial plaque and higher rates of cardiovascular events, but causation has not been definitively established. Marfella et al. (2024) in the New England Journal of Medicine found that patients with detectable microplastics in carotid artery plaque had a 4.5× higher risk of heart attack, stroke, or death over a mean 34-month follow-up, compared to those without detectable plaque microplastics. The study adjusted for traditional cardiovascular risk factors including age, sex, BMI, cholesterol levels, diabetes, hypertension, and previous cardiovascular events. What is not yet established is whether microplastics directly cause or accelerate plaque instability, or whether their presence reflects other risk factors."
         }
       },
       {
@@ -137,7 +137,7 @@ export default function BlogPost() {
         <ul className="space-y-2 text-sm text-slate-700">
           <li>→ Marfella et al. (2024) in the New England Journal of Medicine found microplastics and nanoplastics physically embedded in excised carotid artery plaque</li>
           <li>→ Patients with detectable plaque microplastics had a 4.5× higher risk of heart attack, stroke, or death over 34 months of follow-up</li>
-          <li>→ The elevated risk persisted after adjusting for traditional cardiovascular risk factors including smoking, diabetes, hypertension, and LDL cholesterol</li>
+          <li>→ The elevated risk persisted after adjusting for traditional cardiovascular risk factors including age, sex, BMI, cholesterol, diabetes, hypertension, and previous cardiovascular events</li>
           <li>→ The primary polymers detected in arterial plaque were polyethylene and polyvinyl chloride (PVC)</li>
           <li>→ This is an observational study — it establishes a strong association but does not prove that microplastics directly cause cardiovascular events</li>
         </ul>
@@ -156,7 +156,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Patients were then followed for a median of 34 months. The primary outcome was a composite of heart attack, stroke, or death from any cause. The result: patients with detectable microplastics in their plaque had a <strong>4.53× higher risk of the primary composite outcome</strong> compared to those without detectable plaque microplastics. This risk ratio persisted after statistical adjustment for age, sex, smoking status, diabetes, hypertension, LDL cholesterol, body mass index, and prior statin use.
+          Patients were then followed for a mean of 34 months. The primary outcome was a composite of heart attack, stroke, or death from any cause. The result: patients with detectable microplastics in their plaque had a <strong>4.53× higher risk of the primary composite outcome</strong> compared to those without detectable plaque microplastics. This risk ratio persisted after statistical adjustment for age, sex, BMI, total cholesterol, HDL and LDL cholesterol, triglycerides, creatinine, diabetes, hypertension, and previous cardiovascular events.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Why the plaque finding matters</h2>
