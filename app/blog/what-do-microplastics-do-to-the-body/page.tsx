@@ -229,7 +229,7 @@ export default function BlogPost() {
           <li><strong>Oxidative stress:</strong> Microplastic particles trigger the production of reactive oxygen species in cells, which damages DNA, proteins, and cell membranes.</li>
           <li><strong>Inflammation:</strong> Particles activate inflammatory pathways in immune cells, including macrophages. Chronic low-grade inflammation is a shared mechanism across cardiovascular disease, cancer, and neurodegeneration.</li>
           <li><strong>Cell death:</strong> At sufficient concentrations, microplastics induce apoptosis (programmed cell death) in multiple cell types in laboratory settings.</li>
-          <li><strong>Gut microbiome disruption:</strong> Studies in animal models have shown that microplastic exposure alters gut microbiota composition, reducing beneficial bacterial populations and altering metabolic outputs.</li>
+          <li><strong>Gut microbiome disruption:</strong> A 2025 systematic review of 12 human and human-derived studies found that microplastic exposure consistently suppresses beneficial gut bacteria — including Bifidobacterium, Faecalibacterium, and Lactobacillus — while enriching pathogenic species. MPs also impair short-chain fatty acid production and disrupt immune and metabolic pathways (Soe Thin et al., 2025).</li>
           <li><strong>Endocrine disruption:</strong> Many plastic polymers and their additives (plasticisers, flame retardants, stabilisers) are known endocrine disruptors. These chemicals can leach from particles after ingestion.</li>
         </ul>
 
@@ -295,6 +295,7 @@ export default function BlogPost() {
           <li>Ragusa A et al. Raman Microspectroscopy Detection and Characterisation of Microplastics in Human Breastmilk. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
           <li>Guo Y et al. The Presence of Microplastics in Human Semen and Their Associations with Semen Quality. <em>Toxics</em>. 2025. DOI: 10.3390/toxics13070566</li>
           <li>Liu S et al. Detection of various microplastics in placentas, meconium, infant feces, breastmilk and infant formula: A pilot prospective study. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.158699</li>
+          <li>Soe Thin Z et al. Impact of microplastics on the human gut microbiome: a systematic review of microbial composition, diversity, and metabolic disruptions. <em>BMC Gastroenterol</em>. 2025. DOI: 10.1186/s12876-025-04140-2</li>
         </ol>
       </div>
     </article>
