@@ -296,7 +296,7 @@ export default function BlogPost() {
           <li>Guo Y et al. The Presence of Microplastics in Human Semen and Their Associations with Semen Quality. <em>Toxics</em>. 2025. DOI: 10.3390/toxics13070566</li>
           <li>Liu S et al. Detection of various microplastics in placentas, meconium, infant feces, breastmilk and infant formula: A pilot prospective study. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.158699</li>
           <li>Soe Thin Z et al. Impact of microplastics on the human gut microbiome: a systematic review of microbial composition, diversity, and metabolic disruptions. <em>BMC Gastroenterol</em>. 2025. DOI: 10.1186/s12876-025-04140-2</li>
-          <li>Ullah S et al. A review of the endocrine disrupting effects of micro and nano plastic and their associated chemicals in mammals. <em>Front Endocrinol (Lausanne)</em>. 2023. PMID: 36726457</li>
+          <li>Ullah S et al. A review of the endocrine disrupting effects of micro and nano plastic and their associated chemicals in mammals. <em>Front Endocrinol (Lausanne)</em>. 2023. DOI: 10.3389/fendo.2022.1084236</li>
         </ol>
       </div>
     </article>
