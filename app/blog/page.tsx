@@ -61,8 +61,8 @@ const posts = [
     date: "2026-05-10",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-bottled-water.png",
-    imageAlt: "Seafood and microplastic contamination",
+    image: "/blog-seafood.png",
+    imageAlt: "Illustration of seafood plate with salmon, fish, prawns, mussels and scallop showing microplastic contamination",
   },
   {
     slug: "what-do-microplastics-do-to-the-body",

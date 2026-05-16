@@ -122,6 +122,17 @@ export default function BlogPost() {
         </p>
       </div>
 
+      <figure className="my-8">
+        <img
+          src="/blog-seafood.png"
+          alt="Illustration of a plate with salmon fillet, whole fish, prawn, mussels and scallop alongside a magnified circle showing blue and grey microplastic particles"
+          className="w-full rounded-xl"
+        />
+        <figcaption className="text-xs text-slate-400 text-center mt-2">
+          Shellfish such as mussels and oysters are eaten whole — digestive tract included — making them a higher microplastic exposure pathway than fish fillets, where the gut is removed before eating.
+        </figcaption>
+      </figure>
+
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your current exposure level</p>
@@ -185,7 +196,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Smaller fish consumed whole — sardines, anchovies, sprats — carry higher exposure than large filleted fish because the entire body including the digestive tract is eaten. Sardines and anchovies are also typically caught in coastal and surface waters where microplastic concentrations are higher than deep water.
+          Smaller fish consumed whole — sardines, anchovies, sprats — carry higher exposure than large filleted fish because the entire body including the digestive tract is eaten.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How seafood compares to other exposure pathways</h2>
