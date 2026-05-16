@@ -230,7 +230,7 @@ export default function BlogPost() {
           <li><strong>Inflammation:</strong> Particles activate inflammatory pathways in immune cells, including macrophages. Chronic low-grade inflammation is a shared mechanism across cardiovascular disease, cancer, and neurodegeneration.</li>
           <li><strong>Cell death:</strong> At sufficient concentrations, microplastics induce apoptosis (programmed cell death) in multiple cell types in laboratory settings.</li>
           <li><strong>Gut microbiome disruption:</strong> A 2025 systematic review of 12 human and human-derived studies found that microplastic exposure consistently suppresses beneficial gut bacteria — including Bifidobacterium, Faecalibacterium, and Lactobacillus — while enriching pathogenic species. MPs also impair short-chain fatty acid production and disrupt immune and metabolic pathways (Soe Thin et al., 2025).</li>
-          <li><strong>Endocrine disruption:</strong> Many plastic polymers and their additives (plasticisers, flame retardants, stabilisers) are known endocrine disruptors. These chemicals can leach from particles after ingestion.</li>
+          <li><strong>Endocrine disruption:</strong> Plastic additives — including phthalates, bisphenol A, flame retardants, and organotins — are not covalently bonded to the plastic matrix, allowing them to leach from particles after ingestion. A review of mammalian studies found these chemicals disrupt multiple hormonal axes, with documented effects on thyroid function, reproductive health, and stress hormone regulation (Ullah et al., 2023).</li>
         </ul>
 
         <p>
@@ -296,6 +296,7 @@ export default function BlogPost() {
           <li>Guo Y et al. The Presence of Microplastics in Human Semen and Their Associations with Semen Quality. <em>Toxics</em>. 2025. DOI: 10.3390/toxics13070566</li>
           <li>Liu S et al. Detection of various microplastics in placentas, meconium, infant feces, breastmilk and infant formula: A pilot prospective study. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.158699</li>
           <li>Soe Thin Z et al. Impact of microplastics on the human gut microbiome: a systematic review of microbial composition, diversity, and metabolic disruptions. <em>BMC Gastroenterol</em>. 2025. DOI: 10.1186/s12876-025-04140-2</li>
+          <li>Ullah S et al. A review of the endocrine disrupting effects of micro and nano plastic and their associated chemicals in mammals. <em>Front Endocrinol (Lausanne)</em>. 2023. PMID: 36726457</li>
         </ol>
       </div>
     </article>
