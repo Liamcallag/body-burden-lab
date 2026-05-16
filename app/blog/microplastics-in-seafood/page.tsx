@@ -135,7 +135,7 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ Heavy shellfish consumers ingest up to 11,000 microplastic particles per year from shellfish alone (EFSA, 2016)</li>
+          <li>→ Heavy shellfish consumers ingest up to 11,000 microplastic particles per year from shellfish alone (Van Cauwenberghe &amp; Janssen, 2014)</li>
           <li>→ Shellfish (mussels, oysters, clams) are eaten whole including the digestive tract — where microplastics accumulate — giving them far higher particle loads than fish fillets</li>
           <li>→ Average mussel tissue contains 0.36 microplastic particles per gram (Van Cauwenberghe &amp; Janssen, 2014)</li>
           <li>→ Fish fillets have low microplastic content because the digestive tract — where particles concentrate — is removed before eating</li>
@@ -167,15 +167,15 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Shellfish: the highest seafood exposure pathway</h2>
 
         <p>
-          Shellfish are filter feeders — they pump large volumes of seawater through their bodies to extract food particles. In doing so, they also concentrate microplastics from the surrounding water. A 2016 EFSA (European Food Safety Authority) review estimated that heavy shellfish consumers in Europe could ingest up to <strong>11,000 microplastic particles per year</strong> from shellfish alone.
+          Shellfish are filter feeders — they pump large volumes of seawater through their bodies to extract food particles. In doing so, they also concentrate microplastics from the surrounding water. Van Cauwenberghe and Janssen (2014) in <em>Environmental Pollution</em> calculated that heavy shellfish consumers in Europe could ingest up to <strong>11,000 microplastic particles per year</strong> from shellfish alone — based on measured microplastic loads in commercially grown mussels and oysters.
         </p>
 
         <p>
-          Mussels have been the most studied species. Van Cauwenberghe and Janssen (2014) in <em>Environmental Pollution</em> found an average of 0.36 microplastic particles per gram of mussel tissue — meaning a typical serving of mussels contains several hundred particles. A 2020 review by Barboza et al. in <em>Science of the Total Environment</em> confirmed that bivalves (mussels, oysters, clams) consistently show higher microplastic contamination than other seafood categories, with concentrations reflecting regional ocean plastic pollution levels.
+          Mussels have been the most studied species. The same study found an average of 0.36 microplastic particles per gram of mussel tissue and 0.47 particles per gram in oysters, meaning a typical serving contains several hundred particles. Barboza et al. (2020) in <em>Science of the Total Environment</em> further found microplastics in 49% of commercially important wild fish from the NE Atlantic, including in dorsal muscle tissue — confirming that even the edible fillet carries some contamination, though at lower levels than whole shellfish.
         </p>
 
         <p>
-          Oysters show similar contamination levels. Rochman et al. (2015) documented microplastics across a range of commercially sold shellfish in the US and Indonesia, finding contamination in every sample tested.
+          Oysters show similar contamination levels to mussels. Rochman et al. (2015) found anthropogenic debris in 33% of individual Pacific oysters sampled from California fish markets.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Fish fillets: lower but not zero</h2>
@@ -189,10 +189,6 @@ export default function BlogPost() {
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How seafood compares to other exposure pathways</h2>
-
-        <p>
-          To put seafood exposure in context: Cox et al. (2019) estimated that the average American's annual microplastic intake from all food and drink is between 74,000 and 121,000 particles. Shellfish consumption represents a meaningful fraction of this for heavy consumers, but other pathways — particularly <Link href="/blog/how-to-avoid-microplastics" className="text-teal-700 hover:underline">microwaving food in plastic and drinking from plastic tea bags</Link> — can individually contribute tens of thousands of particles per week.
-        </p>
 
         <p>
           The practical implication: for most people, food preparation habits are a higher-leverage target for exposure reduction than seafood consumption choices.
@@ -245,7 +241,6 @@ export default function BlogPost() {
       <div className="mt-10 border-t border-slate-100 pt-8">
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
-          <li>EFSA Panel on Contaminants in the Food Chain. Presence of microplastics and nanoplastics in food. <em>EFSA Journal</em>. 2016. DOI: 10.2903/j.efsa.2016.4501</li>
           <li>Van Cauwenberghe L &amp; Janssen CR. Microplastics in bivalves cultured for human consumption. <em>Environ Pollut</em>. 2014. DOI: 10.1016/j.envpol.2014.06.010</li>
           <li>Barboza LGA et al. Microplastics in wild fish from North East Atlantic Ocean and its potential for causing neurotoxic effects, lipid oxidative damage, and human health risks associated with ingestion exposure. <em>Sci Total Environ</em>. 2020. DOI: 10.1016/j.scitotenv.2019.134625</li>
           <li>Rochman CM et al. Anthropogenic debris in seafood: Plastic debris and fibers from textiles in fish and bivalves sold for human consumption. <em>Sci Rep</em>. 2015. DOI: 10.1038/srep14340</li>
