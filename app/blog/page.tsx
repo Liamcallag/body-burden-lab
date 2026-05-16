@@ -72,8 +72,8 @@ const posts = [
     date: "2026-05-10",
     readTime: "8 min read",
     tag: "Science",
-    image: "/brain.jpg",
-    imageAlt: "MRI scan of human brain showing microplastic accumulation research",
+    image: "/blog-microplastics-body.png",
+    imageAlt: "Illustration showing how microplastics enter the body through food and water and accumulate in arterial plaque",
   },
   {
     slug: "best-water-filter-for-microplastics",
