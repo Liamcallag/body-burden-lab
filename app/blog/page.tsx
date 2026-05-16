@@ -28,8 +28,8 @@ const posts = [
     date: "2026-05-13",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-how-many.png",
-    imageAlt: "Arterial plaque and microplastics research",
+    image: "/blog-heart-disease.png",
+    imageAlt: "Watercolour illustration of a human heart and arterial plaque with microplastic particles",
   },
   {
     slug: "microplastics-in-the-brain",

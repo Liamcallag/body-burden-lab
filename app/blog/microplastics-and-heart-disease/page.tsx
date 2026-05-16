@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke",
@@ -121,6 +122,16 @@ export default function BlogPost() {
           A 2024 study in the New England Journal of Medicine found microplastics physically embedded in arterial plaque — and a 4.5× higher risk of heart attack, stroke, or death in people who had them. This is what the study found, what it means, and where the evidence currently stands.
         </p>
       </div>
+
+      <figure className="mb-8 rounded-2xl overflow-hidden">
+        <Image
+          src="/blog-heart-disease.png"
+          alt="Watercolour illustration of a human heart and a cross-section of an artery showing atherosclerotic plaque with microplastic particles embedded in it"
+          width={800}
+          height={534}
+          className="w-full object-cover"
+        />
+      </figure>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
