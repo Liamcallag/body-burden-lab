@@ -83,8 +83,8 @@ const posts = [
     date: "2026-05-10",
     readTime: "6 min read",
     tag: "Guide",
-    image: "/blog-reverse-osmosis.png",
-    imageAlt: "Water filter system for removing microplastics",
+    image: "/blog-water-filter.png",
+    imageAlt: "Comparison of reverse osmosis, carbon block, and pitcher water filters for microplastic removal",
   },
   {
     slug: "microplastics-in-cutting-boards",

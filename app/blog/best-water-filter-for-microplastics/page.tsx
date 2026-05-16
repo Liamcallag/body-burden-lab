@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Best Water Filter for Microplastics: RO vs Carbon vs Pitcher, Ranked",
@@ -119,6 +120,14 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Drinking water is one of the most significant microplastic exposure pathways — but not all filters address it equally. Here is what the peer-reviewed evidence and filter physics say about each filter type, ranked by expected removal performance.
         </p>
+        <Image
+          src="/blog-water-filter.png"
+          alt="Comparison of reverse osmosis, carbon block, and pitcher water filters for microplastic removal"
+          width={800}
+          height={450}
+          className="w-full rounded-xl mt-6 mb-2"
+          priority
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
