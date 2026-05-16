@@ -22,7 +22,7 @@ const posts = [
   },
   {
     slug: "microplastics-and-heart-disease",
-    title: "Microplastics and Heart Disease: The NEJM Study Explained",
+    title: "Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke",
     excerpt:
       "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows.",
     date: "2026-05-13",

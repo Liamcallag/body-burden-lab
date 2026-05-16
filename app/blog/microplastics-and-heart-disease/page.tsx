@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Microplastics and Heart Disease: The NEJM Study Explained",
+  title: "Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke",
   description:
     "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows and what it means.",
   alternates: {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     publishedTime: "2026-05-13",
-    title: "Microplastics and Heart Disease: The NEJM Study Explained",
+    title: "Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke",
     description:
       "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows and what it means.",
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Microplastics and Heart Disease: The NEJM Study Explained",
+    title: "Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke",
     description:
       "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows and what it means.",
     images: [
@@ -37,7 +37,7 @@ export default function BlogPost() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Microplastics and Heart Disease: The NEJM Study Explained",
+    "headline": "Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke",
     "description": "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows and what it means.",
     "datePublished": "2026-05-13",
     "dateModified": "2026-05-13",
@@ -100,7 +100,7 @@ export default function BlogPost() {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bodyburdenlab.com" },
     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bodyburdenlab.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "Microplastics and Heart Disease: The NEJM Study Explained", "item": "https://www.bodyburdenlab.com/blog/microplastics-and-heart-disease" },
+    { "@type": "ListItem", "position": 3, "name": "Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke", "item": "https://www.bodyburdenlab.com/blog/microplastics-and-heart-disease" },
   ]
 }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -115,7 +115,7 @@ export default function BlogPost() {
           <time className="text-xs text-slate-400" dateTime="2026-05-13">May 13, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
-          Microplastics and Heart Disease: The NEJM Study Explained
+          Microplastics and Heart Disease: Linked to a 4.5× Higher Risk of Heart Attack and Stroke
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
           A 2024 study in the New England Journal of Medicine found microplastics physically embedded in arterial plaque — and a 4.5× higher risk of heart attack, stroke, or death in people who had them. This is what the study found, what it means, and where the evidence currently stands.
