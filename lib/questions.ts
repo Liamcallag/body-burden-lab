@@ -210,7 +210,7 @@ export const QUESTIONS: Question[] = [
       unit: "microplastic particles per gram of mussel tissue (~90 per 250g serving)",
       citation: "Van Cauwenberghe & Janssen, Environmental Pollution, 2014",
       caveat: "Mussels: 0.36 particles/g, oysters: 0.47 particles/g wet weight — microplastics accumulate in digestive tissue consumed whole. Finfish are significantly lower as the gut is typically removed.",
-      url: "https://www.sciencedirect.com/science/article/pii/S0269749114000815",
+      url: "https://www.sciencedirect.com/science/article/pii/S0269749114002425",
       unitContext: "per gram",
     },
     options: [
