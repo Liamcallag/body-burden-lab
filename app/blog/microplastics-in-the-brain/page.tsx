@@ -77,7 +77,7 @@ export default function BlogPost() {
         "name": "How do microplastics get into the brain?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The most studied pathway is via the bloodstream: microplastics cross the gut lining into systemic circulation (confirmed by Leslie et al., 2022, who detected microplastics in human blood), and very small particles — particularly nanoplastics below 1 micron — can then cross the blood-brain barrier. A secondary route is via the olfactory nerve: particles inhaled through the nose can travel directly to the brain along olfactory nerve fibres, bypassing the blood-brain barrier entirely. Macrophage-mediated transport is also proposed as a mechanism."
+          "text": "The most studied pathway is via the bloodstream. Leslie et al. (2022) detected microplastics in human blood in 77% of donors, and gut absorption is described as scientifically plausible — though the precise uptake route cannot be confirmed from blood measurements alone. Very small particles, particularly nanoplastics below 1 micron, are thought to cross the blood-brain barrier. A secondary route is via the olfactory nerve: particles inhaled through the nose can travel directly to the brain along olfactory nerve fibres, bypassing the blood-brain barrier entirely. Macrophage-mediated transport is also proposed as a mechanism."
         }
       },
       {
@@ -178,7 +178,7 @@ export default function BlogPost() {
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
           <li><strong>Bloodstream via gut absorption</strong> — the primary route. Leslie et al. (2022) in <em>Environment International</em> confirmed the presence of microplastics in human blood — particles were quantifiable in 77% of donors. The paper notes that the precise uptake route cannot be determined from blood measurements alone, and describes gut absorption as scientifically plausible rather than confirmed. Very small particles — particularly nanoplastics below 1 micron — can then cross the blood-brain barrier, a membrane that normally prevents most large molecules from entering brain tissue. Larger microplastic particles are thought to be transported by immune cells (macrophages) which can also cross this barrier.</li>
-          <li><strong>Olfactory nerve pathway</strong> — inhaled particles that reach the nasal passages can travel along olfactory nerve fibres directly into the brain, bypassing the blood-brain barrier entirely. This route has been demonstrated in animal studies and is consistent with the finding of microplastics in olfactory bulb tissue. It is one reason why airborne microplastic exposure — from indoor dust, synthetic textiles, and outdoor sources — is considered a direct neurological exposure pathway, not just a respiratory one.</li>
+          <li><strong>Olfactory nerve pathway</strong> — inhaled particles that reach the nasal passages can travel along olfactory nerve fibres directly into the brain, bypassing the blood-brain barrier entirely. This route is consistent with the finding of microplastics in olfactory bulb tissue and has been explored in animal model research. It is one reason why airborne microplastic exposure — from indoor dust, synthetic textiles, and outdoor sources — is considered a direct neurological exposure pathway, not just a respiratory one.</li>
           <li><strong>Direct translocation from inhalation</strong> — very small particles reaching the deep lung (alveoli) can cross into the bloodstream and subsequently reach the brain via circulation. This is an extension of the bloodstream route but has a distinct entry point from ingestion.</li>
         </ul>
 
@@ -189,7 +189,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Studies in rodents have shown that microplastic particles in brain tissue trigger neuroinflammatory responses — activation of microglia (the brain's immune cells) and elevation of inflammatory markers. Oxidative stress has also been documented in exposed brain tissue. Some animal studies have found behavioural changes including impaired memory and altered anxiety responses in animals with elevated brain microplastic concentrations, though translating these findings to human exposure levels requires caution.
+          Research in animal models has found that microplastic particles in brain tissue are associated with neuroinflammatory responses — including activation of microglia (the brain's immune cells) and elevation of inflammatory markers. Oxidative stress has also been reported in exposed brain tissue. Some animal research has found behavioural changes including impaired memory and altered anxiety responses, though translating these findings to human exposure levels requires caution.
         </p>
 
         <p>
