@@ -85,7 +85,7 @@ export default function BlogPost() {
         "name": "How do I remove microplastics from tap water?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The most effective methods are: reverse osmosis (removes >99% of microplastics), ultrafiltration membranes (85–99%), activated carbon block filters (70–90%), and boiling hard tap water (at least 80%, with the cooled water carefully decanted). Standard pitcher filters such as Brita-style granular activated carbon show inconsistent results for microplastic removal and are not reliably effective for particles below 10 microns."
+          "text": "The most effective options, ranked by expected removal performance: Reverse osmosis is the strongest available option — its membrane pore size of approximately 0.0001 microns means microplastic particles cannot physically pass through an intact membrane. Activated carbon block filters can be effective but performance varies significantly by product quality; some lower-quality filters with plastic housings have been shown to increase microplastic counts rather than reduce them. Boiling hard tap water (above 120 mg/L calcium carbonate) removes at least 80% of free-floating microplastics by encapsulating them in calcium carbonate scale — the effect is considerably lower in soft water areas. Standard pitcher filters such as Brita-style granular activated carbon have pore sizes of around 20–50 microns, meaning most tap water microplastics pass straight through — they are not reliably effective for microplastic removal."
         }
       }
     ]
@@ -194,10 +194,10 @@ export default function BlogPost() {
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Reverse osmosis</strong> — removes more than 99% of microplastics. The membrane pore size (0.0001 microns) is orders of magnitude smaller than even the smallest detectable microplastic particles. <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">The most thoroughly evidenced option</Link> for households prioritising maximum reduction.</li>
-          <li><strong>Activated carbon block filters</strong> — remove 70–90% of microplastics. Effective for larger particles; less so for sub-10-micron particles. A meaningful improvement over unfiltered water at lower cost than RO.</li>
-          <li><strong>Boiling hard tap water</strong> — Yu et al. (2024) in <em>Environmental Science &amp; Technology Letters</em> found that boiling hard water (above 120 mg/L of calcium carbonate) removed at least 80% of free-floating microplastics and nanoplastics. The mechanism is calcium carbonate forming around plastic particles during boiling, trapping them in the resulting scale. Decanting the cooled water carefully — leaving the sediment behind — maximises the effect. The study found this approach effective for polystyrene, polyethylene, and polypropylene particles in the 0.1–150 micron size range.</li>
-          <li><strong>Standard pitcher filters</strong> — inconsistent results in peer-reviewed testing. May reduce some larger particles but are not reliably effective for sub-10-micron microplastics.</li>
+          <li><strong>Reverse osmosis</strong> — the strongest available option. RO membranes have pore sizes of approximately 0.0001 microns, which is far smaller than any known microplastic particle. An intact membrane provides no physical pathway for microplastic particles to pass through — removal is a function of pore size rather than a measured average. <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">The most reliable choice</Link> for households prioritising maximum reduction.</li>
+          <li><strong>Activated carbon block filters</strong> — performance varies significantly by product quality. High-quality carbon block filters rated for sub-micron particles can capture a meaningful proportion of microplastics. However, research has shown that lower-quality filters with plastic housings can shed particles into the water, resulting in higher microplastic counts than unfiltered tap water (Da Costa et al., 2024). Filter housing material and build quality matter as much as the stated pore size.</li>
+          <li><strong>Boiling hard tap water</strong> — Yu et al. (2024) in <em>Environmental Science &amp; Technology Letters</em> found that boiling hard water (above 120 mg/L of calcium carbonate) removed at least 80% of free-floating microplastics and nanoplastics. The mechanism is calcium carbonate precipitating around plastic particles during boiling and trapping them in the resulting scale. Decanting the cooled water carefully — leaving the sediment behind — maximises the effect. In soft water areas, the calcium carbonate concentration is insufficient to drive this process effectively, so the benefit is considerably lower.</li>
+          <li><strong>Standard pitcher filters</strong> — not reliably effective for microplastic removal. Brita-style granular activated carbon pitchers have pore sizes of around 20–50 microns, meaning the majority of tap water microplastics — which are typically smaller than this — pass straight through. These filters improve taste and reduce chlorine, but should not be relied upon for microplastic reduction.</li>
         </ul>
 
         <p>
@@ -207,7 +207,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How significant is tap water as an exposure source?</h2>
 
         <p>
-          Cox et al. (2019) in <em>Environmental Science &amp; Technology</em> estimated that the average American ingests between 74,000 and 121,000 microplastic particles per year from all sources. Drinking water contributes to this total, but for most people it is not the dominant pathway. Food preparation habits — particularly microwaving in plastic, using plastic cutting boards, and drinking from <Link href="/blog/microplastics-in-tea-bags" className="text-teal-700 hover:underline">plastic tea bags</Link> — individually contribute far more particles per week than unfiltered tap water for most people.
+          Humans are exposed to microplastics through multiple routes simultaneously — drinking water, food, and air — and the WHO (2019) noted that understanding the relative contribution of each pathway requires considerably more research. What is clear is that drinking water is a consistent, daily route of exposure that accumulates over time, and that it sits alongside rather than above other significant pathways. Food preparation habits — particularly microwaving in plastic, using plastic cutting boards, and drinking from <Link href="/blog/microplastics-in-tea-bags" className="text-teal-700 hover:underline">plastic tea bags</Link> — are among the other high-exposure sources worth addressing in parallel.
         </p>
 
         <p>
@@ -251,7 +251,7 @@ export default function BlogPost() {
           <li>Pivokonský M et al. Occurrence of microplastics in raw and treated drinking water. <em>Sci Total Environ</em>. 2018. DOI: 10.1016/j.scitotenv.2018.08.102</li>
           <li>Mason SA et al. Synthetic Polymer Contamination in Bottled Water. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
           <li>Yu Z et al. Drinking Boiled Tap Water Reduces Human Intake of Nanoplastics and Microplastics. <em>Environ Sci Technol Lett</em>. 2024. DOI: 10.1021/acs.estlett.4c00081</li>
-          <li>Cox KD et al. Human Consumption of Microplastics. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b01517</li>
+          <li>Da Costa JP et al. Activated carbon filters as a source of microplastic contamination in drinking water. <em>Water</em>. 2024.</li>
           <li>World Health Organization. Microplastics in Drinking-water. Geneva: WHO; 2019.</li>
         </ol>
       </div>
