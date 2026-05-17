@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Are microplastics dangerous?",
-    a: "The honest answer is: the research is concerning but causation in humans has not been fully established. What is confirmed is that microplastics are now found in human blood, lungs, brain tissue, arterial plaque, testicular tissue, and placenta. The most significant study to date — Marfella et al. (2024) in the New England Journal of Medicine — found that people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death over three years. However, this was an observational study and cannot prove that microplastics directly caused these events. The scientific consensus is that presence is well-established, health effects are strongly suspected, and causation is still being investigated.",
+    a: "The honest answer is: the research is concerning but causation in humans has not been fully established. What is confirmed is that microplastics are now found in human blood, lungs, brain tissue, arterial plaque, testicular tissue, and placenta. The most significant study to date — Marfella et al. (2024) in the New England Journal of Medicine — found that people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death over a mean 34-month follow-up. However, this was an observational study and cannot prove that microplastics directly caused these events. The scientific consensus is that presence is well-established, health effects are strongly suspected, and causation is still being investigated.",
     readMore: { href: "/blog/how-many-microplastics-do-you-consume", label: "What the research shows on microplastic consumption" },
   },
   {
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "Does a water filter remove microplastics?",
-    a: "It depends on the filter type. Reverse osmosis removes more than 99% of microplastics — the most effective technology available for home use. Activated carbon block filters (such as Berkey or ZeroWater) remove 70–90% of larger particles but are less effective for particles below 10 microns. Standard pitcher filters (Brita-style) have inconsistent performance for smaller particles. Bottled water is not a solution — multiple studies have found it contains significantly more microplastics than filtered tap water, with contamination originating from the PET bottle and cap.",
+    a: "It depends on the filter type. Reverse osmosis removes more than 99% of microplastics — the most effective technology available for home use. Activated carbon block filters can provide meaningful reduction, but performance varies significantly by quality; some lower-quality devices with plastic housings have been shown to increase microplastic counts rather than reduce them. Standard pitcher filters (Brita-style) are not reliably effective — their pore sizes allow most microplastics to pass straight through. Bottled water is not a solution — multiple studies have found it contains significantly more microplastics than filtered tap water, with contamination originating from the PET bottle and cap.",
     readMore: { href: "/blog/does-reverse-osmosis-remove-microplastics", label: "Does reverse osmosis remove microplastics?" },
   },
   {
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "How long have humans been consuming microplastics?",
-    a: "Since mass plastic production began in the 1950s, though concentrations have increased dramatically over time. A 2024 Nature Medicine study comparing brain tissue from 2016 and 2024 found microplastic concentrations had risen significantly in just eight years — reflecting the rapid increase in global plastic production and the accumulating breakdown of plastics already in the environment. There is no meaningful baseline of 'zero' microplastic exposure for any living human.",
+    a: "Since mass plastic production began in the 1950s, though concentrations have increased dramatically over time. Nihart et al. (2025) in Nature Medicine compared brain tissue samples collected at different time points and found microplastic concentrations had risen significantly in recent years — reflecting the rapid increase in global plastic production and the accumulating breakdown of plastics already in the environment. There is no meaningful baseline of 'zero' microplastic exposure for any living human.",
   },
   {
     q: "What is the difference between microplastics and PFAS?",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "How does the Body Burden calculator work?",
-    a: "The calculator asks 15 questions about your daily habits covering the major documented microplastic exposure pathways: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from a specific peer-reviewed study. The estimates are expressed in microplastic particles per week (particles ≥1 micron) and are summed to give a total. Results are compared to the 74,000–121,000 particles/year figure from Cox et al. (2019), which researchers note is a conservative underestimate. The full methodology and all source studies are documented on our methodology page.",
+    a: "The calculator asks 14 questions about your daily habits across four categories: drinking water, kitchen and cooking, food and diet, and air and environment. Each answer option carries a risk score (0–10) based on the documented exposure level for that behaviour, derived from a specific peer-reviewed study. Each question is also weighted by its relative importance — high-impact sources like microwaving in plastic and plastic tea bags carry more weight than lower-impact ones. Your answers are combined into a normalised 0–100 risk score, which maps to an exposure tier (Low, Moderate, High, or Very High). Results also show a category breakdown so you can see which area of your habits drives most of your exposure. The full methodology and all source studies are documented on our methodology page.",
     readMore: { href: "/methodology", label: "Read the full methodology" },
   },
   {
@@ -146,7 +146,7 @@ export default function FAQPage() {
       <div className="mt-10 bg-teal-50 border border-teal-100 rounded-2xl p-6 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your personal exposure</p>
-          <p className="text-xs text-slate-500">15 questions · 2 minutes · peer-reviewed science</p>
+          <p className="text-xs text-slate-500">14 questions · 2 minutes · peer-reviewed science</p>
         </div>
         <Link
           href="/calculator"
