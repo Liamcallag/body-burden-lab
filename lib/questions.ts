@@ -6,6 +6,8 @@ export interface StudyCallout {
   citation: string;     // e.g. "Hussain et al., ES&T, 2023"
   caveat: string;       // shown on methodology page, not in main UI
   url?: string;         // link to the study
+  citation2?: string;   // optional second citation
+  url2?: string;        // optional second study link
   unitContext?: string; // short label describing the measurement basis, e.g. "per use", "per year"
 }
 
@@ -292,12 +294,14 @@ export const QUESTIONS: Question[] = [
     weight: 5,
     tipKey: "environment",
     studyCallout: {
-      value: "0.9–333",
-      unit: "microplastic particles per cubic metre of outdoor urban air across cities in Asia, Europe, and the Americas",
+      value: "~14–5,300",
+      unit: "microplastic particles inhaled per day from outdoor urban air (derived: 0.9–333 MPs/m³ × 16 m³/day adult inhalation rate)",
       citation: "Han et al., Environments (Basel), 2024",
-      caveat: "Range synthesised from 35 active-sampling studies in urban areas — concentration varies by city, season, and proximity to roads and industrial sources.",
+      caveat: "Concentration range from 35 active-sampling studies in urban areas across Asia, Europe and the Americas — multiplied by EU default adult inhalation rate of 16 m³/day (Yakovenko et al., 2025). Varies by city, season, and proximity to roads.",
       url: "https://doi.org/10.3390/environments11110256",
-      unitContext: "per m³ of air",
+      citation2: "Yakovenko et al., PLoS ONE, 2025",
+      url2: "https://doi.org/10.1371/journal.pone.0328011",
+      unitContext: "per day (est.)",
     },
     options: [
       { label: "Dense city centre", riskScore: 10 },

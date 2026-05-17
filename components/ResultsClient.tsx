@@ -227,10 +227,16 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
                   {question.studyCallout.url ? (
                     <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
                       className="text-[10px] font-semibold hover:underline" style={{ color }}>
-                      View study →
+                      View study 1 →
                     </a>
                   ) : (
                     <span className="text-[10px] text-slate-400 italic">Est.</span>
+                  )}
+                  {question.studyCallout.url2 && (
+                    <a href={question.studyCallout.url2} target="_blank" rel="noopener noreferrer"
+                      className="text-[10px] font-semibold hover:underline" style={{ color }}>
+                      View study 2 →
+                    </a>
                   )}
                 </div>
               </>
