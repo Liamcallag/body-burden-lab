@@ -184,7 +184,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          Rodent studies of gestational microplastic exposure have found associations with reduced fetal body weight, altered placental morphology, increased placental inflammatory markers, and changes in fetal organ development. Some studies have found effects on the developing reproductive system in exposed offspring. These findings are from animal models at exposure levels that may not directly translate to human dietary exposure, and they should not be interpreted as proof of equivalent outcomes in humans.
+          Rodent studies of gestational microplastic exposure have found associations with reduced fetal body weight, altered placental morphology, increased placental inflammatory markers, and changes in fetal organ development. Some studies have found effects on the developing reproductive system in exposed offspring (Obeng et al., 2025). These findings are from animal models at exposure levels that may not directly translate to human dietary exposure, and they should not be interpreted as proof of equivalent outcomes in humans.
         </p>
 
         <p>
@@ -253,6 +253,7 @@ export default function BlogPost() {
           <li>Liu S et al. Detection of various microplastics in placentas, meconium, infant feces, breastmilk and infant formula: A pilot prospective study. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.158699</li>
           <li>Ragusa A et al. Raman Microspectroscopy Detection and Characterisation of Microplastics in Human Breastmilk. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
           <li>Li D et al. Microplastic release from the degradation of polypropylene feeding bottles during infant formula preparation. <em>Nat Food</em>. 2020. DOI: 10.1038/s43016-020-00171-y</li>
+          <li>Obeng EM et al. Microplastic pollution: a review of specific blood-tissue barrier breaches and health effects. <em>Environ Pollut</em>. 2025;376:126416. DOI: 10.1016/j.envpol.2025.126416</li>
         </ol>
       </div>
     </article>
