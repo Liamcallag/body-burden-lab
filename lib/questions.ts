@@ -292,10 +292,11 @@ export const QUESTIONS: Question[] = [
     weight: 5,
     tipKey: "environment",
     studyCallout: {
-      value: "~14",
-      unit: "microplastic particles per cubic metre of urban air",
-      citation: "Dris et al., Environmental Chemistry, 2017",
-      caveat: "Measured in Paris — varies significantly by city, season and proximity to industrial areas",
+      value: "0.9–333",
+      unit: "microplastic particles per cubic metre of outdoor urban air",
+      citation: "Han et al., Environments (Basel), 2024",
+      caveat: "Range synthesised from 35 active-sampling studies across cities worldwide — most studies report below 400 MPs/m³. Concentration varies by city, season, proximity to roads and industrial areas.",
+      url: "https://doi.org/10.3390/environments11110256",
       unitContext: "per m³ of air",
     },
     options: [
