@@ -291,6 +291,14 @@ export const QUESTIONS: Question[] = [
     resultLabel: "Living environment",
     weight: 5,
     tipKey: "environment",
+    studyCallout: {
+      value: "0.9–333",
+      unit: "microplastic particles per cubic metre of outdoor urban air across cities in Asia, Europe, and the Americas",
+      citation: "Han et al., Environments (Basel), 2024",
+      caveat: "Range synthesised from 35 active-sampling studies in urban areas — concentration varies by city, season, and proximity to roads and industrial sources.",
+      url: "https://doi.org/10.3390/environments11110256",
+      unitContext: "per m³ of air",
+    },
     options: [
       { label: "Dense city centre", riskScore: 10 },
       { label: "Suburban or town", riskScore: 5 },
