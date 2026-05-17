@@ -251,7 +251,7 @@ export default function BlogPost() {
           <li>Pivokonský M et al. Occurrence of microplastics in raw and treated drinking water. <em>Sci Total Environ</em>. 2018. DOI: 10.1016/j.scitotenv.2018.08.102</li>
           <li>Mason SA et al. Synthetic Polymer Contamination in Bottled Water. <em>Front Chem</em>. 2018. DOI: 10.3389/fchem.2018.00407</li>
           <li>Yu Z et al. Drinking Boiled Tap Water Reduces Human Intake of Nanoplastics and Microplastics. <em>Environ Sci Technol Lett</em>. 2024. DOI: 10.1021/acs.estlett.4c00081</li>
-          <li>Da Costa JP et al. Activated carbon filters as a source of microplastic contamination in drinking water. <em>Water</em>. 2024.</li>
+          <li>Da Costa ID et al. Are Water Filters Effective Against Microplastics? <em>Water</em>. 2024;16(22):3189. DOI: 10.3390/w16223189</li>
           <li>World Health Organization. Microplastics in Drinking-water. Geneva: WHO; 2019.</li>
         </ol>
       </div>
