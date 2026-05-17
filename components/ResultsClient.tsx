@@ -265,37 +265,36 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
   return (
     <div className="mb-12">
 
-      {/* Desktop layout */}
+      {/* Desktop layout — always side-by-side */}
       <div className="hidden sm:block">
         <div className="relative flex items-start gap-8">
 
-          {/* Chart column — centered when idle, shrinks left when expanded */}
-          <div
-            className="flex flex-col items-center flex-shrink-0"
-            style={{
-              width: expanded ? "280px" : "100%",
-              transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
-            }}
-          >
+          {/* Chart column — fixed width */}
+          <div className="flex flex-col items-center flex-shrink-0" style={{ width: "300px" }}>
             <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
 
             {/* Click hint — fades out once a slice is selected */}
             <p
-              className="text-xs text-center mt-2 flex items-center gap-1.5 justify-center" style={{ color: "#64748b" }}
-              style={{ opacity: expanded ? 0 : 1, transition: "opacity 0.3s ease", pointerEvents: "none" }}
+              className="text-xs text-center mt-2 flex items-center gap-1.5 justify-center"
+              style={{ color: "#64748b", opacity: expanded ? 0 : 1, transition: "opacity 0.3s ease", pointerEvents: "none" }}
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18l6-6-6-6"/>
               </svg>
               Click a slice to explore
             </p>
+          </div>
 
-            {/* Legend */}
+          {/* Right column — legend idle, detail panel when expanded */}
+          <div className="flex-1 min-w-0">
+            {/* Legend — hidden when detail panel is open */}
             <div
-              className="flex flex-col gap-2 mt-5"
+              className="flex flex-col gap-2 mt-4"
               style={{
-                width: expanded ? "100%" : "320px",
-                transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
+                opacity: expanded ? 0 : 1,
+                transition: "opacity 0.2s ease",
+                pointerEvents: expanded ? "none" : "auto",
+                position: expanded ? "absolute" : "relative",
               }}
             >
               {groups.map(({ cat, catPct }) => {
@@ -309,9 +308,13 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                     style={{
                       opacity: isDimmed ? 0.35 : 1,
                       transition: "all 0.2s ease",
+                      backgroundColor: "rgba(255,255,255,0.05)",
+                      borderLeft: `4px solid ${color}`,
+                      borderTop: "1px solid rgba(255,255,255,0.08)",
+                      borderRight: "1px solid rgba(255,255,255,0.08)",
+                      borderBottom: "1px solid rgba(255,255,255,0.08)",
                     }}
                     className="flex flex-col gap-1.5 pl-4 pr-4 py-3 rounded-xl w-full text-left transition-all"
-                    style={{ backgroundColor: "rgba(255,255,255,0.05)", borderLeft: `4px solid ${color}`, borderTop: "1px solid rgba(255,255,255,0.08)", borderRight: "1px solid rgba(255,255,255,0.08)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
@@ -331,23 +334,20 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                 );
               })}
             </div>
-          </div>
 
-          {/* Detail panel — slides in from right */}
-          <div
-            className="overflow-hidden"
-            style={{
-              flex: expanded ? "1 1 0%" : "0 0 0%",
-              width: expanded ? "auto" : "0px",
-              opacity: expanded ? 1 : 0,
-              transform: expanded ? "translateX(0)" : "translateX(40px)",
-              transition: "flex 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.4,0,0.2,1) 0.05s",
-              pointerEvents: expanded ? "auto" : "none",
-            }}
-          >
-            {activeGroup && (
-              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
-            )}
+            {/* Detail panel — fades in when slice selected */}
+            <div
+              style={{
+                opacity: expanded ? 1 : 0,
+                transform: expanded ? "translateX(0)" : "translateX(20px)",
+                transition: "opacity 0.3s ease 0.05s, transform 0.35s cubic-bezier(0.4,0,0.2,1) 0.05s",
+                pointerEvents: expanded ? "auto" : "none",
+              }}
+            >
+              {activeGroup && (
+                <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
+              )}
+            </div>
           </div>
         </div>
       </div>
