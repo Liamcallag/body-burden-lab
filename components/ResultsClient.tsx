@@ -36,7 +36,7 @@ const BLOG_LINKS: Record<string, { title: string; slug: string }> = {
   salt:         { title: "Microplastics in Salt: Is Sea Salt Making You Eat More Plastic?", slug: "microplastics-in-salt" },
   canned:       { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
   clothing:     { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
-  environment:  { title: "How Many Microplastics Do You Consume Per Week? What the Research Shows", slug: "how-many-microplastics-do-you-consume" },
+  environment:  { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
   airquality:   { title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked", slug: "how-to-avoid-microplastics" },
 };
 
