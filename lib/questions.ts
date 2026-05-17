@@ -193,10 +193,8 @@ export const QUESTIONS: Question[] = [
       unitContext: "per order",
     },
     options: [
-      { label: "Most days", riskScore: 10 },
-      { label: "A few times a week", riskScore: 7 },
-      { label: "Once a week", riskScore: 4 },
-      { label: "Occasionally", riskScore: 2 },
+      { label: "Most days or several times a week", riskScore: 10 },
+      { label: "Once a week or so", riskScore: 5 },
       { label: "Rarely or never", riskScore: 0 },
     ],
   },
