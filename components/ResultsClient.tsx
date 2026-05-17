@@ -102,7 +102,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   });
 
   return (
-    <svg viewBox="0 0 400 400" className="w-full max-w-[280px] sm:max-w-[340px] mx-auto">
+    <svg viewBox="0 0 400 400" className="w-full max-w-[280px] sm:max-w-[420px] mx-auto">
       <defs>
         {slices.map(({ cat, color }) => {
           const [light, dark] = RANK_GRADIENTS[color] ?? [color, color];
@@ -265,12 +265,18 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
   return (
     <div className="mb-12">
 
-      {/* Desktop layout — always side-by-side */}
+      {/* Desktop layout */}
       <div className="hidden sm:block">
         <div className="relative flex items-start gap-8">
 
-          {/* Chart column — fixed width */}
-          <div className="flex flex-col items-center flex-shrink-0" style={{ width: "300px" }}>
+          {/* Chart column — centered when idle, shrinks left when expanded */}
+          <div
+            className="flex flex-col items-center flex-shrink-0"
+            style={{
+              width: expanded ? "280px" : "100%",
+              transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
+            }}
+          >
             <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
 
             {/* Click hint — fades out once a slice is selected */}
@@ -283,18 +289,13 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
               </svg>
               Click a slice to explore
             </p>
-          </div>
 
-          {/* Right column — legend idle, detail panel when expanded */}
-          <div className="flex-1 min-w-0">
-            {/* Legend — hidden when detail panel is open */}
+            {/* Legend */}
             <div
-              className="flex flex-col gap-2 mt-4"
+              className="flex flex-col gap-2 mt-5"
               style={{
-                opacity: expanded ? 0 : 1,
-                transition: "opacity 0.2s ease",
-                pointerEvents: expanded ? "none" : "auto",
-                position: expanded ? "absolute" : "relative",
+                width: expanded ? "100%" : "460px",
+                transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
               }}
             >
               {groups.map(({ cat, catPct }) => {
@@ -334,20 +335,23 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
                 );
               })}
             </div>
+          </div>
 
-            {/* Detail panel — fades in when slice selected */}
-            <div
-              style={{
-                opacity: expanded ? 1 : 0,
-                transform: expanded ? "translateX(0)" : "translateX(20px)",
-                transition: "opacity 0.3s ease 0.05s, transform 0.35s cubic-bezier(0.4,0,0.2,1) 0.05s",
-                pointerEvents: expanded ? "auto" : "none",
-              }}
-            >
-              {activeGroup && (
-                <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
-              )}
-            </div>
+          {/* Detail panel — slides in from right */}
+          <div
+            className="overflow-hidden"
+            style={{
+              flex: expanded ? "1 1 0%" : "0 0 0%",
+              width: expanded ? "auto" : "0px",
+              opacity: expanded ? 1 : 0,
+              transform: expanded ? "translateX(0)" : "translateX(40px)",
+              transition: "flex 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.4,0,0.2,1) 0.05s",
+              pointerEvents: expanded ? "auto" : "none",
+            }}
+          >
+            {activeGroup && (
+              <DetailPanel activeGroup={activeGroup} colorsMap={colorsMap} onClose={handleClose} />
+            )}
           </div>
         </div>
       </div>
