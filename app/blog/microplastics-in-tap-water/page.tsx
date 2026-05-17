@@ -69,7 +69,7 @@ export default function BlogPost() {
         "name": "Does tap water contain microplastics?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Microplastics have been detected in tap water samples globally. However, treated tap water in developed countries typically contains significantly fewer microplastic particles per litre than bottled water. A 2020 systematic review by Danopoulos et al. in PLOS ONE found maximum contamination of 628 particles per litre for tap water versus 4,889 particles per litre for bottled water in European samples. Fibres from synthetic textiles are the most commonly detected particle type in tap water."
+          "text": "Yes. Microplastics have been detected in tap water samples globally. However, treated tap water in developed countries typically contains significantly fewer microplastic particles per litre than bottled water. A 2020 systematic review by Danopoulos et al. in PLOS ONE found maximum contamination of 628 particles per litre for tap water versus 4,889 particles per litre for bottled water in European samples. Fragments are the most commonly detected particle shape in tap water, followed by fibres."
         }
       },
       {
@@ -77,7 +77,7 @@ export default function BlogPost() {
         "name": "Is tap water safer than bottled water for microplastics?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Generally yes, for microplastic exposure specifically. Bottled water introduces additional contamination from the PET bottle and polypropylene cap. Mason et al. (2018) found bottled water averaged 325 microplastic particles per litre across 11 global brands. Filtered tap water — particularly through reverse osmosis or activated carbon block — delivers substantially lower microplastic content than bottled water. Unfiltered tap water is not microplastic-free, but it is typically lower exposure than bottled water."
+          "text": "Generally yes, for microplastic exposure specifically. Bottled water introduces additional contamination from the packaging and bottling process itself. Mason et al. (2018) found polypropylene — the plastic commonly used to make bottle caps — was the dominant polymer type, suggesting the cap is a primary contamination source. The same study found bottled water averaged 325 microplastic particles per litre across 11 global brands. Filtered tap water — particularly through reverse osmosis or activated carbon block — delivers substantially lower microplastic content than bottled water. Unfiltered tap water is not microplastic-free, but it is typically lower exposure than bottled water."
         }
       },
       {
@@ -85,7 +85,7 @@ export default function BlogPost() {
         "name": "How do I remove microplastics from tap water?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The most effective methods are: reverse osmosis (removes >99% of microplastics), ultrafiltration membranes (85–99%), activated carbon block filters (70–90%), and boiling hard tap water (80–90%, with the cooled water carefully decanted). Standard pitcher filters such as Brita-style granular activated carbon show inconsistent results for microplastic removal and are not reliably effective for particles below 10 microns."
+          "text": "The most effective methods are: reverse osmosis (removes >99% of microplastics), ultrafiltration membranes (85–99%), activated carbon block filters (70–90%), and boiling hard tap water (at least 80%, with the cooled water carefully decanted). Standard pitcher filters such as Brita-style granular activated carbon show inconsistent results for microplastic removal and are not reliably effective for particles below 10 microns."
         }
       }
     ]
@@ -137,9 +137,9 @@ export default function BlogPost() {
         <ul className="space-y-2 text-sm text-slate-700">
           <li>→ Microplastics have been detected in tap water globally — but treated municipal water typically has far lower concentrations than bottled water</li>
           <li>→ A systematic review found maximum tap water contamination of 628 particles/litre vs 4,889 particles/litre for bottled water in European samples (Danopoulos et al., 2020)</li>
-          <li>→ Synthetic fibres from laundry are the most common microplastic type found in tap water — they pass through wastewater treatment and re-enter water supplies</li>
+          <li>→ Fragments are the most common microplastic shape found in tap water, with fibres second — consistent across multiple studies including the 2020 Danopoulos systematic review</li>
           <li>→ Water treatment plants remove a significant proportion of microplastics but not all — final removal rates vary by treatment process and particle size</li>
-          <li>→ Boiling hard tap water removes 80–90% of microplastics at no cost (Yu et al., 2024); reverse osmosis removes more than 99%</li>
+          <li>→ Boiling hard tap water removes at least 80% of microplastics at no cost (Yu et al., 2024); reverse osmosis removes more than 99%</li>
         </ul>
       </div>
 
@@ -148,7 +148,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Is tap water contaminated with microplastics?</h2>
 
         <p>
-          Yes — microplastics have been detected in tap water samples from every region of the world where studies have been conducted. A 2020 systematic review by Danopoulos et al. in <em>PLOS ONE</em>, covering 12 studies across tap and bottled water, found microplastic contamination in tap water in all locations studied. The dominant particle type across tap water studies is synthetic fibres — consistent with their origin from laundry wastewater passing through treatment systems.
+          Yes — microplastics have been detected in tap water samples from every region of the world where studies have been conducted. A 2020 systematic review by Danopoulos et al. in <em>PLOS ONE</em>, covering 12 studies across tap and bottled water, found microplastic contamination in tap water in all locations studied. Across the tap water studies reviewed, fragments were the most commonly identified particle shape, with fibres the second most common.
         </p>
 
         <p>
@@ -170,7 +170,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What does water treatment remove?</h2>
 
         <p>
-          Modern drinking water treatment — which typically includes coagulation, flocculation, sedimentation, and filtration before disinfection — removes a significant proportion of microplastics, but not all. Pivokonský et al. (2018) in <em>Science of the Total Environment</em> studied a Czech drinking water treatment plant and found that while treatment substantially reduced microplastic counts, particles in the smallest size fractions (particularly those below 10 microns) were the hardest to remove and were still present in finished drinking water.
+          Modern drinking water treatment — which typically includes coagulation, flocculation, sedimentation, and filtration before disinfection — removes a significant proportion of microplastics, but not all. Pivokonský et al. (2018) in <em>Science of the Total Environment</em> studied three Czech drinking water treatment plants and found that while treatment substantially reduced microplastic counts, particles in the smallest size fractions (particularly those below 10 microns) were the hardest to remove and were still present in finished drinking water — accounting for up to 95% of particles detected.
         </p>
 
         <p>
@@ -180,7 +180,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How does tap water compare to bottled water?</h2>
 
         <p>
-          The comparison consistently favours tap water for microplastic exposure. <Link href="/blog/microplastics-in-bottled-water" className="text-teal-700 hover:underline">Mason et al. (2018) found bottled water averaged 325 microplastic particles per litre</Link> across 259 bottles from 11 global brands — with the primary contamination source being the PET bottle and polypropylene cap, not the water supply itself. Bottled water is not a solution to microplastic exposure from drinking water; it introduces a different and typically larger source of contamination.
+          The comparison consistently favours tap water for microplastic exposure. <Link href="/blog/microplastics-in-bottled-water" className="text-teal-700 hover:underline">Mason et al. (2018) found bottled water averaged 325 microplastic particles per litre</Link> across 259 bottles from 11 global brands — with polypropylene, the plastic most commonly used to make bottle caps, identified as the dominant polymer type, suggesting the packaging and bottling process as a primary contamination source rather than the water itself. Bottled water is not a solution to microplastic exposure from drinking water; it introduces a different and typically larger source of contamination.
         </p>
 
         <p>
@@ -196,7 +196,7 @@ export default function BlogPost() {
         <ul className="list-disc list-inside space-y-2 text-slate-700">
           <li><strong>Reverse osmosis</strong> — removes more than 99% of microplastics. The membrane pore size (0.0001 microns) is orders of magnitude smaller than even the smallest detectable microplastic particles. <Link href="/blog/does-reverse-osmosis-remove-microplastics" className="text-teal-700 hover:underline">The most thoroughly evidenced option</Link> for households prioritising maximum reduction.</li>
           <li><strong>Activated carbon block filters</strong> — remove 70–90% of microplastics. Effective for larger particles; less so for sub-10-micron particles. A meaningful improvement over unfiltered water at lower cost than RO.</li>
-          <li><strong>Boiling hard tap water</strong> — Yu et al. (2024) in <em>Environmental Science &amp; Technology Letters</em> found that boiling hard tap water removed 80–90% of free-floating microplastics and nanoplastics. The mechanism is calcium carbonate encapsulating and precipitating particles during boiling. Decanting the cooled water carefully — leaving the sediment behind — maximises the effect. For soft water areas, the effect is lower (~25%).</li>
+          <li><strong>Boiling hard tap water</strong> — Yu et al. (2024) in <em>Environmental Science &amp; Technology Letters</em> found that boiling hard water (above 120 mg/L of calcium carbonate) removed at least 80% of free-floating microplastics and nanoplastics. The mechanism is calcium carbonate forming around plastic particles during boiling, trapping them in the resulting scale. Decanting the cooled water carefully — leaving the sediment behind — maximises the effect. The study found this approach effective for polystyrene, polyethylene, and polypropylene particles in the 0.1–150 micron size range.</li>
           <li><strong>Standard pitcher filters</strong> — inconsistent results in peer-reviewed testing. May reduce some larger particles but are not reliably effective for sub-10-micron microplastics.</li>
         </ul>
 
