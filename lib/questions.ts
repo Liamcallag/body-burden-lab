@@ -232,7 +232,7 @@ export const QUESTIONS: Question[] = [
       value: "0–10",
       unit: "microplastic particles per kg of sea salt (max 37 particles per person per year)",
       citation: "Karami et al., Scientific Reports, 2017",
-      caveat: "Used micro-Raman spectroscopy to confirm every particle — more rigorous than earlier visual-only studies that reported much higher counts",
+      caveat: "Only captures particles >149 µm — studies using finer filters report 100–700+ MPs/kg globally. Karami's Raman-confirmed figures are the most rigorous available but likely undercount smaller particles.",
       url: "https://www.nature.com/articles/srep46173",
       unitContext: "per kg",
     },
