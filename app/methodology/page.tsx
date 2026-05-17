@@ -150,6 +150,15 @@ const sources = [
     usedFor: "Microplastic release from plastic cutting boards during food preparation",
     confidence: "Medium",
   },
+  {
+    author: "Bai et al.",
+    year: 2022,
+    title: "Microplastics in take-out food: Are we over taking it?",
+    journal: "Environmental Research",
+    doi: "10.1016/j.envres.2022.114390",
+    usedFor: "Takeaway food question — mean of 639 MPs/kg across 146 takeaway food samples (rice, noodles, meat, beverages). Approximately 170–638 MPs per order for 1–2 orders per week.",
+    confidence: "Medium",
+  },
 ];
 
 const referenceTable = [
@@ -174,6 +183,9 @@ const referenceTable = [
   { question: "Non-stick pans", answer: "Occasionally", weekly: "75", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
   { question: "Cutting board", answer: "Plastic", weekly: "400", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
   { question: "Cutting board", answer: "Mix", weekly: "200", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
+  { question: "Takeaway food", answer: "Most days / several times a week", weekly: "638", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
+  { question: "Takeaway food", answer: "Once a week or so", weekly: "170", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
+  { question: "Takeaway food", answer: "Rarely or never", weekly: "0", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
   { question: "Seafood", answer: "Daily", weekly: "2,100", study: "Cox et al. / EFSA", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
   { question: "Seafood", answer: "Several times/week", weekly: "1,200", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
   { question: "Seafood", answer: "Once/week", weekly: "296", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
