@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Microplastics in Tap Water: How Much Are You Drinking?",
@@ -120,6 +121,17 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Tap water is not microplastic-free. But the evidence consistently shows it contains far fewer particles than bottled water — and simple interventions can reduce exposure further. Here is what the research shows.
         </p>
+      </div>
+
+      <div className="mb-10 rounded-xl overflow-hidden">
+        <Image
+          src="/blog-tap-water.png"
+          alt="Glass of water and plastic bottle containing visible microplastic particles"
+          width={800}
+          height={450}
+          className="w-full object-cover"
+          priority
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">

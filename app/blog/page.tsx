@@ -50,8 +50,8 @@ const posts = [
     date: "2026-05-13",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-reverse-osmosis.png",
-    imageAlt: "Tap water running from a faucet",
+    image: "/blog-tap-water.png",
+    imageAlt: "Glass of water and plastic bottle containing visible microplastic particles",
   },
   {
     slug: "microplastics-in-seafood",
