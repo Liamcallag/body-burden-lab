@@ -17,8 +17,8 @@ const posts = [
     date: "2026-05-13",
     readTime: "7 min read",
     tag: "Science",
-    image: "/blog-baby-formula.png",
-    imageAlt: "Pregnancy and microplastic exposure research",
+    image: "/blog-pregnancy.png",
+    imageAlt: "Watercolour illustration of a pregnant woman with microplastic particles visible in placental blood supply",
   },
   {
     slug: "microplastics-and-heart-disease",
@@ -39,8 +39,8 @@ const posts = [
     date: "2026-05-13",
     readTime: "7 min read",
     tag: "Science",
-    image: "/brain.jpg",
-    imageAlt: "Brain scan and microplastics research",
+    image: "/blog-brain.png",
+    imageAlt: "Watercolour illustration of a human brain with microplastic particles embedded in tissue",
   },
   {
     slug: "microplastics-in-tap-water",

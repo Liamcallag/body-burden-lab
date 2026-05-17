@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Microplastics and Pregnancy: What the Research Shows",
@@ -120,6 +121,17 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Microplastics have been detected in human placenta and in newborn meconium — confirming that fetal exposure begins before birth. Here is what the peer-reviewed evidence shows and what can be done about it.
         </p>
+      </div>
+
+      <div className="mb-10 rounded-xl overflow-hidden">
+        <Image
+          src="/blog-pregnancy.png"
+          alt="Watercolour illustration of a pregnant woman with fetus in womb and microplastic particles visible in placental blood supply"
+          width={800}
+          height={450}
+          className="w-full object-cover"
+          priority
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">

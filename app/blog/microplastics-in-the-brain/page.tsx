@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Microplastics in the Brain: What the Research Shows",
@@ -120,6 +121,17 @@ export default function BlogPost() {
         <p className="text-lg text-slate-500 leading-relaxed">
           Microplastics have now been detected in human brain tissue at higher concentrations than in the liver or kidney. This is one of the most significant findings in the field — and one of the least understood.
         </p>
+      </div>
+
+      <div className="mb-10 rounded-xl overflow-hidden">
+        <Image
+          src="/blog-brain.png"
+          alt="Watercolour illustration of a human brain with microplastic particles embedded in tissue, with close-up inset"
+          width={800}
+          height={450}
+          className="w-full object-cover"
+          priority
+        />
       </div>
 
       <div className="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
