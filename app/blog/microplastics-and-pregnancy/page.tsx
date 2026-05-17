@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Microplastics and Pregnancy: What the Research Shows",
   description:
-    "Microplastics have been detected in human placenta, amniotic fluid, and umbilical cord blood. Here is what the evidence shows about fetal exposure and what pregnant women can do to reduce it.",
+    "Microplastics have been detected in human placenta and in newborn meconium — fetal exposure is established before birth. Here is what the evidence shows and what pregnant women can do to reduce it.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/microplastics-and-pregnancy",
   },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     publishedTime: "2026-05-13",
     title: "Microplastics and Pregnancy: What the Research Shows",
     description:
-      "Microplastics have been detected in human placenta, amniotic fluid, and umbilical cord blood. Here is what the evidence shows about fetal exposure and what pregnant women can do to reduce it.",
+      "Microplastics have been detected in human placenta and in newborn meconium — fetal exposure is established before birth. Here is what the evidence shows and what pregnant women can do to reduce it.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+and+Pregnancy%3A+What+the+Research+Shows&tag=Science",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Microplastics and Pregnancy: What the Research Shows",
     description:
-      "Microplastics have been detected in human placenta, amniotic fluid, and umbilical cord blood. Here is what the evidence shows about fetal exposure and what pregnant women can do to reduce it.",
+      "Microplastics have been detected in human placenta and in newborn meconium — fetal exposure is established before birth. Here is what the evidence shows and what pregnant women can do to reduce it.",
     images: [
       "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+and+Pregnancy%3A+What+the+Research+Shows&tag=Science",
     ],
@@ -38,7 +38,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microplastics and Pregnancy: What the Research Shows",
-    "description": "Microplastics have been detected in human placenta, amniotic fluid, and umbilical cord blood. Here is what the evidence shows about fetal exposure and what pregnant women can do to reduce it.",
+    "description": "Microplastics have been detected in human placenta and in newborn meconium — fetal exposure is established before birth. Here is what the evidence shows and what pregnant women can do to reduce it.",
     "datePublished": "2026-05-13",
     "dateModified": "2026-05-13",
     "author": {
@@ -69,7 +69,7 @@ export default function BlogPost() {
         "name": "Are microplastics harmful during pregnancy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Microplastics have been detected in human placenta, amniotic fluid, and umbilical cord blood, confirming that fetal exposure occurs. The health implications of this exposure are not yet established in humans. Animal studies have found that microplastic exposure during pregnancy is associated with adverse developmental outcomes including reduced fetal weight and inflammatory changes in placental tissue. No human clinical trial has established causation between microplastic exposure during pregnancy and specific adverse outcomes — but the precautionary position supported by the evidence is that reducing exposure during pregnancy is a reasonable and practical goal."
+          "text": "Microplastics have been detected in human placenta and in newborn meconium, confirming that fetal exposure occurs. The health implications of this exposure are not yet established in humans. Animal studies have found that microplastic exposure during pregnancy is associated with adverse developmental outcomes including reduced fetal weight and inflammatory changes in placental tissue. No human clinical trial has established causation between microplastic exposure during pregnancy and specific adverse outcomes — but the precautionary position supported by the evidence is that reducing exposure during pregnancy is a reasonable and practical goal."
         }
       },
       {
@@ -77,7 +77,7 @@ export default function BlogPost() {
         "name": "Can microplastics cross the placenta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Ragusa et al. (2021) in Environment International was the first peer-reviewed study to confirm the presence of microplastics in human placenta tissue. Subsequent studies have detected microplastics in amniotic fluid and meconium (an infant's first bowel movements), confirming that particles cross the placental barrier and reach the fetus. The smallest particles — particularly nanoplastics below 1 micron — are thought to cross most readily due to their size."
+          "text": "Yes. Ragusa et al. (2021) in Environment International was the first peer-reviewed study to confirm the presence of microplastics in human placenta tissue, detecting particles in four of six placentas across both fetal and maternal sides. Liu et al. (2022) subsequently detected microplastics in newborn meconium, confirming that particles accumulate in the fetal gut before birth. The smallest particles — particularly nanoplastics below 1 micron — are thought to cross most readily due to their size."
         }
       },
       {
@@ -118,7 +118,7 @@ export default function BlogPost() {
           Microplastics and Pregnancy: What the Research Shows
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
-          Microplastics have been detected in human placenta, amniotic fluid, and umbilical cord blood — confirming that fetal exposure begins before birth. Here is what the peer-reviewed evidence shows and what can be done about it.
+          Microplastics have been detected in human placenta and in newborn meconium — confirming that fetal exposure begins before birth. Here is what the peer-reviewed evidence shows and what can be done about it.
         </p>
       </div>
 
@@ -135,7 +135,7 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ Microplastics have been confirmed in human placenta (Ragusa et al., 2021), amniotic fluid, and umbilical cord blood — fetal exposure is established, not theoretical</li>
+          <li>→ Microplastics have been confirmed in human placenta (Ragusa et al., 2021) and in newborn meconium (Liu et al., 2022) — fetal exposure is established, not theoretical</li>
           <li>→ Microplastics were also detected in meconium (a newborn's first bowel movements), confirming particles accumulate in the fetal gut before birth</li>
           <li>→ Animal studies show microplastic exposure during pregnancy is associated with reduced fetal weight, placental inflammation, and altered fetal organ development</li>
           <li>→ The fetal period is a developmentally sensitive window — organs including the brain, liver, and immune system are forming and may be more susceptible to environmental exposures</li>
@@ -148,7 +148,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Microplastics in the placenta: the first evidence</h2>
 
         <p>
-          The placenta was long considered a robust barrier between the maternal and fetal circulatory systems. Ragusa et al. (2021) in <em>Environment International</em> — in a study they named "Plasticenta" — was the first peer-reviewed study to confirm microplastic particles in human placenta tissue. The team analysed full-term placenta samples from six healthy women with normal pregnancies and uncomplicated deliveries. Microplastics were detected in all six placentas, in both the fetal and maternal sides of the tissue.
+          The placenta was long considered a robust barrier between the maternal and fetal circulatory systems. Ragusa et al. (2021) in <em>Environment International</em> — in a study they named "Plasticenta" — was the first peer-reviewed study to confirm microplastic particles in human placenta tissue. The team analysed full-term placenta samples from six healthy women with normal pregnancies and uncomplicated deliveries. Microplastics were detected in four of the six placentas, found across the fetal and maternal sides of the tissue and in the chorioamniotic membranes.
         </p>
 
         <p>
@@ -158,11 +158,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Amniotic fluid and meconium: exposure confirmed in utero</h2>
 
         <p>
-          Subsequent studies extended the finding deeper into the fetal environment. Microplastics have been detected in human amniotic fluid — the fluid surrounding the fetus in the womb — confirming that particles exist in the direct environment of the developing fetus, not only in the placental tissue at the boundary between maternal and fetal circulation.
-        </p>
-
-        <p>
-          Gündoğdu et al. (2022) in <em>Science of the Total Environment</em> detected microplastics in human meconium — the dark, tarry substance that constitutes a newborn's first bowel movements, composed of material accumulated in the fetal gut during gestation. Microplastic presence in meconium confirms that particles ingested or inhaled by the mother can reach the fetal gut before birth. Studies using meconium as a biomarker are particularly useful because the substance accumulates over the entire gestational period and provides a proxy measure of in utero exposure.
+          Liu et al. (2022) in <em>Science of the Total Environment</em> analysed placenta, meconium, infant feces, breast milk, and infant formula from 18 mother-infant pairs and detected microplastics across all sample types. Microplastic presence in meconium — the dark, tarry substance that constitutes a newborn's first bowel movements, composed of material accumulated in the fetal gut during gestation — confirms that particles ingested or inhaled by the mother can reach the fetal gut before birth. Studies using meconium as a biomarker are particularly useful because the substance accumulates over the entire gestational period and provides a proxy measure of in utero exposure.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Why the fetal period matters</h2>
@@ -198,7 +194,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What about breastfeeding?</h2>
 
         <p>
-          Microplastics have also been detected in breast milk. Notarstefano et al. (2022) in <em>Polymers</em> detected microplastics in 75% of breast milk samples from an Italian cohort — the first peer-reviewed confirmation of this finding. This means that microplastic exposure does not end at birth for breastfed infants.
+          Microplastics have also been detected in breast milk. Ragusa et al. (2022) in <em>Polymers</em> detected microplastics in 26 of 34 breast milk samples from an Italian cohort — the first peer-reviewed confirmation of this finding. This means that microplastic exposure does not end at birth for breastfed infants.
         </p>
 
         <p>
@@ -254,9 +250,9 @@ export default function BlogPost() {
         <h3 className="text-sm font-semibold text-slate-900 mb-3">References</h3>
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Ragusa A et al. Plasticenta: First evidence of microplastics in human placenta. <em>Environ Int</em>. 2021. DOI: 10.1016/j.envint.2020.106274</li>
-          <li>Gündoğdu S et al. Microplastics in human meconium: Evidence of early plastic exposure. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.157335</li>
-          <li>Notarstefano V et al. Microplastics in human breast milk: First evidence and potential effects on child health. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
-          <li>Camacho M et al. Estimated exposure to microplastics from infant formula preparation in polypropylene bottles. <em>Nat Food</em>. 2021. DOI: 10.1038/s43016-020-00230-y</li>
+          <li>Liu S et al. Detection of various microplastics in placentas, meconium, infant feces, breastmilk and infant formula: A pilot prospective study. <em>Sci Total Environ</em>. 2022. DOI: 10.1016/j.scitotenv.2022.158699</li>
+          <li>Ragusa A et al. Raman Microspectroscopy Detection and Characterisation of Microplastics in Human Breastmilk. <em>Polymers</em>. 2022. DOI: 10.3390/polym14132700</li>
+          <li>Li D et al. Microplastic release from the degradation of polypropylene feeding bottles during infant formula preparation. <em>Nat Food</em>. 2020. DOI: 10.1038/s43016-020-00171-y</li>
         </ol>
       </div>
     </article>
