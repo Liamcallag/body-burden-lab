@@ -312,10 +312,11 @@ export const QUESTIONS: Question[] = [
     weight: 5,
     tipKey: "airquality",
     studyCallout: {
-      value: "~1,000–4,000",
-      unit: "microplastic particles per cubic metre of indoor air",
-      citation: "Dris et al., Environmental Pollution, 2017",
-      caveat: "Indoor air can exceed outdoor levels due to synthetic textiles, carpets and furnishings — HEPA filtration significantly reduces this",
+      value: "~528–4,300",
+      unit: "microplastic particles per cubic metre of indoor air (inhalable 1–10 µm fraction)",
+      citation: "Yakovenko et al., PLoS ONE, 2025",
+      caveat: "Residential median 528 MPs/m³, car cabin median 2,238 MPs/m³, consensus estimate 4,300 MPs/m³ — measured using Raman spectroscopy in Toulouse, France. High-activity periods can spike to 34,000+ MPs/m³.",
+      url: "https://doi.org/10.1371/journal.pone.0328011",
       unitContext: "per m³ of air",
     },
     options: [
