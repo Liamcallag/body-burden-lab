@@ -138,7 +138,7 @@ export default function BlogPost() {
           <li>→ Microplastics were found in 100% of human brain tissue samples tested, at higher concentrations than matched liver and kidney samples (Nihart et al., 2025)</li>
           <li>→ The most prevalent polymer in brain tissue was polyethylene — the world's most commonly produced plastic</li>
           <li>→ Brain microplastic concentrations appear to have increased significantly over recent years, tracking global plastic production trends</li>
-          <li>→ The primary entry route is the bloodstream: particles cross the gut lining, enter circulation, and the smallest particles cross the blood-brain barrier</li>
+          <li>→ The most likely entry route is the bloodstream: research has detected plastic particles in human blood, and the smallest particles are thought to cross the blood-brain barrier</li>
           <li>→ A secondary route is the olfactory nerve — inhaled particles can travel directly to the brain, bypassing the blood-brain barrier entirely</li>
           <li>→ Causation of neurological harm has not been established in humans, but animal studies show neuroinflammatory responses at comparable concentrations</li>
         </ul>
@@ -153,7 +153,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          The most prevalent polymer detected in brain tissue was polyethylene — the world's most widely produced plastic, used in bags, bottles, and packaging. Other polymers identified included polypropylene and nylon. The study also noted an association between higher brain microplastic concentrations and a diagnosis of dementia, though the authors were careful to characterise this as an association requiring further investigation, not evidence of causation.
+          The most prevalent polymer detected in brain tissue was polyethylene — the world's most widely produced plastic, used in bags, bottles, and packaging. Other polymers identified included polypropylene and PVC. The study also noted an association between higher brain microplastic concentrations and a diagnosis of dementia, though the authors were careful to characterise this as an association requiring further investigation, not evidence of causation.
         </p>
 
         <p>
@@ -167,7 +167,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          This trajectory matters because microplastics are not readily cleared from brain tissue. Unlike water-soluble substances that the kidneys can filter and excrete, plastic particles are not metabolised or excreted through normal biological processes. Once in brain tissue, they appear to persist.
+          This trajectory matters because microplastics are not readily cleared from brain tissue. Unlike water-soluble substances that the kidneys can filter and excrete, plastic particles are not metabolised or excreted through normal biological processes. Once in brain tissue, clearance of particles through normal biological processes has not yet been characterised.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">How do microplastics reach the brain?</h2>
@@ -177,7 +177,7 @@ export default function BlogPost() {
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Bloodstream via gut absorption</strong> — the primary route. Leslie et al. (2022) in <em>Environment International</em> confirmed the presence of microplastics in human blood, establishing that particles do cross the gut lining and enter systemic circulation. Very small particles — particularly nanoplastics below 1 micron — can then cross the blood-brain barrier, a membrane that normally prevents most large molecules from entering brain tissue. Larger microplastic particles are thought to be transported by immune cells (macrophages) which can also cross this barrier.</li>
+          <li><strong>Bloodstream via gut absorption</strong> — the primary route. Leslie et al. (2022) in <em>Environment International</em> confirmed the presence of microplastics in human blood — particles were quantifiable in 77% of donors. The paper notes that the precise uptake route cannot be determined from blood measurements alone, and describes gut absorption as scientifically plausible rather than confirmed. Very small particles — particularly nanoplastics below 1 micron — can then cross the blood-brain barrier, a membrane that normally prevents most large molecules from entering brain tissue. Larger microplastic particles are thought to be transported by immune cells (macrophages) which can also cross this barrier.</li>
           <li><strong>Olfactory nerve pathway</strong> — inhaled particles that reach the nasal passages can travel along olfactory nerve fibres directly into the brain, bypassing the blood-brain barrier entirely. This route has been demonstrated in animal studies and is consistent with the finding of microplastics in olfactory bulb tissue. It is one reason why airborne microplastic exposure — from indoor dust, synthetic textiles, and outdoor sources — is considered a direct neurological exposure pathway, not just a respiratory one.</li>
           <li><strong>Direct translocation from inhalation</strong> — very small particles reaching the deep lung (alveoli) can cross into the bloodstream and subsequently reach the brain via circulation. This is an extension of the bloodstream route but has a distinct entry point from ingestion.</li>
         </ul>
@@ -253,7 +253,6 @@ export default function BlogPost() {
         <ol className="space-y-2 text-xs text-slate-500 list-decimal list-inside leading-relaxed">
           <li>Nihart AJ et al. Bioaccumulation of microplastics in decedent human brains. <em>Nat Med</em>. 2025. DOI: 10.1038/s41591-024-03453-1</li>
           <li>Leslie HA et al. Discovery and quantification of plastic particle pollution in human blood. <em>Environ Int</em>. 2022. DOI: 10.1016/j.envint.2022.107199</li>
-          <li>Cox KD et al. Human Consumption of Microplastics. <em>Environ Sci Technol</em>. 2019. DOI: 10.1021/acs.est.9b01517</li>
         </ol>
       </div>
     </article>
