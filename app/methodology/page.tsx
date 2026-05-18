@@ -193,14 +193,6 @@ export default function MethodologyPage() {
           </p>
         </div>
 
-        {/* Cox benchmark callout */}
-        <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">For context</p>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            Cox et al. (2019) estimated the average American ingests <strong className="text-slate-900">74,000–121,000 microplastic particles per year</strong> — and researchers note this is likely a significant underestimate, as many exposure pathways remain unstudied.
-          </p>
-        </div>
-
         {/* Nanoplastics note */}
         <div className="mt-4 rounded-xl border-l-4 border-teal-400 bg-teal-50/50 px-5 py-4">
           <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 mb-1">Microplastics vs nanoplastics</p>
