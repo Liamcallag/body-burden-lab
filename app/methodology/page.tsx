@@ -198,7 +198,7 @@ export default function MethodologyPage() {
             Individual exposure will vary depending on consumption volumes, product types, and geographic factors not captured by these questions. Figures should be understood as documented estimates, not precise measurements.
           </p>
           <p>
-            <strong>A note on microplastics vs nanoplastics:</strong> This calculator covers microplastic particles only — defined as particles between 1 micron and 5mm in size. Nanoplastic particles (smaller than 1 micron) are not included. Nanoplastic research is newer, measurement techniques vary significantly between studies, and consistent comparable figures do not yet exist across all exposure pathways. Where nanoplastic data does exist — such as in the tea bag study by Hernandez et al. (2019), which found 11.6 billion nanoplastic particles released per bag — the numbers are substantially higher than microplastic counts alone. All scores in this calculator should therefore be understood as documented minimums.
+            <strong>A note on microplastics vs nanoplastics:</strong> This calculator covers microplastic particles only (1 micron – 5mm). Nanoplastics (&lt;1 micron) are not included — measurement techniques vary too much between studies for consistent comparisons across pathways. All scores should be understood as documented minimums; true total particle exposure including nanoplastics is likely significantly higher.
           </p>
         </div>
       </section>
