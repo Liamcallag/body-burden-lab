@@ -349,7 +349,7 @@ export default function MethodologyPage() {
             Microplastics research is a rapidly evolving field. Many exposure pathways remain unstudied, and study methodologies vary significantly. The figures presented here represent best estimates at the time of publication and will be updated as new research emerges.
           </p>
           <p>
-            Notably absent from this calculator due to limited published data: microplastics in processed food, canned goods, and personal care products. Their omission means our estimates are likely conservative.
+            Some exposure pathways are not captured here: plastic cooking utensils were excluded because no peer-reviewed study directly quantifies particle release under normal use conditions; nanoplastics are excluded due to inconsistent measurement coverage across pathways; and airborne indoor exposure is only partially represented by the Yakovenko et al. data. The calculator likely understates total exposure as a result.
           </p>
           <p>
             This tool is intended for educational purposes only. It does not constitute medical advice and should not be used to inform clinical decisions.
