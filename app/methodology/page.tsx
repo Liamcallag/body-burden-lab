@@ -189,16 +189,23 @@ export default function MethodologyPage() {
             Because each study measures things differently — particles per litre, per gram, per wash cycle, per cooking session — we do not attempt to convert everything into a single weekly total. Instead, the calculator uses each answer to generate a relative risk score, weighted by the significance of that exposure pathway. The full reference table below shows the measured values from each source study with their original units.
           </p>
           <p>
-            For context, Cox et al. (2019) estimated that the average American ingests 74,000–121,000 microplastic particles per year — researchers note this is likely a significant underestimate as many exposure pathways remain unstudied.
+            Where a single high-quality study exists for a particular pathway (e.g. plastic tea bags, bottled water), we use that study directly. Where evidence is more limited, we note a lower confidence level. Individual exposure will vary depending on consumption volumes, product types, and geographic factors not captured by these questions. Figures should be understood as documented estimates, not precise measurements.
           </p>
-          <p>
-            Where a single high-quality study exists for a particular pathway (e.g. plastic tea bags, bottled water), we use that study directly. Where evidence is more limited, we note a lower confidence level.
+        </div>
+
+        {/* Cox benchmark callout */}
+        <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">For context</p>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            Cox et al. (2019) estimated the average American ingests <strong className="text-slate-900">74,000–121,000 microplastic particles per year</strong> — and researchers note this is likely a significant underestimate, as many exposure pathways remain unstudied.
           </p>
-          <p>
-            Individual exposure will vary depending on consumption volumes, product types, and geographic factors not captured by these questions. Figures should be understood as documented estimates, not precise measurements.
-          </p>
-          <p>
-            <strong>A note on microplastics vs nanoplastics:</strong> This calculator covers microplastic particles only (1 micron – 5mm). Nanoplastics (&lt;1 micron) are not included because consistent data does not yet exist across all exposure pathways covered here — making fair comparisons impossible. All scores should be understood as documented minimums; true total particle exposure including nanoplastics is likely significantly higher.
+        </div>
+
+        {/* Nanoplastics note */}
+        <div className="mt-4 rounded-xl border-l-4 border-teal-400 bg-teal-50/50 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 mb-1">Microplastics vs nanoplastics</p>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            This calculator covers microplastic particles only (1 micron – 5mm). Nanoplastics (&lt;1 micron) are excluded because consistent data does not yet exist across all exposure pathways covered here, making fair comparisons impossible. All scores should be understood as documented minimums — true total particle exposure including nanoplastics is likely significantly higher.
           </p>
         </div>
       </section>
@@ -304,7 +311,16 @@ export default function MethodologyPage() {
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-slate-900 mb-2">Full reference table</h2>
         <p className="text-sm text-slate-500 mb-2">Every question and the measured value from the source study. Units vary by question — some are per litre, per gram, per wash, or per session depending on what the study measured.</p>
-        <p className="text-xs text-slate-400 mb-5"><span className="font-semibold text-emerald-700">High confidence</span> — figure derives directly from a single well-cited study. <span className="font-semibold text-amber-700">Medium confidence</span> — figure informed by the cited study but involves some extrapolation to real-world conditions.</p>
+        <div className="flex flex-col sm:flex-row gap-3 mb-5">
+          <div className="flex items-start gap-2">
+            <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0 mt-px">High</span>
+            <span className="text-xs text-slate-400">Figure derives directly from a single well-cited study.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 shrink-0 mt-px">Medium</span>
+            <span className="text-xs text-slate-400">Figure informed by study but involves some extrapolation to real-world conditions.</span>
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left border-collapse">
             <thead>
