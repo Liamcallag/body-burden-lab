@@ -132,15 +132,6 @@ const sources = [
     usedFor: "Takeaway food question — mean of 639 MPs/kg across 146 takeaway food samples (rice, noodles, meat, beverages). Approximately 170–638 MPs per order.",
     confidence: "Medium",
   },
-  {
-    author: "Cox et al.",
-    year: 2019,
-    title: "Human Consumption of Microplastics",
-    journal: "Environmental Science & Technology",
-    doi: "10.1021/acs.est.9b01517",
-    usedFor: "Benchmark reference only — not used for any calculator question. The 74,000–121,000 particles/year range for the average American is used as a comparison point for interpreting calculator results.",
-    confidence: "High",
-  },
 ];
 
 const referenceTable = [
@@ -263,6 +254,14 @@ export default function MethodologyPage() {
               journal: "Environment International",
               doi: "10.1016/j.envint.2020.106274",
               note: "First study to detect microplastics in human placental tissue, demonstrating that particles can cross the placental barrier.",
+            },
+            {
+              author: "Cox et al.",
+              year: 2019,
+              title: "Human Consumption of Microplastics",
+              journal: "Environmental Science & Technology",
+              doi: "10.1021/acs.est.9b01517",
+              note: "Estimated that the average American ingests 74,000–121,000 microplastic particles per year — and notes this is likely a significant underestimate as many exposure pathways remain unstudied.",
             },
             {
               author: "World Health Organization",
