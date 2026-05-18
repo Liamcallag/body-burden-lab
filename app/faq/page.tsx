@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "How does the Body Burden calculator work?",
-    a: "The calculator asks 13 questions about your daily habits across four categories: drinking water, kitchen and cooking, food and diet, and air and environment. Each answer option carries a risk score (0–10) based on the documented exposure level for that behaviour, derived from a specific peer-reviewed study. Each question is also weighted by its relative importance — high-impact sources like microwaving in plastic and plastic tea bags carry more weight than lower-impact ones. Your answers are combined into a normalised 0–100 risk score, which maps to an exposure tier (Low, Moderate, High, or Very High). Results also show a category breakdown so you can see which area of your habits drives most of your exposure. The full methodology and all source studies are documented on our methodology page.",
+    a: "The calculator asks 12 questions about your daily habits across four categories: drinking water, kitchen and cooking, food and diet, and air and environment. Each answer option carries a risk score (0–10) based on the documented exposure level for that behaviour, derived from a specific peer-reviewed study. Each question is also weighted by its relative importance — high-impact sources like microwaving in plastic and plastic tea bags carry more weight than lower-impact ones. Your answers are combined into a normalised 0–100 risk score, which maps to an exposure tier (Low, Moderate, High, or Very High). Results also show a category breakdown so you can see which area of your habits drives most of your exposure. The full methodology and all source studies are documented on our methodology page.",
     readMore: { href: "/methodology", label: "Read the full methodology" },
   },
   {
@@ -146,7 +146,7 @@ export default function FAQPage() {
       <div className="mt-10 bg-teal-50 border border-teal-100 rounded-2xl p-6 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-sm font-semibold text-slate-900 mb-0.5">Find out your personal exposure</p>
-          <p className="text-xs text-slate-500">13 questions · 2 minutes · peer-reviewed science</p>
+          <p className="text-xs text-slate-500">12 questions · 2 minutes · peer-reviewed science</p>
         </div>
         <Link
           href="/calculator"

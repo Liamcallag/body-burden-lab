@@ -175,9 +175,6 @@ const referenceTable = [
   { question: "Microwaving plastic", answer: "Daily", weekly: "28,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
   { question: "Microwaving plastic", answer: "Few times/week", weekly: "12,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
   { question: "Microwaving plastic", answer: "Occasionally", weekly: "3,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
-  { question: "Cooking utensils", answer: "Mostly plastic", weekly: "500", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
-  { question: "Cooking utensils", answer: "Mix", weekly: "250", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
-  { question: "Cooking utensils", answer: "Wood / metal / silicone", weekly: "50", study: "Cole et al.", year: 2024, confidence: "Medium", doi: "10.1016/j.scitotenv.2024.172577" },
   { question: "Non-stick pans", answer: "Visibly scratched or chipped", weekly: "~9,100 per session", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
   { question: "Non-stick pans", answer: "Light scratching", weekly: "Est.", study: "Luo et al.", year: 2022, confidence: "Low", doi: "10.1016/j.scitotenv.2022.158293" },
   { question: "Non-stick pans", answer: "Good condition", weekly: "Est.", study: "Luo et al.", year: 2022, confidence: "Low", doi: "10.1016/j.scitotenv.2022.158293" },
@@ -233,7 +230,7 @@ export default function MethodologyPage() {
         <h2 className="text-xl font-semibold text-slate-900 mb-4">How the calculator works</h2>
         <div className="prose prose-slate max-w-none text-sm text-slate-600 leading-relaxed space-y-3">
           <p>
-            The calculator presents 13 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from the relevant published study.
+            The calculator presents 12 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from the relevant published study.
           </p>
           <p>
             Estimates are expressed as microplastic particles per week. To calculate annual exposure, weekly totals are multiplied by 52. Results are compared to the range of 74,000–121,000 particles per year reported by Cox et al. (2019) for the average American — researchers note this is likely a significant underestimate as many exposure pathways remain unstudied.

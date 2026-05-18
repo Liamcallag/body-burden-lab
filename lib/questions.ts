@@ -115,26 +115,6 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "utensils",
-    category: "kitchen",
-    question: "What do you mainly cook with?",
-    resultLabel: "Plastic utensils",
-    weight: 4,
-    tipKey: "utensils",
-    studyCallout: {
-      value: "~50,000",
-      unit: "microplastic particles per year from plastic utensil use",
-      citation: "Estimated from plastic leaching studies",
-      caveat: "Direct peer-reviewed data on utensil MPs is limited — figure is a conservative estimate",
-      unitContext: "per year",
-    },
-    options: [
-      { label: "Mostly plastic utensils — spatulas, spoons etc", riskScore: 10 },
-      { label: "Mix of plastic and wood or metal", riskScore: 5 },
-      { label: "Mostly wood, metal or silicone", riskScore: 0 },
-    ],
-  },
-  {
     id: "nonstick",
     category: "kitchen",
     question: "Are your non-stick pans scratched or damaged?",
