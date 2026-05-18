@@ -311,7 +311,7 @@ export default function MethodologyPage() {
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-slate-900 mb-2">Full reference table</h2>
         <p className="text-sm text-slate-500 mb-2">Every question and the measured value from the source study. Units vary by question — some are per litre, per gram, per wash, or per session depending on what the study measured.</p>
-        <div className="flex flex-col sm:flex-row gap-3 mb-5">
+        <div className="flex flex-col gap-3 mb-5">
           <div className="flex items-start gap-2">
             <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0 mt-px">High</span>
             <span className="text-xs text-slate-400">Figure derives directly from a single well-cited study.</span>
