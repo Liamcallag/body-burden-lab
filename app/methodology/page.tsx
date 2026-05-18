@@ -311,15 +311,16 @@ export default function MethodologyPage() {
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-slate-900 mb-2">Full reference table</h2>
         <p className="text-sm text-slate-500 mb-2">Every question and the measured value from the source study. Units vary by question — some are per litre, per gram, per wash, or per session depending on what the study measured.</p>
-        <div className="flex flex-col gap-3 mb-5">
-          <div className="flex items-start gap-2">
-            <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0 mt-px">High</span>
-            <span className="text-xs text-slate-400">Figure derives directly from a single well-cited study.</span>
-          </div>
-          <div className="flex items-start gap-2">
-            <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 shrink-0 mt-px">Medium</span>
-            <span className="text-xs text-slate-400">Figure informed by study but involves some extrapolation to real-world conditions.</span>
-          </div>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 mb-5 text-xs text-slate-400">
+          <span className="flex items-center gap-1.5">
+            <span className="inline-block font-medium px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">High</span>
+            Direct from a single well-cited study
+          </span>
+          <span className="text-slate-200">|</span>
+          <span className="flex items-center gap-1.5">
+            <span className="inline-block font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">Medium</span>
+            Involves some extrapolation to real-world conditions
+          </span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left border-collapse">
