@@ -183,19 +183,22 @@ export default function MethodologyPage() {
         <h2 className="text-xl font-semibold text-slate-900 mb-4">How the calculator works</h2>
         <div className="prose prose-slate max-w-none text-sm text-slate-600 leading-relaxed space-y-3">
           <p>
-            The calculator presents 12 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each answer maps to a weekly particle estimate derived from the relevant published study.
+            The calculator presents 12 questions covering the major documented pathways for human microplastic exposure: drinking water, food preparation, diet, clothing, and indoor air. Each question is linked to a peer-reviewed study that measured microplastic release or concentration for that specific source.
           </p>
           <p>
-            Estimates are expressed as microplastic particles per week. To calculate annual exposure, weekly totals are multiplied by 52. Results are compared to the range of 74,000–121,000 particles per year reported by Cox et al. (2019) for the average American — researchers note this is likely a significant underestimate as many exposure pathways remain unstudied.
+            Because each study measures things differently — particles per litre, per gram, per wash cycle, per cooking session — we do not attempt to convert everything into a single weekly total. Instead, the calculator uses each answer to generate a relative risk score, weighted by the significance of that exposure pathway. The full reference table below shows the measured values from each source study with their original units.
           </p>
           <p>
-            Where a single high-quality study exists for a particular pathway (e.g. plastic tea bags, bottled water), we use that study directly. Where evidence is more limited or comes from multiple smaller studies, we note a lower confidence level and use a conservative mid-range figure.
+            For context, Cox et al. (2019) estimated that the average American ingests 74,000–121,000 microplastic particles per year — researchers note this is likely a significant underestimate as many exposure pathways remain unstudied.
           </p>
           <p>
-            Individual exposure will vary depending on consumption volumes, product types, and geographic factors not captured by these questions. Figures are derived from published studies and should be understood as documented estimates, not precise measurements.
+            Where a single high-quality study exists for a particular pathway (e.g. plastic tea bags, bottled water), we use that study directly. Where evidence is more limited, we note a lower confidence level.
           </p>
           <p>
-            <strong>A note on microplastics vs nanoplastics:</strong> This calculator counts microplastic particles only — defined as particles between 1 micron and 5mm in size. Nanoplastic particles (smaller than 1 micron) are not included. This is a deliberate methodological choice: nanoplastic research is newer, measurement techniques vary significantly between studies, and consistent comparable figures do not yet exist across all exposure pathways. Where nanoplastic data does exist — such as in the tea bag study by Hernandez et al. (2019), which found 11.6 billion nanoplastic particles released per bag — the numbers are substantially higher than microplastic counts alone. All scores in this calculator should therefore be understood as documented minimums. The true total particle exposure, including nanoplastics, is likely significantly higher.
+            Individual exposure will vary depending on consumption volumes, product types, and geographic factors not captured by these questions. Figures should be understood as documented estimates, not precise measurements.
+          </p>
+          <p>
+            <strong>A note on microplastics vs nanoplastics:</strong> This calculator covers microplastic particles only — defined as particles between 1 micron and 5mm in size. Nanoplastic particles (smaller than 1 micron) are not included. Nanoplastic research is newer, measurement techniques vary significantly between studies, and consistent comparable figures do not yet exist across all exposure pathways. Where nanoplastic data does exist — such as in the tea bag study by Hernandez et al. (2019), which found 11.6 billion nanoplastic particles released per bag — the numbers are substantially higher than microplastic counts alone. All scores in this calculator should therefore be understood as documented minimums.
           </p>
         </div>
       </section>
