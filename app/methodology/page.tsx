@@ -34,15 +34,6 @@ export const metadata: Metadata = {
 
 const sources = [
   {
-    author: "Cox et al.",
-    year: 2019,
-    title: "Human Consumption of Microplastics",
-    journal: "Environmental Science & Technology",
-    doi: "10.1021/acs.est.9b01517",
-    usedFor: "Drinking water exposure estimates across all water source types (bottled, tap, filtered). Used for scoring consistency across answer options.",
-    confidence: "High",
-  },
-  {
     author: "Mason et al.",
     year: 2018,
     title: "Synthetic Polymer Contamination in Bottled Water",
@@ -153,7 +144,7 @@ const sources = [
 ];
 
 const referenceTable = [
-  { question: "Drinking water", value: "~325 particles/litre (bottled) / ~4 particles/litre (tap)", study: "Mason et al. / Cox et al.", year: "2018 / 2019", confidence: "High", doi: "10.3389/fchem.2018.00407" },
+  { question: "Drinking water", value: "~325 particles/litre (bottled water)", study: "Mason et al.", year: 2018, confidence: "High", doi: "10.3389/fchem.2018.00407" },
   { question: "Plastic tea bags", value: "11.6 billion particles/cup", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
   { question: "Tea & coffee (drip bags/pods)", value: "Est. — thousands of particles/cup", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
   { question: "Disposable cups", value: "675–5,984 particles/litre released into hot beverages", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
