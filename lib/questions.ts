@@ -253,9 +253,9 @@ export const QUESTIONS: Question[] = [
     studyCallout: {
       value: "~700,000",
       unit: "microplastic fibres released per wash cycle",
-      citation: "Browne et al., Environmental Science & Technology, 2011",
-      caveat: "Measures fibres entering wastewater — airborne inhalation from wearing synthetic clothing adds additional exposure not yet well quantified",
-      url: "https://pubs.acs.org/doi/10.1021/es201811s",
+      citation: "Napper & Thompson, Marine Pollution Bulletin, 2016",
+      caveat: "Measured from a 6 kg acrylic load — fibres enter wastewater; airborne inhalation from wearing synthetic clothing adds additional exposure not yet well quantified",
+      url: "https://doi.org/10.1016/j.marpolbul.2016.09.025",
       unitContext: "per wash",
     },
     options: [
