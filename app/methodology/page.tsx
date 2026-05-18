@@ -198,7 +198,7 @@ export default function MethodologyPage() {
             Individual exposure will vary depending on consumption volumes, product types, and geographic factors not captured by these questions. Figures should be understood as documented estimates, not precise measurements.
           </p>
           <p>
-            <strong>A note on microplastics vs nanoplastics:</strong> This calculator covers microplastic particles only (1 micron – 5mm). Nanoplastics (&lt;1 micron) are not included as peer-reviewed data across everyday exposure pathways remains limited. All scores should be understood as documented minimums; true total particle exposure including nanoplastics is likely significantly higher.
+            <strong>A note on microplastics vs nanoplastics:</strong> This calculator covers microplastic particles only (1 micron – 5mm). Nanoplastics (&lt;1 micron) are not included because consistent data does not yet exist across all exposure pathways covered here — making fair comparisons impossible. All scores should be understood as documented minimums; true total particle exposure including nanoplastics is likely significantly higher.
           </p>
         </div>
       </section>
