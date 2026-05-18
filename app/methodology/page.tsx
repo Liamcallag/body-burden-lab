@@ -153,45 +153,37 @@ const sources = [
 ];
 
 const referenceTable = [
-  { question: "Drinking water", answer: "Only bottled", weekly: "1,730", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Drinking water", answer: "Mostly bottled", weekly: "1,300", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Drinking water", answer: "Mix of both", weekly: "850", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Drinking water", answer: "Mostly tap", weekly: "150", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Drinking water", answer: "Only tap / filtered", weekly: "77", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Tea & coffee", answer: "Plastic/nylon tea bags daily", weekly: "7,000", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
-  { question: "Tea & coffee", answer: "Plastic/nylon tea bags few times/week", weekly: "3,000", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
-  { question: "Tea & coffee", answer: "Plastic/nylon tea bags occasionally", weekly: "800", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
-
-  { question: "Tea & coffee", answer: "Coffee machine / pods", weekly: "200", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
-  { question: "Disposable cups", answer: "Yes, most days", weekly: "Est.", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
-  { question: "Disposable cups", answer: "Yes, occasionally", weekly: "Est.", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
-  { question: "Microwaving plastic", answer: "Daily", weekly: "28,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
-  { question: "Microwaving plastic", answer: "Few times/week", weekly: "12,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
-  { question: "Microwaving plastic", answer: "Occasionally", weekly: "3,000", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
-  { question: "Non-stick pans", answer: "Visibly scratched or chipped", weekly: "~9,100 per session", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
-  { question: "Non-stick pans", answer: "Some light scratching", weekly: "~9,100 per session", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
-  { question: "Cutting board", answer: "Plastic", weekly: "400", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
-  { question: "Cutting board", answer: "Mix", weekly: "200", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
-  { question: "Takeaway food", answer: "Most days / several times a week", weekly: "638", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
-  { question: "Takeaway food", answer: "Once a week or so", weekly: "170", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
-  { question: "Takeaway food", answer: "Rarely or never", weekly: "0", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
-  { question: "Seafood", answer: "Daily", weekly: "2,100", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Seafood", answer: "Several times/week", weekly: "1,200", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Seafood", answer: "Once/week", weekly: "296", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Seafood", answer: "Few times/month", weekly: "100", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Salt type", answer: "Sea salt", weekly: "15", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
-  { question: "Salt type", answer: "Table / mixed", weekly: "5", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
-  { question: "Salt type", answer: "Rock / Himalayan", weekly: "2", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
-  { question: "Clothing", answer: "Mostly synthetic", weekly: "800", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
-  { question: "Clothing", answer: "Half and half", weekly: "400", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
-  { question: "Clothing", answer: "Mostly natural fibres", weekly: "150", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
-  { question: "Car commute", answer: "By car, most days", weekly: "800", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Car commute", answer: "By car, a few times/week", weekly: "400", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Car commute", answer: "Rarely or never in a car", weekly: "80", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Home air quality", answer: "No filter, carpet, rarely vacuum", weekly: "700", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Home air quality", answer: "Vacuum, no HEPA", weekly: "400", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Home air quality", answer: "Hard floors, regular vacuum", weekly: "200", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Home air quality", answer: "HEPA filter/vacuum", weekly: "150", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
+  { question: "Drinking water", answer: "Only bottled", value: "~325 particles/litre", study: "Mason et al.", year: 2018, confidence: "High", doi: "10.3389/fchem.2018.00407" },
+  { question: "Drinking water", answer: "Mostly bottled", value: "~325 particles/litre", study: "Mason et al.", year: 2018, confidence: "High", doi: "10.3389/fchem.2018.00407" },
+  { question: "Drinking water", answer: "Mix of both", value: "~4 particles/litre (tap)", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Drinking water", answer: "Mostly tap", value: "~4 particles/litre (tap)", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Drinking water", answer: "Only tap / filtered", value: "~4 particles/litre (tap)", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
+  { question: "Plastic tea bags", answer: "Yes, most days", value: "11.6 billion particles/cup", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+  { question: "Plastic tea bags", answer: "Yes, occasionally", value: "11.6 billion particles/cup", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+  { question: "Tea & coffee", answer: "Coffee machine / pods", value: "Est. — thousands of particles/cup", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
+  { question: "Disposable cups", answer: "Yes, most days", value: "675–5,984 particles/litre", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
+  { question: "Disposable cups", answer: "Yes, occasionally", value: "675–5,984 particles/litre", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
+  { question: "Microwaving plastic", answer: "Yes, most days", value: "4.22 million particles/cm² per use", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
+  { question: "Microwaving plastic", answer: "Yes, occasionally", value: "4.22 million particles/cm² per use", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
+  { question: "Non-stick pans", answer: "Visibly scratched or chipped", value: "~9,100 particles per cooking session (single crack)", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
+  { question: "Non-stick pans", answer: "Some light scratching", value: "~9,100 particles per cooking session (single crack)", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
+  { question: "Cutting board", answer: "Plastic", value: "14.5–79 million particles/year", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
+  { question: "Cutting board", answer: "Mix of plastic and wood", value: "14.5–79 million particles/year (plastic portion)", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
+  { question: "Takeaway food", answer: "Most days / several times a week", value: "170–638 particles/order", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
+  { question: "Takeaway food", answer: "Once a week or so", value: "170–638 particles/order", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
+  { question: "Mussels & oysters", answer: "Daily", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
+  { question: "Mussels & oysters", answer: "Several times/week", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
+  { question: "Mussels & oysters", answer: "Once/week", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
+  { question: "Mussels & oysters", answer: "A few times a month", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
+  { question: "Salt type", answer: "Sea salt", value: "0–10 particles/kg (max 37 particles/person/year)", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
+  { question: "Salt type", answer: "Table / mixed", value: "Lower contamination than sea salt", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
+  { question: "Salt type", answer: "Rock / Himalayan", value: "Lowest contamination", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
+  { question: "Synthetic clothing", answer: "Mostly synthetic", value: "~700,000 fibres/wash cycle (6 kg load)", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
+  { question: "Synthetic clothing", answer: "Roughly half and half", value: "~700,000 fibres/wash cycle (6 kg load)", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
+  { question: "Car commute", answer: "By car, most days", value: "2,238 particles/m³ (car cabin median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
+  { question: "Car commute", answer: "By car, a few times/week", value: "2,238 particles/m³ (car cabin median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
+  { question: "Home air quality", answer: "No filter, carpet, rarely vacuum", value: "528 particles/m³ (residential indoor median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
+  { question: "Home air quality", answer: "Vacuum regularly / HEPA", value: "528 particles/m³ (residential indoor median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
 ];
 
 const confidenceBadge: Record<string, string> = {
@@ -339,15 +331,15 @@ export default function MethodologyPage() {
       {/* Reference table */}
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-slate-900 mb-2">Full reference table</h2>
-        <p className="text-sm text-slate-500 mb-2">Every answer and its corresponding weekly particle estimate</p>
-        <p className="text-xs text-slate-400 mb-5"><span className="font-semibold text-emerald-700">High confidence</span> — figure derives directly from a single well-cited study. <span className="font-semibold text-amber-700">Medium confidence</span> — figure is a reasoned estimate informed by the cited study but involves extrapolation (e.g. scaling from lab conditions to weekly exposure).</p>
+        <p className="text-sm text-slate-500 mb-2">Every question and the measured value from the source study. Units vary by question — some are per litre, per gram, per wash, or per session depending on what the study measured.</p>
+        <p className="text-xs text-slate-400 mb-5"><span className="font-semibold text-emerald-700">High confidence</span> — figure derives directly from a single well-cited study. <span className="font-semibold text-amber-700">Medium confidence</span> — figure informed by the cited study but involves some extrapolation to real-world conditions.</p>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left border-collapse">
             <thead>
               <tr className="border-b border-slate-200">
                 <th className="py-2.5 pr-4 font-semibold text-slate-600 whitespace-nowrap">Question</th>
                 <th className="py-2.5 pr-4 font-semibold text-slate-600">Answer</th>
-                <th className="py-2.5 pr-4 font-semibold text-slate-600 whitespace-nowrap text-right">Particles/week</th>
+                <th className="py-2.5 pr-4 font-semibold text-slate-600">Measured value</th>
                 <th className="py-2.5 pr-4 font-semibold text-slate-600 whitespace-nowrap">Study</th>
                 <th className="py-2.5 font-semibold text-slate-600 whitespace-nowrap">Confidence</th>
               </tr>
@@ -357,7 +349,7 @@ export default function MethodologyPage() {
                 <tr key={i} className="border-b border-slate-50 hover:bg-slate-50">
                   <td className="py-2 pr-4 text-slate-700 whitespace-nowrap font-medium">{row.question}</td>
                   <td className="py-2 pr-4 text-slate-600">{row.answer}</td>
-                  <td className="py-2 pr-4 text-slate-900 font-medium text-right tabular-nums whitespace-nowrap">{row.weekly}</td>
+                  <td className="py-2 pr-4 text-slate-900 font-medium">{row.value}</td>
                   <td className="py-2 pr-4 text-slate-500 whitespace-nowrap">
                     {row.doi ? (
                       <a href={`https://doi.org/${row.doi}`} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
