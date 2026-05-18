@@ -102,7 +102,7 @@ export const QUESTIONS: Question[] = [
     tipKey: "hotdrinks",
     studyCallout: {
       value: "675–5,984",
-      unit: "microplastic particles per litre from PE-lined paper cups",
+      unit: "microplastic particles per litre released into hot beverages from PE-lined paper cups",
       citation: "Chen et al., Science of the Total Environment, 2023",
       caveat: "Tested across 90 commercial cup batches at 95°C — higher temperatures and acidic drinks increase release significantly",
       url: "https://pubmed.ncbi.nlm.nih.gov/36089043/",
