@@ -39,7 +39,7 @@ const sources = [
     title: "Synthetic Polymer Contamination in Bottled Water",
     journal: "Frontiers in Chemistry",
     doi: "10.3389/fchem.2018.00407",
-    usedFor: "Bottled water contamination — 325 particles/litre average across 259 bottles from 11 brands in 9 countries (93% of bottles contaminated). Higher than Cox et al. figures due to inclusion of smaller particles (6.5–100 µm). Cox et al. used for calculator scoring to maintain consistency across all water source answer options.",
+    usedFor: "Drinking water question — 325 particles/litre average across 259 bottles from 11 brands in 9 countries (93% of bottles contaminated).",
     confidence: "High",
   },
   {
@@ -115,15 +115,6 @@ const sources = [
     confidence: "High",
   },
   {
-    author: "Wang et al.",
-    year: 2023,
-    title: "Pouring hot water through drip bags releases thousands of microplastics into coffee",
-    journal: "Food Chemistry",
-    doi: "10.1016/j.foodchem.2023.135717",
-    usedFor: "Tea and coffee question — microplastic release from plastic coffee filter bags and pod-style brewing.",
-    confidence: "Medium",
-  },
-  {
     author: "Yadav et al.",
     year: 2023,
     title: "Cutting Boards: An Overlooked Source of Microplastics in Human Food?",
@@ -141,12 +132,20 @@ const sources = [
     usedFor: "Takeaway food question — mean of 639 MPs/kg across 146 takeaway food samples (rice, noodles, meat, beverages). Approximately 170–638 MPs per order.",
     confidence: "Medium",
   },
+  {
+    author: "Cox et al.",
+    year: 2019,
+    title: "Human Consumption of Microplastics",
+    journal: "Environmental Science & Technology",
+    doi: "10.1021/acs.est.9b01517",
+    usedFor: "Benchmark reference only — not used for any calculator question. The 74,000–121,000 particles/year range for the average American is used as a comparison point for interpreting calculator results.",
+    confidence: "High",
+  },
 ];
 
 const referenceTable = [
   { question: "Drinking water", value: "~325 particles/litre (bottled water)", study: "Mason et al.", year: 2018, confidence: "High", doi: "10.3389/fchem.2018.00407" },
   { question: "Plastic tea bags", value: "11.6 billion particles/cup", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
-  { question: "Tea & coffee (drip bags/pods)", value: "Est. — thousands of particles/cup", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
   { question: "Disposable cups", value: "675–5,984 particles/litre released into hot beverages", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
   { question: "Microwaving in plastic", value: "4.22 million particles/cm² per use", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
   { question: "Non-stick pans (scratched)", value: "~9,100 particles per cooking session (single crack); up to 2.3 million from broken coating", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
