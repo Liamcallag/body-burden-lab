@@ -153,37 +153,19 @@ const sources = [
 ];
 
 const referenceTable = [
-  { question: "Drinking water", answer: "Only bottled", value: "~325 particles/litre", study: "Mason et al.", year: 2018, confidence: "High", doi: "10.3389/fchem.2018.00407" },
-  { question: "Drinking water", answer: "Mostly bottled", value: "~325 particles/litre", study: "Mason et al.", year: 2018, confidence: "High", doi: "10.3389/fchem.2018.00407" },
-  { question: "Drinking water", answer: "Mix of both", value: "~4 particles/litre (tap)", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Drinking water", answer: "Mostly tap", value: "~4 particles/litre (tap)", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Drinking water", answer: "Only tap / filtered", value: "~4 particles/litre (tap)", study: "Cox et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b01517" },
-  { question: "Plastic tea bags", answer: "Yes, most days", value: "11.6 billion particles/cup", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
-  { question: "Plastic tea bags", answer: "Yes, occasionally", value: "11.6 billion particles/cup", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
-  { question: "Tea & coffee", answer: "Coffee machine / pods", value: "Est. — thousands of particles/cup", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
-  { question: "Disposable cups", answer: "Yes, most days", value: "675–5,984 particles/litre", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
-  { question: "Disposable cups", answer: "Yes, occasionally", value: "675–5,984 particles/litre", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
-  { question: "Microwaving plastic", answer: "Yes, most days", value: "4.22 million particles/cm² per use", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
-  { question: "Microwaving plastic", answer: "Yes, occasionally", value: "4.22 million particles/cm² per use", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
-  { question: "Non-stick pans", answer: "Visibly scratched or chipped", value: "~9,100 particles per cooking session (single crack)", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
-  { question: "Non-stick pans", answer: "Some light scratching", value: "~9,100 particles per cooking session (single crack)", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
-  { question: "Cutting board", answer: "Plastic", value: "14.5–79 million particles/year", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
-  { question: "Cutting board", answer: "Mix of plastic and wood", value: "14.5–79 million particles/year (plastic portion)", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
-  { question: "Takeaway food", answer: "Most days / several times a week", value: "170–638 particles/order", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
-  { question: "Takeaway food", answer: "Once a week or so", value: "170–638 particles/order", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
-  { question: "Mussels & oysters", answer: "Daily", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Mussels & oysters", answer: "Several times/week", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Mussels & oysters", answer: "Once/week", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Mussels & oysters", answer: "A few times a month", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
-  { question: "Salt type", answer: "Sea salt", value: "0–10 particles/kg (max 37 particles/person/year)", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
-  { question: "Salt type", answer: "Table / mixed", value: "Lower contamination than sea salt", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
-  { question: "Salt type", answer: "Rock / Himalayan", value: "Lowest contamination", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
-  { question: "Synthetic clothing", answer: "Mostly synthetic", value: "~700,000 fibres/wash cycle (6 kg load)", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
-  { question: "Synthetic clothing", answer: "Roughly half and half", value: "~700,000 fibres/wash cycle (6 kg load)", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
-  { question: "Car commute", answer: "By car, most days", value: "2,238 particles/m³ (car cabin median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Car commute", answer: "By car, a few times/week", value: "2,238 particles/m³ (car cabin median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Home air quality", answer: "No filter, carpet, rarely vacuum", value: "528 particles/m³ (residential indoor median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
-  { question: "Home air quality", answer: "Vacuum regularly / HEPA", value: "528 particles/m³ (residential indoor median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
+  { question: "Drinking water", value: "~325 particles/litre (bottled) / ~4 particles/litre (tap)", study: "Mason et al. / Cox et al.", year: "2018 / 2019", confidence: "High", doi: "10.3389/fchem.2018.00407" },
+  { question: "Plastic tea bags", value: "11.6 billion particles/cup", study: "Hernandez et al.", year: 2019, confidence: "High", doi: "10.1021/acs.est.9b02540" },
+  { question: "Tea & coffee (drip bags/pods)", value: "Est. — thousands of particles/cup", study: "Wang et al.", year: 2023, confidence: "Medium", doi: "10.1016/j.foodchem.2023.135717" },
+  { question: "Disposable cups", value: "675–5,984 particles/litre released into hot beverages", study: "Chen et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158606" },
+  { question: "Microwaving in plastic", value: "4.22 million particles/cm² per use", study: "Hussain et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c01942" },
+  { question: "Non-stick pans (scratched)", value: "~9,100 particles per cooking session (single crack); up to 2.3 million from broken coating", study: "Luo et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.scitotenv.2022.158293" },
+  { question: "Plastic cutting board", value: "14.5–79 million particles/year", study: "Yadav et al.", year: 2023, confidence: "Medium", doi: "10.1021/acs.est.3c00924" },
+  { question: "Takeaway food", value: "170–638 particles/order", study: "Bai et al.", year: 2022, confidence: "Medium", doi: "10.1016/j.envres.2022.114390" },
+  { question: "Mussels & oysters", value: "0.36 particles/g mussel tissue (~90 per 250g serving)", study: "Van Cauwenberghe & Janssen", year: 2014, confidence: "High", doi: "10.1016/j.envpol.2014.06.010" },
+  { question: "Salt type", value: "Sea salt: 0–10 particles/kg; rock salt: lowest contamination", study: "Karami et al.", year: 2017, confidence: "High", doi: "10.1038/srep46173" },
+  { question: "Synthetic clothing", value: "~700,000 fibres released per wash cycle (6 kg load)", study: "Napper & Thompson", year: 2016, confidence: "Medium", doi: "10.1016/j.marpolbul.2016.09.025" },
+  { question: "Car commute", value: "2,238 particles/m³ (car cabin median) vs 528 particles/m³ (residential indoor)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
+  { question: "Home air quality", value: "528 particles/m³ (residential indoor median)", study: "Yakovenko et al.", year: 2025, confidence: "Medium", doi: "10.1371/journal.pone.0328011" },
 ];
 
 const confidenceBadge: Record<string, string> = {
@@ -338,7 +320,6 @@ export default function MethodologyPage() {
             <thead>
               <tr className="border-b border-slate-200">
                 <th className="py-2.5 pr-4 font-semibold text-slate-600 whitespace-nowrap">Question</th>
-                <th className="py-2.5 pr-4 font-semibold text-slate-600">Answer</th>
                 <th className="py-2.5 pr-4 font-semibold text-slate-600">Measured value</th>
                 <th className="py-2.5 pr-4 font-semibold text-slate-600 whitespace-nowrap">Study</th>
                 <th className="py-2.5 font-semibold text-slate-600 whitespace-nowrap">Confidence</th>
@@ -348,7 +329,6 @@ export default function MethodologyPage() {
               {referenceTable.map((row, i) => (
                 <tr key={i} className="border-b border-slate-50 hover:bg-slate-50">
                   <td className="py-2 pr-4 text-slate-700 whitespace-nowrap font-medium">{row.question}</td>
-                  <td className="py-2 pr-4 text-slate-600">{row.answer}</td>
                   <td className="py-2 pr-4 text-slate-900 font-medium">{row.value}</td>
                   <td className="py-2 pr-4 text-slate-500 whitespace-nowrap">
                     {row.doi ? (
