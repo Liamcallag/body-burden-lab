@@ -132,7 +132,6 @@ export const QUESTIONS: Question[] = [
     options: [
       { label: "Yes — visibly scratched, chipped or heavily worn", riskScore: 10 },
       { label: "Yes — some light scratching", riskScore: 5 },
-      { label: "Yes — in good condition", riskScore: 2 },
       { label: "No — I use stainless steel, cast iron or ceramic", riskScore: 0 },
     ],
   },
