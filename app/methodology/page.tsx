@@ -219,10 +219,7 @@ export default function MethodologyPage() {
                     <span className="font-medium">Used for:</span> {s.usedFor}
                   </p>
                 </div>
-                <div className="flex flex-col items-end gap-2 flex-shrink-0">
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${confidenceBadge[s.confidence]}`}>
-                    {s.confidence} confidence
-                  </span>
+                <div className="flex-shrink-0">
                   <a
                     href={`https://doi.org/${s.doi}`}
                     target="_blank"
