@@ -159,10 +159,10 @@ const referenceTable = [
 ];
 
 const confidenceBadge: Record<string, string> = {
-  High: "bg-emerald-100 text-emerald-700",
-  Medium: "bg-amber-100 text-amber-700",
-  Low: "bg-red-100 text-red-700",
-  "N/A": "bg-slate-100 text-slate-500",
+  High: "bg-emerald-600 text-white",
+  Medium: "bg-amber-500 text-white",
+  Low: "bg-red-500 text-white",
+  "N/A": "bg-slate-300 text-slate-600",
 };
 
 export default function MethodologyPage() {
@@ -311,14 +311,13 @@ export default function MethodologyPage() {
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-slate-900 mb-2">Full reference table</h2>
         <p className="text-sm text-slate-500 mb-2">Every question and the measured value from the source study. Units vary by question — some are per litre, per gram, per wash, or per session depending on what the study measured.</p>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 mb-5 text-xs text-slate-400">
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block font-medium px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">High</span>
+        <div className="flex flex-col gap-1.5 mb-5 text-xs text-slate-500">
+          <span className="flex items-center gap-2">
+            <span className="inline-block font-semibold px-2.5 py-0.5 rounded-full bg-emerald-600 text-white">High</span>
             Direct from a single well-cited study
           </span>
-          <span className="text-slate-200">|</span>
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">Medium</span>
+          <span className="flex items-center gap-2">
+            <span className="inline-block font-semibold px-2.5 py-0.5 rounded-full bg-amber-500 text-white">Medium</span>
             Involves some extrapolation to real-world conditions
           </span>
         </div>
