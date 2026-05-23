@@ -128,63 +128,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest research */}
-      <section className="py-14 px-4 sm:px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Landmark research</h2>
-          <p className="text-slate-500 text-center text-sm mb-10">Significant studies from peer-reviewed journals</p>
-          <div className="flex flex-col gap-4">
-            {[
-              {
-                journal: "New England Journal of Medicine",
-                year: "2024",
-                title: "Microplastics found in arterial plaque linked to 4.5× higher cardiovascular risk",
-                summary: "Scientists examined arterial plaque from 257 heart surgery patients and found plastic in the majority of samples. Those whose plaque contained microplastics were nearly five times more likely to have a heart attack, stroke, or die within three years.",
-                doi: "10.1056/NEJMoa2309822",
-              },
-              {
-                journal: "Nature Medicine",
-                year: "2025",
-                title: "Brains accumulate more microplastic than any other organ — and levels are rising",
-                summary: "Autopsy analysis of brain, liver, and kidney tissue found that brains contain more microplastic than other organs, and concentrations rose significantly in just eight years. Brains from people with dementia showed even higher plastic loads.",
-                doi: "10.1038/s41591-024-03453-1",
-              },
-              {
-                journal: "eBioMedicine (The Lancet)",
-                year: "2024",
-                title: "Microplastics found in 100% of semen samples — more types linked to lower sperm count",
-                summary: "Every semen sample from 113 men contained microplastics. Men with more polymer types showed significantly lower sperm counts and reduced motility, with PTFE showing the strongest association.",
-                doi: "10.1016/j.ebiom.2024.105369",
-              },
-              {
-                journal: "Science of the Total Environment",
-                year: "2022",
-                title: "First detection of microplastics in living human lung tissue",
-                summary: "For the first time, researchers confirmed microplastics in lung tissue from living patients — not just cadavers. Particles were found deep in the lower lungs, in locations very difficult for the body to expel.",
-                doi: "10.1016/j.scitotenv.2022.154907",
-              },
-            ].map((study) => (
-              <div key={study.doi} className="border border-slate-100 rounded-xl p-5 bg-white hover:border-teal-200 transition-colors border-l-4 border-l-teal-400">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full">{study.journal}</span>
-                  <span className="text-xs text-slate-400">{study.year}</span>
-                </div>
-                <p className="text-sm font-semibold text-slate-900 mb-1 leading-snug">{study.title}</p>
-                <p className="text-sm text-slate-500 leading-relaxed mb-3">{study.summary}</p>
-                <a
-                  href={`https://doi.org/${study.doi}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-teal-600 hover:underline"
-                >
-                  DOI: {study.doi} →
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Blog preview */}
       <section className="py-14 px-4 sm:px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
