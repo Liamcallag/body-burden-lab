@@ -81,7 +81,7 @@ export const QUESTIONS: Question[] = [
     tipKey: "microwave",
     studyCallout: {
       value: "4.22 million",
-      unit: "microplastic particles per cm² per use",
+      unit: "microplastic particles per cm² per 3-minute use",
       citation: "Hussain et al., Environmental Science & Technology, 2023",
       caveat: "Peak measurement under 3-min heating using food simulants · real food may release more",
       url: "https://pubs.acs.org/doi/10.1021/acs.est.3c01942",
