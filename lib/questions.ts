@@ -60,9 +60,9 @@ export const QUESTIONS: Question[] = [
     tipKey: "tea",
     studyCallout: {
       value: "11.6 billion",
-      unit: "microparticles per cup",
+      unit: "microplastic particles per cup at brewing temperature",
       citation: "Hernandez et al., Environmental Science & Technology, 2019",
-      caveat: "Includes particles across a wide size range — methodology disputed, likely an overcount of true microplastics",
+      caveat: "A single plastic tea bag releases ~11.6 billion microplastic and ~3.1 billion nanoplastic particles per cup at brewing temperature",
       url: "https://pubs.acs.org/doi/10.1021/acs.est.9b02540",
       unitContext: "per cup",
     },
