@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Does Silicone Release Microplastics?",
+  title: "Does Silicone Have Microplastics?",
   description:
     "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
-    title: "Does Silicone Release Microplastics?",
+    title: "Does Silicone Have Microplastics?",
     description:
       "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Does Silicone Release Microplastics?",
+    title: "Does Silicone Have Microplastics?",
     description:
       "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
     images: [
@@ -38,7 +38,7 @@ export default function BlogPost() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Does Silicone Release Microplastics?",
+    "headline": "Does Silicone Have Microplastics?",
     "description": "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
     "datePublished": "2026-04-19",
     "dateModified": "2026-04-19",
@@ -76,7 +76,37 @@ export default function BlogPost() {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bodyburdenlab.com" },
     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.bodyburdenlab.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "Does Silicone Release Microplastics?", "item": "https://www.bodyburdenlab.com/blog/does-silicone-have-microplastics" },
+    { "@type": "ListItem", "position": 3, "name": "Does Silicone Have Microplastics?", "item": "https://www.bodyburdenlab.com/blog/does-silicone-have-microplastics" },
+  ]
+}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does silicone have microplastics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Silicone is not technically a plastic, so it does not release microplastics in the traditional sense. However, it does release nanoparticles under mechanical stress (Ekvall et al., 2023) and migrates methylsiloxane chemicals — including D4, D5, and D6 — into food at cooking temperatures. 84% of silicone kitchenwares tested showed endocrine disrupting activity (Feng et al., 2023). It is not inert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is silicone safer than plastic for cooking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the comparison. Silicone doesn't carry BPA or phthalate risks associated with some hard plastics, but peer-reviewed studies show it migrates methylsiloxanes into food at high temperatures — compounds flagged by EU regulators as substances of very high concern. Glass, stainless steel, and cast iron remain the safest choices for high-heat cooking based on current evidence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do silicone spatulas release microplastics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Silicone spatulas and utensils can release nanoparticles under mechanical stress and abrasion, and may migrate siloxane chemicals during cooking. The risk increases with wear — visibly degraded or heavily scratched silicone items should be replaced. For cooking utensils, stainless steel or wooden alternatives carry lower risk."
+      }
+    }
   ]
 }) }} />
       <div className="mb-8">
@@ -90,7 +120,7 @@ export default function BlogPost() {
           <time className="text-xs text-slate-400" dateTime="2026-04-19">April 19, 2026</time>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
-          Does Silicone Release Microplastics?
+          Does Silicone Have Microplastics?
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
           Silicone kitchen items — baking moulds, baby bottles, spatulas — are widely promoted as a safer plastic alternative. The picture is more nuanced than the marketing suggests.
