@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="py-14 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-semibold text-slate-900 mb-2 text-center">Three habits that drive the most exposure</h2>
-          <p className="text-slate-500 text-center text-sm mb-10">Per-use figures from peer-reviewed studies — not weekly estimates</p>
+          <p className="text-slate-500 text-center text-sm mb-10">Real numbers from peer-reviewed studies</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {stats.map((s) => (
               <div key={s.figure} className="border border-slate-100 rounded-xl p-6">
