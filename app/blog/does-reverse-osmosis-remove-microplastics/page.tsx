@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Not all water filters remove microplastics — some pitcher filters can make it worse. Here's how reverse osmosis actually performs, according to peer-reviewed research.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-reverse-osmosis.png",
+        url: "https://www.bodyburdenlab.com/blog-reverse-osmosis.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Not all water filters remove microplastics — some pitcher filters can make it worse. Here's how reverse osmosis actually performs, according to peer-reviewed research.",
     images: [
-      "https://www.bodyburdenlab.com/blog-reverse-osmosis.png",
+      "https://www.bodyburdenlab.com/blog-reverse-osmosis.jpg",
     ],
   },
 };
@@ -56,7 +56,7 @@ export default function BlogPost() {
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.bodyburdenlab.com/blog-reverse-osmosis.png",
+      "url": "https://www.bodyburdenlab.com/blog-reverse-osmosis.jpg",
       "width": 1200,
       "height": 630,
     },
@@ -130,7 +130,7 @@ export default function BlogPost() {
 
       <div className="mb-10 rounded-xl overflow-hidden">
         <Image
-          src="/blog-reverse-osmosis.png"
+          src="/blog-reverse-osmosis.jpg"
           alt="Illustration of a reverse osmosis filter system installed under a kitchen sink"
           width={800}
           height={450}

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows and what it means.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-heart-disease.png",
+        url: "https://www.bodyburdenlab.com/blog-heart-disease.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "A 2024 New England Journal of Medicine study found people with microplastics in their arterial plaque had a 4.5× higher risk of heart attack, stroke, or death. Here is what the research shows and what it means.",
     images: [
-      "https://www.bodyburdenlab.com/blog-heart-disease.png",
+      "https://www.bodyburdenlab.com/blog-heart-disease.jpg",
     ],
   },
 };
@@ -125,7 +125,7 @@ export default function BlogPost() {
 
       <figure className="mb-8 rounded-2xl overflow-hidden">
         <Image
-          src="/blog-heart-disease.png"
+          src="/blog-heart-disease.jpg"
           alt="Watercolour illustration of a human heart and a cross-section of an artery showing atherosclerotic plaque with microplastic particles embedded in it"
           width={800}
           height={534}

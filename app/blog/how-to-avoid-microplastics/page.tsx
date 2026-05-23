@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-avoid.png",
+        url: "https://www.bodyburdenlab.com/blog-avoid.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
     images: [
-      "https://www.bodyburdenlab.com/blog-avoid.png",
+      "https://www.bodyburdenlab.com/blog-avoid.jpg",
     ],
   },
 };
@@ -56,7 +56,7 @@ export default function BlogPost() {
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.bodyburdenlab.com/blog-avoid.png",
+      "url": "https://www.bodyburdenlab.com/blog-avoid.jpg",
       "width": 1200,
       "height": 630,
     },
@@ -172,7 +172,7 @@ export default function BlogPost() {
           You cannot eliminate microplastic exposure entirely. But the research shows that a handful of specific changes can dramatically reduce your intake — particularly around food preparation, drinking water, and what you heat food in.
         </p>
         <Image
-          src="/blog-avoid.png"
+          src="/blog-avoid.jpg"
           alt="Ways to reduce microplastic exposure in daily life"
           width={800}
           height={450}

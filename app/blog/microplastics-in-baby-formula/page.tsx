@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-baby-formula.png",
+        url: "https://www.bodyburdenlab.com/blog-baby-formula.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
     images: [
-      "https://www.bodyburdenlab.com/blog-baby-formula.png",
+      "https://www.bodyburdenlab.com/blog-baby-formula.jpg",
     ],
   },
 };
@@ -56,7 +56,7 @@ export default function BlogPost() {
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.bodyburdenlab.com/blog-baby-formula.png",
+      "url": "https://www.bodyburdenlab.com/blog-baby-formula.jpg",
       "width": 1200,
       "height": 630,
     },
@@ -127,7 +127,7 @@ export default function BlogPost() {
           Infants face disproportionately high microplastic exposure relative to their body weight — from plastic feeding bottles, formula preparation, and breast milk. Here is what the peer-reviewed evidence shows.
         </p>
         <Image
-          src="/blog-baby-formula.png"
+          src="/blog-baby-formula.jpg"
           alt="Baby bottle and breastfeeding with microplastic particles"
           width={800}
           height={450}

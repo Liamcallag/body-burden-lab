@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-cutting-boards.png",
+        url: "https://www.bodyburdenlab.com/blog-cutting-boards.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
     images: [
-      "https://www.bodyburdenlab.com/blog-cutting-boards.png",
+      "https://www.bodyburdenlab.com/blog-cutting-boards.jpg",
     ],
   },
 };
@@ -56,7 +56,7 @@ export default function BlogPost() {
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.bodyburdenlab.com/blog-cutting-boards.png",
+      "url": "https://www.bodyburdenlab.com/blog-cutting-boards.jpg",
       "width": 1200,
       "height": 630,
     },
@@ -96,7 +96,7 @@ export default function BlogPost() {
           Plastic cutting boards are found in most kitchens. Research now shows they are a significant and underappreciated source of microplastic contamination in food — releasing particles with every knife stroke.
         </p>
         <Image
-          src="/blog-cutting-boards.png"
+          src="/blog-cutting-boards.jpg"
           alt="Plastic cutting board with knife marks and microplastic particles"
           width={800}
           height={450}

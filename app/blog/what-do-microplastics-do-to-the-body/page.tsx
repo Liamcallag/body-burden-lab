@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Microplastics have been found in human blood, lungs, brain, heart, and placenta. Here is what peer-reviewed science currently shows about health effects — and what remains unknown.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-microplastics-body.png",
+        url: "https://www.bodyburdenlab.com/blog-microplastics-body.jpg",
         width: 1200,
         height: 630,
       },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "Microplastics have been found in human blood, lungs, brain, heart, and placenta. Here is what peer-reviewed science currently shows about health effects — and what remains unknown.",
     images: [
-      "https://www.bodyburdenlab.com/blog-microplastics-body.png",
+      "https://www.bodyburdenlab.com/blog-microplastics-body.jpg",
     ],
   },
 };
@@ -123,7 +123,7 @@ export default function BlogPost() {
 
       <figure className="my-8">
         <img
-          src="/blog-microplastics-body.png"
+          src="/blog-microplastics-body.jpg"
           alt="Illustration showing how microplastics enter the body through food and water, travel through the digestive tract into the bloodstream, and accumulate in arterial plaque"
           className="w-full rounded-xl"
         />

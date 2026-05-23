@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-silicone.png",
+        url: "https://www.bodyburdenlab.com/blog-silicone.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
     images: [
-      "https://www.bodyburdenlab.com/blog-silicone.png",
+      "https://www.bodyburdenlab.com/blog-silicone.jpg",
     ],
   },
 };
@@ -56,7 +56,7 @@ export default function BlogPost() {
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.bodyburdenlab.com/blog-silicone.png",
+      "url": "https://www.bodyburdenlab.com/blog-silicone.jpg",
       "width": 1200,
       "height": 630,
     },
@@ -126,7 +126,7 @@ export default function BlogPost() {
           Silicone kitchen items — baking moulds, baby bottles, spatulas — are widely promoted as a safer plastic alternative. What the research actually shows is more complicated than the marketing suggests.
         </p>
         <Image
-          src="/blog-silicone.png"
+          src="/blog-silicone.jpg"
           alt="Silicone kitchen utensils"
           width={800}
           height={450}

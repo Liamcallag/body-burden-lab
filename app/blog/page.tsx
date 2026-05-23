@@ -17,7 +17,7 @@ const posts = [
     date: "2026-05-13",
     readTime: "7 min read",
     tag: "Science",
-    image: "/blog-pregnancy.png",
+    image: "/blog-pregnancy.jpg",
     imageAlt: "Watercolour illustration of a pregnant woman with microplastic particles visible in placental blood supply",
   },
   {
@@ -28,7 +28,7 @@ const posts = [
     date: "2026-05-13",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-heart-disease.png",
+    image: "/blog-heart-disease.jpg",
     imageAlt: "Watercolour illustration of a human heart and arterial plaque with microplastic particles",
   },
   {
@@ -39,7 +39,7 @@ const posts = [
     date: "2026-05-13",
     readTime: "7 min read",
     tag: "Science",
-    image: "/blog-brain.png",
+    image: "/blog-brain.jpg",
     imageAlt: "Watercolour illustration of a human brain with microplastic particles embedded in tissue",
   },
   {
@@ -50,7 +50,7 @@ const posts = [
     date: "2026-05-13",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-tap-water.png",
+    image: "/blog-tap-water.jpg",
     imageAlt: "Glass of water and plastic bottle containing visible microplastic particles",
   },
   {
@@ -61,7 +61,7 @@ const posts = [
     date: "2026-05-10",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-seafood.png",
+    image: "/blog-seafood.jpg",
     imageAlt: "Illustration of seafood plate with salmon, fish, prawns, mussels and scallop showing microplastic contamination",
   },
   {
@@ -72,7 +72,7 @@ const posts = [
     date: "2026-05-10",
     readTime: "8 min read",
     tag: "Science",
-    image: "/blog-microplastics-body.png",
+    image: "/blog-microplastics-body.jpg",
     imageAlt: "Illustration showing how microplastics enter the body through food and water and accumulate in arterial plaque",
   },
   {
@@ -83,7 +83,7 @@ const posts = [
     date: "2026-05-10",
     readTime: "6 min read",
     tag: "Guide",
-    image: "/blog-water-filter.png",
+    image: "/blog-water-filter.jpg",
     imageAlt: "Comparison of reverse osmosis, carbon block, and pitcher water filters for microplastic removal",
   },
   {
@@ -94,7 +94,7 @@ const posts = [
     date: "2026-04-24",
     readTime: "5 min read",
     tag: "Science",
-    image: "/blog-cutting-boards.png",
+    image: "/blog-cutting-boards.jpg",
     imageAlt: "Plastic cutting board with knife marks",
   },
   {
@@ -105,7 +105,7 @@ const posts = [
     date: "2026-04-23",
     readTime: "5 min read",
     tag: "Science",
-    image: "/blog-tea-bags.png",
+    image: "/blog-tea-bags.jpg",
     imageAlt: "Plastic tea bag steeping in hot water",
   },
   {
@@ -116,7 +116,7 @@ const posts = [
     date: "2026-04-22",
     readTime: "5 min read",
     tag: "Science",
-    image: "/blog-salt.png",
+    image: "/blog-salt.jpg",
     imageAlt: "Sea salt and table salt comparison",
   },
   {
@@ -127,7 +127,7 @@ const posts = [
     date: "2026-04-20",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-baby-formula.png",
+    image: "/blog-baby-formula.jpg",
     imageAlt: "Baby bottle and infant feeding",
   },
   {
@@ -138,7 +138,7 @@ const posts = [
     date: "2026-04-19",
     readTime: "5 min read",
     tag: "Science",
-    image: "/blog-silicone.png",
+    image: "/blog-silicone.jpg",
     imageAlt: "Silicone kitchen utensils",
   },
   {
@@ -149,7 +149,7 @@ const posts = [
     date: "2026-04-15",
     readTime: "5 min read",
     tag: "Science",
-    image: "/blog-reverse-osmosis.png",
+    image: "/blog-reverse-osmosis.jpg",
     imageAlt: "Reverse osmosis under-sink filtration system",
   },
   {
@@ -160,7 +160,7 @@ const posts = [
     date: "2026-04-11",
     readTime: "6 min read",
     tag: "Science",
-    image: "/blog-bottled-water.png",
+    image: "/blog-bottled-water.jpg",
     imageAlt: "Plastic water bottles",
   },
   {
@@ -171,7 +171,7 @@ const posts = [
     date: "2026-04-06",
     readTime: "7 min read",
     tag: "Guide",
-    image: "/blog-avoid.png",
+    image: "/blog-avoid.jpg",
     imageAlt: "Ways to reduce microplastic exposure in daily life",
   },
   {
@@ -182,7 +182,7 @@ const posts = [
     date: "2026-04-01",
     readTime: "8 min read",
     tag: "Science",
-    image: "/blog-how-many.png",
+    image: "/blog-how-many.jpg",
     imageAlt: "Microplastics entering the food chain and human body",
   },
 ];

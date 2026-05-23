@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Microplastics have been found in 100% of human brain samples tested — at higher concentrations than in the liver or kidney. Here is what the science currently shows about how they get there and what it means.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-brain.png",
+        url: "https://www.bodyburdenlab.com/blog-brain.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Microplastics have been found in 100% of human brain samples tested — at higher concentrations than in the liver or kidney. Here is what the science currently shows about how they get there and what it means.",
     images: [
-      "https://www.bodyburdenlab.com/blog-brain.png",
+      "https://www.bodyburdenlab.com/blog-brain.jpg",
     ],
   },
 };
@@ -125,7 +125,7 @@ export default function BlogPost() {
 
       <div className="mb-10 rounded-xl overflow-hidden">
         <Image
-          src="/blog-brain.png"
+          src="/blog-brain.jpg"
           alt="Watercolour illustration of a human brain with microplastic particles embedded in tissue, with close-up inset"
           width={800}
           height={450}

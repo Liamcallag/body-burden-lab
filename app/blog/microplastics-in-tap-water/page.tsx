@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Tap water contains microplastics — but significantly fewer than bottled water. Here's what peer-reviewed research shows about contamination levels, sources, and how to reduce your exposure.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-tap-water.png",
+        url: "https://www.bodyburdenlab.com/blog-tap-water.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Tap water contains microplastics — but significantly fewer than bottled water. Here's what peer-reviewed research shows about contamination levels, sources, and how to reduce your exposure.",
     images: [
-      "https://www.bodyburdenlab.com/blog-tap-water.png",
+      "https://www.bodyburdenlab.com/blog-tap-water.jpg",
     ],
   },
 };
@@ -125,7 +125,7 @@ export default function BlogPost() {
 
       <div className="mb-10 rounded-xl overflow-hidden">
         <Image
-          src="/blog-tap-water.png"
+          src="/blog-tap-water.jpg"
           alt="Glass of water and plastic bottle containing visible microplastic particles"
           width={800}
           height={450}

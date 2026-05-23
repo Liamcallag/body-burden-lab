@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Bottled water contains significantly more microplastics than filtered tap water. Here's what peer-reviewed research has found, and what it means for your exposure.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-bottled-water.png",
+        url: "https://www.bodyburdenlab.com/blog-bottled-water.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Bottled water contains significantly more microplastics than filtered tap water. Here's what peer-reviewed research has found, and what it means for your exposure.",
     images: [
-      "https://www.bodyburdenlab.com/blog-bottled-water.png",
+      "https://www.bodyburdenlab.com/blog-bottled-water.jpg",
     ],
   },
 };
@@ -56,7 +56,7 @@ export default function BlogPost() {
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.bodyburdenlab.com/blog-bottled-water.png",
+      "url": "https://www.bodyburdenlab.com/blog-bottled-water.jpg",
       "width": 1200,
       "height": 630,
     },
@@ -99,7 +99,7 @@ export default function BlogPost() {
 
       <div className="mb-10 rounded-xl overflow-hidden">
         <Image
-          src="/blog-bottled-water.png"
+          src="/blog-bottled-water.jpg"
           alt="Illustration of a plastic bottle disintegrating into microplastic particles"
           width={800}
           height={450}

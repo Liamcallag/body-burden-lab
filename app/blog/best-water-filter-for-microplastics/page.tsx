@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Not all water filters remove microplastics equally. Here is what the peer-reviewed evidence and filter physics show about each major filter type — from reverse osmosis to pitcher filters.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-water-filter.png",
+        url: "https://www.bodyburdenlab.com/blog-water-filter.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Not all water filters remove microplastics equally. Here is what the peer-reviewed evidence and filter physics show about each major filter type — from reverse osmosis to pitcher filters.",
     images: [
-      "https://www.bodyburdenlab.com/blog-water-filter.png",
+      "https://www.bodyburdenlab.com/blog-water-filter.jpg",
     ],
   },
 };
@@ -121,7 +121,7 @@ export default function BlogPost() {
           Drinking water is one of the most significant microplastic exposure pathways — but not all filters address it equally. Here is what the peer-reviewed evidence and filter physics say about each filter type, ranked by expected removal performance.
         </p>
         <Image
-          src="/blog-water-filter.png"
+          src="/blog-water-filter.jpg"
           alt="Comparison of reverse osmosis, carbon block, and pitcher water filters for microplastic removal"
           width={800}
           height={450}

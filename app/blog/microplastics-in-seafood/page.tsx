@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Shellfish eaters consume significantly more microplastics than fish eaters — because shellfish are eaten whole, digestive tract included. Here is what the research shows by seafood type.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-seafood.png",
+        url: "https://www.bodyburdenlab.com/blog-seafood.jpg",
         width: 1200,
         height: 630,
       },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "Shellfish eaters consume significantly more microplastics than fish eaters — because shellfish are eaten whole, digestive tract included. Here is what the research shows by seafood type.",
     images: [
-      "https://www.bodyburdenlab.com/blog-seafood.png",
+      "https://www.bodyburdenlab.com/blog-seafood.jpg",
     ],
   },
 };
@@ -124,7 +124,7 @@ export default function BlogPost() {
 
       <figure className="my-8">
         <img
-          src="/blog-seafood.png"
+          src="/blog-seafood.jpg"
           alt="Illustration of a plate with salmon fillet, whole fish, prawn, mussels and scallop alongside a magnified circle showing blue and grey microplastic particles"
           className="w-full rounded-xl"
         />

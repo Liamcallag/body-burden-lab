@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/blog-how-many.png",
+        url: "https://www.bodyburdenlab.com/blog-how-many.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
-      "https://www.bodyburdenlab.com/blog-how-many.png",
+      "https://www.bodyburdenlab.com/blog-how-many.jpg",
     ],
   },
 };
@@ -56,7 +56,7 @@ export default function BlogPost() {
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.bodyburdenlab.com/blog-how-many.png",
+      "url": "https://www.bodyburdenlab.com/blog-how-many.jpg",
       "width": 1200,
       "height": 630,
     },
@@ -97,7 +97,7 @@ export default function BlogPost() {
           Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.
         </p>
         <Image
-          src="/blog-how-many.png"
+          src="/blog-how-many.jpg"
           alt="Microplastics entering the food chain and human body"
           width={800}
           height={450}
