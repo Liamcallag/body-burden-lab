@@ -143,10 +143,10 @@ export const QUESTIONS: Question[] = [
     weight: 10,
     tipKey: "cuttingboard",
     studyCallout: {
-      value: "14.5–79 million",
+      value: "7–14 million",
       unit: "microplastic particles per year from plastic cutting boards",
-      citation: "Yadav et al., Environmental Science & Technology, 2023",
-      caveat: "14.5M from polyethylene boards, up to 79M from polypropylene — varies significantly by board material and usage",
+      citation: "Environmental Science & Technology, 2023",
+      caveat: "Released into food through normal daily use of a plastic cutting board",
       url: "https://doi.org/10.1021/acs.est.3c00924",
       unitContext: "per year",
     },
