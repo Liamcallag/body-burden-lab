@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Microplastics have been found in human blood, lungs, brain, heart, and placenta. Here is what peer-reviewed science currently shows about health effects — and what remains unknown.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=What+Do+Microplastics+Do+to+the+Human+Body%3F&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-microplastics-body.png",
         width: 1200,
         height: 630,
       },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "Microplastics have been found in human blood, lungs, brain, heart, and placenta. Here is what peer-reviewed science currently shows about health effects — and what remains unknown.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=What+Do+Microplastics+Do+to+the+Human+Body%3F&tag=Science",
+      "https://www.bodyburdenlab.com/blog-microplastics-body.png",
     ],
   },
 };

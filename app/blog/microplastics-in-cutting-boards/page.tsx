@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Plastic+Cutting+Boards+as+a+Source+of+Microplastics+in+Food&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-cutting-boards.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Plastic+Cutting+Boards+as+a+Source+of+Microplastics+in+Food&tag=Science",
+      "https://www.bodyburdenlab.com/blog-cutting-boards.png",
     ],
   },
 };

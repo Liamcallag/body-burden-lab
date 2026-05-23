@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Microplastics have been detected in human placenta and in newborn meconium — fetal exposure is established before birth. Here is what the evidence shows and what pregnant women can do to reduce it.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+and+Pregnancy%3A+What+the+Research+Shows&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-pregnancy.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Microplastics have been detected in human placenta and in newborn meconium — fetal exposure is established before birth. Here is what the evidence shows and what pregnant women can do to reduce it.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+and+Pregnancy%3A+What+the+Research+Shows&tag=Science",
+      "https://www.bodyburdenlab.com/blog-pregnancy.png",
     ],
   },
 };

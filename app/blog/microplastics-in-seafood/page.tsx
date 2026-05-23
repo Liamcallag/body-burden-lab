@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Shellfish eaters consume significantly more microplastics than fish eaters — because shellfish are eaten whole, digestive tract included. Here is what the research shows by seafood type.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Seafood&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-seafood.png",
         width: 1200,
         height: 630,
       },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "Shellfish eaters consume significantly more microplastics than fish eaters — because shellfish are eaten whole, digestive tract included. Here is what the research shows by seafood type.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Seafood&tag=Science",
+      "https://www.bodyburdenlab.com/blog-seafood.png",
     ],
   },
 };

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Tap water contains microplastics — but significantly fewer than bottled water. Here's what peer-reviewed research shows about contamination levels, sources, and how to reduce your exposure.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Tap+Water%3A+How+Much+Are+You+Drinking%3F&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-tap-water.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Tap water contains microplastics — but significantly fewer than bottled water. Here's what peer-reviewed research shows about contamination levels, sources, and how to reduce your exposure.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Tap+Water%3A+How+Much+Are+You+Drinking%3F&tag=Science",
+      "https://www.bodyburdenlab.com/blog-tap-water.png",
     ],
   },
 };

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Not all water filters remove microplastics equally. Here is what the peer-reviewed evidence and filter physics show about each major filter type — from reverse osmosis to pitcher filters.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Best+Water+Filter+for+Microplastics&tag=Guide",
+        url: "https://www.bodyburdenlab.com/blog-water-filter.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Not all water filters remove microplastics equally. Here is what the peer-reviewed evidence and filter physics show about each major filter type — from reverse osmosis to pitcher filters.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Best+Water+Filter+for+Microplastics&tag=Guide",
+      "https://www.bodyburdenlab.com/blog-water-filter.png",
     ],
   },
 };

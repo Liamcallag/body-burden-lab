@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-how-many.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Microplastics have been found in human lungs, blood, and arterial plaque. How much you're exposed to depends almost entirely on a handful of daily habits — and the range between individuals is enormous. Here's what the peer-reviewed science actually shows.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=How+Many+Microplastics+Do+You+Consume+Per+Week%3F&tag=Science",
+      "https://www.bodyburdenlab.com/blog-how-many.png",
     ],
   },
 };

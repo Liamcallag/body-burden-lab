@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
+        url: "https://www.bodyburdenlab.com/blog-avoid.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=How+to+Avoid+Microplastics+%E2%80%94+A+Science-Based+Guide&tag=Guide",
+      "https://www.bodyburdenlab.com/blog-avoid.png",
     ],
   },
 };

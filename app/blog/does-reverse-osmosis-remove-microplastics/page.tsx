@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Not all water filters remove microplastics — some pitcher filters can make it worse. Here's how reverse osmosis actually performs, according to peer-reviewed research.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Does+Reverse+Osmosis+Remove+Microplastics%3F&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-reverse-osmosis.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Not all water filters remove microplastics — some pitcher filters can make it worse. Here's how reverse osmosis actually performs, according to peer-reviewed research.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Does+Reverse+Osmosis+Remove+Microplastics%3F&tag=Science",
+      "https://www.bodyburdenlab.com/blog-reverse-osmosis.png",
     ],
   },
 };

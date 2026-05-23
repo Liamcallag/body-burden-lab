@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Microplastics have been found in 100% of human brain samples tested — at higher concentrations than in the liver or kidney. Here is what the science currently shows about how they get there and what it means.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+the+Brain%3A+What+the+Research+Shows&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-brain.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Microplastics have been found in 100% of human brain samples tested — at higher concentrations than in the liver or kidney. Here is what the science currently shows about how they get there and what it means.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+the+Brain%3A+What+the+Research+Shows&tag=Science",
+      "https://www.bodyburdenlab.com/blog-brain.png",
     ],
   },
 };

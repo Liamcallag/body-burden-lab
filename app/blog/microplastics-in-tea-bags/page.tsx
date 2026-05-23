@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "A single plastic tea bag releases up to 11.6 billion microplastic particles into your cup. Here's what the research shows and what to use instead.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Tea+Bags%3A+How+Many+You%27re+Drinking&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-tea-bags.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "A single plastic tea bag releases up to 11.6 billion microplastic particles into your cup. Here's what the research shows and what to use instead.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Tea+Bags%3A+How+Many+You%27re+Drinking&tag=Science",
+      "https://www.bodyburdenlab.com/blog-tea-bags.png",
     ],
   },
 };

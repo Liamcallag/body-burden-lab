@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "90% of commercial salt brands contain microplastics — and sea salt is the most contaminated type. Here's what the research shows and what it means for your exposure.",
     images: [
       {
-        url: "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Salt%3A+Is+Sea+Salt+Making+You+Eat+More+Plastic%3F&tag=Science",
+        url: "https://www.bodyburdenlab.com/blog-salt.png",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "90% of commercial salt brands contain microplastics — and sea salt is the most contaminated type. Here's what the research shows and what it means for your exposure.",
     images: [
-      "https://www.bodyburdenlab.com/api/og-image?title=Microplastics+in+Salt%3A+Is+Sea+Salt+Making+You+Eat+More+Plastic%3F&tag=Science",
+      "https://www.bodyburdenlab.com/blog-salt.png",
     ],
   },
 };
