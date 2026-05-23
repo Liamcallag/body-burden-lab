@@ -220,14 +220,14 @@ function DetailPanel({ activeGroup, colorsMap, onClose }: {
                 <p className="text-[10px] text-slate-500 leading-snug mt-0.5 mb-2">{question.studyCallout.unit}</p>
                 <div className="flex items-center gap-2 flex-wrap">
                   {question.studyCallout.unitContext && (
-                    <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-white" style={{ color }}>
+                    <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded text-white" style={{ backgroundColor: color }}>
                       {question.studyCallout.unitContext}
                     </span>
                   )}
                   {question.studyCallout.url ? (
                     <a href={question.studyCallout.url} target="_blank" rel="noopener noreferrer"
                       className="text-[10px] font-semibold hover:underline" style={{ color }}>
-                      View study 1 →
+                      View study →
                     </a>
                   ) : (
                     <span className="text-[10px] text-slate-400 italic">Est.</span>
