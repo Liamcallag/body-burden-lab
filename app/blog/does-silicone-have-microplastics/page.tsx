@@ -123,7 +123,7 @@ export default function BlogPost() {
           Does Silicone Have Microplastics?
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed">
-          Silicone kitchen items — baking moulds, baby bottles, spatulas — are widely promoted as a safer plastic alternative. The picture is more nuanced than the marketing suggests.
+          Silicone kitchen items — baking moulds, baby bottles, spatulas — are widely promoted as a safer plastic alternative. What the research actually shows is more complicated than the marketing suggests.
         </p>
         <Image
           src="/blog-silicone.png"
@@ -148,11 +148,12 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ 84% of silicone kitchenwares tested showed endocrine disrupting activity, and 96% showed mild or above cytotoxicity — driven by chemical migration at cooking temperatures (Feng et al., 2023)</li>
-          <li>→ The main migrants are methylsiloxanes including D4, D5, and D6 — substances flagged by EU regulators as of very high concern due to links with hormone disruption and fertility effects (Feng et al., 2023)</li>
-          <li>→ Migration increases at high temperatures — the risk is meaningfully higher when silicone kitchenware is used for hot or baked food (Feng et al., 2023)</li>
-          <li>→ Silicone also releases nanoparticles under mechanical stress, and boiling silicone approximately doubles subsequent particle release (Ekvall et al., 2023)</li>
-          <li>→ Glass, stainless steel, and cast iron remain the safest choices for food contact — none release synthetic polymer particles or methylsiloxanes</li>
+          <li>→ Silicone doesn't release traditional microplastics — but it does release nanoparticles and chemical migrants that raise their own concerns</li>
+          <li>→ 84% of silicone kitchenwares tested showed hormone-disrupting effects, and 96% were toxic to cells — caused by chemicals migrating out at cooking temperatures (Feng et al., 2023)</li>
+          <li>→ The main chemicals are methylsiloxanes (D4, D5, D6) — flagged by EU regulators as substances of very high concern due to links with hormone disruption and fertility effects (Feng et al., 2023)</li>
+          <li>→ Risk increases with heat — migration is meaningfully higher when silicone is used for baking or hot food (Feng et al., 2023)</li>
+          <li>→ Silicone also releases nanoparticles under mechanical stress — and boiling silicone approximately doubles subsequent particle release (Ekvall et al., 2023)</li>
+          <li>→ Glass, stainless steel, and cast iron remain the safest choices for food contact — none release particles or methylsiloxanes</li>
         </ul>
       </div>
 
@@ -161,29 +162,33 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What is silicone?</h2>
 
         <p>
-          Silicone (technically polydimethylsiloxane, or PDMS) is a synthetic polymer made from silicon, oxygen, carbon, and hydrogen. It is not technically a plastic — plastics are carbon-chain polymers, whereas silicone has a silicon-oxygen backbone — which is part of why it is often positioned as a safer alternative. It is heat-resistant, flexible, and widely used in kitchen tools, food storage bags, baby products, and medical devices.
+          Silicone is a synthetic polymer — but it is not technically a plastic. Plastics have a carbon-chain backbone; silicone has a silicon-oxygen backbone. This is part of why it is marketed as a safer alternative. It is heat-resistant, flexible, and widely used in kitchen tools, food storage bags, baby products, and medical devices.
         </p>
 
         <p>
-          The relevant question for microplastic exposure is not whether silicone is technically a plastic, but whether it releases particles or chemical migrants into food and water under realistic use conditions.
+          The real question isn't whether silicone is technically a plastic — it's whether it releases particles or chemicals into food under everyday use. That's what the research addresses.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research shows</h2>
 
         <p>
-          Feng et al. (2023) in <em>Science of the Total Environment</em> tested 31 silicone kitchenwares purchased from the Chinese market — including baking moulds, plates, chopping boards, and cups. Migration was measured using ethanol as a food simulant at 70°C. The results were striking: 96% of products showed mild or above cytotoxicity, and 84% showed at least one form of hormonal activity, including estrogenic, anti-estrogenic, androgenic, and anti-androgenic effects. The study identified migration of at least 26 organic compounds and 21 metals across the products tested.
+          The short answer: silicone doesn't release traditional microplastics. What it does release — nanoparticles and chemical migrants — raises its own concerns.
         </p>
 
         <p>
-          The main compounds driving these effects were methylsiloxanes — a family of chemicals that includes D4, D5, and D6. Evidence from animal studies links these compounds to fertility damage and estrogen disruption, and they appear on the European Chemicals Agency's list of substances of very high concern. Critically, the study found that the risk of endocrine disruption was higher when products were used at elevated temperatures, which is exactly how most silicone bakeware and cooking tools are used.
+          Feng et al. (2023) in <em>Science of the Total Environment</em> tested 31 silicone kitchenwares — baking moulds, plates, chopping boards, and cups. They found that 96% were toxic to cells and 84% showed hormone-disrupting effects, including impacts on both estrogen and androgen activity. At least 26 organic compounds and 21 metals were detected migrating out of the products.
         </p>
 
         <p>
-          Notably, the 11 baby bottle nipples in the same study performed significantly better — none showed cytotoxic or hormonal activity. This suggests that regulatory scrutiny applied specifically to infant products may result in meaningfully safer silicone formulations.
+          The main chemicals driving these effects were methylsiloxanes — D4, D5, and D6. These are flagged by the European Chemicals Agency as substances of very high concern, linked to fertility damage and hormone disruption in animal studies. Migration was higher at elevated temperatures — which is exactly how most silicone bakeware and cooking utensils are used.
         </p>
 
         <p>
-          Separately, Ekvall et al. (2023) in <em>PLOS ONE</em> confirmed that silicone releases nanoparticles under mechanical stress. Their experiments with silicone pacifiers showed that boiling the material before mechanical breakdown approximately doubled the number of nanoparticles released — pointing to heat as a factor that weakens silicone's structure over time.
+          Notably, the 11 baby bottle nipples in the same study performed significantly better — none showed toxic or hormonal effects. This suggests that the tighter regulation applied to infant products may result in safer silicone formulations.
+        </p>
+
+        <p>
+          On the particle side, Ekvall et al. (2023) in <em>PLOS ONE</em> confirmed that silicone releases nanoparticles under mechanical stress. Their experiments with silicone pacifiers showed that boiling the material before mechanical breakdown approximately doubled the number of nanoparticles released — pointing to heat as a factor that weakens silicone's structure over time.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Is silicone safer than plastic?</h2>
@@ -193,7 +198,7 @@ export default function BlogPost() {
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>High-temperature use carries the most risk</strong> — baking moulds and oven-safe cookware are the use cases where migration of methylsiloxanes is most likely to occur.</li>
+          <li><strong>High-temperature use carries the most risk</strong> — baking moulds and oven-safe cookware are where migration of methylsiloxanes is most likely to occur.</li>
           <li><strong>Not all silicone products are the same</strong> — the study found variation between products, and the better-performing bottle nipples suggest formulation matters. Cheaper products with more additives and colorants may carry higher risk.</li>
           <li><strong>Mechanical wear also releases particles</strong> — silicone used with abrasive cleaners or utensils will shed nanoparticles over time.</li>
           <li><strong>Cold storage is lower risk</strong> — the migration effects in Feng et al. were measured at cooking temperatures; using silicone bags for cold food storage is a different risk profile.</li>
