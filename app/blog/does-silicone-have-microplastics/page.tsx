@@ -148,11 +148,11 @@ export default function BlogPost() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Key takeaways</p>
         <ul className="space-y-2 text-sm text-slate-700">
-          <li>→ Silicone doesn't release traditional microplastics — but it does release nanoparticles and chemical migrants that raise their own concerns</li>
+          <li>→ Silicone doesn't release traditional microplastics — but it does release silicone nanoplastics and chemical migrants that raise their own concerns</li>
           <li>→ 84% of silicone kitchenwares tested showed hormone-disrupting effects, and 96% were toxic to cells — caused by chemicals migrating out at cooking temperatures (Feng et al., 2023)</li>
           <li>→ The main chemicals are methylsiloxanes (D4, D5, D6) — flagged by EU regulators as substances of very high concern due to links with hormone disruption and fertility effects (Feng et al., 2023)</li>
           <li>→ Risk increases with heat — migration is meaningfully higher when silicone is used for baking or hot food (Feng et al., 2023)</li>
-          <li>→ Silicone also releases nanoparticles under mechanical stress — and boiling silicone approximately doubles subsequent particle release (Ekvall et al., 2023)</li>
+          <li>→ Silicone releases silicone nanoplastics under mechanical stress — boiling alone does not release particles, but boiling followed by mechanical wear approximately doubles the number released (Ekvall et al., 2023)</li>
           <li>→ Glass, stainless steel, and cast iron remain the safest choices for food contact — none release particles or methylsiloxanes</li>
         </ul>
       </div>
@@ -172,7 +172,7 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">What the research shows</h2>
 
         <p>
-          The short answer: silicone doesn't release traditional microplastics. What it does release — nanoparticles and chemical migrants — raises its own concerns.
+          The short answer: silicone doesn't release traditional microplastics. What it does release — silicone nanoplastics and chemical migrants — raises its own concerns.
         </p>
 
         <p>
@@ -188,7 +188,7 @@ export default function BlogPost() {
         </p>
 
         <p>
-          On the particle side, Ekvall et al. (2023) in <em>PLOS ONE</em> confirmed that silicone releases nanoparticles under mechanical stress. Their experiments with silicone pacifiers showed that boiling the material before mechanical breakdown approximately doubled the number of nanoparticles released — pointing to heat as a factor that weakens silicone's structure over time.
+          On the particle side, Ekvall et al. (2023) in <em>PLOS ONE</em> confirmed that silicone releases silicone nanoplastics under mechanical stress. Boiling alone did not release a significant number of particles — but when the boiled silicone was then subjected to mechanical breakdown, it released approximately twice the number of nanoplastics compared to unboiled material. The study also tested acute toxicity and found the silicone nanoplastics did not affect survival in the test organism, though this covers acute toxicity only and does not address longer-term effects.
         </p>
 
         <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-3">Is silicone safer than plastic?</h2>
@@ -200,7 +200,7 @@ export default function BlogPost() {
         <ul className="list-disc list-inside space-y-2 text-slate-700">
           <li><strong>High-temperature use carries the most risk</strong> — baking moulds and oven-safe cookware are where migration of methylsiloxanes is most likely to occur.</li>
           <li><strong>Not all silicone products are the same</strong> — the study found variation between products, and the better-performing bottle nipples suggest formulation matters. Cheaper products with more additives and colorants may carry higher risk.</li>
-          <li><strong>Mechanical wear also releases particles</strong> — silicone used with abrasive cleaners or utensils will shed nanoparticles over time.</li>
+          <li><strong>Mechanical wear releases silicone nanoplastics</strong> — silicone used with abrasive cleaners or utensils will shed particles over time, particularly if the material has previously been boiled.</li>
           <li><strong>Cold storage is lower risk</strong> — the migration effects in Feng et al. were measured at cooking temperatures; using silicone bags for cold food storage is a different risk profile.</li>
         </ul>
 
