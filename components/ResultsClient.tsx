@@ -681,9 +681,14 @@ export default function ResultsClient() {
       </div>
 
       {/* ── Nanoplastics note ── */}
-      <p className="text-xs text-slate-400 text-center mb-8 px-4">
+      <p className="text-xs text-slate-400 text-center mb-3 px-4">
         Note: this score covers microplastics only. Nanoplastics — smaller, more cell-penetrating — are not yet measurable across sources and are not included.{" "}
         <Link href="/methodology" className="underline hover:text-slate-600">Learn more</Link>
+      </p>
+
+      {/* ── Data disclaimer ── */}
+      <p className="text-xs text-slate-400 text-center mb-8 px-4">
+        Figures are drawn from peer-reviewed studies linked throughout this page. Because studies use different methodologies and units of measurement, results should be treated as estimates rather than precise measurements.
       </p>
 
       {/* ── CTAs ── */}
