@@ -5,7 +5,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Best Water Filter for Microplastics: RO vs Carbon vs Pitcher, Ranked",
   description:
-    "Reverse osmosis removes 99%+ of microplastics. Some pitcher filters remove as little as 58%. We ranked every major filter type by removal efficiency using peer-reviewed research — with a clear winner.",
+    "Reverse osmosis removes 99%+ of microplastics. Standard pitcher filters aren't reliably effective. We ranked every major filter type by removal efficiency using peer-reviewed research — with a clear winner.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/best-water-filter-for-microplastics",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     publishedTime: "2026-05-10",
     title: "Best Water Filter for Microplastics: RO vs Carbon vs Pitcher, Ranked",
     description:
-      "Reverse osmosis removes 99%+ of microplastics. Some pitcher filters remove as little as 58%. We ranked every major filter type by removal efficiency using peer-reviewed research — with a clear winner.",
+      "Reverse osmosis removes 99%+ of microplastics. Standard pitcher filters aren't reliably effective. We ranked every major filter type by removal efficiency using peer-reviewed research — with a clear winner.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/blog-water-filter.jpg",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Best Water Filter for Microplastics: RO vs Carbon vs Pitcher, Ranked",
     description:
-      "Reverse osmosis removes 99%+ of microplastics. Some pitcher filters remove as little as 58%. We ranked every major filter type by removal efficiency using peer-reviewed research — with a clear winner.",
+      "Reverse osmosis removes 99%+ of microplastics. Standard pitcher filters aren't reliably effective. We ranked every major filter type by removal efficiency using peer-reviewed research — with a clear winner.",
     images: [
       "https://www.bodyburdenlab.com/blog-water-filter.jpg",
     ],

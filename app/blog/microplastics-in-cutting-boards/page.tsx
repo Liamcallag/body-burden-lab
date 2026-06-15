@@ -5,7 +5,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Microplastics in Cutting Boards: How Many Particles End Up in Your Food?",
   description:
-    "One study found plastic cutting boards shed up to 14.5 million microplastic particles per year into food. Here's what the research shows and the safest alternatives.",
+    "Plastic cutting boards shed microplastic particles directly onto food with every knife stroke. Here's what peer-reviewed research shows and the safest alternatives.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-cutting-boards",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     publishedTime: "2026-04-24",
     title: "Microplastics in Cutting Boards: How Many Particles End Up in Your Food?",
     description:
-      "One study found plastic cutting boards shed up to 14.5 million microplastic particles per year into food. Here's what the research shows and the safest alternatives.",
+      "Plastic cutting boards shed microplastic particles directly onto food with every knife stroke. Here's what peer-reviewed research shows and the safest alternatives.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/blog-cutting-boards.jpg",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Microplastics in Cutting Boards: How Many Particles End Up in Your Food?",
     description:
-      "One study found plastic cutting boards shed up to 14.5 million microplastic particles per year into food. Here's what the research shows and the safest alternatives.",
+      "Plastic cutting boards shed microplastic particles directly onto food with every knife stroke. Here's what peer-reviewed research shows and the safest alternatives.",
     images: [
       "https://www.bodyburdenlab.com/blog-cutting-boards.jpg",
     ],
