@@ -3,18 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Does Reverse Osmosis Remove Microplastics?",
+  title: "Does Reverse Osmosis Remove Microplastics? (Studies Show 99%+)",
   description:
-    "Not all water filters remove microplastics — some pitcher filters can make it worse. Here's how reverse osmosis actually performs, according to peer-reviewed research.",
+    "Studies show reverse osmosis removes over 99% of microplastics and nanoplastics. Here's what the peer-reviewed research shows about removal rates and how RO compares to carbon and pitcher filters.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/does-reverse-osmosis-remove-microplastics",
   },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-15",
-    title: "Does Reverse Osmosis Remove Microplastics?",
+    title: "Does Reverse Osmosis Remove Microplastics? (Studies Show 99%+)",
     description:
-      "Not all water filters remove microplastics — some pitcher filters can make it worse. Here's how reverse osmosis actually performs, according to peer-reviewed research.",
+      "Studies show reverse osmosis removes over 99% of microplastics and nanoplastics. Here's what the peer-reviewed research shows about removal rates and how RO compares to carbon and pitcher filters.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/blog-reverse-osmosis.jpg",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Does Reverse Osmosis Remove Microplastics?",
+    title: "Does Reverse Osmosis Remove Microplastics? (Studies Show 99%+)",
     description:
-      "Not all water filters remove microplastics — some pitcher filters can make it worse. Here's how reverse osmosis actually performs, according to peer-reviewed research.",
+      "Studies show reverse osmosis removes over 99% of microplastics and nanoplastics. Here's what the peer-reviewed research shows about removal rates and how RO compares to carbon and pitcher filters.",
     images: [
       "https://www.bodyburdenlab.com/blog-reverse-osmosis.jpg",
     ],

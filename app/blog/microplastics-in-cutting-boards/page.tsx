@@ -3,18 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Plastic Cutting Boards as a Source of Microplastics in Food",
+  title: "Microplastics in Cutting Boards: How Many Particles End Up in Your Food?",
   description:
-    "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
+    "One study found plastic cutting boards shed up to 14.5 million microplastic particles per year into food. Here's what the research shows and the safest alternatives.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-cutting-boards",
   },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-24",
-    title: "Plastic Cutting Boards as a Source of Microplastics in Food",
+    title: "Microplastics in Cutting Boards: How Many Particles End Up in Your Food?",
     description:
-      "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
+      "One study found plastic cutting boards shed up to 14.5 million microplastic particles per year into food. Here's what the research shows and the safest alternatives.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/blog-cutting-boards.jpg",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Plastic Cutting Boards as a Source of Microplastics in Food",
+    title: "Microplastics in Cutting Boards: How Many Particles End Up in Your Food?",
     description:
-      "Plastic cutting boards are an overlooked source of microplastic contamination in food. Here's what the research shows and what to use instead.",
+      "One study found plastic cutting boards shed up to 14.5 million microplastic particles per year into food. Here's what the research shows and the safest alternatives.",
     images: [
       "https://www.bodyburdenlab.com/blog-cutting-boards.jpg",
     ],

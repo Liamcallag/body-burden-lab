@@ -3,18 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
+  title: "Microplastics in Baby Formula (2026): What Parents Need to Know",
   description:
-    "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
+    "Plastic baby bottles release up to 16 million microplastic particles per litre. Formula-fed infants may ingest millions of particles daily. Here's what the research shows and how to reduce exposure.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/microplastics-in-baby-formula",
   },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-20",
-    title: "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
+    title: "Microplastics in Baby Formula (2026): What Parents Need to Know",
     description:
-      "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
+      "Plastic baby bottles release up to 16 million microplastic particles per litre. Formula-fed infants may ingest millions of particles daily. Here's what the research shows and how to reduce exposure.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/blog-baby-formula.jpg",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Microplastics in Baby Formula and Breast Milk: What Parents Need to Know",
+    title: "Microplastics in Baby Formula (2026): What Parents Need to Know",
     description:
-      "Plastic baby bottles can release up to 16 million microplastic particles per litre. Microplastics have also been detected in breast milk. Here's what the research shows.",
+      "Plastic baby bottles release up to 16 million microplastic particles per litre. Formula-fed infants may ingest millions of particles daily. Here's what the research shows and how to reduce exposure.",
     images: [
       "https://www.bodyburdenlab.com/blog-baby-formula.jpg",
     ],

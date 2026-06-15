@@ -3,18 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
+  title: "How to Avoid Microplastics (2026): Highest-Impact Changes, Ranked",
   description:
-    "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
+    "Switching plastic bottles for steel is low impact. Filtering your tap water cuts far more. We ranked every strategy by actual reduction potential using peer-reviewed research — see what actually matters.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/how-to-avoid-microplastics",
   },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
-    title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
+    title: "How to Avoid Microplastics (2026): Highest-Impact Changes, Ranked",
     description:
-      "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
+      "Switching plastic bottles for steel is low impact. Filtering your tap water cuts far more. We ranked every strategy by actual reduction potential using peer-reviewed research — see what actually matters.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/blog-avoid.jpg",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Avoid Microplastics: The Highest-Impact Changes, Ranked",
+    title: "How to Avoid Microplastics (2026): Highest-Impact Changes, Ranked",
     description:
-      "Most advice gets the priorities wrong. We ranked every change by reduction potential — based on what peer-reviewed studies actually show about each exposure source.",
+      "Switching plastic bottles for steel is low impact. Filtering your tap water cuts far more. We ranked every strategy by actual reduction potential using peer-reviewed research — see what actually matters.",
     images: [
       "https://www.bodyburdenlab.com/blog-avoid.jpg",
     ],

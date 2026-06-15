@@ -3,18 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Does Silicone Have Microplastics?",
+  title: "Does Silicone Have Microplastics? What the Research Actually Shows",
   description:
-    "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
+    "Silicone releases particles when heated — but they're not technically microplastics. Here's what peer-reviewed studies found about silicone spatulas, bakeware, and baby products.",
   alternates: {
     canonical: "https://www.bodyburdenlab.com/blog/does-silicone-have-microplastics",
   },
   openGraph: {
     type: "article",
     publishedTime: "2026-04-19",
-    title: "Does Silicone Have Microplastics?",
+    title: "Does Silicone Have Microplastics? What the Research Actually Shows",
     description:
-      "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
+      "Silicone releases particles when heated — but they're not technically microplastics. Here's what peer-reviewed studies found about silicone spatulas, bakeware, and baby products.",
     images: [
       {
         url: "https://www.bodyburdenlab.com/blog-silicone.jpg",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Does Silicone Have Microplastics?",
+    title: "Does Silicone Have Microplastics? What the Research Actually Shows",
     description:
-      "Silicone is widely marketed as a safer alternative to plastic. But does it release microplastics or other particles? Here's what the peer-reviewed evidence says.",
+      "Silicone releases particles when heated — but they're not technically microplastics. Here's what peer-reviewed studies found about silicone spatulas, bakeware, and baby products.",
     images: [
       "https://www.bodyburdenlab.com/blog-silicone.jpg",
     ],
