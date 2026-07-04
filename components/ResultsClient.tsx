@@ -52,7 +52,7 @@ const PRODUCT_SWAPS: Record<string, { label: string; url: string }> = {
   clothing:     { label: "Shop laundry bags", url: "https://www.amazon.com/s?k=microfiber+laundry+bag+washing" },
 };
 
-function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMap }: {
+function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMap, instanceId }: {
   groups: CategoryGroup[];
   selected: Category | null;
   onSelect: (cat: Category) => void;
@@ -60,6 +60,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
   tier: string;
   tierColor: string;
   colorsMap: Record<string, string>;
+  instanceId: string;
 }) {
   const cx = 200, cy = 200, r = 168, holeR = 96;
   let angle = -Math.PI / 2;
@@ -107,7 +108,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
         {slices.map(({ cat, color }) => {
           const [light, dark] = RANK_GRADIENTS[color] ?? [color, color];
           return (
-            <linearGradient key={cat} id={`grad-${cat}`} x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <linearGradient key={cat} id={`grad-${instanceId}-${cat}`} x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
               <stop offset="0%" stopColor={light} />
               <stop offset="100%" stopColor={dark} />
             </linearGradient>
@@ -131,7 +132,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
           >
             <path
               d={d}
-              fill={`url(#grad-${cat})`}
+              fill={`url(#grad-${instanceId}-${cat})`}
               style={{
                 opacity: dimmed ? 0.3 : 1,
                 transition: "opacity 0.25s ease",
@@ -283,7 +284,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
               transition: "width 0.45s cubic-bezier(0.4,0,0.2,1)",
             }}
           >
-            <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
+            <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} instanceId="desktop" />
 
             {/* Click hint — fades out once a slice is selected */}
             <p
@@ -365,7 +366,7 @@ function CategorySection({ groups, score, tier, tierColor, colorsMap }: {
       {/* Mobile layout — chart full width, detail as bottom sheet */}
       <div className="sm:hidden">
         <div className="flex flex-col items-center">
-          <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} />
+          <PieChart groups={groups} selected={selectedCat} onSelect={handleSliceClick} score={score} tier={tier} tierColor={tierColor} colorsMap={colorsMap} instanceId="mobile" />
           <div className="flex flex-col gap-2 mt-4 w-full max-w-[320px]">
             {groups.map(({ cat, catPct }) => {
               const isActive = selectedCat === cat;
