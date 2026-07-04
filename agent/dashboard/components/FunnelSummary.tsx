@@ -4,56 +4,6 @@ interface Props {
   candidates: Candidate[]
 }
 
-interface StatProps {
-  label: string
-  value: number
-  active: boolean
-}
-
-function Stat({ label, value, active }: StatProps) {
-  return (
-    <div style={{
-      flex: 1,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 8,
-      background: active ? '#45B8A8' : '#242426',
-      border: `1px solid ${active ? '#45B8A8' : 'rgba(255,255,255,0.1)'}`,
-      borderRadius: 8,
-      padding: '20px 12px',
-      boxSizing: 'border-box',
-    }}>
-      <span style={{
-        fontSize: 48,
-        fontWeight: 700,
-        lineHeight: 1,
-        letterSpacing: '-0.03em',
-        fontVariantNumeric: 'tabular-nums',
-        color: active ? '#FFFFFF' : '#888890',
-      }}>
-        {value}
-      </span>
-      <span style={{
-        fontSize: 11,
-        fontWeight: 500,
-        letterSpacing: '0.07em',
-        textTransform: 'uppercase',
-        color: active ? 'rgba(255,255,255,0.8)' : '#888890',
-      }}>
-        {label}
-      </span>
-    </div>
-  )
-}
-
-function Arrow() {
-  return (
-    <span style={{ color: '#3A3A3C', fontSize: 14, userSelect: 'none', flexShrink: 0, alignSelf: 'center' }}>→</span>
-  )
-}
-
 export function FunnelSummary({ candidates }: Props) {
   const total = candidates.length
   const emailFound = candidates.filter(c => c.contact_status === 'email_found').length
@@ -62,26 +12,53 @@ export function FunnelSummary({ candidates }: Props) {
   const replied = candidates.filter(c => c.outreach_status === 'replied').length
   const linked = candidates.filter(c => c.outreach_status === 'linked').length
 
+  const stats = [
+    { label: 'Targets', value: total },
+    { label: 'Emails', value: emailFound },
+    { label: 'Drafts', value: drafted },
+    { label: 'Sent', value: sent },
+    { label: 'Replied', value: replied },
+    { label: 'Linked', value: linked },
+  ]
+
   return (
     <div style={{
       display: 'flex',
-      alignItems: 'stretch',
-      gap: 8,
-      paddingBottom: 40,
-      borderBottom: '1px solid #3A3A3C',
-      marginBottom: 32,
+      borderBottom: '1px solid #1A1A1A',
+      marginBottom: 0,
     }}>
-      <Stat label="Targets found" value={total} active={total > 0} />
-      <Arrow />
-      <Stat label="Emails found" value={emailFound} active={emailFound > 0} />
-      <Arrow />
-      <Stat label="Drafts ready" value={drafted} active={drafted > 0} />
-      <Arrow />
-      <Stat label="Sent" value={sent} active={sent > 0} />
-      <Arrow />
-      <Stat label="Replied" value={replied} active={replied > 0} />
-      <Arrow />
-      <Stat label="Linked" value={linked} active={linked > 0} />
+      {stats.map((s, i) => (
+        <div
+          key={s.label}
+          style={{
+            flex: 1,
+            padding: '32px 0',
+            textAlign: 'center',
+            borderRight: i < stats.length - 1 ? '1px solid #1A1A1A' : 'none',
+          }}
+        >
+          <div style={{
+            fontSize: 40,
+            fontWeight: 700,
+            letterSpacing: '-0.03em',
+            color: s.value > 0 ? '#FFFFFF' : '#222',
+            lineHeight: 1,
+            marginBottom: 8,
+            fontVariantNumeric: 'tabular-nums',
+          }}>
+            {s.value}
+          </div>
+          <div style={{
+            fontSize: 9,
+            fontWeight: 600,
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            color: s.value > 0 ? '#45B8A8' : '#333',
+          }}>
+            {s.label}
+          </div>
+        </div>
+      ))}
     </div>
   )
 }

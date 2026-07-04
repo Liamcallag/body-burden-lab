@@ -8,162 +8,237 @@ interface Props {
   candidates: Candidate[]
 }
 
-const th: React.CSSProperties = {
-  fontSize: 11,
-  fontWeight: 800,
-  letterSpacing: '0.07em',
-  textTransform: 'uppercase',
-  color: '#FFFFFF',
-  padding: '12px 16px',
-  textAlign: 'left',
-  borderBottom: '1px solid #35A898',
-  background: '#45B8A8',
-  whiteSpace: 'nowrap',
-}
-
-const td: React.CSSProperties = {
-  padding: '12px 16px',
-  verticalAlign: 'top',
-  borderBottom: '1px solid #3A3A3C',
-  fontSize: 13,
-  color: '#E5E5E7',
-}
-
 export function TargetsTable({ candidates }: Props) {
   const [expandedId, setExpandedId] = useState<number | null>(null)
   const [expandedWhyId, setExpandedWhyId] = useState<number | null>(null)
 
   if (candidates.length === 0) {
     return (
-      <p style={{ fontSize: 13, color: '#8E8E93', padding: '40px 0', textAlign: 'center' }}>
+      <p style={{
+        fontSize: 10,
+        fontWeight: 600,
+        letterSpacing: '0.15em',
+        textTransform: 'uppercase',
+        color: '#333',
+        padding: '60px 0',
+        textAlign: 'center',
+      }}>
         No targets match the current filters.
       </p>
     )
   }
 
   return (
-    <div style={{ border: '1px solid #3A3A3C', borderRadius: 2, overflow: 'hidden' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
-        <thead>
-          <tr>
-            <th style={{ ...th, width: '26%' }}>Page</th>
-            <th style={{ ...th, width: '26%' }}>Why relevant</th>
-            <th style={{ ...th, width: '18%' }}>Contact</th>
-            <th style={{ ...th, width: '12%' }}>Contact</th>
-            <th style={{ ...th, width: '12%' }}>Outreach</th>
-            <th style={{ ...th, width: '6%' }}></th>
-          </tr>
-        </thead>
-        <tbody>
-          {candidates.map((c, i) => (
-            <React.Fragment key={c.id}>
-              <tr
-                style={{ background: i % 2 === 0 ? '#2A2A2C' : '#242426', borderLeft: '3px solid transparent', transition: 'border-color 0.1s' }}
-                onMouseEnter={e => (e.currentTarget.style.borderLeftColor = '#45B8A8')}
-                onMouseLeave={e => (e.currentTarget.style.borderLeftColor = 'transparent')}
-              >
+    <div>
+      {/* Column headers */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '2fr 2.5fr 1.6fr 1fr 1fr 60px',
+        padding: '10px 0',
+        borderBottom: '1px solid #1A1A1A',
+      }}>
+        {['Page', 'Why Relevant', 'Contact', 'Status', 'Outreach', ''].map((h, i) => (
+          <span key={i} style={{
+            fontSize: 9,
+            fontWeight: 800,
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            color: '#444',
+            paddingRight: 16,
+          }}>
+            {h}
+          </span>
+        ))}
+      </div>
 
-                {/* Page */}
-                <td style={td}>
-                  <a
-                    href={c.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: '#45B8A8', fontWeight: 500, textDecoration: 'none', lineHeight: 1.4, display: 'block' }}
-                    onMouseEnter={e => { e.currentTarget.style.textDecoration = 'underline' }}
-                    onMouseLeave={e => { e.currentTarget.style.textDecoration = 'none' }}
-                  >
-                    {c.page_title}
-                  </a>
-                  <span style={{ fontSize: 10, color: '#8E8E93', marginTop: 3, display: 'block' }}>
-                    {(() => { try { return new URL(c.url).hostname.replace('www.', '') } catch { return c.url } })()}
-                  </span>
-                </td>
+      {/* Rows */}
+      {candidates.map((c, i) => {
+        const isExpanded = expandedId === c.id
+        const isWhyExpanded = expandedWhyId === c.id
+        const hasDraft = Boolean(c.email_draft)
+        // First row with a draft gets teal highlight treatment
+        const isFeatured = hasDraft && i === 0
 
-                {/* Why relevant */}
-                <td style={{ ...td, color: '#A0A0A8', lineHeight: 1.55 }}>
-                  <span style={expandedWhyId === c.id ? {} : {
+        return (
+          <React.Fragment key={c.id}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '2fr 2.5fr 1.6fr 1fr 1fr 60px',
+                padding: '20px 0',
+                borderBottom: '1px solid #1A1A1A',
+                background: isFeatured ? 'rgba(69,184,168,0.06)' : 'transparent',
+                borderLeft: isFeatured ? '2px solid #45B8A8' : '2px solid transparent',
+                paddingLeft: isFeatured ? 14 : 0,
+                transition: 'background 0.1s',
+                cursor: 'default',
+              }}
+              onMouseEnter={e => {
+                if (!isFeatured) e.currentTarget.style.background = '#080808'
+              }}
+              onMouseLeave={e => {
+                if (!isFeatured) e.currentTarget.style.background = 'transparent'
+              }}
+            >
+              {/* Page */}
+              <div style={{ paddingRight: 20 }}>
+                <a
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                    color: '#FFFFFF',
+                    textDecoration: 'none',
+                    display: 'block',
+                    lineHeight: 1.35,
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.color = '#45B8A8' }}
+                  onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF' }}
+                >
+                  {c.page_title}
+                </a>
+                <span style={{
+                  fontSize: 9,
+                  letterSpacing: '0.08em',
+                  color: '#444',
+                  marginTop: 4,
+                  display: 'block',
+                }}>
+                  {(() => { try { return new URL(c.url).hostname.replace('www.', '') } catch { return c.url } })()}
+                </span>
+              </div>
+
+              {/* Why relevant */}
+              <div style={{ paddingRight: 20 }}>
+                <p style={{
+                  fontSize: 12,
+                  color: '#777',
+                  lineHeight: 1.55,
+                  margin: 0,
+                  ...(isWhyExpanded ? {} : {
                     display: '-webkit-box',
                     WebkitLineClamp: 2,
                     WebkitBoxOrient: 'vertical',
                     overflow: 'hidden',
-                  } as React.CSSProperties}>
-                    {c.why_relevant}
-                  </span>
+                  } as React.CSSProperties),
+                }}>
+                  {c.why_relevant}
+                </p>
+                <button
+                  onClick={() => setExpandedWhyId(isWhyExpanded ? null : c.id)}
+                  style={{
+                    fontSize: 9,
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: '#45B8A8',
+                    background: 'none',
+                    border: 'none',
+                    padding: '4px 0 0',
+                    cursor: 'pointer',
+                    display: 'block',
+                    fontFamily: 'inherit',
+                  }}
+                >
+                  {isWhyExpanded ? 'Less ↑' : 'More ↓'}
+                </button>
+              </div>
+
+              {/* Contact email */}
+              <div style={{ paddingRight: 20 }}>
+                <span style={{ fontSize: 11, color: '#555', wordBreak: 'break-all', lineHeight: 1.4 }}>
+                  {c.contact_email ?? <span style={{ color: '#2A2A2A', letterSpacing: '0.1em' }}>—</span>}
+                </span>
+              </div>
+
+              {/* Contact status */}
+              <div>
+                <StatusBadge status={c.contact_status} type="contact" />
+              </div>
+
+              {/* Outreach status */}
+              <div>
+                <StatusBadge status={c.outreach_status} type="outreach" />
+              </div>
+
+              {/* Draft toggle */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-end' }}>
+                {hasDraft && (
                   <button
-                    onClick={() => setExpandedWhyId(expandedWhyId === c.id ? null : c.id)}
-                    style={{ fontSize: 11, color: '#2D6A7F', background: 'none', border: 'none', padding: 0, cursor: 'pointer', marginTop: 4, display: 'block', fontWeight: 600 }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#45B8A8')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#2D6A7F')}
+                    onClick={() => setExpandedId(isExpanded ? null : c.id)}
+                    style={{
+                      fontSize: 16,
+                      color: '#45B8A8',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      padding: 0,
+                      lineHeight: 1,
+                      fontFamily: 'inherit',
+                      transition: 'opacity 0.1s',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.opacity = '0.6' }}
+                    onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+                    title={isExpanded ? 'Hide draft' : 'View draft'}
                   >
-                    {expandedWhyId === c.id ? 'less ↑' : 'more ↓'}
+                    {isExpanded ? '↑' : '↗'}
                   </button>
-                </td>
+                )}
+              </div>
+            </div>
 
-                {/* Contact email */}
-                <td style={{ ...td, color: '#A0A0A8', fontSize: 12, wordBreak: 'break-all' }}>
-                  {c.contact_email ?? <span style={{ color: '#C8C4BE' }}>—</span>}
-                </td>
-
-                {/* Contact status */}
-                <td style={td}>
-                  <StatusBadge status={c.contact_status} type="contact" />
-                </td>
-
-                {/* Outreach status */}
-                <td style={td}>
-                  <StatusBadge status={c.outreach_status} type="outreach" />
-                </td>
-
-                {/* Draft toggle */}
-                <td style={{ ...td, textAlign: 'right' }}>
-                  {c.email_draft && (
-                    <button
-                      onClick={() => setExpandedId(expandedId === c.id ? null : c.id)}
-                      style={{ fontSize: 12, color: '#45B8A8', background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', padding: 0 }}
-                      onMouseEnter={e => (e.currentTarget.style.opacity = '0.7')}
-                      onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
-                    >
-                      {expandedId === c.id ? 'hide ↑' : 'draft ↓'}
-                    </button>
-                  )}
-                </td>
-              </tr>
-
-              {/* Expanded draft */}
-              {expandedId === c.id && c.email_draft && (
-                <tr key={`${c.id}-draft`} style={{ background: '#111E1D' }}>
-                  <td colSpan={6} style={{ padding: '24px 28px', borderBottom: '1px solid #3A3A3C' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                        <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#45B8A8', display: 'inline-block', flexShrink: 0 }} />
-                        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#45B8A8' }}>
-                          Email Draft
-                        </span>
-                      </div>
-                      {c.contact_email && (
-                        <span style={{ fontSize: 11, color: '#8E8E93', background: '#2A2A2C', border: '1px solid #3A3A3C', borderRadius: 4, padding: '3px 10px' }}>
-                          To: {c.contact_email}
-                        </span>
-                      )}
-                    </div>
-                    <div style={{
-                      background: '#1C1C1E',
-                      border: '1px solid #2D6A7F',
-                      borderRadius: 8,
-                      padding: '20px 24px',
+            {/* Expanded email draft */}
+            {isExpanded && c.email_draft && (
+              <div style={{
+                borderBottom: '1px solid #1A1A1A',
+                background: '#050505',
+                padding: '0 0 0 2px',
+              }}>
+                <div style={{ borderLeft: '2px solid #45B8A8', padding: '28px 32px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+                    <span style={{
+                      fontSize: 9,
+                      fontWeight: 700,
+                      letterSpacing: '0.2em',
+                      textTransform: 'uppercase',
+                      color: '#45B8A8',
                     }}>
-                      <pre style={{ fontSize: 13.5, color: '#E5E5E7', whiteSpace: 'pre-wrap', fontFamily: 'inherit', lineHeight: 1.75, margin: 0 }}>
-                        {c.email_draft}
-                      </pre>
-                    </div>
-                  </td>
-                </tr>
-              )}
-            </React.Fragment>
-          ))}
-        </tbody>
-      </table>
+                      Email Draft
+                    </span>
+                    {c.contact_email && (
+                      <span style={{
+                        fontSize: 9,
+                        fontWeight: 600,
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        color: '#555',
+                        border: '1px solid #1A1A1A',
+                        padding: '4px 12px',
+                      }}>
+                        To: {c.contact_email}
+                      </span>
+                    )}
+                  </div>
+                  <pre style={{
+                    fontSize: 13,
+                    color: '#C8C8C8',
+                    whiteSpace: 'pre-wrap',
+                    fontFamily: 'inherit',
+                    lineHeight: 1.8,
+                    margin: 0,
+                  }}>
+                    {c.email_draft}
+                  </pre>
+                </div>
+              </div>
+            )}
+          </React.Fragment>
+        )
+      })}
     </div>
   )
 }
