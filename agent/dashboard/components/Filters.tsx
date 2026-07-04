@@ -32,6 +32,7 @@ const selectStyle: React.CSSProperties = {
   color: '#666',
   background: 'transparent',
   border: '1px solid #222',
+  borderRadius: 0,
   padding: '6px 24px 6px 10px',
   outline: 'none',
   cursor: 'pointer',
