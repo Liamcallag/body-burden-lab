@@ -107,7 +107,7 @@ function PieChart({ groups, selected, onSelect, score, tier, tierColor, colorsMa
         {slices.map(({ cat, color }) => {
           const [light, dark] = RANK_GRADIENTS[color] ?? [color, color];
           return (
-            <linearGradient key={cat} id={`grad-${cat}`} x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+            <linearGradient key={cat} id={`grad-${cat}`} x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
               <stop offset="0%" stopColor={light} />
               <stop offset="100%" stopColor={dark} />
             </linearGradient>
