@@ -1,16 +1,42 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Candidate } from '@/lib/supabase'
 import { StatusBadge } from './StatusBadge'
+
+const OUTREACH_STATUSES = ['not_contacted', 'drafted', 'sent', 'replied', 'linked']
+
+const OUTREACH_COLORS: Record<string, string> = {
+  not_contacted: '#6B7280',
+  drafted:       '#45B8A8',
+  sent:          '#2D6A7F',
+  replied:       '#a78bfa',
+  linked:        '#22c55e',
+}
 
 interface Props {
   candidates: Candidate[]
 }
 
 export function TargetsTable({ candidates }: Props) {
+  const router = useRouter()
   const [expandedId, setExpandedId] = useState<number | null>(null)
   const [expandedWhyId, setExpandedWhyId] = useState<number | null>(null)
+  const [updatingId, setUpdatingId] = useState<number | null>(null)
+  const [localStatuses, setLocalStatuses] = useState<Record<number, string>>({})
+
+  async function handleStatusChange(id: number, status: string) {
+    setUpdatingId(id)
+    setLocalStatuses(prev => ({ ...prev, [id]: status }))
+    await fetch('/api/update-status', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, outreach_status: status }),
+    })
+    setUpdatingId(null)
+    router.refresh()
+  }
 
   if (candidates.length === 0) {
     return (
@@ -160,9 +186,45 @@ export function TargetsTable({ candidates }: Props) {
                 <StatusBadge status={c.contact_status} type="contact" />
               </div>
 
-              {/* Outreach status */}
+              {/* Outreach status — editable */}
               <div>
-                <StatusBadge status={c.outreach_status} type="outreach" />
+                {(() => {
+                  const current = localStatuses[c.id] ?? c.outreach_status ?? 'not_contacted'
+                  const color = OUTREACH_COLORS[current] ?? '#6B7280'
+                  const isUpdating = updatingId === c.id
+                  return (
+                    <div style={{ position: 'relative', display: 'inline-block' }}>
+                      <select
+                        value={current}
+                        onChange={e => handleStatusChange(c.id, e.target.value)}
+                        disabled={isUpdating}
+                        style={{
+                          background: 'transparent',
+                          border: `1px solid ${color}`,
+                          borderRadius: 0,
+                          color,
+                          fontSize: 9,
+                          fontWeight: 700,
+                          letterSpacing: '0.1em',
+                          textTransform: 'uppercase',
+                          padding: '4px 20px 4px 8px',
+                          fontFamily: 'inherit',
+                          outline: 'none',
+                          cursor: isUpdating ? 'not-allowed' : 'pointer',
+                          appearance: 'none',
+                          opacity: isUpdating ? 0.5 : 1,
+                        }}
+                      >
+                        {OUTREACH_STATUSES.map(s => (
+                          <option key={s} value={s} style={{ background: '#1A1A1A', color: '#fff', textTransform: 'uppercase' }}>
+                            {s.replace(/_/g, ' ')}
+                          </option>
+                        ))}
+                      </select>
+                      <span style={{ position: 'absolute', right: 5, top: '50%', transform: 'translateY(-50%)', color, fontSize: 7, pointerEvents: 'none' }}>▾</span>
+                    </div>
+                  )
+                })()}
               </div>
 
               {/* Draft toggle */}
