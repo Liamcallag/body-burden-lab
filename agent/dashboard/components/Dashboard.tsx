@@ -21,12 +21,19 @@ const STATUS_MESSAGES = [
   'Saving to database...',
 ]
 
-const TOPIC = 'microplastics exposure health resources environmental education'
+const ANGLES = [
+  { label: 'Health & Resource Pages', topic: 'microplastics health resources tools useful links site:org OR site:edu' },
+  { label: 'Student & Education', topic: 'microplastics plastic pollution student education classroom resources' },
+  { label: 'Environmental Advocacy', topic: 'PFAS microplastics awareness campaign environmental advocacy blog' },
+  { label: 'Consumer & Lifestyle', topic: 'microplastics consumer guide reduce plastic exposure everyday tips' },
+  { label: 'Science Communication', topic: 'microplastics science communication public engagement research explainer' },
+]
 
 export function Dashboard({ candidates }: Props) {
   const router = useRouter()
   const [contactFilter, setContactFilter] = useState('')
   const [outreachFilter, setOutreachFilter] = useState('')
+  const [selectedAngle, setSelectedAngle] = useState(0)
   const [runState, setRunState] = useState<RunState>('idle')
   const [statusIndex, setStatusIndex] = useState(0)
   const [result, setResult] = useState<{ targetsFound: number; contactsFound: number; drafted: number } | null>(null)
@@ -54,7 +61,7 @@ export function Dashboard({ candidates }: Props) {
       const res = await fetch('/api/run-agent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ topic: TOPIC }),
+        body: JSON.stringify({ topic: ANGLES[selectedAngle].topic }),
       })
 
       clearInterval(interval)
@@ -108,9 +115,39 @@ export function Dashboard({ candidates }: Props) {
           )}
         </div>
 
-        <button
-          onClick={handleRun}
-          disabled={isRunning}
+        <div style={{ display: 'flex', gap: 0, alignItems: 'stretch' }}>
+          <div style={{ position: 'relative' }}>
+            <select
+              value={selectedAngle}
+              onChange={e => setSelectedAngle(Number(e.target.value))}
+              disabled={isRunning}
+              style={{
+                background: 'transparent',
+                border: '1px solid #333',
+                borderRight: 'none',
+                borderRadius: 0,
+                padding: '14px 32px 14px 16px',
+                fontSize: 9,
+                fontWeight: 600,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: isRunning ? '#444' : '#888',
+                fontFamily: 'inherit',
+                outline: 'none',
+                cursor: isRunning ? 'not-allowed' : 'pointer',
+                appearance: 'none',
+              }}
+            >
+              {ANGLES.map((a, i) => (
+                <option key={i} value={i}>{a.label}</option>
+              ))}
+            </select>
+            <span style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', color: '#444', fontSize: 8, pointerEvents: 'none' }}>▾</span>
+          </div>
+
+          <button
+            onClick={handleRun}
+            disabled={isRunning}
           style={{
             background: isRunning ? '#1A1A1A' : '#45B8A8',
             color: isRunning ? '#45B8A8' : '#000000',
@@ -131,7 +168,8 @@ export function Dashboard({ candidates }: Props) {
           onMouseLeave={e => { if (!isRunning) { e.currentTarget.style.background = '#45B8A8'; e.currentTarget.style.borderColor = '#45B8A8' } }}
         >
           {isRunning ? '⬤ Running...' : 'Find New Targets ↗'}
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Stats strip */}
