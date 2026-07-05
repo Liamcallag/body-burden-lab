@@ -109,7 +109,7 @@ export function Dashboard({ candidates }: Props) {
             </p>
           )}
           {runState === 'idle' && (
-            <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#333' }}>
+            <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#666' }}>
               Find new backlink targets
             </p>
           )}
@@ -131,7 +131,7 @@ export function Dashboard({ candidates }: Props) {
                 fontWeight: 600,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: isRunning ? '#444' : '#888',
+                color: isRunning ? '#444' : '#aaa',
                 fontFamily: 'inherit',
                 outline: 'none',
                 cursor: isRunning ? 'not-allowed' : 'pointer',

@@ -41,7 +41,7 @@ export function FunnelSummary({ candidates }: Props) {
             fontSize: 40,
             fontWeight: 700,
             letterSpacing: '-0.03em',
-            color: s.value > 0 ? '#FFFFFF' : '#222',
+            color: s.value > 0 ? '#FFFFFF' : '#444',
             lineHeight: 1,
             marginBottom: 8,
             fontVariantNumeric: 'tabular-nums',
@@ -53,7 +53,7 @@ export function FunnelSummary({ candidates }: Props) {
             fontWeight: 600,
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
-            color: s.value > 0 ? '#45B8A8' : '#333',
+            color: s.value > 0 ? '#45B8A8' : '#555',
           }}>
             {s.label}
           </div>
